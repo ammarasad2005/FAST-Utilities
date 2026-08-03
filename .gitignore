@@ -1,0 +1,96 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+
+#codex files
+.codex
+.codex/
+*.codex
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+.env.events
+.env.events.*
+
+# vercel
+.vercel
+
+# local editor settings
+.vscode/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# 🔴 Custom Ignored Files for Exams App 🔴
+# Do not track schedule.json since it's built on-the-fly via npm run prebuild.
+# /public/data/schedule.json
+
+# Ignore the project generation plan and any other internal plans
+FSC_ExamSchedule_GenerationPlan.md
+*_GenerationPlan.md
+time-table-extension-plan.md
+
+# events automation artifacts
+scripts/debug_list.html
+logs/events.log
+logs/timetable.log
+
+# python cache artifacts
+__pycache__/
+*.py[cod]
+
+# Project Context (Local only)
+/GEMINI.md
+
+# Local temporary files and screenshots
+/*.png
+/*.jpg
+/*.jpeg
+/lint.txt
+
+
+# Agent orchestration metadata
+.agents/
+
+# Scratch/test files
+scratch/
+
+# API response test data
+api_response.json
+api_response_3001.json
+
+# Runtime logs
+server.log
+
+# Development utilities
+scripts/show-env-keys.ts
+scripts/verify-html-check.ts
+
+# Project documentation (tracked separately in docs/)
+PROJECT.md
+ORIGINAL_REQUEST.md

@@ -1,0 +1,349 @@
+{
+  "scraped_at": "2026-08-03T09:56:33.859456",
+  "date_range": "2026-08-01 to 2026-09-30",
+  "total_events": 57,
+  "events": [
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 1",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 2",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 3",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Instructor Interviews",
+      "date": "August 3",
+      "time": "9:00 am - 5:00 pm",
+      "event_location": "MEDC 117 & 118 By Mr. Afaq FSM"
+    },
+    {
+      "event_name": "HCI Course Meeting (CS)",
+      "date": "August 3",
+      "time": "1:00 pm - 2:00 pm",
+      "event_location": "C 109 by Ms. Nayab"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 4",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Workshop S&H",
+      "date": "August 4",
+      "time": "9:00 am - 4:00 pm",
+      "event_location": "C-109 by Ms. Kanwal"
+    },
+    {
+      "event_name": "Training CSO",
+      "date": "August 4",
+      "time": "9:00 am - 4:00 pm",
+      "event_location": "Auditorium D Block by Mr. Zain"
+    },
+    {
+      "event_name": "Interviews MBA",
+      "date": "August 4",
+      "time": "9:00 am - 1:00 pm",
+      "event_location": "MEDC- 117 & 118 by Abdul Qadoos"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 5",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "IAB FSC",
+      "date": "August 5",
+      "time": "9:00 am - 2:00 pm",
+      "event_location": "C-109 by Ms. Neelofar"
+    },
+    {
+      "event_name": "CS Seminar",
+      "date": "August 5",
+      "time": "9:00 am - 7:00 pm",
+      "event_location": "Auditorium A Block by Ms. Nayab"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 6",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Faculty Meeting",
+      "date": "August 6",
+      "time": "8:00 am - 10:00 am",
+      "event_location": "C-109 by Ms. Saleha"
+    },
+    {
+      "event_name": "Faculty Orientation Session",
+      "date": "August 6",
+      "time": "9:00 am - 5:00 pm",
+      "event_location": "Auditorium A Block by Ms. Fasiha"
+    },
+    {
+      "event_name": "Department Meeting & Workshop",
+      "date": "August 6",
+      "time": "10:00 am - 5:00 pm",
+      "event_location": "C-109 by Mr. Ikram"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 7",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Workshop S&H",
+      "date": "August 7",
+      "time": "8:00 am - 5:00 pm",
+      "event_location": "C-109 by Ms. Kanwal"
+    },
+    {
+      "event_name": "CSO Event",
+      "date": "August 7",
+      "time": "8:00 am - 6:00 pm",
+      "event_location": "Auditorium A Block by Ms. Laraib"
+    },
+    {
+      "event_name": "FYP Briefing FSM",
+      "date": "August 7",
+      "time": "9:00 am - 2:00 pm",
+      "event_location": "MEDC 117 & 118 By Ms. Fasiha"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 8",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 9",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 10",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Orientation 2026 Computing",
+      "date": "August 10",
+      "time": "8:00 am - 7:00 pm",
+      "event_location": "Auditorium A and C Block by Dr. Hasan Mujtaba"
+    },
+    {
+      "event_name": "Workshop S&H",
+      "date": "August 10",
+      "time": "9:00 am - 6:00 pm",
+      "event_location": "C-109 by Ms. Kanwal"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 11",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Orientation 2026 Computing",
+      "date": "August 11",
+      "time": "8:00 am - 7:00 pm",
+      "event_location": "Auditorium A and C Block by Dr. Hasan Mujtaba"
+    },
+    {
+      "event_name": "Faculty Orientation Session",
+      "date": "August 11",
+      "time": "9:00 am - 5:00 pm",
+      "event_location": "C-109 by Ms. Warda"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 12",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Orientation FSM 2026",
+      "date": "August 12",
+      "time": "8:00 am - 7:00 pm",
+      "event_location": "Auditorium A & D Block by Dr. Sara Khan"
+    },
+    {
+      "event_name": "FSM Orientation",
+      "date": "August 12",
+      "time": "8:00 am - 6:00 pm",
+      "event_location": "MEDC 118 & CMR by Dr. Sajjad"
+    },
+    {
+      "event_name": "Faculty Orientation Session",
+      "date": "August 12",
+      "time": "9:00 am - 5:00 pm",
+      "event_location": "C 109 By Ms. warda"
+    },
+    {
+      "event_name": "Orientation",
+      "date": "August 12",
+      "time": "12:00 pm - 5:00 pm",
+      "event_location": "CMR by Ms. Fasiha"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 13",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "FSM Orientation",
+      "date": "August 13",
+      "time": "8:00 am - 6:00 pm",
+      "event_location": "MEDC 118 by Dr. Sajjad"
+    },
+    {
+      "event_name": "Orientation FSE 2026",
+      "date": "August 13",
+      "time": "8:00 am - 10:00 pm",
+      "event_location": "Auditorium A Block by Dr. Tariq"
+    },
+    {
+      "event_name": "Orientation FSM",
+      "date": "August 13",
+      "time": "8:00 am - 7:00 pm",
+      "event_location": "Auditorium D Block by Dr. Sarah Khan"
+    },
+    {
+      "event_name": "Faculty Orientation Session",
+      "date": "August 13",
+      "time": "9:00 am - 5:00 pm",
+      "event_location": "C 109 by Ms. Warda"
+    },
+    {
+      "event_name": "Orientation",
+      "date": "August 13",
+      "time": "12:00 pm - 5:00 pm",
+      "event_location": "CMR By Ms. Fasiha"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 14",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 15",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Admissions Activity",
+      "date": "August 16",
+      "time": "8:00 am - 9:00 pm",
+      "event_location": "Auditorium D Block by Mr. Hameed"
+    },
+    {
+      "event_name": "Engineering Classes Series - FSE",
+      "date": "August 17",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "FSE Engineering Classes Series - II",
+      "date": "August 20",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium D Block by Mr. Tariq"
+    },
+    {
+      "event_name": "Engineering Classes Series - FSE",
+      "date": "August 24",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "FSE Engineering Classes Series - II",
+      "date": "August 27",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium D Block by Mr. Tariq"
+    },
+    {
+      "event_name": "Engineering Classes Series - FSE",
+      "date": "August 31",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "FSE Engineering Classes Series - II",
+      "date": "September 3",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium D Block by Mr. Tariq"
+    },
+    {
+      "event_name": "Engineering Classes Series - FSE",
+      "date": "September 7",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "FSE Engineering Classes Series - II",
+      "date": "September 10",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium D Block by Mr. Tariq"
+    },
+    {
+      "event_name": "Welcome Party CS",
+      "date": "September 11",
+      "time": "5:00 pm - 11:00 pm",
+      "event_location": "Auditorium by Dr. Hasan Mujtaba"
+    },
+    {
+      "event_name": "Engineering Classes Series - FSE",
+      "date": "September 14",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "FSE Engineering Classes Series - II",
+      "date": "September 17",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium D Block by Mr. Tariq"
+    },
+    {
+      "event_name": "Welcome Party CS",
+      "date": "September 18",
+      "time": "5:00 pm - 11:00 pm",
+      "event_location": "Auditorium by Dr. Hasan Mujtaba"
+    },
+    {
+      "event_name": "Engineering Classes Series - FSE",
+      "date": "September 21",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "FSE Engineering Classes Series - II",
+      "date": "September 24",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium D Block by Mr. Tariq"
+    },
+    {
+      "event_name": "Engineering Classes Series - FSE",
+      "date": "September 28",
+      "time": "2:00 pm - 5:00 pm",
+      "event_location": "Auditorium A Block by Mr. Tariq"
+    }
+  ]
+}

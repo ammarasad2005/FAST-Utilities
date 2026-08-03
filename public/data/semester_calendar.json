@@ -1,0 +1,90 @@
+{
+  "semester": "Summer 2026",
+  "academicYear": "2025-2026",
+  "generatedAt": "2026-06-17",
+  "keyDates": [
+    {
+      "label": "First day of classes",
+      "date": "2026-06-15",
+      "type": "academic",
+      "icon": "school"
+    },
+    {
+      "label": "Add & Drop of courses / labs",
+      "date": "2026-06-20",
+      "type": "deadline",
+      "icon": "event_available"
+    },
+    {
+      "label": "First Sessional Examination",
+      "date": "2026-07-13",
+      "endDate": "2026-07-14",
+      "type": "exam",
+      "icon": "quiz"
+    },
+    {
+      "label": "First Sessional results announced",
+      "date": "2026-07-21",
+      "endDate": "2026-07-22",
+      "type": "academic",
+      "icon": "info"
+    },
+    {
+      "label": "Last day of classes",
+      "date": "2026-08-07",
+      "type": "academic",
+      "icon": "school"
+    },
+    {
+      "label": "Course withdrawal deadline / Makeup week",
+      "date": "2026-08-07",
+      "type": "deadline",
+      "icon": "event_busy"
+    },
+    {
+      "label": "Final Examinations",
+      "date": "2026-08-10",
+      "endDate": "2026-08-12",
+      "type": "exam",
+      "icon": "quiz"
+    },
+    {
+      "label": "Final Examination results announced",
+      "date": "2026-08-17",
+      "type": "academic",
+      "icon": "info"
+    }
+  ],
+  "holidays": [
+    {
+      "label": "Independence Day",
+      "date": "2026-08-14",
+      "type": "national"
+    }
+  ],
+  "academicRanges": [
+    {
+      "label": "Regular Classes",
+      "startDate": "2026-06-15",
+      "endDate": "2026-08-07",
+      "color": "blue",
+      "type": "classes"
+    },
+    {
+      "label": "First Sessional Examination",
+      "startDate": "2026-07-13",
+      "endDate": "2026-07-14",
+      "color": "orange",
+      "type": "exams"
+    },
+    {
+      "label": "Final Examinations",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-12",
+      "color": "red",
+      "type": "exams"
+    }
+  ],
+  "weekCount": 8,
+  "totalCreditHoursPerWeek": 16
+}

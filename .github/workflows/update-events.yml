@@ -1,0 +1,54 @@
+name: Update Events Data
+
+on:
+  # Every Monday at 06:00 UTC
+  schedule:
+    - cron: '0 6 * * 1'
+
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-events:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.MAIN_PUSH_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install scraper dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml
+
+      - name: Run weekly events pipeline
+        env:
+          SLATE_USERNAME: ${{ secrets.SLATE_USERNAME }}
+          SLATE_PASSWORD: ${{ secrets.SLATE_PASSWORD }}
+          SLATE_TOOL_BASE: ${{ secrets.SLATE_TOOL_BASE }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: npm run events:update
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/slate_calendar_events.json public/data/student_events.json
+          if git diff --staged --quiet; then
+            echo "No changes detected - events are up to date."
+          else
+            git commit -m "chore: auto-update student events [$(date -u +'%Y-%m-%d %H:%M UTC')]"
+            git push
+            echo "Events updated and pushed."
+          fi
