@@ -64,10 +64,13 @@ const SUMMER_COURSE_ALIASES: Record<string, string[]> = {
   'ap':            ['applied physics'],
   'calculus':      ['calculus and analytical geometry'],
   'dld':           ['digital logic design'],
+  'dld lab':       ['digital logic design lab'],
   'la':            ['linear algebra'],
   'mv calculus':   ['multivariable calculus'],
   'oop':           ['object oriented programming'],
-  'pf':            ['programming fundamentals'],
+  'oop lab':       ['object oriented programming lab'],
+  'pf':            ['programming fundamental', 'programming fundamentals'],
+  'pf lab':        ['programming fundamental lab'],
   'prob & stats':  ['probability and satistics'],  // note: "satistics" typo is in the source xlsx
   'generative ai': ['generative ai'],
   'discrete st':   [],  // exam "will be held later" per FAST — no match expected
@@ -83,9 +86,16 @@ const SUMMER_COURSE_ALIASES: Record<string, string[]> = {
  *   1. Alias map — precise lookup for known abbreviations
  *   2. Exact match — direct string equality
  *   3. Acronym match — "DLD" matches "Digital Logic Design" (first letters)
- *   4. Word-level overlap — "Prob & Stats" matches "Probability and Satistics"
- *      via prefix matching on significant words
- *   5. Substring match — fallback for any remaining cases
+ *   4. Significant word overlap — "Prob & Stats" matches "Probability and Satistics"
+ *      via prefix matching on significant words (≥4 chars; ignores short words like
+ *      "Lab", "and", "for", "the" that would over-match across unrelated courses)
+ *
+ * NOTE: Strategy 5 (substring match) was REMOVED — it caused unwanted Lab variants
+ * of selected courses to leak into the exam schedule (e.g., "Object Oriented
+ * Programming" would substring-match "Object Oriented Programming Lab"). Lab
+ * variants are now matched explicitly via alias entries like 'oop lab', 'pf lab'.
+ * If new false-negatives appear, add explicit aliases here instead of re-enabling
+ * substring match — it is intentionally not coming back.
  */
 function matchesSummerCourse(selectedName: string, examName: string): boolean {
   const sel = selectedName.toLowerCase().trim();
@@ -113,13 +123,15 @@ function matchesSummerCourse(selectedName: string, examName: string): boolean {
     if (acronym === sel) return true;
   }
 
-  // Strategy 4: Word-level overlap
-  // Split both names into words, ignore short words (≤2 chars like "&", "and",
-  // "ii", "to"), and check if any significant word from the selected name is
-  // a prefix of (or is prefixed by) a significant word in the exam name.
+  // Strategy 4: Significant word overlap (stricter — words ≥4 chars)
+  // Split both names into words, ignore short words (≤3 chars: "Lab", "&", "and",
+  // "for", "the", "ii", "to"), and check if any significant word from the selected
+  // name is a prefix of (or prefixed by) a significant word in the exam name.
   // e.g., "Prob & Stats" → ["prob", "stats"] → "prob" is prefix of "probability" → match
-  const selWords = sel.split(/[\s&]+/).filter(w => w.length > 2);
-  const examWords = exam.split(/[\s&]+/).filter(w => w.length > 2);
+  // DOES NOT match "OOP Lab" → "Digital Logic Design Lab" (because "lab" is filtered out,
+  // and "oop" → "object" via acronym-only, not word overlap)
+  const selWords = sel.split(/[\s&]+/).filter(w => w.length > 3);
+  const examWords = exam.split(/[\s&]+/).filter(w => w.length > 3);
   if (selWords.length > 0) {
     const hasOverlap = selWords.some(sw =>
       examWords.some(ew => ew.startsWith(sw) || sw.startsWith(ew))
@@ -127,9 +139,7 @@ function matchesSummerCourse(selectedName: string, examName: string): boolean {
     if (hasOverlap) return true;
   }
 
-  // Strategy 5: Substring match (lowest priority fallback)
-  if (exam.includes(sel) || sel.includes(exam)) return true;
-
+  // Strategy 5: Substring match — INTENTIONALLY REMOVED (see docstring above)
   return false;
 }
 
