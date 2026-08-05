@@ -94,3 +94,4 @@ scripts/verify-html-check.ts
 # Project documentation (tracked separately in docs/)
 PROJECT.md
 ORIGINAL_REQUEST.md
+.env.local

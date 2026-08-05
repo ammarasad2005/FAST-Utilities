@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 import { flattenTimetable, findMatchingCatalogEntry, extractTimeFromCourseName } from '@/lib/timetable-filter';
+import { mergeExamOnlyCourses } from '@/lib/exam-catalog';
 import type { TimetableEntry, SummerCourseCatalogEntry } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -297,7 +298,13 @@ function serveLocalFallback(catalog: SummerCourseCatalogEntry[] = []) {
     // eslint-disable-next-line
     const timetableRaw = require('../../../../public/data/timetable.json');
     const entries = flattenTimetable(timetableRaw);
-    return NextResponse.json({ entries, catalog });
+    // If no catalog was passed in, auto-build one from entries AND merge in
+    // exam-only FSM/FSE courses from summer_schedule.json. This ensures the
+    // multi-school exam checklist works in local dev (without Supabase).
+    const finalCatalog = catalog.length > 0
+      ? catalog
+      : mergeExamOnlyCourses(autoBuildCatalog(entries));
+    return NextResponse.json({ entries, catalog: finalCatalog });
   } catch (err) {
     console.error('Error reading/flattening local timetable:', err);
     return NextResponse.json({ error: 'Failed to retrieve timetable data' }, { status: 500 });
@@ -372,6 +379,15 @@ export async function GET(_req: NextRequest) {
       }
     }
     // Regular semester: catalog stays [] — frontend ignores it
+
+    // ── Merge exam-only courses (FSM, FSE) into the catalog ──────────────────
+    // This adds FSM/FSE exam courses from summer_schedule.json as examOnly
+    // entries, and tags existing (FSC) entries with school='FSC'. The home
+    // page checklist uses this to show a multi-school exam course selector.
+    // Only applies in summer mode (regular semester has no summer catalog).
+    if (isSummer) {
+      catalog = mergeExamOnlyCourses(catalog);
+    }
 
     const response = { entries, catalog };
 

@@ -131,10 +131,15 @@ export type RawTimetableJSON = Record<
 // ─── Summer Semester Catalog ──────────────────────────────────────────────────
 // Stored in semester_settings.course_mappings (JSONB) when semester_type = 'summer'.
 // sheetName is always used for entry matching; displayName is the student-facing label.
+//
+// examOnly + school are added at API runtime (not stored in Supabase) to support
+// the multi-school exam checklist. See src/lib/exam-catalog.ts.
 export interface SummerCourseCatalogEntry {
   sheetName: string;          // exact courseName as it appears in the Google Sheet
   displayName: string | null; // admin alias (null = show sheetName as-is)
   hidden: boolean;            // if true, exclude from the student course checklist
+  examOnly?: boolean;         // true = course exists in exam schedule but not in timetable (FSM/FSE)
+  school?: 'FSC' | 'FSM' | 'FSE';  // which school the course belongs to (for column grouping)
 }
 
 // Response shape from /api/timetable

@@ -213,6 +213,11 @@ export default function SetupPage() {
   // Build unique course list for the student checklist.
   // If a catalog exists: use it (respecting hidden flag + alias).
   // If catalog is empty: fall back to raw entries (auto-derive, all visible).
+  //
+  // Feature-aware (summer only):
+  //   - feature === 'timetable': hide examOnly courses (they have no weekly slots)
+  //   - feature === 'exams':     show ALL courses (including examOnly FSM/FSE),
+  //                               grouped by school for multi-column layout
   const uniqueCourses = useMemo(() => {
     // Build sections map from entries (keyed by sheetName)
     const sectionsMap = new Map<string, string[]>();
@@ -227,14 +232,21 @@ export default function SetupPage() {
     const isCatalogEmpty = summerCatalog.length === 0;
 
     // Resolve canonical sheetNames and merge sections
-    const canonicalCoursesMap = new Map<string, { displayName: string; hidden: boolean; sections: string[] }>();
+    const canonicalCoursesMap = new Map<string, {
+      displayName: string;
+      hidden: boolean;
+      sections: string[];
+      examOnly: boolean;
+      school?: 'FSC' | 'FSM' | 'FSE';
+    }>();
 
+    // Pass 1: Walk sectionsMap (derived from timetable entries) and resolve to catalog
     Array.from(sectionsMap.entries()).forEach(([sheetName, sections]) => {
       const catalogEntry = findMatchingCatalogEntry(sheetName, summerCatalog);
       const canonicalKey = catalogEntry ? catalogEntry.sheetName : sheetName;
       const displayName = catalogEntry?.displayName ?? canonicalKey;
-      const isHidden = catalogEntry 
-        ? catalogEntry.hidden 
+      const isHidden = catalogEntry
+        ? catalogEntry.hidden
         : !isCatalogEmpty; // Whitelist logic: hide if catalog is configured but this course is not in it
 
       const existing = canonicalCoursesMap.get(canonicalKey);
@@ -242,29 +254,50 @@ export default function SetupPage() {
         // Merge sections
         const mergedSecs = [...new Set([...existing.sections, ...sections])];
         canonicalCoursesMap.set(canonicalKey, {
-          displayName,
-          hidden: isHidden,
-          sections: mergedSecs
+          ...existing,
+          sections: mergedSecs,
         });
       } else {
         canonicalCoursesMap.set(canonicalKey, {
           displayName,
           hidden: isHidden,
-          sections
+          sections,
+          examOnly: catalogEntry?.examOnly ?? false,
+          school: catalogEntry?.school ?? 'FSC',
         });
       }
     });
+
+    // Pass 2: Walk the catalog itself to pick up exam-only entries that have
+    // NO timetable slots (FSM/FSE courses). These won't appear in sectionsMap.
+    if (!isCatalogEmpty) {
+      summerCatalog.forEach(catalogEntry => {
+        if (canonicalCoursesMap.has(catalogEntry.sheetName)) return;  // already included
+        if (catalogEntry.hidden) return;
+        canonicalCoursesMap.set(catalogEntry.sheetName, {
+          displayName: catalogEntry.displayName ?? catalogEntry.sheetName,
+          hidden: false,
+          sections: [],  // no timetable sections
+          examOnly: catalogEntry.examOnly ?? false,
+          school: catalogEntry.school ?? 'FSC',
+        });
+      });
+    }
 
     return Array.from(canonicalCoursesMap.entries())
       .map(([sheetName, data]) => ({
         sheetName,
         displayName: data.displayName,
         hidden: data.hidden,
-        sections: data.sections
+        sections: data.sections,
+        examOnly: data.examOnly,
+        school: data.school,
       }))
       .filter(c => !c.hidden)
+      // In timetable feature: hide examOnly courses (they have no weekly slots)
+      .filter(c => feature !== 'timetable' || !c.examOnly)
       .sort((a, b) => a.displayName.localeCompare(b.displayName));
-  }, [summerCoursesList, summerCatalog]);
+  }, [summerCoursesList, summerCatalog, feature]);
 
   // Keys in selectedSummerCourses are always sheetName (for matching), not displayName
   const handleToggleSummerCourse = (sheetName: string, defaultSection: string) => {
@@ -648,16 +681,74 @@ export default function SetupPage() {
     </div>
   ) : null;
 
+  // ─── Summer course checklist ──────────────────────────────────────────────
+  // Feature-aware rendering:
+  //   - 'exams' feature: multi-column layout grouped by school (FSC | FSM | FSE).
+  //     Exam-only courses (FSM/FSE) are shown here. Section dropdown hidden for
+  //     exam-only courses (exam schedule doesn't filter by section).
+  //   - 'timetable' feature: single-column list, examOnly courses hidden (they
+  //     have no weekly slots). Section dropdown shown for all (timetable needs it).
   const summerCheckboxList = isSummerMode ? (
-    <div className="space-y-4 max-h-[300px] overflow-y-auto pr-1 border border-[var(--color-border-strong)] rounded-lg p-3 bg-[var(--color-bg-subtle)]">
-      <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text-tertiary)] mb-2 sticky top-0 bg-[var(--color-bg-subtle)] pb-1 border-b border-[var(--color-border)]">
-        Select Summer Courses
+    <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1 border border-[var(--color-border-strong)] rounded-lg p-3 bg-[var(--color-bg-subtle)]">
+      <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text-tertiary)] mb-2 sticky top-0 bg-[var(--color-bg-subtle)] pb-1 border-b border-[var(--color-border)] z-10">
+        {feature === 'exams' ? 'Select Exam Courses' : 'Select Summer Courses'}
       </p>
       {uniqueCourses.length === 0 ? (
         <p className="text-xs text-[var(--color-text-tertiary)] italic py-4 text-center">
-          No summer courses loaded from timetable API.
+          {feature === 'exams'
+            ? 'No exam courses loaded. Check /api/timetable.'
+            : 'No summer courses loaded from timetable API.'}
         </p>
+      ) : feature === 'exams' ? (
+        // ── Multi-column school-grouped layout (exams feature) ──
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {(['FSC', 'FSM', 'FSE'] as const).map(schoolCode => {
+            const schoolCourses = uniqueCourses.filter(c => c.school === schoolCode);
+            if (schoolCourses.length === 0) return null;
+            return (
+              <div key={schoolCode} className="space-y-2">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-text-tertiary)] border-b border-[var(--color-border)] pb-1 mb-1 sticky top-7 bg-[var(--color-bg-subtle)] z-10">
+                  {schoolCode}
+                </p>
+                <div className="space-y-2">
+                  {schoolCourses.map(({ sheetName, displayName, sections, examOnly }) => {
+                    const isChecked = !!selectedSummerCourses[sheetName];
+                    const selectedSection = selectedSummerCourses[sheetName] || sections[0] || 'A';
+                    return (
+                      <div key={sheetName} className="flex items-center justify-between gap-2 text-xs">
+                        <label className="flex items-center gap-2 cursor-pointer select-none text-[var(--color-text-primary)] font-medium flex-1 truncate">
+                          <input
+                            type="checkbox"
+                            checked={isChecked}
+                            onChange={() => handleToggleSummerCourse(sheetName, sections[0] || 'A')}
+                            className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 accent-orange-500 shrink-0"
+                          />
+                          <span className="truncate" title={sheetName}>{displayName}</span>
+                        </label>
+                        {/* Section dropdown: hidden for exam-only courses (no timetable sections to choose from;
+                            exam schedule doesn't filter by section) */}
+                        {!examOnly && sections.length > 0 && (
+                          <select
+                            value={selectedSection}
+                            disabled={!isChecked}
+                            onChange={(e) => handleSummerSectionChange(sheetName, e.target.value)}
+                            className="h-8 rounded border border-[var(--color-border-strong)] bg-[var(--color-bg-raised)] font-mono text-[11px] px-1.5 focus:outline-none focus:ring-1 focus:ring-orange-500 disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+                          >
+                            {sections.map(sec => (
+                              <option key={sec} value={sec}>{sec}</option>
+                            ))}
+                          </select>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       ) : (
+        // ── Single-column list (timetable feature) ──
         <div className="space-y-2.5">
           {uniqueCourses.map(({ sheetName, displayName, sections }) => {
             const isChecked = !!selectedSummerCourses[sheetName];
@@ -671,10 +762,8 @@ export default function SetupPage() {
                     onChange={() => handleToggleSummerCourse(sheetName, sections[0] || 'A')}
                     className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 accent-orange-500"
                   />
-                  {/* Show alias if set, otherwise raw sheet name */}
                   <span className="truncate" title={sheetName}>{displayName}</span>
                 </label>
-
                 <select
                   value={selectedSection}
                   disabled={!isChecked}
