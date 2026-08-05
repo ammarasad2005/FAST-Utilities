@@ -79,6 +79,7 @@ export default function SetupPage() {
   const [summerCoursesList, setSummerCoursesList] = useState<TimetableEntry[]>([]);
   const [summerCatalog, setSummerCatalog] = useState<SummerCourseCatalogEntry[]>([]);
   const [selectedSummerCourses, setSelectedSummerCourses] = useState<Record<string, string>>({});
+  const [selectedSummerSchool, setSelectedSummerSchool] = useState<'FSC' | 'FSM' | 'FSE'>('FSC');
   const [semesterName, setSemesterName] = useState<string>('Spring 2026');
 
   // Shared form state
@@ -298,6 +299,32 @@ export default function SetupPage() {
       .filter(c => feature !== 'timetable' || !c.examOnly)
       .sort((a, b) => a.displayName.localeCompare(b.displayName));
   }, [summerCoursesList, summerCatalog, feature]);
+
+  // ─── School tabs for exam checklist ────────────────────────────────────────
+  // Count courses per school to decide which school tabs to show.
+  // Auto-switch to the first school with courses if the current selection is empty.
+  const summerSchoolCounts = useMemo(() => {
+    const counts: Record<string, number> = { FSC: 0, FSM: 0, FSE: 0 };
+    uniqueCourses.forEach(c => {
+      if (c.school) counts[c.school] = (counts[c.school] || 0) + 1;
+    });
+    return counts;
+  }, [uniqueCourses]);
+
+  const summerAvailableSchools = useMemo(
+    () => (['FSC', 'FSM', 'FSE'] as const).filter(s => (summerSchoolCounts[s] || 0) > 0),
+    [summerSchoolCounts]
+  );
+
+  // Auto-switch: if the selected school has no courses (e.g., data changed, or user
+  // switched feature), fall back to the first school that has courses.
+  useEffect(() => {
+    if (feature !== 'exams') return;
+    if (summerAvailableSchools.length === 0) return;
+    if (!summerAvailableSchools.includes(selectedSummerSchool)) {
+      setSelectedSummerSchool(summerAvailableSchools[0]);
+    }
+  }, [feature, summerAvailableSchools, selectedSummerSchool]);
 
   // Keys in selectedSummerCourses are always sheetName (for matching), not displayName
   const handleToggleSummerCourse = (sheetName: string, defaultSection: string) => {
@@ -700,52 +727,72 @@ export default function SetupPage() {
             : 'No summer courses loaded from timetable API.'}
         </p>
       ) : feature === 'exams' ? (
-        // ── Multi-column school-grouped layout (exams feature) ──
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {(['FSC', 'FSM', 'FSE'] as const).map(schoolCode => {
-            const schoolCourses = uniqueCourses.filter(c => c.school === schoolCode);
-            if (schoolCourses.length === 0) return null;
-            return (
-              <div key={schoolCode} className="space-y-2">
-                <p className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-text-tertiary)] border-b border-[var(--color-border)] pb-1 mb-1 sticky top-7 bg-[var(--color-bg-subtle)] z-10">
-                  {schoolCode}
-                </p>
-                <div className="space-y-2">
-                  {schoolCourses.map(({ sheetName, displayName, sections, examOnly }) => {
-                    const isChecked = !!selectedSummerCourses[sheetName];
-                    const selectedSection = selectedSummerCourses[sheetName] || sections[0] || 'A';
-                    return (
-                      <div key={sheetName} className="flex items-center justify-between gap-2 text-xs">
-                        <label className="flex items-center gap-2 cursor-pointer select-none text-[var(--color-text-primary)] font-medium flex-1 truncate">
-                          <input
-                            type="checkbox"
-                            checked={isChecked}
-                            onChange={() => handleToggleSummerCourse(sheetName, sections[0] || 'A')}
-                            className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 accent-orange-500 shrink-0"
-                          />
-                          <span className="truncate" title={sheetName}>{displayName}</span>
-                        </label>
-                        {/* Section dropdown: hidden for exam-only courses (no timetable sections to choose from;
-                            exam schedule doesn't filter by section) */}
-                        {!examOnly && sections.length > 0 && (
-                          <select
-                            value={selectedSection}
-                            disabled={!isChecked}
-                            onChange={(e) => handleSummerSectionChange(sheetName, e.target.value)}
-                            className="h-8 rounded border border-[var(--color-border-strong)] bg-[var(--color-bg-raised)] font-mono text-[11px] px-1.5 focus:outline-none focus:ring-1 focus:ring-orange-500 disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
-                          >
-                            {sections.map(sec => (
-                              <option key={sec} value={sec}>{sec}</option>
-                            ))}
-                          </select>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
+        // ── 2-step selector: school tabs + single-column course list (exams feature) ──
+        // Saves vertical space — instead of 3 cramped columns where course names
+        // get truncated, the user picks a school first, then sees a full-width
+        // single-column list of that school's courses.
+        <div className="space-y-3">
+          {/* School tabs — only show when 2+ schools have courses */}
+          {summerAvailableSchools.length > 1 && (
+            <div role="group" aria-label="School selector" className="flex gap-2">
+              {summerAvailableSchools.map(schoolCode => (
+                <button
+                  key={schoolCode}
+                  type="button"
+                  onClick={() => setSelectedSummerSchool(schoolCode)}
+                  aria-pressed={selectedSummerSchool === schoolCode}
+                  className="flex-1 h-9 rounded-md border font-mono text-xs font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2"
+                  style={selectedSummerSchool === schoolCode ? {
+                    backgroundColor: 'var(--color-text-primary)',
+                    color: 'var(--color-bg)',
+                    borderColor: 'transparent',
+                  } : {
+                    borderColor: 'var(--color-border-strong)',
+                    color: 'var(--color-text-secondary)',
+                  }}
+                >
+                  {schoolCode} <span className="opacity-60">({summerSchoolCounts[schoolCode]})</span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Single-column course list for the selected school */}
+          <div className="space-y-2.5">
+            {uniqueCourses
+              .filter(c => c.school === selectedSummerSchool)
+              .map(({ sheetName, displayName, sections, examOnly }) => {
+                const isChecked = !!selectedSummerCourses[sheetName];
+                const selectedSection = selectedSummerCourses[sheetName] || sections[0] || 'A';
+                return (
+                  <div key={sheetName} className="flex items-center justify-between gap-3 text-xs">
+                    <label className="flex items-center gap-2 cursor-pointer select-none text-[var(--color-text-primary)] font-medium flex-1 min-w-0">
+                      <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={() => handleToggleSummerCourse(sheetName, sections[0] || 'A')}
+                        className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 accent-orange-500 shrink-0"
+                      />
+                      <span className="truncate" title={sheetName}>{displayName}</span>
+                    </label>
+                    {/* Section dropdown: hidden for exam-only courses (no timetable sections to choose from;
+                        exam schedule doesn't filter by section) */}
+                    {!examOnly && sections.length > 0 && (
+                      <select
+                        value={selectedSection}
+                        disabled={!isChecked}
+                        onChange={(e) => handleSummerSectionChange(sheetName, e.target.value)}
+                        className="h-8 rounded border border-[var(--color-border-strong)] bg-[var(--color-bg-raised)] font-mono text-[11px] px-1.5 focus:outline-none focus:ring-1 focus:ring-orange-500 disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+                      >
+                        {sections.map(sec => (
+                          <option key={sec} value={sec}>{sec}</option>
+                        ))}
+                      </select>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
         </div>
       ) : (
         // ── Single-column list (timetable feature) ──
