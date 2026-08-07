@@ -1815,13 +1815,6 @@
     "days": [
       {
         "day": "Monday",
-        "sheetName": "Mon",
-        "date": "03 Aug",
-        "isoDate": "2026-08-03",
-        "isMakeup": false
-      },
-      {
-        "day": "Monday",
         "sheetName": "Monday",
         "date": "03 Aug",
         "isoDate": "2026-08-03",
@@ -1853,48 +1846,6 @@
         "sheetName": "Friday",
         "date": "07 Aug",
         "isoDate": "2026-08-07",
-        "isMakeup": false
-      },
-      {
-        "day": "Saturday",
-        "sheetName": "Saturday",
-        "date": "08 Aug",
-        "isoDate": "2026-08-08",
-        "isMakeup": false
-      },
-      {
-        "day": "Tuesday",
-        "sheetName": "Tue",
-        "date": "04 Aug",
-        "isoDate": "2026-08-04",
-        "isMakeup": false
-      },
-      {
-        "day": "Wednesday",
-        "sheetName": "Wed",
-        "date": "05 Aug",
-        "isoDate": "2026-08-05",
-        "isMakeup": false
-      },
-      {
-        "day": "Thursday",
-        "sheetName": "Thu",
-        "date": "06 Aug",
-        "isoDate": "2026-08-06",
-        "isMakeup": false
-      },
-      {
-        "day": "Friday",
-        "sheetName": "Fri",
-        "date": "07 Aug",
-        "isoDate": "2026-08-07",
-        "isMakeup": false
-      },
-      {
-        "day": "Saturday",
-        "sheetName": "Sat",
-        "date": "08 Aug",
-        "isoDate": "2026-08-08",
         "isMakeup": false
       }
     ]
