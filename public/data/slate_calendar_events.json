@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-08-03T09:56:33.859456",
+  "scraped_at": "2026-08-10T07:51:42.163514",
   "date_range": "2026-08-01 to 2026-09-30",
-  "total_events": 57,
+  "total_events": 70,
   "events": [
     {
       "event_name": "Admissions Activity",
@@ -46,16 +46,16 @@
       "event_location": "C-109 by Ms. Kanwal"
     },
     {
-      "event_name": "Training CSO",
-      "date": "August 4",
-      "time": "9:00 am - 4:00 pm",
-      "event_location": "Auditorium D Block by Mr. Zain"
-    },
-    {
       "event_name": "Interviews MBA",
       "date": "August 4",
       "time": "9:00 am - 1:00 pm",
       "event_location": "MEDC- 117 & 118 by Abdul Qadoos"
+    },
+    {
+      "event_name": "Training CSO",
+      "date": "August 4",
+      "time": "9:00 am - 4:00 pm",
+      "event_location": "Auditorium D Block by Mr. Zain"
     },
     {
       "event_name": "Admissions Activity",
@@ -64,16 +64,16 @@
       "event_location": "Auditorium D Block by Mr. Hameed"
     },
     {
-      "event_name": "IAB FSC",
-      "date": "August 5",
-      "time": "9:00 am - 2:00 pm",
-      "event_location": "C-109 by Ms. Neelofar"
-    },
-    {
       "event_name": "CS Seminar",
       "date": "August 5",
       "time": "9:00 am - 7:00 pm",
       "event_location": "Auditorium A Block by Ms. Nayab"
+    },
+    {
+      "event_name": "IAB FSC",
+      "date": "August 5",
+      "time": "9:00 am - 2:00 pm",
+      "event_location": "C-109 by Ms. Neelofar"
     },
     {
       "event_name": "Admissions Activity",
@@ -100,22 +100,28 @@
       "event_location": "C-109 by Mr. Ikram"
     },
     {
+      "event_name": "South East university meeting (Bangladesh)",
+      "date": "August 6",
+      "time": "2:00 pm - 3:00 pm",
+      "event_location": "MEDC 117 by Mr. Afaq"
+    },
+    {
       "event_name": "Admissions Activity",
       "date": "August 7",
       "time": "8:00 am - 9:00 pm",
       "event_location": "Auditorium D Block by Mr. Hameed"
     },
     {
-      "event_name": "Workshop S&H",
-      "date": "August 7",
-      "time": "8:00 am - 5:00 pm",
-      "event_location": "C-109 by Ms. Kanwal"
-    },
-    {
       "event_name": "CSO Event",
       "date": "August 7",
       "time": "8:00 am - 6:00 pm",
       "event_location": "Auditorium A Block by Ms. Laraib"
+    },
+    {
+      "event_name": "Workshop S&H",
+      "date": "August 7",
+      "time": "8:00 am - 5:00 pm",
+      "event_location": "C-109 by Ms. Kanwal"
     },
     {
       "event_name": "FYP Briefing FSM",
@@ -196,6 +202,12 @@
       "event_location": "C 109 By Ms. warda"
     },
     {
+      "event_name": "Meeting S&H",
+      "date": "August 12",
+      "time": "10:00 am - 12:00 pm",
+      "event_location": "MEDC-117 by Ms. Sehrish Hassan"
+    },
+    {
       "event_name": "Orientation",
       "date": "August 12",
       "time": "12:00 pm - 5:00 pm",
@@ -232,6 +244,12 @@
       "event_location": "C 109 by Ms. Warda"
     },
     {
+      "event_name": "Faculty Meeting AI & DS",
+      "date": "August 13",
+      "time": "10:00 am - 1:00 pm",
+      "event_location": "MEDC-117 by MS. Madiha"
+    },
+    {
       "event_name": "Orientation",
       "date": "August 13",
       "time": "12:00 pm - 5:00 pm",
@@ -262,6 +280,30 @@
       "event_location": "Auditorium A Block by Mr. Tariq"
     },
     {
+      "event_name": "MS (FSM) Orientation Session",
+      "date": "August 17",
+      "time": "2:00 pm - 6:00 pm",
+      "event_location": "MEDC-118 by Dr. Sarah Khan"
+    },
+    {
+      "event_name": "MS Computing Orientation Session",
+      "date": "August 17",
+      "time": "3:00 pm - 6:00 pm",
+      "event_location": "Auditorium A Block by Dr. Hasan Mujtaba"
+    },
+    {
+      "event_name": "PPIT Seminar - Weekly",
+      "date": "August 19",
+      "time": "11:00 am - 2:00 pm",
+      "event_location": "Auditorium A Block by Mr. Fahad"
+    },
+    {
+      "event_name": "NATO SPS Workshop 2026",
+      "date": "August 20",
+      "time": "9:00 am - 5:00 pm",
+      "event_location": "Auditorium D Block and & C 109 by Ms. Ilqa"
+    },
+    {
       "event_name": "FSE Engineering Classes Series - II",
       "date": "August 20",
       "time": "2:00 pm - 5:00 pm",
@@ -272,6 +314,12 @@
       "date": "August 24",
       "time": "2:00 pm - 5:00 pm",
       "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "PPIT Seminar - Weekly",
+      "date": "August 26",
+      "time": "11:00 am - 2:00 pm",
+      "event_location": "Auditorium A Block by Mr. Fahad"
     },
     {
       "event_name": "FSE Engineering Classes Series - II",
@@ -286,6 +334,12 @@
       "event_location": "Auditorium A Block by Mr. Tariq"
     },
     {
+      "event_name": "PPIT Seminar - Weekly",
+      "date": "September 2",
+      "time": "11:00 am - 2:00 pm",
+      "event_location": "Auditorium A Block by Mr. Fahad"
+    },
+    {
       "event_name": "FSE Engineering Classes Series - II",
       "date": "September 3",
       "time": "2:00 pm - 5:00 pm",
@@ -296,6 +350,12 @@
       "date": "September 7",
       "time": "2:00 pm - 5:00 pm",
       "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "PPIT Seminar - Weekly",
+      "date": "September 9",
+      "time": "11:00 am - 2:00 pm",
+      "event_location": "Auditorium A Block by Mr. Fahad"
     },
     {
       "event_name": "FSE Engineering Classes Series - II",
@@ -316,6 +376,12 @@
       "event_location": "Auditorium A Block by Mr. Tariq"
     },
     {
+      "event_name": "PPIT Seminar - Weekly",
+      "date": "September 16",
+      "time": "11:00 am - 2:00 pm",
+      "event_location": "Auditorium A Block by Mr. Fahad"
+    },
+    {
       "event_name": "FSE Engineering Classes Series - II",
       "date": "September 17",
       "time": "2:00 pm - 5:00 pm",
@@ -334,6 +400,12 @@
       "event_location": "Auditorium A Block by Mr. Tariq"
     },
     {
+      "event_name": "PPIT Seminar - Weekly",
+      "date": "September 23",
+      "time": "11:00 am - 2:00 pm",
+      "event_location": "Auditorium A Block by Mr. Fahad"
+    },
+    {
       "event_name": "FSE Engineering Classes Series - II",
       "date": "September 24",
       "time": "2:00 pm - 5:00 pm",
@@ -344,6 +416,12 @@
       "date": "September 28",
       "time": "2:00 pm - 5:00 pm",
       "event_location": "Auditorium A Block by Mr. Tariq"
+    },
+    {
+      "event_name": "PPIT Seminar - Weekly",
+      "date": "September 30",
+      "time": "11:00 am - 2:00 pm",
+      "event_location": "Auditorium A Block by Mr. Fahad"
     }
   ]
 }
