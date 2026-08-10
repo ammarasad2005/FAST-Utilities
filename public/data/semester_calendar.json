@@ -1,56 +1,127 @@
 {
-  "semester": "Summer 2026",
-  "academicYear": "2025-2026",
-  "generatedAt": "2026-06-17",
+  "semester": "Fall 2026",
+  "academicYear": "2026-2027",
+  "generatedAt": "2026-08-10",
   "keyDates": [
     {
+      "label": "Communicating Classes Schedule",
+      "date": "2026-08-10",
+      "type": "academic",
+      "icon": "info"
+    },
+    {
+      "label": "Orientation of New Batches",
+      "date": "2026-08-10",
+      "endDate": "2026-08-13",
+      "type": "academic",
+      "icon": "school"
+    },
+    {
+      "label": "Readmission Test (Academic Warning III Students of SU26)",
+      "date": "2026-08-13",
+      "type": "exam",
+      "icon": "quiz"
+    },
+    {
+      "label": "Online Registration of Courses",
+      "date": "2026-08-12",
+      "endDate": "2026-08-17",
+      "type": "deadline",
+      "icon": "event_available"
+    },
+    {
       "label": "First day of classes",
-      "date": "2026-06-15",
+      "date": "2026-08-17",
       "type": "academic",
       "icon": "school"
     },
     {
       "label": "Add & Drop of courses / labs",
-      "date": "2026-06-20",
+      "date": "2026-08-28",
       "type": "deadline",
       "icon": "event_available"
     },
     {
+      "label": "Semester Freeze",
+      "date": "2026-09-07",
+      "type": "deadline",
+      "icon": "event_available"
+    },
+    {
+      "label": "First Feedback of Faculty/Courses",
+      "date": "2026-09-14",
+      "type": "academic",
+      "icon": "info"
+    },
+    {
+      "label": "Second Feedback of Faculty/Courses",
+      "date": "2026-12-01",
+      "type": "academic",
+      "icon": "info"
+    },
+    {
       "label": "First Sessional Examination",
-      "date": "2026-07-13",
-      "endDate": "2026-07-14",
+      "date": "2026-09-19",
+      "endDate": "2026-09-23",
       "type": "exam",
       "icon": "quiz"
     },
     {
       "label": "First Sessional results announced",
-      "date": "2026-07-21",
-      "endDate": "2026-07-22",
+      "date": "2026-09-30",
       "type": "academic",
       "icon": "info"
     },
     {
+      "label": "Second Sessional Examination",
+      "date": "2026-10-29",
+      "endDate": "2026-11-02",
+      "type": "exam",
+      "icon": "quiz"
+    },
+    {
+      "label": "Second Sessional results announced",
+      "date": "2026-11-13",
+      "type": "academic",
+      "icon": "info"
+    },
+    {
+      "label": "FYP Evaluation/Defense of Thesis",
+      "date": "2026-11-23",
+      "endDate": "2026-12-04",
+      "type": "exam",
+      "icon": "quiz"
+    },
+    {
       "label": "Last day of classes",
-      "date": "2026-08-07",
+      "date": "2026-12-04",
       "type": "academic",
       "icon": "school"
     },
     {
       "label": "Course withdrawal deadline / Makeup week",
-      "date": "2026-08-07",
+      "date": "2026-12-07",
+      "endDate": "2026-12-11",
       "type": "deadline",
       "icon": "event_busy"
     },
     {
       "label": "Final Examinations",
-      "date": "2026-08-10",
-      "endDate": "2026-08-12",
+      "date": "2026-12-14",
+      "endDate": "2027-01-08",
       "type": "exam",
       "icon": "quiz"
     },
     {
+      "label": "Show-up of Final Examination Papers",
+      "date": "2026-12-21",
+      "endDate": "2027-01-08",
+      "type": "academic",
+      "icon": "info"
+    },
+    {
       "label": "Final Examination results announced",
-      "date": "2026-08-17",
+      "date": "2027-01-11",
       "type": "academic",
       "icon": "info"
     }
@@ -60,31 +131,60 @@
       "label": "Independence Day",
       "date": "2026-08-14",
       "type": "national"
+    },
+    {
+      "label": "Eid Milad Nabi",
+      "date": "2026-08-26",
+      "type": "religious"
+    },
+    {
+      "label": "Iqbal Day",
+      "date": "2026-11-09",
+      "type": "national"
+    },
+    {
+      "label": "Quaid's Birthday",
+      "date": "2026-12-25",
+      "type": "national"
     }
   ],
   "academicRanges": [
     {
       "label": "Regular Classes",
-      "startDate": "2026-06-15",
-      "endDate": "2026-08-07",
+      "startDate": "2026-08-17",
+      "endDate": "2026-12-04",
       "color": "blue",
       "type": "classes"
     },
     {
       "label": "First Sessional Examination",
-      "startDate": "2026-07-13",
-      "endDate": "2026-07-14",
+      "startDate": "2026-09-19",
+      "endDate": "2026-09-23",
+      "color": "orange",
+      "type": "exams"
+    },
+    {
+      "label": "Second Sessional Examination",
+      "startDate": "2026-10-29",
+      "endDate": "2026-11-02",
+      "color": "orange",
+      "type": "exams"
+    },
+    {
+      "label": "FYP Evaluation/Defense of Thesis",
+      "startDate": "2026-11-23",
+      "endDate": "2026-12-04",
       "color": "orange",
       "type": "exams"
     },
     {
       "label": "Final Examinations",
-      "startDate": "2026-08-10",
-      "endDate": "2026-08-12",
+      "startDate": "2026-12-14",
+      "endDate": "2027-01-08",
       "color": "red",
       "type": "exams"
     }
   ],
-  "weekCount": 8,
-  "totalCreditHoursPerWeek": 16
+  "weekCount": 22,
+  "totalCreditHoursPerWeek": 0
 }
