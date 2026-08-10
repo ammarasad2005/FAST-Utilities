@@ -4,23 +4,17 @@
   "generatedAt": "2026-08-10",
   "keyDates": [
     {
-      "label": "Communicating Classes Schedule",
+      "label": "Communicating Classes Schedule to all concerned",
       "date": "2026-08-10",
       "type": "academic",
       "icon": "info"
     },
     {
-      "label": "Orientation of New Batches",
+      "label": "Orientation of New Batches of Fall 2026",
       "date": "2026-08-10",
       "endDate": "2026-08-13",
       "type": "academic",
       "icon": "school"
-    },
-    {
-      "label": "Readmission Test (Academic Warning III Students of SU26)",
-      "date": "2026-08-13",
-      "type": "exam",
-      "icon": "quiz"
     },
     {
       "label": "Online Registration of Courses",
@@ -30,19 +24,25 @@
       "icon": "event_available"
     },
     {
-      "label": "First day of classes",
+      "label": "Readmission Test, Academic Warning III Students of SU26",
+      "date": "2026-08-13",
+      "type": "exam",
+      "icon": "quiz"
+    },
+    {
+      "label": "First Day of Classes",
       "date": "2026-08-17",
       "type": "academic",
       "icon": "school"
     },
     {
-      "label": "Add & Drop of courses / labs",
+      "label": "Deadline for Add and Drop of Courses/Labs",
       "date": "2026-08-28",
       "type": "deadline",
       "icon": "event_available"
     },
     {
-      "label": "Semester Freeze",
+      "label": "Deadline for Semester Freeze",
       "date": "2026-09-07",
       "type": "deadline",
       "icon": "event_available"
@@ -54,12 +54,6 @@
       "icon": "info"
     },
     {
-      "label": "Second Feedback of Faculty/Courses",
-      "date": "2026-12-01",
-      "type": "academic",
-      "icon": "info"
-    },
-    {
       "label": "First Sessional Examination",
       "date": "2026-09-19",
       "endDate": "2026-09-23",
@@ -67,7 +61,7 @@
       "icon": "quiz"
     },
     {
-      "label": "First Sessional results announced",
+      "label": "Announcement of Results of 1st Sessional Examinations",
       "date": "2026-09-30",
       "type": "academic",
       "icon": "info"
@@ -80,7 +74,7 @@
       "icon": "quiz"
     },
     {
-      "label": "Second Sessional results announced",
+      "label": "Announcement of Results of 2nd Sessional Examinations",
       "date": "2026-11-13",
       "type": "academic",
       "icon": "info"
@@ -93,15 +87,27 @@
       "icon": "quiz"
     },
     {
-      "label": "Last day of classes",
+      "label": "Second Feedback of Faculty/Courses",
+      "date": "2026-12-01",
+      "type": "academic",
+      "icon": "info"
+    },
+    {
+      "label": "Last Day of Classes",
       "date": "2026-12-04",
       "type": "academic",
       "icon": "school"
     },
     {
-      "label": "Course withdrawal deadline / Makeup week",
+      "label": "Makeup Week",
       "date": "2026-12-07",
       "endDate": "2026-12-11",
+      "type": "academic",
+      "icon": "event_busy"
+    },
+    {
+      "label": "Deadline for the Withdrawal from Courses",
+      "date": "2026-12-11",
       "type": "deadline",
       "icon": "event_busy"
     },
@@ -120,7 +126,7 @@
       "icon": "info"
     },
     {
-      "label": "Final Examination results announced",
+      "label": "Announcement of Results of Final Examinations",
       "date": "2027-01-11",
       "type": "academic",
       "icon": "info"
