@@ -796,11 +796,14 @@ for day_info in day_sheets:
                     else time_map.get(i, "Unknown Time")
                 )
 
-                # Skip Masters courses (scheduled after 5:15 PM)
+                # Skip Masters (MS) courses — this platform is BS-only.
+                # MS rule: any class that STARTS after 5:00 PM (17:00) OR
+                # CONTINUES PAST 5:20 PM (17:20) is an MS course → discard.
+                # (BS classes end by 5:15 PM; the MS evening slot starts at 5:20 PM.)
                 if actual_time != "Unknown Time":
                     try:
-                        _, e_min = parse_time_to_minutes(actual_time)
-                        if e_min > (17 * 60 + 15): # 17:15 is 5:15 PM
+                        s_min, e_min = parse_time_to_minutes(actual_time)
+                        if s_min > (17 * 60) or e_min > (17 * 60 + 20):
                             continue
                     except:
                         pass
