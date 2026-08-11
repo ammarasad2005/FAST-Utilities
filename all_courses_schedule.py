@@ -844,10 +844,78 @@ print("Fetching and parsing unified timetable (2-pass constraint satisfaction)..
 
 day_sheets = resolve_timetable_sheets(sheet_id, _sheet_name_mappings)
 
-# Regex patterns
-repeat_pattern = re.compile(r'^([^(]+?)\s*\(\s*([A-Z]{2,}(?:\/[A-Z]{2,})?)\s*-\s*([A-Z0-9]+)\s*,\s*(\d{2})\s*\)')
-regular_pattern = re.compile(r'^([^(]+?)\s*\(\s*(?:([A-Z]{2,}(?:\/[A-Z]{2,})?)\s*-)?\s*([^)]+?)\s*\)')
-time_pattern    = re.compile(r'\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2}')
+# ==============================================================================
+# ROBUST CELL PARSER — validates against known vocabularies instead of
+# permissive regexes + fix-up loops.
+#
+# There are exactly 4 cell patterns in the timetable:
+#   1. (DEPT-SECTION)           e.g., PF (CS-A)           → regular
+#   2. (DEPT-SECTION, YY)       e.g., OOP (CS-A, 25)      → repeat
+#   3. (DEPT, YY)               e.g., Algo (CS, 23)       → repeat, no section
+#   4. (DEPT)                   e.g., SMD (CS)            → regular, no section
+#
+# The parser splits the parenthetical content into dept/section/batch tokens
+# and validates dept against VALID_DEPTS. If dept is not a known code, the
+# cell is rejected (returns None). This eliminates the entire class of bugs
+# where a dept code like "CS" is captured as a section string.
+# ==============================================================================
+
+VALID_DEPTS = {
+    "CS", "AI", "DS", "CY", "SE",       # Single depts
+    "AI/DS", "AI/DS/SE",                 # Shared depts
+    "CI", "AIHS",                        # MS programs
+    "CS-Robo",                           # Robotics special
+}
+
+time_pattern = re.compile(r'\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2}')
+
+def parse_cell_parens(val):
+    """
+    Parse a timetable cell's parenthetical content.
+    Returns (course_name, dept, section, batch, category) or None if unparseable.
+
+    - section is None when the cell has no section letter (Pattern 3 and 4).
+      Caller should default it to "A".
+    - batch is None for non-repeat cells (Pattern 1 and 4).
+    - category is "repeat" when batch is not None, "regular" otherwise.
+    """
+    # 1. Strip trailing time annotation (e.g., "Func Eng (CS-G) 08:30-10:15")
+    text = re.sub(r'\s+\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2}\s*$', '', val).strip()
+
+    # 2. Extract parenthetical content (last parens group in the cell)
+    m = re.search(r'\(([^)]+)\)\s*$', text)
+    if not m:
+        return None
+    course_name = text[:m.start()].strip()
+    paren = m.group(1).strip()
+
+    if not course_name or not paren:
+        return None
+
+    # 3. Split off batch suffix (", YY") if present
+    batch = None
+    batch_match = re.search(r',\s*(\d{2})\s*$', paren)
+    if batch_match:
+        batch = "20" + batch_match.group(1)
+        paren = paren[:batch_match.start()].strip()
+
+    # 4. Now paren is either "DEPT-SECTION" or "DEPT"
+    if '-' in paren:
+        parts = paren.split('-', 1)
+        dept = parts[0].strip()
+        section = parts[1].strip()
+    else:
+        dept = paren.strip()
+        section = None
+
+    # 5. Validate dept against known codes — THE KEY VALIDATION
+    if dept not in VALID_DEPTS:
+        return None  # reject malformed cells like "AP (A, 25)"
+
+    # 6. Determine category
+    category = "repeat" if batch is not None else "regular"
+
+    return (course_name, dept, section, batch, category)
 
 # ==============================================================================
 # CONSTRAINT SATISFACTION DATA STRUCTURES
@@ -1000,43 +1068,24 @@ for day_info in day_sheets:
 
                 course_name = dept = section = batch = category = None
 
-                # Repeat courses carry the YY suffix, e.g. "AI (CS-A, 23)"
-                rep_match = repeat_pattern.search(val)
-                if rep_match:
-                    course_name = rep_match.group(1).strip()
-                    dept        = rep_match.group(2).strip()
-                    section     = rep_match.group(3).strip()
-                    batch       = "20" + rep_match.group(4).strip()
-                    category    = "repeat"
-                else:
-                    reg_match = regular_pattern.search(val)
-                    if reg_match:
-                        course_name = reg_match.group(1).strip()
-                        dept_group  = reg_match.group(2)
-                        dept        = dept_group.strip() if dept_group else None
-                        section     = reg_match.group(3).strip()
-                        category    = "regular"
-                        
-                        # Fix for AI/DS department courses appearing as sections
-                        # Matches "AI", "DS" or "DS, Gp-II", "AI, G-I"
-                        for dcode in ["AI", "DS", "SE", "CY"]:
-                            if dept is None:
-                                if section == dcode:
-                                    dept = dcode
-                                    section = ""
-                                    break
-                                elif section.startswith(f"{dcode},") or section.startswith(f"{dcode} "):
-                                    dept = dcode
-                                    section = section[len(dcode):].strip(", ").strip()
-                                    break
-                        
-                        if dept is None:
-                            # Try to infer department directly
-                            possible = find_possible_batches(course_name, dept=None)
-                            if possible:
-                                dept = possible[0][1] # (batch, dept)
-                            else:
-                                dept = "CS" # Fallback
+                # ── Robust cell parser ──────────────────────────────────
+                # Handles all 4 cell patterns via VALID_DEPTS validation.
+                # Replaces the old repeat_pattern/regular_pattern + fix-up loop.
+                parsed = parse_cell_parens(val)
+                if parsed:
+                    course_name, dept, section, batch, category = parsed
+                    # Default section to "A" when cell has no section letter
+                    # (Pattern 3: "Algo (CS, 23)" and Pattern 4: "SMD (CS)")
+                    if section is None:
+                        section = "A"
+                    # If dept couldn't be determined from cell (shouldn't happen
+                    # with VALID_DEPTS validation), infer from course name
+                    if dept is None:
+                        possible = find_possible_batches(course_name, dept=None)
+                        if possible:
+                            dept = possible[0][1]
+                        else:
+                            dept = "CS"  # Fallback
 
                 if not category:
                     continue
