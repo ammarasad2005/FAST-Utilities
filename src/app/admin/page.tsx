@@ -92,7 +92,7 @@ export default function AdminPage() {
     Friday: '',
     Saturday: ''
   })
-  const [activeBatchTab, setActiveBatchTab] = useState('2025')
+  const [activeBatchTab, setActiveBatchTab] = useState('2026')
   const [newCourseInput, setNewCourseInput] = useState<Record<string, string>>({}) // key: `${batch}|${dept}`
   const [savingSettings, setSavingSettings] = useState(false)
   const [loadingSettings, setLoadingSettings] = useState(false)
@@ -130,6 +130,8 @@ export default function AdminPage() {
 
   const [feedbackToDelete, setFeedbackToDelete] = useState<any | null>(null)
   const [feedbackDeleteConfirmOpen, setFeedbackDeleteConfirmOpen] = useState(false)
+
+  const [clearBatchConfirmOpen, setClearBatchConfirmOpen] = useState(false)
 
   const [actionLoading, setActionLoading] = useState<string | null>(null) // id of item being updated
 
@@ -1573,9 +1575,9 @@ export default function AdminPage() {
                               </div>
                             </div>
 
-                            {/* Batch Tabs */}
-                            <div className="flex gap-1 border-b border-[var(--color-border)] pb-0">
-                              {['2025', '2024', '2023', '2022'].map(batch => (
+                            {/* Batch Tabs + Clear All */}
+                            <div className="flex items-center gap-1 border-b border-[var(--color-border)] pb-0">
+                              {['2026', '2025', '2024', '2023'].map(batch => (
                                 <button
                                   key={batch}
                                   type="button"
@@ -1589,6 +1591,15 @@ export default function AdminPage() {
                                   {batch}
                                 </button>
                               ))}
+                              <button
+                                type="button"
+                                onClick={() => setClearBatchConfirmOpen(true)}
+                                disabled={!regularMappings[activeBatchTab] || Object.keys(regularMappings[activeBatchTab] || {}).every(d => !(regularMappings[activeBatchTab]?.[d]?.length))}
+                                className="ml-auto px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider rounded-lg border border-red-500/30 text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                                title={`Clear all courses for all streams in Batch ${activeBatchTab}`}
+                              >
+                                Clear All {activeBatchTab}
+                              </button>
                             </div>
 
                             {/* Department Rows for active batch */}
@@ -1598,10 +1609,30 @@ export default function AdminPage() {
                                 const inputKey = `${activeBatchTab}|${dept}`
                                 return (
                                   <div key={dept} className="p-3 rounded-xl border" style={{ borderColor: 'var(--color-border)' }}>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-[var(--color-text-secondary)] mb-2"
-                                      style={{ color: `var(--accent-${dept.toLowerCase()})` }}>
-                                      {dept}
-                                    </p>
+                                    <div className="flex items-center justify-between mb-2">
+                                      <p className="text-[10px] font-black uppercase tracking-widest text-[var(--color-text-secondary)]"
+                                        style={{ color: `var(--accent-${dept.toLowerCase()})` }}>
+                                        {dept}
+                                      </p>
+                                      {courses.length > 0 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            setRegularMappings(prev => ({
+                                              ...prev,
+                                              [activeBatchTab]: {
+                                                ...prev[activeBatchTab],
+                                                [dept]: []
+                                              }
+                                            }))
+                                          }}
+                                          className="text-[9px] font-bold uppercase tracking-wider text-[var(--color-text-tertiary)] hover:text-red-500 transition-colors"
+                                          title={`Clear all ${courses.length} course${courses.length === 1 ? '' : 's'} from ${dept} ${activeBatchTab}`}
+                                        >
+                                          Clear
+                                        </button>
+                                      )}
+                                    </div>
                                     {/* Course pills */}
                                     <div className="flex flex-wrap gap-1.5 mb-2">
                                       {courses.map((course, ci) => (
@@ -1806,6 +1837,39 @@ export default function AdminPage() {
               className="rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase tracking-wide px-4 py-2"
             >
               Confirm Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* 3. Clear All Courses for Batch Confirmation Alert Dialog */}
+      <AlertDialog open={clearBatchConfirmOpen} onOpenChange={setClearBatchConfirmOpen}>
+        <AlertDialogContent className="rounded-2xl border border-red-500/20 bg-[var(--color-bg)] text-[var(--color-text-primary)] max-w-md">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-sm font-black uppercase tracking-wider text-red-500 flex items-center gap-2">
+              <AlertTriangle size={18} />
+              Clear All Courses — Batch {activeBatchTab}
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-xs text-[var(--color-text-secondary)] font-medium leading-relaxed mt-2">
+              This will remove ALL courses from ALL streams (CS, SE, AI, DS, CY) for Batch {activeBatchTab}. The changes are not yet saved to Supabase — you still need to click &quot;Save Configurations&quot; to persist them.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter className="mt-4 gap-2">
+            <AlertDialogCancel className="rounded-xl border font-bold text-xs uppercase tracking-wide px-4 py-2">
+              Cancel
+            </AlertDialogCancel>
+            <AlertDialogAction 
+              onClick={() => {
+                setRegularMappings(prev => {
+                  const next = { ...prev }
+                  delete next[activeBatchTab]
+                  return next
+                })
+                setClearBatchConfirmOpen(false)
+              }}
+              className="rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase tracking-wide px-4 py-2"
+            >
+              Clear All Streams
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

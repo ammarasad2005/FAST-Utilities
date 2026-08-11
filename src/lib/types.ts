@@ -156,14 +156,15 @@ export type RegularCourseMappings = Record<string, Record<string, string[]>>;
 
 // The hardcoded fallback — mirrors VALID_COURSES_MAP in all_courses_schedule.py.
 // Used to pre-populate the admin editor via "Load from Code".
+//
+// Batch 2022 has graduated and is removed. Batch 2026 (Year-1, Semester 1) is
+// added with courses extracted from the Fall 2026 course allocation list.
+// The short names below (PF, Calculus, Func Eng, etc.) match exactly what
+// appears in timetable cells — the scraper matches against these strings.
+//
+// CS/AI/DS share the same Year-1 foundation. CY/SE have AP + Arts & Hum
+// instead of Islamic + Seerah (different S&H requirements per dept).
 export const HARDCODED_VALID_COURSES_MAP: RegularCourseMappings = {
-  "2022": {
-    "CS": ["Stat Modeling", "Entre", "Digital Mktg", "AI Prod Develop", "Gen AI", "Cloud Comp", "Tech Mgt", "Big Data", "Deep Learn", "Agentic AI", "Fund of Data Vis", "ML for Robo", "Robo Tech", "Fund of SPM", "MLOPs"],
-    "SE": ["PPIT", "S/w Metrices", "Cloud Comp", "NLP", "Entre", "User Exp Engg", "Gen AI"],
-    "AI": ["PPIT", "Fin Mgt", "Info Sec", "Blockchain", "Responsible AI", "Agentic AI", "Gen AI"],
-    "DS": ["Reinf Learn", "Agentic AI", "MLOPs", "Fin Mgt", "NLP", "Resp AI", "Gen AI", "Comp Vision"],
-    "CY": ["Blockchain", "Entre", "PPIT", "Cloud Security", "Blockchain"]
-  },
   "2023": {
     "CS": ["PDC", "Web", "AI", "Comp Arch", "SE", "Comp Const", "DIP", "AI Lab"],
     "SE": ["SPM", "Civics", "Comp Net Lab", "AI Lab", "Comp Net", "AI", "Process Mining", "Formal Meth in SE"],
@@ -184,5 +185,12 @@ export const HARDCODED_VALID_COURSES_MAP: RegularCourseMappings = {
     "AI": ["OOP", "OOP Lab", "MV Calculus", "DLD", "DLD Lab", "AP", "Exp Writing", "Exp Writing Lab", "Seerah & UHQ-I"],
     "DS": ["OOP", "MV Calculus", "DLD", "DLD Lab", "Civics", "Pak Studies", "OOP Lab", "Exp Writing", "Exp Writing Lab"],
     "CY": ["OOP", "OOP Lab", "DLD", "DLD Lab", "MV Calculus", "AP", "Exp Writing", "Exp Writing Lab", "Seerah & UHQ-I"]
+  },
+  "2026": {
+    "CS": ["PF", "PF Lab", "IICT", "IICT Lab", "Calculus", "Func Eng", "Func Eng Lab", "Islamic", "Ideology of Pak", "Seerah"],
+    "SE": ["PF", "PF Lab", "IICT", "IICT Lab", "Calculus", "Func Eng", "Func Eng Lab", "Ideology of Pak", "AP", "Arts & Hum"],
+    "AI": ["PF", "PF Lab", "IICT", "IICT Lab", "Calculus", "Func Eng", "Func Eng Lab", "Islamic", "Ideology of Pak", "Seerah"],
+    "DS": ["PF", "PF Lab", "IICT", "IICT Lab", "Calculus", "Func Eng", "Func Eng Lab", "Islamic", "Ideology of Pak", "Seerah"],
+    "CY": ["PF", "PF Lab", "IICT", "IICT Lab", "Calculus", "Func Eng", "Func Eng Lab", "Ideology of Pak", "AP", "Arts & Hum"]
   }
 };
