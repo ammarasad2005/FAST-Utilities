@@ -1235,6 +1235,72 @@ print(
 )
 
 # ==============================================================================
+# SIBLING-CELL CATEGORY INFERENCE
+#
+# If a (batch, dept, course) tuple has at least one cell classified as
+# "repeat", reclassify all "regular" cells of the same tuple as "repeat".
+#
+# This fixes inconsistent cell suffixing in the timetable where the sheet
+# author adds ", YY" to some cells but not others for the same course.
+# Example: OOP Lab (CS-B, 25) → repeat, OOP Lab (CS-A) → regular.
+# Both are for Batch 2025 — the A/C/D cells just forgot the suffix.
+#
+# The allocation list is the source of truth for batch assignment (via
+# the course-section-batch lookup). Once the batch is correctly resolved,
+# if any sibling cell is repeat, ALL cells of that (batch, dept, course)
+# should be repeat — a student either repeats a course or takes it for
+# the first time, not both.
+# ==============================================================================
+
+# Build set of (batch, dept, course) that have at least one repeat cell
+repeat_tuples = set()
+for rec in unambiguous_classes:
+    if rec.get("category") == "repeat":
+        repeat_tuples.add((rec["batch"], rec["dept"], rec["course_name"]))
+
+# Reclassify regular cells whose (batch, dept, course) has a repeat sibling
+reclassified_count = 0
+for rec in unambiguous_classes:
+    if rec.get("category") == "regular":
+        key = (rec["batch"], rec["dept"], rec["course_name"])
+        if key in repeat_tuples:
+            rec["category"] = "repeat"
+            reclassified_count += 1
+
+if reclassified_count > 0:
+    print(f"  Sibling-cell inference: reclassified {reclassified_count} regular → repeat")
+    print(f"  (based on {len(repeat_tuples)} (batch, dept, course) tuples with repeat siblings)")
+
+# Also apply to ambiguous pool — if a deferred cell's (course, dept) has
+# a repeat sibling for a specific batch, narrow its possible_batches to
+# that batch and reclassify as repeat.
+ambiguous_reclassified = 0
+for rec in ambiguous_pool:
+    if rec.get("category") == "regular":
+        possible = rec.get("possible_batches", [])
+        for b in possible:
+            if (b, rec["dept"], rec["course_name"]) in repeat_tuples:
+                rec["batch"] = b
+                rec["category"] = "repeat"
+                rec.pop("possible_batches", None)
+                ambiguous_reclassified += 1
+                break
+
+if ambiguous_reclassified > 0:
+    print(f"  Sibling-cell inference (ambiguous pool): resolved {ambiguous_reclassified} regular → repeat")
+    # Move reclassified records from ambiguous_pool to unambiguous_classes
+    still_ambiguous = []
+    for rec in ambiguous_pool:
+        if rec.get("category") == "repeat" and rec.get("batch"):
+            # Anchor the resolved repeat cell
+            cal_key = f"{rec['batch']}-{rec['dept']}-{rec['section']}-{rec['day']}"
+            busy_calendar.setdefault(cal_key, []).append(rec["blocking_time"])
+            unambiguous_classes.append(rec)
+        else:
+            still_ambiguous.append(rec)
+    ambiguous_pool = still_ambiguous
+
+# ==============================================================================
 # PASS 2 — DEDUCTION PASS
 # For each ambiguous record, check busy_calendar at its exact slot key.
 # A batch is "free" if its slot is NOT already occupied by a different batch.
