@@ -133,6 +133,12 @@ export default function AdminPage() {
 
   const [clearBatchConfirmOpen, setClearBatchConfirmOpen] = useState(false)
 
+  // Per-stream "Add as List" mode — when true, dept row shows a textarea for
+  // bulk pasting comma-separated courses instead of the one-by-one input.
+  // Key format: `${batch}|${dept}` (same as newCourseInput).
+  const [listModeDepts, setListModeDepts] = useState<Record<string, boolean>>({})
+  const [listInput, setListInput] = useState<Record<string, string>>({})
+
   const [actionLoading, setActionLoading] = useState<string | null>(null) // id of item being updated
 
   const categories = [
@@ -1614,24 +1620,37 @@ export default function AdminPage() {
                                         style={{ color: `var(--accent-${dept.toLowerCase()})` }}>
                                         {dept}
                                       </p>
-                                      {courses.length > 0 && (
+                                      <div className="flex items-center gap-3">
                                         <button
                                           type="button"
                                           onClick={() => {
-                                            setRegularMappings(prev => ({
-                                              ...prev,
-                                              [activeBatchTab]: {
-                                                ...prev[activeBatchTab],
-                                                [dept]: []
-                                              }
-                                            }))
+                                            const key = `${activeBatchTab}|${dept}`
+                                            setListModeDepts(prev => ({ ...prev, [key]: !prev[key] }))
                                           }}
-                                          className="text-[9px] font-bold uppercase tracking-wider text-[var(--color-text-tertiary)] hover:text-red-500 transition-colors"
-                                          title={`Clear all ${courses.length} course${courses.length === 1 ? '' : 's'} from ${dept} ${activeBatchTab}`}
+                                          className="text-[9px] font-bold uppercase tracking-wider text-[var(--color-text-tertiary)] hover:text-orange-500 transition-colors"
+                                          title={listModeDepts[`${activeBatchTab}|${dept}`] ? 'Switch to one-by-one input' : 'Switch to bulk list input (paste comma-separated courses)'}
                                         >
-                                          Clear
+                                          {listModeDepts[`${activeBatchTab}|${dept}`] ? 'One-by-one' : 'Add as List'}
                                         </button>
-                                      )}
+                                        {courses.length > 0 && (
+                                          <button
+                                            type="button"
+                                            onClick={() => {
+                                              setRegularMappings(prev => ({
+                                                ...prev,
+                                                [activeBatchTab]: {
+                                                  ...prev[activeBatchTab],
+                                                  [dept]: []
+                                                }
+                                              }))
+                                            }}
+                                            className="text-[9px] font-bold uppercase tracking-wider text-[var(--color-text-tertiary)] hover:text-red-500 transition-colors"
+                                            title={`Clear all ${courses.length} course${courses.length === 1 ? '' : 's'} from ${dept} ${activeBatchTab}`}
+                                          >
+                                            Clear
+                                          </button>
+                                        )}
+                                      </div>
                                     </div>
                                     {/* Course pills */}
                                     <div className="flex flex-wrap gap-1.5 mb-2">
@@ -1663,16 +1682,75 @@ export default function AdminPage() {
                                         <span className="text-[10px] italic text-[var(--color-text-tertiary)]">No courses — add below</span>
                                       )}
                                     </div>
-                                    {/* Add course input */}
-                                    <div className="flex gap-2">
-                                      <input
-                                        type="text"
-                                        placeholder="Add course name…"
-                                        value={newCourseInput[inputKey] ?? ''}
-                                        onChange={(e) => setNewCourseInput(prev => ({ ...prev, [inputKey]: e.target.value }))}
-                                        onKeyDown={(e) => {
-                                          if (e.key === 'Enter') {
-                                            e.preventDefault()
+                                    {/* Add course input — one-by-one OR list mode */}
+                                    {listModeDepts[inputKey] ? (
+                                      <div className="space-y-2">
+                                        <textarea
+                                          placeholder={`Paste ${dept} ${activeBatchTab} courses, separated by commas&#10;e.g., PF, PF Lab, Calculus, Func Eng, IICT, IICT Lab`}
+                                          value={listInput[inputKey] ?? ''}
+                                          onChange={(e) => setListInput(prev => ({ ...prev, [inputKey]: e.target.value }))}
+                                          rows={3}
+                                          className="w-full rounded-lg px-3 py-2 text-[11px] outline-none border bg-[var(--color-bg-subtle)] focus:border-orange-500/50 transition-all resize-y font-mono"
+                                          style={{ borderColor: 'var(--color-border)', color: 'var(--color-text-primary)' }}
+                                        />
+                                        <div className="flex items-center justify-between gap-2">
+                                          <span className="text-[9px] text-[var(--color-text-tertiary)]">
+                                            {courses.length > 0
+                                              ? `⚠ Replaces ${courses.length} existing course${courses.length === 1 ? '' : 's'}`
+                                              : 'Empty entries will be filtered out'}
+                                          </span>
+                                          <button
+                                            type="button"
+                                            onClick={() => {
+                                              const raw = listInput[inputKey] ?? ''
+                                              const parsed = raw
+                                                .split(',')
+                                                .map(c => c.trim())
+                                                .filter(c => c.length > 0)
+                                              if (parsed.length === 0) return
+                                              setRegularMappings(prev => ({
+                                                ...prev,
+                                                [activeBatchTab]: {
+                                                  ...prev[activeBatchTab],
+                                                  [dept]: parsed
+                                                }
+                                              }))
+                                              setListInput(prev => ({ ...prev, [inputKey]: '' }))
+                                            }}
+                                            className="px-3 py-1.5 rounded-lg text-[10px] font-bold border border-orange-500/40 text-orange-600 hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-colors"
+                                          >
+                                            Replace List
+                                          </button>
+                                        </div>
+                                      </div>
+                                    ) : (
+                                      <div className="flex gap-2">
+                                        <input
+                                          type="text"
+                                          placeholder="Add course name…"
+                                          value={newCourseInput[inputKey] ?? ''}
+                                          onChange={(e) => setNewCourseInput(prev => ({ ...prev, [inputKey]: e.target.value }))}
+                                          onKeyDown={(e) => {
+                                            if (e.key === 'Enter') {
+                                              e.preventDefault()
+                                              const val = (newCourseInput[inputKey] ?? '').trim()
+                                              if (!val) return
+                                              setRegularMappings(prev => ({
+                                                ...prev,
+                                                [activeBatchTab]: {
+                                                  ...prev[activeBatchTab],
+                                                  [dept]: [...(prev[activeBatchTab]?.[dept] ?? []), val]
+                                                }
+                                              }))
+                                              setNewCourseInput(prev => ({ ...prev, [inputKey]: '' }))
+                                            }
+                                          }}
+                                          className="flex-1 rounded-lg px-3 py-1.5 text-[11px] outline-none border bg-[var(--color-bg-subtle)] focus:border-orange-500/50 transition-all"
+                                          style={{ borderColor: 'var(--color-border)', color: 'var(--color-text-primary)' }}
+                                        />
+                                        <button
+                                          type="button"
+                                          onClick={() => {
                                             const val = (newCourseInput[inputKey] ?? '').trim()
                                             if (!val) return
                                             setRegularMappings(prev => ({
@@ -1683,30 +1761,13 @@ export default function AdminPage() {
                                               }
                                             }))
                                             setNewCourseInput(prev => ({ ...prev, [inputKey]: '' }))
-                                          }
-                                        }}
-                                        className="flex-1 rounded-lg px-3 py-1.5 text-[11px] outline-none border bg-[var(--color-bg-subtle)] focus:border-orange-500/50 transition-all"
-                                        style={{ borderColor: 'var(--color-border)', color: 'var(--color-text-primary)' }}
-                                      />
-                                      <button
-                                        type="button"
-                                        onClick={() => {
-                                          const val = (newCourseInput[inputKey] ?? '').trim()
-                                          if (!val) return
-                                          setRegularMappings(prev => ({
-                                            ...prev,
-                                            [activeBatchTab]: {
-                                              ...prev[activeBatchTab],
-                                              [dept]: [...(prev[activeBatchTab]?.[dept] ?? []), val]
-                                            }
-                                          }))
-                                          setNewCourseInput(prev => ({ ...prev, [inputKey]: '' }))
-                                        }}
-                                        className="px-3 py-1.5 rounded-lg text-[10px] font-bold border border-orange-500/40 text-orange-600 hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-colors"
-                                      >
-                                        + Add
-                                      </button>
-                                    </div>
+                                          }}
+                                          className="px-3 py-1.5 rounded-lg text-[10px] font-bold border border-orange-500/40 text-orange-600 hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-colors"
+                                        >
+                                          + Add
+                                        </button>
+                                      </div>
+                                    )}
                                   </div>
                                 )
                               })}
