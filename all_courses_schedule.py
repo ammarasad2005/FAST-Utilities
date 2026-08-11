@@ -122,6 +122,65 @@ else:
     else:
         print("ℹ  Using hardcoded VALID_COURSES_MAP (override is OFF).")
 
+# ==============================================================================
+# KNOWN ELECTIVES — courses explicitly tagged as electives in the course
+# allocation list (e.g., "(CS Elective IV)", "(AI Elective-II)").
+# These are authoritative — if a course is in this set, it IS an elective,
+# and if it's in the admin course map but NOT here, it IS core (not elective).
+# The range-based heuristic is only a fallback for courses not in either set.
+# Update this set when the course allocation list changes (new electives added
+# or old ones removed).
+# ==============================================================================
+KNOWN_ELECTIVES = {
+    # CS senior electives (Elective IV) — Batch 2023
+    ("CS", "Agentic AI"), ("CS", "Gen AI"), ("CS", "Cloud Comp"),
+    ("CS", "Deep Learn"), ("CS", "MLOps"), ("CS", "Fund of Data Vis"),
+    ("CS", "Fund of SPM"), ("CS", "SMD"), ("CS", "Game Design"),
+    # CY electives
+    ("CY", "Web Prog"), ("CY", "Blockchain"), ("CY", "Cloud Comp"),
+    ("CY", "Security Ops"), ("CY", "Info Assur"),
+    # AI electives
+    ("AI", "Agentic AI"), ("AI", "Blockchain"), ("AI", "AI Prod Dev"),
+    ("AI", "Multiagent Sys"), ("AI", "Edge Comp"), ("AI", "Adv AI"),
+    ("AI", "App Comp Vision"),
+    # DS electives
+    ("DS", "Fund of CV"), ("DS", "Agentic AI"), ("DS", "Multiagent Sys"),
+    # SE electives
+    ("SE", "Gen AI"), ("SE", "NLP"), ("SE", "Formal Meth in SE"),
+    ("SE", "Process Mining"), ("SE", "SMD"), ("SE", "Game Design"),
+}
+
+# Build a set of ALL (dept, course) from the admin's effective course map.
+# These are courses we have authoritative identity data for. If a course is
+# in this set but NOT in KNOWN_ELECTIVES, it's a known core course — the
+# range heuristic should NOT override this.
+ALL_KNOWN_COURSES = set()
+for _b, _depts in EFFECTIVE_COURSES_MAP.items():
+    for _d, _courses in _depts.items():
+        for _c in _courses:
+            ALL_KNOWN_COURSES.add((_d, _c))
+
+def is_known_elective(dept, course_name):
+    """Check if a course is a known elective. Handles 'Lab' suffix variants."""
+    if (dept, course_name) in KNOWN_ELECTIVES:
+        return True
+    # "ML Lab" inherits from "ML" being a known elective
+    if course_name.lower().endswith(" lab"):
+        base = course_name[:-4].strip()
+        if (dept, base) in KNOWN_ELECTIVES:
+            return True
+    return False
+
+def is_known_course(dept, course_name):
+    """Check if a course is in the admin's course mappings (core or elective)."""
+    if (dept, course_name) in ALL_KNOWN_COURSES:
+        return True
+    if course_name.lower().endswith(" lab"):
+        base = course_name[:-4].strip()
+        if (dept, base) in ALL_KNOWN_COURSES:
+            return True
+    return False
+
 DAY_ALIASES = {
     "mon": "Monday",
     "monday": "Monday",
@@ -1068,11 +1127,7 @@ for rec in unambiguous_classes:
 
 def is_course_elective(rec):
     b, d, c, s = rec["batch"], rec["dept"], rec["course_name"], rec["section"]
-    # 2022 special cases
-    if b == "2022" and ("G-" in s or "Gp-" in s or s == "" or s in ["AI", "DS"]):
-        return True
-    
-    # Range logic
+    # Range logic (used as fallback for courses not in KNOWN_ELECTIVES or ALL_KNOWN_COURSES)
     norm_max = course_max_section.get((b, d, c))
     dept_sections = dept_section_map.get((b, d), set())
     if norm_max is not None and dept_sections:
@@ -1180,20 +1235,27 @@ for rec in unambiguous_classes:
         is_elective = False
         group = None
     else:
-        # Inherit group
+        # Inherit group from section-name tags (G-I, Gp-II, etc.)
         group = global_course_groups.get((batch, course_name))
-        
-        # Range-based detection
-        d_max = dept_max_sections.get((batch, dept), -1)
-        c_max = course_max_sections.get((batch, dept, course_name), -1)
-        
-        is_elective_by_range = (c_max < d_max) if d_max != -1 else False
-        is_elective = is_course_elective(rec) or (group is not None) or is_elective_by_range
 
-    # Debug specific problematic courses
-    if any(k in course_name for k in ["Deep Learn", "Data Vis", "ML for Robo", "Agentic AI"]):
-        if batch == "2022":
-            print(f"  [DEBUG] 2022 Course: {course_name} ({dept}-{section}) | Group: {group} | Elective: {is_elective}")
+        # ── Priority-based elective detection ──────────────────────────────
+        # 1. KNOWN ELECTIVES from course allocation list → authoritative True
+        # 2. KNOWN CORE from admin course mappings       → authoritative False
+        # 3. Explicit group tag (G-I, Gp-II)             → True
+        # 4. Range-based heuristic                        → fallback only
+        #
+        # This replaces the old `is_course_elective(rec) or group or range`
+        # OR-chain where the range heuristic could override known core courses.
+        if is_known_elective(dept, course_name):
+            is_elective = True
+        elif is_known_course(dept, course_name):
+            is_elective = False
+        elif group is not None:
+            is_elective = True
+        else:
+            d_max = dept_max_sections.get((batch, dept), -1)
+            c_max = course_max_sections.get((batch, dept, course_name), -1)
+            is_elective = (c_max < d_max) if d_max != -1 else False
 
     if batch not in data_hierarchy:
         data_hierarchy[batch] = {}
