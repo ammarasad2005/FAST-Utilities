@@ -5,11 +5,13 @@ import urllib.request
 import urllib.parse
 import re
 import json
+import csv
 import sys
 import os
 from datetime import date, timedelta
 import zipfile
 import xml.etree.ElementTree as ET
+from collections import defaultdict
 
 # ==============================================================================
 # ADMIN PANEL OVERRIDE: Fetch course mappings from Supabase if override is ON.
@@ -180,6 +182,217 @@ def is_known_course(dept, course_name):
         if (dept, base) in ALL_KNOWN_COURSES:
             return True
     return False
+
+# ==============================================================================
+# COURSE-SECTION-BATCH LOOKUP — from the course allocation list
+#
+# The allocation list tells us exactly which (dept, course, section) combinations
+# belong to which batch. This is more authoritative than the range heuristic
+# or the constraint-satisfaction guess.
+#
+# Example: (CS, "Algo", "B") → {2024} because only BCS-5B takes Algo,
+#          not BCS-7B. This resolves the ambiguity that find_possible_batches
+#          creates when a course appears in both 2024/CS and 2023/CS maps.
+#
+# The lookup is built at startup by fetching the allocation list's 4 tabs.
+# If the fetch fails, the lookup is empty and the scraper falls back to
+# the existing constraint-satisfaction behavior.
+# ==============================================================================
+
+ALLOCATION_SHEET_ID = "1O9LXRAXKApeOWrD4OcgPCFRJRONPA6JnWPkW_LFYXb0"
+
+SEMESTER_TO_BATCH = {
+    1: "2026", 2: "2026",   # Year 1
+    3: "2025", 4: "2025",   # Year 2
+    5: "2024", 6: "2024",   # Year 3
+    7: "2023", 8: "2023",   # Year 4
+    9: "2022",              # Repeater (graduated)
+}
+
+# Full course name → short name mapping.
+# The allocation list uses full names ("Design and Analysis of Algorithms");
+# the timetable uses short names ("Algo"). This mapping bridges them.
+# Only courses that appear in MULTIPLE batches' admin maps need to be here
+# (those are the ones that cause ambiguity). But including all is more robust.
+FULL_TO_SHORT = {
+    ("CS", "Programming Fundamentals"): "PF",
+    ("AI", "Programming Fundamentals"): "PF",
+    ("DS", "Programming Fundamentals"): "PF",
+    ("CY", "Programming Fundamentals"): "PF",
+    ("SE", "Programming Fundamentals"): "PF",
+    ("CS", "Object Oriented Programming"): "OOP",
+    ("AI", "Object Oriented Programming"): "OOP",
+    ("SE", "Object Oriented Programming"): "OOP",
+    ("CS", "Data Structures"): "Data St",
+    ("AI", "Data Structures"): "Data St",
+    ("DS", "Data Structures"): "Data St",
+    ("CY", "Data Structures"): "Data St",
+    ("SE", "Data Structures"): "Data St",
+    ("CS", "Design and Analysis of Algorithms"): "Algo",
+    ("AI", "Design and Analysis of Algorithms"): "Algo",
+    ("DS", "Design and Analysis of Algorithms"): "Algo",
+    ("SE", "Design and Analysis of Algorithms"): "Algo",
+    ("CS", "Applied Human Computer Interaction"): "App HCI",
+    ("CS", "Computer Architecture"): "Comp Arch",
+    ("CS", "Computer Networks"): "Comp Net",
+    ("AI", "Computer Networks"): "Comp Net",
+    ("DS", "Computer Networks"): "Comp Net",
+    ("CS", "Technical and Business Writing"): "TBW",
+    ("AI", "Technical and Business Writing"): "TBW",
+    ("DS", "Technical and Business Writing"): "TBW",
+    ("SE", "Technical and Business Writing"): "TBW",
+    ("CS", "Information Security"): "Info Sec",
+    ("CY", "Information Security"): "Info Sec",
+    ("SE", "Information Security"): "Info Sec",
+    ("CY", "Artificial Intelligence"): "AI",
+    ("SE", "Artificial Intelligence"): "AI",
+    ("CS", "Database Systems"): "DB",
+    ("CY", "Database Systems"): "DB",
+    ("CS", "Operating Systems"): "OS",
+    ("CY", "Operating Systems"): "OS",
+    ("DS", "Operating Systems"): "OS",
+    ("CS", "Professional Practices in IT"): "PPIT",
+    ("CY", "Professional Practices in IT"): "PPIT",
+    ("SE", "Professional Practices in IT"): "PPIT",
+    ("CS", "Parallel and Distributed Computing"): "PDC",
+    ("SE", "Parallel and Distributed Computing"): "PDC",
+    ("CS", "Final Year Project-I"): "FYP-I",
+    ("AI", "Final Year Project-I"): "FYP-I",
+    ("DS", "Final Year Project-I"): "FYP-I",
+    ("CY", "Final Year Project-I"): "FYP-I",
+    ("SE", "Final Year Project-I"): "FYP-I",
+    ("CS", "Cloud Computing"): "Cloud Comp",
+    ("CY", "Cloud Computing"): "Cloud Comp",
+    ("CS", "Deep Learning for Perception"): "Deep Learn",
+    ("CS", "MLOPS"): "MLOps",
+    ("CS", "Agentic AI"): "Agentic AI",
+    ("AI", "Agentic Artificial Intelligence"): "Agentic AI",
+    ("DS", "Agentic Artificial Intelligence"): "Agentic AI",
+    ("CS", "Generative AI"): "Gen AI",
+    ("SE", "Generative AI"): "Gen AI",
+    ("CY", "Blockchain and Cryptocurrency"): "Blockchain",
+    ("AI", "Blockchain Technologies and Applications"): "Blockchain",
+    ("CY", "Information Assurance"): "Info Assur",
+    ("CY", "Security Operations and Administration"): "Security Ops",
+    ("DS", "Fundamentals of Computer Vision"): "Fund of CV",
+    ("SE", "Game Design and Development"): "Game Design",
+    ("CS", "Game Design and Development"): "Game Design",
+    ("SE", "Natural Language Processing"): "NLP",
+    ("SE", "Software for Mobile Devices"): "SMD",
+    ("CS", "Software for Mobile Devices"): "SMD",
+    ("AI", "AI Product Development"): "AI Prod Dev",
+    ("AI", "Advanced Artificial Intelligence"): "Adv AI",
+    ("AI", "Multiagent Systems and Game Theory"): "Multiagent Sys",
+    ("DS", "Multiagent Systems and Game Theory"): "Multiagent Sys",
+    ("AI", "Methods in Business Research"): "Business Research",
+    ("DS", "Methods in Business Research"): "Business Research",
+    ("AI", "Edge Computing and Intelligent Systems"): "Edge Comp",
+    ("DS", "Edge Computing"): "Edge Comp",
+    ("CS", "Fundamentals of Data Visualization"): "Fund of Data Vis",
+    ("CS", "Fundamentals of Software Project Management"): "Fund of SPM",
+    ("SE", "Formal Methods in Software Engineering"): "Formal Meth in SE",
+    ("SE", "Process Mining and Simulation"): "Process Mining",
+    ("SE", "Software Quality Engineering"): "S/w Quality Engg",
+    ("SE", "Software Construction and Develpment"): "S/w Const",
+    ("CS", "Software Design and Analysis"): "SDA",
+    ("CS", "Digital Logic Design"): "DLD",
+    ("CS", "Computer Organization and Assembly Language"): "COAL",
+    ("AI", "Computer Organization and Assembly Language"): "COAL",
+    ("DS", "Computer Organization and Assembly Language"): "COAL",
+    ("CY", "Computer Organization and Assembly Language"): "COAL",
+    ("SE", "Computer Organization and Assembly Language"): "COAL",
+    ("CS", "Linear Algebra"): "LA",
+    ("CY", "Cyber Security"): "Cy Sec",
+    ("CY", "Web Programming"): "Web Prog",
+    ("AI", "Machine Learning"): "ML",
+    ("AI", "Knowledge Representation & Reasoning"): "Knowl Rep",
+    ("AI", "Programming for AI"): "Prog for AI",
+    ("DS", "Introduction to Data Science"): "Intro to DS",
+    ("SE", "Introduction to Software Engineering"): "Intro to SE",
+    ("DS", "Data Analysis & Visualization"): "DAV",
+    ("DS", "Data Warehousing & Business Intelligence"): "Data Ware & BI",
+    ("DS", "Advacned Statistics"): "Adv Stats",
+    ("CS", "Discrete Structures"): "Discrete",
+    ("AI", "Research Methodology"): "Research Methodology",
+}
+
+def _parse_alloc_section_code(s):
+    """Parse 'BCS-5A' → ('CS', 5, 'A'). Returns (dept, semester, section_letter)."""
+    if not s or not s.strip():
+        return None
+    m = re.match(r'^([BCDS][A-Z]{2})-(\d+)([A-Z]\d*)$', s.strip())
+    if not m:
+        return None
+    prefix, sem, sec = m.groups()
+    dept = {"BCS": "CS", "BAI": "AI", "BDS": "DS", "BCY": "CY", "BSE": "SE"}.get(prefix)
+    if not dept:
+        return None
+    # Normalize: A1→A, A2→A, B1→B (lab sub-sections → parent section)
+    norm = re.match(r'([A-Z])', sec)
+    section_letter = norm.group(1) if norm else sec
+    return (dept, int(sem), section_letter)
+
+def build_course_section_lookup():
+    """
+    Fetch the course allocation list and build:
+      {(dept, short_name, section_letter) → set of batches}
+
+    This provides authoritative batch assignment for (course, section) pairs,
+    resolving ambiguity when find_possible_batches returns multiple candidates.
+
+    Returns an empty dict if the fetch fails (scraper falls back to existing behavior).
+    """
+    lookup = defaultdict(set)
+    # All 4 tabs: Computing Labs, Sciences & Humanities, Computing Theory, Management
+    allocation_gids = ["1026835609", "1344717791", "1902911975", "289237719"]
+
+    for gid in allocation_gids:
+        url = (
+            f"https://docs.google.com/spreadsheets/d/{ALLOCATION_SHEET_ID}"
+            f"/gviz/tq?tqx=out:csv&gid={gid}"
+        )
+        try:
+            resp = urllib.request.urlopen(url, timeout=10)
+            text = resp.read().decode("utf-8")
+            rows = list(csv.reader(text.splitlines()))
+
+            last_course_key = None  # (dept, full_name) — propagated through merged cells
+            for row in rows[1:]:
+                if len(row) < 5:
+                    continue
+                code = row[1].strip()
+                course_full = row[2].strip()
+                section_code = row[4].strip()
+
+                # New course entry (code + name present) — update last_course_key
+                if code and course_full:
+                    clean = re.sub(r'\s*\([^)]*\)\s*$', '', course_full).strip()
+                    parsed = _parse_alloc_section_code(section_code)
+                    if parsed:
+                        last_course_key = (parsed[0], clean)  # dept from section code
+
+                # Process this section assignment
+                if last_course_key and section_code:
+                    parsed = _parse_alloc_section_code(section_code)
+                    if parsed:
+                        dept, sem, section = parsed
+                        batch = SEMESTER_TO_BATCH.get(sem)
+                        if batch and batch != "2022":  # skip graduated batch
+                            short = FULL_TO_SHORT.get(last_course_key)
+                            if short:
+                                lookup[(dept, short, section)].add(batch)
+        except Exception as e:
+            print(f"⚠  Could not fetch allocation tab {gid}: {e}")
+
+    return dict(lookup)
+
+# Build the lookup at startup
+print("Fetching course allocation list for section-level batch resolution...")
+COURSE_SECTION_BATCH_LOOKUP = build_course_section_lookup()
+if COURSE_SECTION_BATCH_LOOKUP:
+    print(f"✅ Built course-section-batch lookup: {len(COURSE_SECTION_BATCH_LOOKUP)} entries")
+else:
+    print("⚠  Course-section-batch lookup is empty — falling back to constraint satisfaction only")
 
 DAY_ALIASES = {
     "mon": "Monday",
@@ -928,7 +1141,27 @@ for day_info in day_sheets:
                     possible = find_possible_batches(course_name, dept)
                     if not possible:
                         continue
-                    elif len(possible) == 1:
+
+                    # ── Section-level batch resolution ──────────────────────
+                    # If the course-section-batch lookup has data for this
+                    # (dept, course, section), filter candidates to only
+                    # batches that actually offer this course to this section.
+                    # This is authoritative — from the course allocation list.
+                    if COURSE_SECTION_BATCH_LOOKUP and len(possible) > 1:
+                        # Normalize section for lookup (same logic as extract_section_letter)
+                        norm_section = section
+                        if norm_section:
+                            m = re.search(r'([A-Z])', norm_section)
+                            if m:
+                                norm_section = m.group(1)
+                        lookup_key = (dept, course_name, norm_section)
+                        valid_batches = COURSE_SECTION_BATCH_LOOKUP.get(lookup_key)
+                        if valid_batches:
+                            filtered = [b for b in possible if b in valid_batches]
+                            if filtered:
+                                possible = filtered
+
+                    if len(possible) == 1:
                         # Single candidate — anchor immediately
                         batch_val = possible[0]
                         record["batch"] = batch_val
@@ -959,12 +1192,36 @@ print(
 # A section cannot be in two places at once, so the occupied batch eliminates
 # itself as a candidate for any other class at the same slot.
 #
+# ALSO: Repeat-cell exclusion — if a batch's section already has this course
+# as a REPEAT (anchored in Pass 1 via batch suffix), exclude that batch from
+# regular candidates. A section can't take the same course both as a repeat
+# AND as a regular class.
+#
 # Logic:
-#   free = [b for b in possible if busy_calendar.get(key) != b]
+#   free = [b for b in possible if busy_calendar.get(key) != b
+#           and (b, dept, section, course) not in REPEAT_ANCHORED]
 #   → if exactly 1 free candidate remains → assign it
 #   → if 0 remain → conflict warning, skip
 #   → if 2+ remain → still ambiguous, best-effort assign first free candidate
 # ==============================================================================
+
+# Build a set of (batch, dept, section, course) from all anchored repeat cells.
+# This is used to exclude batches that already have this course as a repeat.
+REPEAT_ANCHORED = set()
+for rec in unambiguous_classes:
+    if rec.get("category") == "repeat":
+        # Normalize section for matching (same as extract_section_letter)
+        raw_sec = rec.get("section", "")
+        norm_sec = "A"
+        if raw_sec:
+            m = re.search(r'([A-Z])', raw_sec)
+            if m:
+                norm_sec = m.group(1)
+        REPEAT_ANCHORED.add((rec["batch"], rec["dept"], norm_sec, rec["course_name"]))
+
+if REPEAT_ANCHORED:
+    print(f"  Repeat-cell exclusion: {len(REPEAT_ANCHORED)} anchored repeat (batch, dept, section, course) tuples")
+
 deduced_count   = 0
 conflict_count  = 0
 fallback_count  = 0
@@ -989,10 +1246,18 @@ while changed:
         bypasses_quota = record.get("bypasses_quota", False)
 
         # Per-batch key: check if THAT batch is already busy or at its quota
+        # ALSO: exclude batches that already have this course as a repeat
+        # (a section can't take the same course both as repeat AND regular)
+        norm_sec_lookup = "A"
+        if section:
+            m_sec = re.search(r'([A-Z])', section)
+            if m_sec:
+                norm_sec_lookup = m_sec.group(1)
         free_candidates = [
             b for b in possible
             if not is_batch_busy(b, dept, section, day, blocking_time, busy_calendar)
             and (bypasses_quota or has_quota_room(b, dept, section, course_name, quota, quota_calendar))
+            and (b, dept, norm_sec_lookup, course_name) not in REPEAT_ANCHORED
         ]
 
         if len(free_candidates) == 1:
@@ -1042,10 +1307,17 @@ for record in still_ambiguous:
     bypasses_quota = record.get("bypasses_quota", False)
 
     # Re-calculate free candidates based on the MOST RECENT quota and busy state
+    # ALSO: exclude batches that already have this course as a repeat
+    norm_sec_fb = "A"
+    if section:
+        m_fb = re.search(r'([A-Z])', section)
+        if m_fb:
+            norm_sec_fb = m_fb.group(1)
     free_candidates = [
         b for b in possible
         if not is_batch_busy(b, dept, section, day, blocking_time, busy_calendar)
         and (bypasses_quota or has_quota_room(b, dept, section, course_name, quota_val, quota_calendar))
+        and (b, dept, norm_sec_fb, course_name) not in REPEAT_ANCHORED
     ]
 
     # Sort candidates by:
