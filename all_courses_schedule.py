@@ -1221,32 +1221,18 @@ ambiguous_pool      = []   # list of records still needing deduction
 timetable_meta      = {"days": []}
 
 # ==============================================================================
-# Fetch ALL cell colors in a SINGLE API call (before the loop).
-# This avoids Google's rate-limiting on CI IPs — 1 API call instead of 6.
-# If the API fails, all_cell_colors is empty and the scraper falls back
-# to text-based detection (the existing heuristic pipeline).
+# STEP 1 — GVIZ FETCH (all day sheets, BEFORE any includeGridData call)
+#
+# Fetch and store ALL gviz rows for all day sheets FIRST. This must happen
+# before any Google Sheets API v4 call with includeGridData=true, because
+# includeGridData poisons the gviz endpoint on GHA IPs — subsequent gviz
+# fetches return 0 rows even though the HTTP status is 200.
+#
+# The stored rows are parsed in STEP 3 after colors are fetched.
 # ==============================================================================
-# DISABLED: Even a single Google Sheets API v4 call from GitHub Actions
-# CI IPs triggers throttling that also affects the gviz endpoint,
-# causing ALL gviz fetches to return empty data → empty timetable.json.
-# The color API is completely disabled until a rate-limit-safe method
-# is found (e.g., running the API call from a non-CI environment, or
-# using a different authentication method).
-# To re-enable: uncomment the 2 lines below.
-# _all_sheet_names = [ds["sheet_name"] for ds in day_sheets]
-# all_cell_colors = fetch_all_cell_colors(sheet_id, _all_sheet_names)
-all_cell_colors = {}
-print("Color API disabled — using text-based detection (fallback mode)")
 
-# ==============================================================================
-# PASS 1 — ANCHOR PASS
-# Parse every sheet cell across all five day-tabs.
-#   • Repeat courses   → batch is encoded in the cell text → anchor immediately.
-#   • Regular courses  → call find_possible_batches():
-#       len == 1  → unambiguous → anchor immediately
-#       len  > 1  → ambiguous   → push to ambiguous_pool
-#       len == 0  → unmapped    → discard
-# ==============================================================================
+gviz_snapshots = {}  # {sheet_name: {"rows": [...], "day": ..., "date": ..., "isoDate": ..., "isMakeup": ...}}
+
 for day_info in day_sheets:
     day = day_info["day"]
     sheet_name = day_info["sheet_name"]
@@ -1257,9 +1243,6 @@ for day_info in day_sheets:
         "isoDate": day_info.get("isoDate", ""),
         "isMakeup": day_info.get("isMakeup", False)
     })
-
-    # Get cell colors for this sheet from the batch fetch (no additional API call)
-    cell_colors = all_cell_colors.get(sheet_name, {})
 
     req_url = (
         f"https://docs.google.com/spreadsheets/d/{sheet_id}"
@@ -1274,293 +1257,341 @@ for day_info in day_sheets:
         data      = json.loads(text[start_idx:end_idx])
         rows      = data.get("table", {}).get("rows", [])
 
-        time_map        = {}
-        master_time_map = {}
-        current_room    = ""
-        is_lab_section  = False
+        gviz_snapshots[sheet_name] = {
+            "rows": rows,
+            "day": day,
+        }
+        print(f"  gviz {sheet_name}: status=ok rows={len(rows)}")
+    except Exception as e:
+        print(f"  gviz {sheet_name}: ERROR — {e}")
+        gviz_snapshots[sheet_name] = {"rows": [], "day": day}
 
-        for row_idx, r in enumerate(rows):
-            cells = r.get("c", [])
-            if not cells:
-                continue
+# ==============================================================================
+# STEP 2 — FETCH CELL COLORS (single includeGridData call, AFTER all gviz)
+#
+# Now that all gviz data is safely stored, make ONE includeGridData call
+# to fetch cell background colors. This is best-effort — if it fails, the
+# scraper falls back to text-based detection (the existing heuristic pipeline).
+# gviz is never called again after this point.
+# ==============================================================================
+_all_sheet_names = [ds["sheet_name"] for ds in day_sheets]
+all_cell_colors = fetch_all_cell_colors(sheet_id, _all_sheet_names)
+if all_cell_colors:
+    total = sum(len(v) for v in all_cell_colors.values())
+    print(f"Color data loaded: {len(all_cell_colors)} sheets, {total} colored cells (1 API call)")
+else:
+    print("Color data unavailable — using text-based detection (fallback mode)")
 
-            first_val = (
-                str(cells[0].get("v", "")).strip()
-                if cells[0] and cells[0].get("v")
+# ==============================================================================
+# STEP 3 — PARSE STORED GVIZ ROWS (with color override if available)
+#
+# Parse the gviz rows stored in STEP 1. For each cell, use color data
+# from STEP 2 (if available) to deterministically identify dept, batch,
+# and category. Color-anchored cells with a known batch go directly to
+# unambiguous_classes — they do NOT go through find_possible_batches
+# or Pass 2.
+# ==============================================================================
+for day_info in day_sheets:
+    day = day_info["day"]
+    sheet_name = day_info["sheet_name"]
+    snapshot = gviz_snapshots.get(sheet_name, {"rows": [], "day": day})
+    rows = snapshot["rows"]
+    cell_colors = all_cell_colors.get(sheet_name, {})
+
+    time_map        = {}
+    master_time_map = {}
+    current_room    = ""
+    is_lab_section  = False
+
+    for row_idx, r in enumerate(rows):
+        cells = r.get("c", [])
+        if not cells:
+            continue
+
+        first_val = (
+            str(cells[0].get("v", "")).strip()
+            if cells[0] and cells[0].get("v")
+            else ""
+        )
+
+        if first_val in ("Room", "Lab"):
+            is_lab_section = (first_val == "Lab")
+            local_time_map = {}
+            row_last_time  = "Unknown Time"
+            
+            for i in range(1, len(cells)):
+                c_val = str(cells[i].get("v", "")).strip() if cells[i] and cells[i].get("v") else ""
+                
+                if c_val and c_val not in ("Room", "Lab"):
+                    row_last_time = c_val
+                elif not c_val and i in master_time_map:
+                    # Fallback logic: 
+                    # If current header cell is empty, check if master header starts a new slot
+                    m_time = master_time_map[i]
+                    if m_time != "Unknown Time" and row_last_time != "Unknown Time":
+                        try:
+                            m_start, m_end = parse_time_to_minutes(m_time)
+                            r_start, r_end = parse_time_to_minutes(row_last_time)
+                            # If master starts after current row_last_time ends, it's a new slot
+                            if m_start >= r_end:
+                                row_last_time = m_time
+                        except:
+                            pass
+                    elif row_last_time == "Unknown Time":
+                        row_last_time = m_time
+                
+                local_time_map[i] = row_last_time
+            
+            # First header of the day becomes the master template
+            if not master_time_map:
+                master_time_map = local_time_map.copy()
+            
+            time_map = local_time_map
+            continue
+
+        if first_val:
+            current_room = first_val
+        if not current_room:
+            continue
+
+        # ── Scan each column for a class entry ──
+        for i in range(1, len(cells)):
+            val = (
+                str(cells[i].get("v", "")).replace("\n", " ").strip()
+                if cells[i] and cells[i].get("v")
                 else ""
             )
-
-            if first_val in ("Room", "Lab"):
-                is_lab_section = (first_val == "Lab")
-                local_time_map = {}
-                row_last_time  = "Unknown Time"
-                
-                for i in range(1, len(cells)):
-                    c_val = str(cells[i].get("v", "")).strip() if cells[i] and cells[i].get("v") else ""
-                    
-                    if c_val and c_val not in ("Room", "Lab"):
-                        row_last_time = c_val
-                    elif not c_val and i in master_time_map:
-                        # Fallback logic: 
-                        # If current header cell is empty, check if master header starts a new slot
-                        m_time = master_time_map[i]
-                        if m_time != "Unknown Time" and row_last_time != "Unknown Time":
-                            try:
-                                m_start, m_end = parse_time_to_minutes(m_time)
-                                r_start, r_end = parse_time_to_minutes(row_last_time)
-                                # If master starts after current row_last_time ends, it's a new slot
-                                if m_start >= r_end:
-                                    row_last_time = m_time
-                            except:
-                                pass
-                        elif row_last_time == "Unknown Time":
-                            row_last_time = m_time
-                    
-                    local_time_map[i] = row_last_time
-                
-                # First header of the day becomes the master template
-                if not master_time_map:
-                    master_time_map = local_time_map.copy()
-                
-                time_map = local_time_map
+            if not val:
                 continue
 
-            if first_val:
-                current_room = first_val
-            if not current_room:
-                continue
+            val_lower = val.lower()
+            is_reserved = False
+            is_cancelled = False
 
-            # ── Scan each column for a class entry ──
-            for i in range(1, len(cells)):
-                val = (
-                    str(cells[i].get("v", "")).replace("\n", " ").strip()
-                    if cells[i] and cells[i].get("v")
-                    else ""
-                )
-                if not val:
+            if "reserved" in val_lower:
+                time_slot = time_map.get(i, "Unknown Time")
+                if time_slot == "Unknown Time":
                     continue
-
-                val_lower = val.lower()
-                is_reserved = False
-                is_cancelled = False
-
-                if "reserved" in val_lower:
-                    time_slot = time_map.get(i, "Unknown Time")
-                    if time_slot == "Unknown Time":
-                        continue
-                    unambiguous_classes.append({
-                        "course_name": "Reserved",
-                        "dept":        "System",
-                        "section":     "Reserved",
-                        "normalized_section": "Reserved",
-                        "day":         day,
-                        "sheet_name":  sheet_name,
-                        "time":        time_slot,
-                        "room":        current_room,
-                        "category":    "regular",
-                        "batch":       "System",
-                        "is_rescheduled": False,
-                        "is_exam":     False,
-                        "isReserved":  True
-                    })
-                    continue
-
-                if "cancel" in val_lower or "cancle" in val_lower:
-                    is_cancelled = True
-                    # Remove the cancel keyword and any surrounding parens
-                    val = re.sub(r'(?i)\s*\(\s*(?:cancel|cancle)[a-z]*\s*\)\s*', ' ', val)
-                    val = re.sub(r'(?i)\s*\b(?:cancel|cancle)[a-z]*\b\s*', ' ', val)
-                    val = val.strip()
-
-                course_name = dept = section = batch = category = None
-
-                # ── Robust cell parser ──────────────────────────────────
-                # Handles all 4 cell patterns via VALID_DEPTS validation.
-                # Replaces the old repeat_pattern/regular_pattern + fix-up loop.
-                parsed = parse_cell_parens(val)
-                if parsed:
-                    course_name, dept, section, batch, category = parsed
-                    # Default section to "A" when cell has no section letter
-                    # (Pattern 3: "Algo (CS, 23)" and Pattern 4: "SMD (CS)")
-                    if section is None:
-                        section = "A"
-                    # If dept couldn't be determined from cell (shouldn't happen
-                    # with VALID_DEPTS validation), infer from course name
-                    if dept is None:
-                        possible = find_possible_batches(course_name, dept=None)
-                        if possible:
-                            dept = possible[0][1]
-                        else:
-                            dept = "CS"  # Fallback
-
-                # ── Sheets API color-based override ─────────────────────
-                # If cell color data is available, use it to DETERMINISTICALLY
-                # identify dept, batch, and category. This overrides the
-                # text-based parsing for batch and category (which are
-                # heuristic), while keeping the text-based course_name and
-                # section (which are reliable from cell text).
-                if cell_colors and COLOR_MAP:
-                    color_key = (row_idx, i)
-                    if color_key in cell_colors:
-                        rv, gv, bv = cell_colors[color_key]
-                        color_result = identify_from_color(rv, gv, bv)
-                        if color_result:
-                            color_dept, color_batch, is_repeat = color_result
-                            # Override batch and category from color
-                            if is_repeat:
-                                category = "repeat"
-                                # Batch still from text suffix if available,
-                                # otherwise from color (yellow doesn't encode batch)
-                                if not batch:
-                                    batch = None  # Will be resolved via constraint satisfaction
-                            else:
-                                # Color gives us dept AND batch deterministically
-                                category = "regular"
-                                if color_batch:
-                                    batch = color_batch
-                                if color_dept:
-                                    dept = color_dept
-
-                if not category:
-                    continue
-
-                # Normalize: force "Lab" suffix when inside the lab block
-                if is_lab_section and not course_name.lower().endswith("lab"):
-                    course_name = f"{course_name} Lab"
-
-                # Determine if special slot
-                is_saturday    = (day == "Saturday")
-                is_rescheduled = any(k in val.lower() for k in ["rescheduled", "resch"])
-                is_exam        = any(k in val.lower() for k in ["mid", "exam", "sessional"])
-                
-                # Logic: Saturday itself is a "rescheduled day" concept.
-                # It bypasses quotas internally, but only carries the label if explicitly marked.
-                bypasses_quota = is_rescheduled or is_saturday
-
-                if is_rescheduled or is_exam:
-                    # Strip keywords from course name if they got captured
-                    course_name = re.sub(r'(?i)\b(resch(eduled)?|mid|exam|sessional)\b', '', course_name).strip()
-                    label = "Exam" if is_exam else "Rescheduled"
-                    print(f"  ✨ {label}: {course_name} ({dept}-{section}) on {day}")
-
-                # Determine the class time
-                explicit_time = time_pattern.search(val)
-                actual_time   = (
-                    explicit_time.group(0)
-                    if explicit_time
-                    else time_map.get(i, "Unknown Time")
-                )
-
-                # Skip Masters (MS) courses — this platform is BS-only.
-                # MS rule: any class that STARTS after 5:00 PM (17:00) OR
-                # CONTINUES PAST 5:20 PM (17:20) is an MS course → discard.
-                # (BS classes end by 5:15 PM; the MS evening slot starts at 5:20 PM.)
-                if actual_time != "Unknown Time":
-                    try:
-                        s_min, e_min = parse_time_to_minutes(actual_time)
-                        if s_min > (17 * 60) or e_min > (17 * 60 + 20):
-                            continue
-                    except:
-                        pass
-
-                # Force specific durations based on cell type (per user request)
-                is_actually_lab = is_lab_section or course_name.lower().endswith("lab")
-                blocking_time = actual_time # Time slot used for conflict detection
-                
-                if actual_time != "Unknown Time":
-                    try:
-                        s_min, _ = parse_time_to_minutes(actual_time)
-                        if is_exam:
-                            # Exams/Sessionals are strictly 90 mins for display
-                            e_min_disp = s_min + 90
-                            actual_time = f"{minutes_to_time(s_min)}-{minutes_to_time(e_min_disp)}"
-                            # But if it's a lab slot, it blocks the full 165 mins for other classes
-                            # because a section can't have a 10:00 class if they are in a lab until 11:15
-                            if is_actually_lab:
-                                e_min_block = s_min + 165
-                                blocking_time = f"{minutes_to_time(s_min)}-{minutes_to_time(e_min_block)}"
-                            else:
-                                blocking_time = actual_time
-                        elif is_actually_lab:
-                            # Regular labs are 165 mins
-                            e_min = s_min + 165
-                            actual_time = f"{minutes_to_time(s_min)}-{minutes_to_time(e_min)}"
-                            blocking_time = actual_time
-                    except Exception as e:
-                        pass
-
-                duration, quota = get_slot_quota(actual_time)
-
-                # Base record — batch filled in when resolved
-                record = {
-                    "course_name": course_name,
-                    "dept":        dept,
-                    "section":     section,
+                unambiguous_classes.append({
+                    "course_name": "Reserved",
+                    "dept":        "System",
+                    "section":     "Reserved",
+                    "normalized_section": "Reserved",
                     "day":         day,
                     "sheet_name":  sheet_name,
-                    "time":        actual_time,
-                    "blocking_time": blocking_time,
+                    "time":        time_slot,
                     "room":        current_room,
-                    "category":    category,
-                    "batch":       batch,        # None for regular until resolved
-                    "is_rescheduled": is_rescheduled,
-                    "is_saturday": is_saturday,
-                    "bypasses_quota": bypasses_quota,
-                    "is_exam":     is_exam,
-                    "quota":       quota,
-                    "isCancelled":  is_cancelled
-                }
+                    "category":    "regular",
+                    "batch":       "System",
+                    "is_rescheduled": False,
+                    "is_exam":     False,
+                    "isReserved":  True
+                })
+                continue
 
-                if category == "repeat":
-                    # Batch encoded in cell — anchor immediately
-                    cal_key = f"{batch}-{dept}-{section}-{day}"
+            if "cancel" in val_lower or "cancle" in val_lower:
+                is_cancelled = True
+                # Remove the cancel keyword and any surrounding parens
+                val = re.sub(r'(?i)\s*\(\s*(?:cancel|cancle)[a-z]*\s*\)\s*', ' ', val)
+                val = re.sub(r'(?i)\s*\b(?:cancel|cancle)[a-z]*\b\s*', ' ', val)
+                val = val.strip()
+
+            course_name = dept = section = batch = category = None
+
+            # ── Robust cell parser ──────────────────────────────────
+            # Handles all 4 cell patterns via VALID_DEPTS validation.
+            # Replaces the old repeat_pattern/regular_pattern + fix-up loop.
+            parsed = parse_cell_parens(val)
+            if parsed:
+                course_name, dept, section, batch, category = parsed
+                # Default section to "A" when cell has no section letter
+                # (Pattern 3: "Algo (CS, 23)" and Pattern 4: "SMD (CS)")
+                if section is None:
+                    section = "A"
+                # If dept couldn't be determined from cell (shouldn't happen
+                # with VALID_DEPTS validation), infer from course name
+                if dept is None:
+                    possible = find_possible_batches(course_name, dept=None)
+                    if possible:
+                        dept = possible[0][1]
+                    else:
+                        dept = "CS"  # Fallback
+
+            # ── Sheets API color-based override ─────────────────────
+            # If cell color data is available, use it to DETERMINISTICALLY
+            # identify dept, batch, and category. Color-anchored cells with
+            # a known batch go directly to unambiguous_classes — they do NOT
+            # go through find_possible_batches or Pass 2.
+            color_anchored = False
+            if cell_colors and COLOR_MAP:
+                color_key = (row_idx, i)
+                if color_key in cell_colors:
+                    rv, gv, bv = cell_colors[color_key]
+                    color_result = identify_from_color(rv, gv, bv)
+                    if color_result:
+                        color_dept, color_batch, is_repeat = color_result
+                        if is_repeat:
+                            # Yellow = repeat. Keep batch from text suffix (e.g., "OOP (CS-A, 25)" → batch=2025).
+                            # Do NOT set batch=None — yellow doesn't encode batch, but the text might.
+                            category = "repeat"
+                            # batch stays as whatever parse_cell_parens set (from ",YY" suffix or None)
+                        else:
+                            # Non-yellow color gives dept AND batch deterministically.
+                            category = "regular"
+                            if color_batch:
+                                batch = color_batch
+                                color_anchored = True  # Color gave us a definitive batch
+                            if color_dept:
+                                dept = color_dept
+
+            if not category:
+                continue
+
+            # Normalize: force "Lab" suffix when inside the lab block
+            if is_lab_section and not course_name.lower().endswith("lab"):
+                course_name = f"{course_name} Lab"
+
+            # Determine if special slot
+            is_saturday    = (day == "Saturday")
+            is_rescheduled = any(k in val.lower() for k in ["rescheduled", "resch"])
+            is_exam        = any(k in val.lower() for k in ["mid", "exam", "sessional"])
+            
+            # Logic: Saturday itself is a "rescheduled day" concept.
+            # It bypasses quotas internally, but only carries the label if explicitly marked.
+            bypasses_quota = is_rescheduled or is_saturday
+
+            if is_rescheduled or is_exam:
+                # Strip keywords from course name if they got captured
+                course_name = re.sub(r'(?i)\b(resch(eduled)?|mid|exam|sessional)\b', '', course_name).strip()
+                label = "Exam" if is_exam else "Rescheduled"
+                print(f"  ✨ {label}: {course_name} ({dept}-{section}) on {day}")
+
+            # Determine the class time
+            explicit_time = time_pattern.search(val)
+            actual_time   = (
+                explicit_time.group(0)
+                if explicit_time
+                else time_map.get(i, "Unknown Time")
+            )
+
+            # Skip Masters (MS) courses — this platform is BS-only.
+            # MS rule: any class that STARTS after 5:00 PM (17:00) OR
+            # CONTINUES PAST 5:20 PM (17:20) is an MS course → discard.
+            # (BS classes end by 5:15 PM; the MS evening slot starts at 5:20 PM.)
+            if actual_time != "Unknown Time":
+                try:
+                    s_min, e_min = parse_time_to_minutes(actual_time)
+                    if s_min > (17 * 60) or e_min > (17 * 60 + 20):
+                        continue
+                except:
+                    pass
+
+            # Force specific durations based on cell type (per user request)
+            is_actually_lab = is_lab_section or course_name.lower().endswith("lab")
+            blocking_time = actual_time # Time slot used for conflict detection
+            
+            if actual_time != "Unknown Time":
+                try:
+                    s_min, _ = parse_time_to_minutes(actual_time)
+                    if is_exam:
+                        # Exams/Sessionals are strictly 90 mins for display
+                        e_min_disp = s_min + 90
+                        actual_time = f"{minutes_to_time(s_min)}-{minutes_to_time(e_min_disp)}"
+                        # But if it's a lab slot, it blocks the full 165 mins for other classes
+                        # because a section can't have a 10:00 class if they are in a lab until 11:15
+                        if is_actually_lab:
+                            e_min_block = s_min + 165
+                            blocking_time = f"{minutes_to_time(s_min)}-{minutes_to_time(e_min_block)}"
+                        else:
+                            blocking_time = actual_time
+                    elif is_actually_lab:
+                        # Regular labs are 165 mins
+                        e_min = s_min + 165
+                        actual_time = f"{minutes_to_time(s_min)}-{minutes_to_time(e_min)}"
+                        blocking_time = actual_time
+                except Exception as e:
+                    pass
+
+            duration, quota = get_slot_quota(actual_time)
+
+            # Base record — batch filled in when resolved
+            record = {
+                "course_name": course_name,
+                "dept":        dept,
+                "section":     section,
+                "day":         day,
+                "sheet_name":  sheet_name,
+                "time":        actual_time,
+                "blocking_time": blocking_time,
+                "room":        current_room,
+                "category":    category,
+                "batch":       batch,        # None for regular until resolved
+                "is_rescheduled": is_rescheduled,
+                "is_saturday": is_saturday,
+                "bypasses_quota": bypasses_quota,
+                "is_exam":     is_exam,
+                "quota":       quota,
+                "isCancelled":  is_cancelled
+            }
+
+            if category == "repeat":
+                # Batch encoded in cell — anchor immediately
+                cal_key = f"{batch}-{dept}-{section}-{day}"
+                busy_calendar.setdefault(cal_key, []).append(blocking_time)
+                if not bypasses_quota:
+                    q_key = f"{batch}-{dept}-{section}-{course_name}"
+                    quota_calendar[q_key] = quota_calendar.get(q_key, 0) + 1
+                unambiguous_classes.append(record)
+
+            elif color_anchored and batch:
+                # Color gave us a definitive batch — anchor immediately,
+                # do NOT send through find_possible_batches or Pass 2.
+                # These are the D1/D2 cells that would otherwise be ambiguous.
+                cal_key = f"{batch}-{dept}-{section}-{day}"
+                busy_calendar.setdefault(cal_key, []).append(blocking_time)
+                if not bypasses_quota:
+                    q_key = f"{batch}-{dept}-{section}-{course_name}"
+                    quota_calendar[q_key] = quota_calendar.get(q_key, 0) + 1
+                unambiguous_classes.append(record)
+
+            else:  # regular — no color anchor, use heuristic pipeline
+                possible = find_possible_batches(course_name, dept)
+                if not possible:
+                    continue
+
+                # ── Section-level batch resolution ──────────────────────
+                # If the course-section-batch lookup has data for this
+                # (dept, course, section), filter candidates to only
+                # batches that actually offer this course to this section.
+                # This is authoritative — from the course allocation list.
+                if COURSE_SECTION_BATCH_LOOKUP and len(possible) > 1:
+                    # Normalize section for lookup (same logic as extract_section_letter)
+                    norm_section = section
+                    if norm_section:
+                        m = re.search(r'([A-Z])', norm_section)
+                        if m:
+                            norm_section = m.group(1)
+                    lookup_key = (dept, course_name, norm_section)
+                    valid_batches = COURSE_SECTION_BATCH_LOOKUP.get(lookup_key)
+                    if valid_batches:
+                        filtered = [b for b in possible if b in valid_batches]
+                        if filtered:
+                            possible = filtered
+
+                if len(possible) == 1:
+                    # Single candidate — anchor immediately
+                    batch_val = possible[0]
+                    record["batch"] = batch_val
+                    cal_key = f"{batch_val}-{dept}-{section}-{day}"
                     busy_calendar.setdefault(cal_key, []).append(blocking_time)
                     if not bypasses_quota:
-                        q_key = f"{batch}-{dept}-{section}-{course_name}"
+                        q_key = f"{batch_val}-{dept}-{section}-{course_name}"
                         quota_calendar[q_key] = quota_calendar.get(q_key, 0) + 1
                     unambiguous_classes.append(record)
-
-                else:  # regular
-                    possible = find_possible_batches(course_name, dept)
-                    if not possible:
-                        continue
-
-                    # ── Section-level batch resolution ──────────────────────
-                    # If the course-section-batch lookup has data for this
-                    # (dept, course, section), filter candidates to only
-                    # batches that actually offer this course to this section.
-                    # This is authoritative — from the course allocation list.
-                    if COURSE_SECTION_BATCH_LOOKUP and len(possible) > 1:
-                        # Normalize section for lookup (same logic as extract_section_letter)
-                        norm_section = section
-                        if norm_section:
-                            m = re.search(r'([A-Z])', norm_section)
-                            if m:
-                                norm_section = m.group(1)
-                        lookup_key = (dept, course_name, norm_section)
-                        valid_batches = COURSE_SECTION_BATCH_LOOKUP.get(lookup_key)
-                        if valid_batches:
-                            filtered = [b for b in possible if b in valid_batches]
-                            if filtered:
-                                possible = filtered
-
-                    if len(possible) == 1:
-                        # Single candidate — anchor immediately
-                        batch_val = possible[0]
-                        record["batch"] = batch_val
-                        cal_key = f"{batch_val}-{dept}-{section}-{day}"
-                        busy_calendar.setdefault(cal_key, []).append(blocking_time)
-                        if not bypasses_quota:
-                            q_key = f"{batch_val}-{dept}-{section}-{course_name}"
-                            quota_calendar[q_key] = quota_calendar.get(q_key, 0) + 1
-                        unambiguous_classes.append(record)
-                    else:
-                        # Multiple candidates — defer to Pass 2
-                        record["possible_batches"] = possible
-                        ambiguous_pool.append(record)
-
-    except Exception as e:
-        print(f"Warning: Could not process {day} ({sheet_name}). Error: {e}")
+                else:
+                    # Multiple candidates — defer to Pass 2
+                    record["possible_batches"] = possible
+                    ambiguous_pool.append(record)
 
 print(
     f"\nPass 1 complete — "
@@ -2016,42 +2047,41 @@ for rec in unambiguous_classes:
 output_filename = "timetable.json"
 data_hierarchy["__meta__"] = timetable_meta
 
-# Count batch entries (non-meta keys)
-batch_count = len([k for k in data_hierarchy.keys() if k != "__meta__"])
+# Count year batches (keys matching ^20\d{2}$, excluding __meta__ and System)
+import re as _re
+year_batches = [k for k in data_hierarchy.keys() if _re.match(r'^20\d{2}$', k)]
 total_resolved = len(unambiguous_classes)
 total_ambiguous = len(ambiguous_pool)
 
-if batch_count == 0:
-    # Empty output — scraper failed (likely gviz throttling)
-    print("\n⚠  WARNING: Scraper produced 0 batch entries!")
-    print("   This is likely caused by Google API rate-limiting on CI IPs.")
+print(f"  year_batches={year_batches}")
+
+if len(year_batches) == 0:
+    # Empty output — scraper failed. Restore previous timetable.json.
+    print("\n⚠  WARNING: Scraper produced 0 year batches!")
     print("   Keeping previous timetable.json to avoid breaking the website.")
-    
-    # Check if a previous timetable.json exists in public/data/
+
     import shutil
     prev_path = "public/data/timetable.json"
     if os.path.exists(prev_path):
         shutil.copy2(prev_path, output_filename)
         with open(prev_path, "r") as f:
             prev_data = json.load(f)
-        prev_batches = len([k for k in prev_data.keys() if k != "__meta__"])
-        print(f"   Restored previous timetable.json ({prev_batches} batches, "
-              f"{sum(len(v) for k, v in prev_data.items() if k != '__meta__' and isinstance(v, dict))} dept entries)")
+        prev_batches = [k for k in prev_data.keys() if _re.match(r'^20\d{2}$', k)]
+        print(f"   Restored previous timetable.json ({len(prev_batches)} year batches)")
     else:
-        # No previous file — write the empty output as last resort
         with open(output_filename, "w") as json_file:
             json.dump(data_hierarchy, json_file, indent=4)
-        print("   No previous timetable.json found — wrote empty output (website will show no batches)")
-    
+        print("   No previous timetable.json found — wrote empty output")
+
     print(f"   Scraper stats: {total_resolved} resolved, {total_ambiguous} ambiguous")
 else:
     # Normal output — write the new timetable
     with open(output_filename, "w") as json_file:
         json.dump(data_hierarchy, json_file, indent=4)
-    
+
     print(f"\n✅ Success! Unified schedule exported to: {output_filename}")
     print(
         f"   Total resolved: {total_resolved} class slots "
         f"({total_ambiguous} passed through the deduction pass)"
     )
-    print(f"   Batches: {batch_count}")
+    print(f"   Year batches: {year_batches}")
