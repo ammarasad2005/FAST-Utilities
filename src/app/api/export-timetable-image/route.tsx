@@ -105,26 +105,37 @@ export async function POST(req: NextRequest) {
       entries: dayMap.get(dayName) || [],
     }));
 
-    // ── Detect which badges are needed in the legend ──
-    const hasLab = entries.some(e => e.type === 'lab');
-    const hasRepeat = entries.some(e => e.category === 'repeat');
-    const hasExam = entries.some(e => e.exam);
-    const hasRescheduled = entries.some(e => e.rescheduled);
-    const hasCancelled = entries.some(e => e.cancelled);
-
     // ── Layout dimensions ──
     const timeColWidth = 110;
     const dayColWidth = (1400 - 80 - timeColWidth) / 6; // 6 day columns
     const gridHeight = DAY_SPAN_MIN * PX_PER_MIN;       // ~848px
     const dayHeaderHeight = 56;
     const headerHeight = 200;
-    const legendHeight = 80;
     const footerHeight = 50;
     const padding = 80;
     const height = Math.max(
       1000,
-      headerHeight + dayHeaderHeight + gridHeight + legendHeight + footerHeight + padding
+      headerHeight + dayHeaderHeight + gridHeight + footerHeight + padding
     );
+
+    // ── Find consecutive empty day groups for HOLIDAY rendering ──
+    // 1 empty day → vertical "HOLIDAY" text
+    // 2 consecutive → slanted from top-left of left day to bottom-right of right day
+    // 3+ consecutive → slanted from top-left of leftmost to bottom-right of rightmost
+    const holidayGroups: { startIdx: number; count: number }[] = [];
+    let di = 0;
+    while (di < days.length) {
+      if (days[di].entries.length === 0) {
+        let dj = di;
+        while (dj < days.length && days[dj].entries.length === 0) {
+          dj++;
+        }
+        holidayGroups.push({ startIdx: di, count: dj - di });
+        di = dj;
+      } else {
+        di++;
+      }
+    }
 
     // ── Student context line ──
     const contextLine = config.isCustom
@@ -236,13 +247,20 @@ export async function POST(req: NextRequest) {
               >
                 {HOUR_MARKERS.map((m, i) => {
                   const top = (m.min - DAY_START_MIN) * PX_PER_MIN;
+                  // Fix top/bottom edge clipping:
+                  // First marker sits at the very top, last at the very bottom,
+                  // middle markers are centered on their gridline.
+                  const adjustedTop =
+                    i === 0 ? 2 :
+                    i === HOUR_MARKERS.length - 1 ? gridHeight - 18 :
+                    top - 8;
                   return (
                     <div
                       key={i}
                       style={{
                         display: 'flex',
                         position: 'absolute',
-                        top: top - 8,
+                        top: adjustedTop,
                         left: 0,
                         right: 0,
                         justifyContent: 'center',
@@ -311,7 +329,7 @@ export async function POST(req: NextRequest) {
                           left: '6px',
                           right: '6px',
                           height: cardHeight,
-                          backgroundColor: '#ffffff',
+                          backgroundColor: isLab ? '#F0FDFA' : '#ffffff',
                           border: '1px solid #e5e7eb',
                           borderLeft: `4px solid ${accent}`,
                           borderRadius: '5px',
@@ -399,50 +417,45 @@ export async function POST(req: NextRequest) {
                   })}
                 </div>
               ))}
+              {/* ── HOLIDAY overlays for empty day groups ── */}
+              {holidayGroups.map((group, gi) => {
+                const totalWidth = group.count * dayColWidth;
+                // 1 day = 90° (vertical), 2+ days = diagonal from top-left to bottom-right
+                const angle = group.count === 1
+                  ? 90
+                  : Math.atan2(gridHeight, totalWidth) * 180 / Math.PI;
+                return (
+                  <div
+                    key={`holiday-${gi}`}
+                    style={{
+                      display: 'flex',
+                      position: 'absolute',
+                      left: timeColWidth + group.startIdx * dayColWidth,
+                      width: totalWidth,
+                      top: 0,
+                      height: gridHeight,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      zIndex: 5,
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: 'flex',
+                        transform: `rotate(${angle}deg)`,
+                        fontSize: '26px',
+                        fontWeight: 'bold',
+                        color: '#d1d5db',
+                        letterSpacing: '0.4em',
+                        fontFamily: 'monospace',
+                      }}
+                    >
+                      HOLIDAY
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          </div>
-
-          {/* ── Legend ── */}
-          <div
-            style={{
-              display: 'flex',
-              gap: '14px',
-              marginTop: '16px',
-              padding: '10px 14px',
-              backgroundColor: '#f9fafb',
-              border: '1px solid #e5e7eb',
-              borderRadius: '8px',
-              fontSize: '13px',
-              color: '#4b5563',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-            }}
-          >
-            <span style={{ display: 'flex', fontWeight: 'bold', color: '#1f2937' }}>Legend:</span>
-            {(() => {
-              const deptsInSchedule = [...new Set(entries.map(e => e.department.toLowerCase().split('/')[0]))];
-              return deptsInSchedule.slice(0, 5).map(d => (
-                <div key={d} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <span style={{ display: 'flex', width: '11px', height: '11px', borderRadius: '2px', backgroundColor: DEPT_COLORS[d] || '#6b7280' }} />
-                  <span style={{ display: 'flex', textTransform: 'uppercase' }}>{d}</span>
-                </div>
-              ));
-            })()}
-            {hasLab && (
-              <span style={{ display: 'flex', backgroundColor: '#F0FDFA', color: '#0F766E', fontSize: '11px', fontWeight: 'bold', padding: '2px 7px', borderRadius: '3px' }}>Lab</span>
-            )}
-            {hasRepeat && (
-              <span style={{ display: 'flex', backgroundColor: '#FEF3C7', color: '#B45309', fontSize: '11px', fontWeight: 'bold', padding: '2px 7px', borderRadius: '3px' }}>Repeat</span>
-            )}
-            {hasExam && (
-              <span style={{ display: 'flex', backgroundColor: '#FEE2E2', color: '#DC2626', fontSize: '11px', fontWeight: 'bold', padding: '2px 7px', borderRadius: '3px' }}>Exam</span>
-            )}
-            {hasRescheduled && (
-              <span style={{ display: 'flex', backgroundColor: '#FEF3C7', color: '#D97706', fontSize: '11px', fontWeight: 'bold', padding: '2px 7px', borderRadius: '3px' }}>Rescheduled</span>
-            )}
-            {hasCancelled && (
-              <span style={{ display: 'flex', backgroundColor: '#F3F4F6', color: '#6b7280', fontSize: '11px', fontWeight: 'bold', padding: '2px 7px', borderRadius: '3px' }}>Cancelled</span>
-            )}
           </div>
 
           {/* ── Footer ── */}
