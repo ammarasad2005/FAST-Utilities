@@ -1318,6 +1318,14 @@ for day_info in day_sheets:
     master_time_map = {}
     current_room    = ""
     is_lab_section  = False
+    # MS boundary: column index of the 2nd "Room"/"Lab" header. Cells at or
+    # beyond this column are MS courses (evening section) and must be skipped.
+    # The timetable sheet has two "Room" columns in the header row — the first
+    # at col 0 (BS section) and the second around col 30 (MS section). Everything
+    # to the right of the 2nd "Room" column is MS. This structural check is more
+    # reliable than color or time-based filtering because MS and BS colors can
+    # overlap (e.g., MS(AI) shares a color with CS 2023).
+    ms_boundary     = None
 
     for row_idx, r in enumerate(rows):
         cells = r.get("c", [])
@@ -1334,10 +1342,26 @@ for day_info in day_sheets:
             is_lab_section = (first_val == "Lab")
             local_time_map = {}
             row_last_time  = "Unknown Time"
-            
-            for i in range(1, len(cells)):
+
+            # Detect MS boundary: find the 2nd "Room" or "Lab" value in this row.
+            # The first is at col 0; the second marks the start of the MS section.
+            header_seen = 0
+            for i in range(0, len(cells)):
                 c_val = str(cells[i].get("v", "")).strip() if cells[i] and cells[i].get("v") else ""
-                
+                if c_val in ("Room", "Lab"):
+                    header_seen += 1
+                    if header_seen == 2:
+                        ms_boundary = i
+                        print(f"  MS boundary detected on {day} {sheet_name}: col {ms_boundary} (all cells >= {ms_boundary} excluded)")
+                        break
+
+            for i in range(1, len(cells)):
+                # Skip MS section cells (at or beyond the 2nd "Room"/"Lab" column)
+                if ms_boundary is not None and i >= ms_boundary:
+                    continue
+
+                c_val = str(cells[i].get("v", "")).strip() if cells[i] and cells[i].get("v") else ""
+
                 if c_val and c_val not in ("Room", "Lab"):
                     row_last_time = c_val
                 elif not c_val and i in master_time_map:
@@ -1372,6 +1396,11 @@ for day_info in day_sheets:
 
         # ── Scan each column for a class entry ──
         for i in range(1, len(cells)):
+            # Skip MS section cells (at or beyond the 2nd "Room"/"Lab" column).
+            # This structurally excludes all MS courses regardless of color or time.
+            if ms_boundary is not None and i >= ms_boundary:
+                continue
+
             val = (
                 str(cells[i].get("v", "")).replace("\n", " ").strip()
                 if cells[i] and cells[i].get("v")
@@ -1954,6 +1983,13 @@ def extract_section_letter(s):
     # 2. If after cleaning we only have punctuation or nothing, it's a group-wide course -> Section A
     if not re.search(r'[a-zA-Z]', cleaned):
         return "A"
+    # 2b. Section-choice pattern: letter + digit (e.g., "A1", "A2", "B1").
+    # These are core courses where the student picks which section to attend.
+    # Preserve the full section identifier so A1 and A2 are distinct in the
+    # output — the frontend lets the user pick their section.
+    choice_match = re.match(r'^([A-Z])(\d)$', cleaned)
+    if choice_match:
+        return cleaned  # e.g., "A1", "B2" — keep as-is
     # 3. Look for patterns like CS-A or just A
     match = re.search(r'([A-Z])\d*', cleaned)
     if match:
@@ -2031,14 +2067,21 @@ for rec in unambiguous_classes:
         # ── Priority-based elective detection ──────────────────────────────
         # 1. KNOWN ELECTIVES from course allocation list → authoritative True
         # 2. KNOWN CORE from admin course mappings       → authoritative False
-        # 3. Explicit group tag (G-I, Gp-II)             → True
-        # 4. Range-based heuristic                        → fallback only
+        # 3. Section-choice pattern (A1, A2, B1)         → False (core, user picks section)
+        # 4. Explicit group tag (G-I, Gp-II)             → True
+        # 5. Range-based heuristic                        → fallback only
         #
         # This replaces the old `is_course_elective(rec) or group or range`
         # OR-chain where the range heuristic could override known core courses.
         if is_known_elective(dept, course_name):
             is_elective = True
         elif is_known_course(dept, course_name):
+            is_elective = False
+        elif re.match(r'^[A-Z]\d$', section or ""):
+            # Section-choice course (e.g., Func Eng with sections A1, A2, B1).
+            # Core course — the student picks which section to attend.
+            # Don't flag as elective; the frontend shows all sections for the
+            # user to choose from.
             is_elective = False
         elif group is not None:
             is_elective = True
