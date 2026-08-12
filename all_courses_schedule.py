@@ -1118,13 +1118,18 @@ def fetch_cell_colors(sheet_id, day_sheet_name):
 
 # Build the color map from the first day sheet (Monday)
 # All day sheets use the same color scheme
+# Wrapped in try/except so API failures NEVER break the main scraper flow
 if day_sheets:
     _first_sheet_name = day_sheets[0]["sheet_name"]
-    _color_map_ok = build_color_map(sheet_id, _first_sheet_name)
-    if _color_map_ok:
-        print(f"✅ Built color map from Sheets API: {len(COLOR_MAP)} (dept, batch) color entries")
-    else:
-        print("ℹ  Color map not available — using text-based heuristic detection (fallback mode)")
+    try:
+        _color_map_ok = build_color_map(sheet_id, _first_sheet_name)
+        if _color_map_ok:
+            print(f"✅ Built color map from Sheets API: {len(COLOR_MAP)} (dept, batch) color entries")
+        else:
+            print("ℹ  Color map not available — using text-based heuristic detection (fallback mode)")
+    except Exception as e:
+        print(f"⚠  Color map build failed: {e} — using text-based heuristic detection (fallback mode)")
+        COLOR_MAP = {}
 else:
     print("⚠  No day sheets found — cannot build color map")
 
@@ -1240,9 +1245,15 @@ for day_info in day_sheets:
     })
 
     # Fetch cell colors for this day sheet (if API is available)
-    cell_colors = fetch_cell_colors(sheet_id, sheet_name)
-    if cell_colors:
-        print(f"  📊 Color data loaded for {sheet_name}: {len(cell_colors)} colored cells")
+    # Wrapped in try/except so API failures NEVER break the main scraper flow
+    cell_colors = None
+    try:
+        cell_colors = fetch_cell_colors(sheet_id, sheet_name)
+        if cell_colors:
+            print(f"  📊 Color data loaded for {sheet_name}: {len(cell_colors)} colored cells")
+    except Exception as e:
+        print(f"  ⚠ Color fetch failed for {sheet_name}: {e} — using text-based detection")
+        cell_colors = None
 
     req_url = (
         f"https://docs.google.com/spreadsheets/d/{sheet_id}"
