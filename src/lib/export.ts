@@ -306,6 +306,50 @@ export async function downloadTimetableImage(entries: TimetableEntry[], config?:
 }
 
 /**
+ * Generates a weekly timetable PNG (week-grid layout: days as columns,
+ * time slots as rows) via the /api/export-timetable-image edge route.
+ *
+ * Config supports:
+ *   - batch, dept, section: student context for the header (configured mode)
+ *   - isCustom: true → header shows "Custom Timetable" + dept/batch badge on each card
+ *   - isSummer: for summer semester display
+ *   - semesterName: e.g. "Spring 2026" (falls back to default if absent)
+ *   - todayDayName: highlights the matching day column
+ */
+export async function downloadWeeklyTimetableImage(
+  entries: TimetableEntry[],
+  config?: {
+    batch?: string;
+    dept?: string;
+    section?: string;
+    semesterName?: string;
+    isCustom?: boolean;
+    isSummer?: boolean;
+    todayDayName?: string;
+  }
+): Promise<void> {
+  try {
+    const { saveAs } = (await import('file-saver')).default;
+
+    const res = await fetch('/api/export-timetable-image', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ entries, config }),
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to generate image: ${res.statusText}`);
+    }
+
+    const blob = await res.blob();
+    saveAs(blob, `timetable.png`);
+  } catch (err) {
+    console.error('Weekly timetable image export failed:', err);
+    throw err;
+  }
+}
+
+/**
  * Generates a recurring weekly .ics for a set of timetable entries.
  * Events repeat RRULE:FREQ=WEEKLY for ~16 weeks (or 8 weeks for summer) from the current date.
  */

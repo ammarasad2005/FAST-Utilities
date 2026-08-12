@@ -575,7 +575,7 @@ function CustomTimetableInner() {
     <div className="min-h-dvh flex flex-col">
 
       {/* ── Sticky header ── */}
-      <Header rightActions={saved && <TimetableExportButton entries={filtered} />}>
+      <Header rightActions={saved && <TimetableExportButton entries={filtered} config={{ isCustom: true }} />}>
         <div className="flex flex-1 items-center gap-2 md:gap-3 w-full max-w-full min-w-0">
           <button
             onClick={() => router.push('/')}
@@ -749,7 +749,7 @@ function CustomTimetableInner() {
             </div>
             
             {saved && (
-              <TimetableExportButton entries={filtered} variant="sidebar" />
+              <TimetableExportButton entries={filtered} variant="sidebar" config={{ isCustom: true }} />
             )}
           </div>
         </aside>
@@ -903,13 +903,14 @@ function CustomTimetableInner() {
                 <div className="flex-1">
                   <SearchBar value={query} onChange={setQuery} />
                 </div>
-                <div className="md:hidden flex gap-1">
+                {/* View toggle — visible on all breakpoints */}
+                <div className="flex gap-1">
                   {(['list', 'grid'] as ViewMode[]).map(v => (
                     <button
                       key={v}
                       onClick={() => setViewMode(v)}
                       aria-pressed={viewMode === v}
-                      className="h-9 w-9 rounded border font-mono text-xs font-medium transition-all"
+                      className="h-9 w-9 md:w-auto md:px-3 rounded border font-mono text-xs font-medium transition-all"
                       style={viewMode === v ? {
                         backgroundColor: 'var(--color-text-primary)',
                         color: 'var(--color-bg)',
@@ -920,7 +921,8 @@ function CustomTimetableInner() {
                       }}
                       title={v === 'list' ? 'List view' : 'Grid view'}
                     >
-                      {v === 'list' ? '☰' : '⊞'}
+                      <span className="md:hidden">{v === 'list' ? '☰' : '⊞'}</span>
+                      <span className="hidden md:inline">{v === 'list' ? 'List' : 'Grid'}</span>
                     </button>
                   ))}
                 </div>

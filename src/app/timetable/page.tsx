@@ -803,7 +803,7 @@ function TimetablePageInner() {
     <div className="min-h-dvh flex flex-col">
 
       {/* ── Sticky header ─────────────────────────────────────────────────── */}
-      <Header rightActions={<TimetableExportButton entries={filtered} isSummer={isSummer} />}>
+      <Header rightActions={<TimetableExportButton entries={filtered} isSummer={isSummer} config={{ batch, dept, section, semesterName, todayDayName: resolvedData.todayDayName }} />}>
         <div className="flex flex-1 items-center gap-2 md:gap-3 w-full max-w-full min-w-0">
           <button
             onClick={() => router.back()}
@@ -949,7 +949,7 @@ function TimetablePageInner() {
             >
               {isSummer ? 'Change courses' : 'Change filters'}
             </button>
-            <TimetableExportButton entries={filtered} variant="sidebar" isSummer={isSummer} />
+            <TimetableExportButton entries={filtered} variant="sidebar" isSummer={isSummer} config={{ batch, dept, section, semesterName, todayDayName: resolvedData.todayDayName }} />
           </div>
         </aside>
 
