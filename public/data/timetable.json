@@ -10732,6 +10732,30 @@
                         ]
                     }
                 },
+                "Fund of SPM": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "D-404",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "D-404",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "SMD": {
                     "A": {
                         "Monday": [
@@ -11358,6 +11382,30 @@
                             {
                                 "room": "D-405",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "Fund of Data Vis": {
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "D-412",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "D-412",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
