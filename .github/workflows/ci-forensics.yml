@@ -53,22 +53,11 @@ jobs:
 
       # 5. Analyze the scraper's output
       - name: Analyze scraper output
+        continue-on-error: true
         run: |
           echo "=== timetable.json analysis ==="
           if [ -f timetable.json ]; then
-            python3 -c "
-            import json, re
-            with open('timetable.json') as f:
-                d = json.load(f)
-            batches = [k for k in d.keys() if re.match(r'^20\d{2}\$', k)]
-            print(f'top-level keys: {list(d.keys())[:10]}')
-            print(f'year batches found: {batches}')
-            print(f'file size: {len(json.dumps(d))} bytes')
-            if batches:
-                print('RESULT: Scraper produced batch data (SUCCESS)')
-            else:
-                print('RESULT: Scraper produced EMPTY output (only __meta__)')
-            "
+            python3 scripts/analyze_output.py timetable.json
           else
             echo "timetable.json NOT FOUND — scraper crashed before writing"
           fi
