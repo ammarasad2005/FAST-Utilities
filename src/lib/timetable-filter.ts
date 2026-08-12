@@ -93,17 +93,17 @@ export function filterTimetable(
     if (e.batch !== filter.batch) return false;
     if (!isDepartmentMatch(e.department, filter.department)) return false;
     if (!includeRepeats && e.category === 'repeat') return false;
-    
+
     // Skip electives for the main section-based view
     if (e.isElective) return false;
 
-    if (e.batch === filter.batch && e.batch === '2025') {
-      const normalizedSection = e.section.replace(/\d+$/, '');
-      if (normalizedSection !== filter.section) return false;
-    } else if (e.section !== filter.section) {
-      return false;
-    }
-    
+    // Section-choice normalization: A1 and A2 are sub-sections of section "A".
+    // When the user selects "A", include both A1 and A2 entries. The per-course
+    // "Change Section" dropdown on the results page lets the user pick which
+    // sub-section to attend. This applies to ALL batches (not just 2025).
+    const normalizedSection = e.section.replace(/\d+$/, '');
+    if (normalizedSection !== filter.section) return false;
+
     if (
       q &&
       !e.courseName.toLowerCase().includes(q) &&
@@ -148,22 +148,24 @@ export function getAvailableSections(
   const set = new Set<string>();
   for (const e of entries) {
     if (e.batch === batch && isDepartmentMatch(e.department, department)) {
-      if (batch === '2025') {
-        const normalized = e.section.replace(/\d+$/, '');
-        set.add(normalized);
-      } else if (batch === '2022' && (
+      // Skip empty sections (department-level electives) from the dropdown
+      if (e.section === '') continue;
+
+      // Skip elective group sections for 2022 (G-I, Gp-II, etc.)
+      if (batch === '2022' && (
         e.section.includes(', G-') || e.section.startsWith('G-') ||
         e.section.includes(', Gp-') || e.section.startsWith('Gp-') ||
         e.section === 'AI' || e.section === 'DS'
       )) {
-        // Skip elective sections for 2022 in the initial dropdown
         continue;
-      } else if (e.section === '') {
-        // Skip empty sections (department-level electives) from the dropdown
-        continue;
-      } else {
-        set.add(e.section);
       }
+
+      // Section-choice normalization: A1 and A2 are sub-sections of "A".
+      // Show "A" in the picker, not "A1" / "A2" separately. The user picks
+      // A1 or A2 per-course on the results page via the "Change Section"
+      // dropdown. This applies to ALL batches.
+      const normalized = e.section.replace(/\d+$/, '');
+      set.add(normalized);
     }
   }
   // Return sorted: single-letter first (A, B, C…), then compound (BX, A1…)
@@ -197,9 +199,12 @@ export function detectConflicts(entries: TimetableEntry[], includeRepeats = true
         // Skip conflicts involving repeat courses when repeats are excluded
         if (!includeRepeats && (a.category === 'repeat' || b.category === 'repeat')) continue;
 
-        // 2025 Batch: A1 and A2 are sub-sections of the same logical section.
-        // Overlaps between DIFFERENT sub-sections don't cause a conflict.
-        if (a.batch === '2025' && b.batch === '2025' && a.section !== b.section) continue;
+        // Section-choice: A1 and A2 are sub-sections of the same logical section "A".
+        // Overlaps between DIFFERENT sub-sections don't cause a conflict (the student
+        // picks one sub-section per course). Applies to ALL batches.
+        const aNorm = a.section.replace(/\d+$/, '');
+        const bNorm = b.section.replace(/\d+$/, '');
+        if (aNorm !== bNorm) continue;
 
         if (overlaps(a, b)) {
           conflicting.add(makeKey(a));

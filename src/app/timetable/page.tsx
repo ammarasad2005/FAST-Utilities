@@ -1200,7 +1200,19 @@ function TimetablePageInner() {
           )}
 
           {batch !== '2022' && (
-            <div className="border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]/30">
+            <div
+              className={`border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]/30 ${
+                otherCourseGroups.length > 0
+                  ? 'relative overflow-hidden rounded-2xl my-2 shadow-lg ring-1 ring-blue-500/10'
+                  : ''
+              }`}
+              style={otherCourseGroups.length > 0 ? {
+                border: '2px solid transparent',
+                backgroundImage: 'linear-gradient(var(--color-bg-subtle), var(--color-bg-subtle)), var(--others-border-gradient)',
+                backgroundOrigin: 'border-box',
+                backgroundClip: 'padding-box, border-box',
+              } : {}}
+            >
               <button
                 onClick={() => setIsOtherCoursesExpanded(!isOtherCoursesExpanded)}
                 className="w-full flex items-center justify-between px-4 py-4 focus-visible:outline-none focus-visible:bg-[var(--color-bg-raised)] transition-colors hover:bg-[var(--color-bg-raised)]"

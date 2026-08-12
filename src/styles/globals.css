@@ -102,6 +102,10 @@
   --today-border-gradient: linear-gradient(135deg, rgba(147, 51, 234, 0.6) 0%, rgba(249, 115, 22, 0.6) 100%);
   --today-label-bg: linear-gradient(90deg, #9333ea, #f97316);
 
+  /* Electives/Others Container Gradient (Light: Blue -> Indigo) — subtler than today */
+  --others-border-gradient: linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(99, 102, 241, 0.4) 100%);
+  --others-label-bg: linear-gradient(90deg, #3b82f6, #6366f1);
+
   /* Fonts */
   --font-display: 'Instrument Serif', serif;
   --font-body:    'DM Sans', sans-serif;
@@ -155,6 +159,10 @@
   /* Today Section Gradient (Dark: Gold -> Yellow) */
   --today-border-gradient: linear-gradient(135deg, rgba(245, 158, 11, 0.75) 0%, rgba(254, 240, 138, 0.75) 100%);
   --today-label-bg: linear-gradient(90deg, #d97706, #facc15);
+
+  /* Electives/Others Container Gradient (Dark: Blue -> Indigo) — subtler than today */
+  --others-border-gradient: linear-gradient(135deg, rgba(59, 130, 246, 0.5) 0%, rgba(99, 102, 241, 0.5) 100%);
+  --others-label-bg: linear-gradient(90deg, #3b82f6, #818cf8);
 }
 
 /* ───────────────── Dark mode via system preference (no JS toggle set) ───────────────── */
@@ -205,6 +213,10 @@
     /* Today Section Gradient (Dark: Gold -> Yellow) */
     --today-border-gradient: linear-gradient(135deg, rgba(245, 158, 11, 0.75) 0%, rgba(254, 240, 138, 0.75) 100%);
     --today-label-bg: linear-gradient(90deg, #d97706, #facc15);
+
+    /* Electives/Others Container Gradient (Dark: Blue -> Indigo) — subtler than today */
+    --others-border-gradient: linear-gradient(135deg, rgba(59, 130, 246, 0.5) 0%, rgba(99, 102, 241, 0.5) 100%);
+    --others-label-bg: linear-gradient(90deg, #3b82f6, #818cf8);
   }
 }
 
