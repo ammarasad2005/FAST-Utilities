@@ -1012,30 +1012,8 @@ export default function SetupPage() {
       ================================================================ */}
       <div className="hidden md:flex min-h-dvh flex-col">
 
-        {/* Full-width header */}
-        {/* Full-width header */}
-        <Header>
-          {/* Feature toggle — prominent centre nav */}
-          <div role="group" aria-label="Select feature" className="flex items-center gap-1 bg-[var(--color-bg-subtle)] rounded-lg p-1">
-            {(['timetable', 'exams', 'rooms', 'faculty'] as Feature[]).map(f => (
-              <button
-                key={f}
-                id={`desktop-feature-${f}`}
-                onClick={() => { setFeature(f); setMode('default'); }}
-                aria-pressed={feature === f}
-                className="h-8 px-4 rounded-md font-body text-sm font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2"
-                style={feature === f ? {
-                  backgroundColor: 'var(--color-text-primary)',
-                  color: 'var(--color-bg)',
-                } : {
-                  color: 'var(--color-text-secondary)',
-                }}
-              >
-                {f === 'exams' ? 'Exam Finder' : f === 'timetable' ? 'Timetable' : f === 'rooms' ? 'Free Rooms' : 'Faculty Info'}
-              </button>
-            ))}
-          </div>
-        </Header>
+        {/* Full-width header (timeline in center) */}
+        <Header />
 
         {/* Two-column body */}
         <div className="flex flex-1 overflow-hidden">

@@ -487,6 +487,44 @@ body {
   display: none;
 }
 
+/* ── Semester Timeline capsule: laser-rail gradient on the upper arc ── */
+/* The capsule shares the header's bottom baseline (no bottom border).
+   The ::before pseudo-element creates a 2px gradient outline that traces
+   the top arc + both sides, using the same --laser-rail-gradient as the
+   header's baseline. This makes the capsule appear as though the header's
+   laser rail flows up and around the capsule's arc. */
+.semester-timeline-capsule::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px 14px 0 0;
+  padding: 2px; /* controls the gradient line thickness */
+  background: var(--laser-rail-gradient);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Light mode: use the majority visible color from the header baseline
+   (amber/orange) as a simple solid outline. Not a copy of the full
+   multi-color gradient — just enough to feel present in the header. */
+:root:not([data-theme="dark"]) .semester-timeline-capsule::before {
+  background: rgba(180, 83, 9, 0.4);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .semester-timeline-capsule::before {
+    background: rgba(180, 83, 9, 0.4);
+  }
+}
+
 @media (max-width: 767px) {
   .glass-header-laser::before {
     height: 1.5px;
@@ -659,6 +697,31 @@ body {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
+
+@keyframes timelineSheen {
+  from { background-position: -15% center; }
+  to { background-position: 115% center; }
+}
+
+@keyframes timelinePopoverIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timelineSheen,
+  .timeline-popover {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 .btn-shimmer:hover {
   background: linear-gradient(90deg, var(--accent-lf) 0%, var(--accent-lf) 40%, rgba(255,255,255,0.15) 50%, var(--accent-lf) 60%, var(--accent-lf) 100%);
   background-size: 200% 100%;

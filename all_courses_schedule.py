@@ -1507,15 +1507,28 @@ for day_info in day_sheets:
             # Color override can set `category` from the cell's background
             # color even when the cell's text didn't parse via
             # parse_cell_parens() — in that case `course_name` is still None.
-            # Skip such cells: they're not course entries (typically headers,
-            # section labels, or other colored non-course text). Without this
-            # guard, the next line crashes with
-            #   AttributeError: 'NoneType' object has no attribute 'lower'
-            # This was the actual root cause of the empty CI output in PRs
-            # #25/#28/#30 (the per-day try/except masked it then; f8662c3
-            # removed the try/except, exposing the crash).
+            #
+            # If the color override successfully identified dept+batch+category
+            # (color_anchored=True), the cell IS a course entry — the text just
+            # lacks the parenthetical dept/section suffix (e.g., "Fund of Data
+            # Vis" without "(CS-A)"). In that case, use the raw cell text as
+            # the course name.
+            #
+            # If color_anchored is False and course_name is still None, skip —
+            # it's a non-course cell (header, label, etc.) that would crash
+            # the next line with AttributeError on course_name.lower().
             if course_name is None:
-                continue
+                if color_anchored and val:
+                    # Color confirmed it's a course; use the raw text as name.
+                    # Strip any trailing time annotation (e.g., "Fund of Data Vis 11:30-12:50")
+                    course_name = re.sub(r'\s+\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2}\s*$', '', val).strip()
+                    if not course_name:
+                        continue
+                    # Default section to "A" (the cell has no section info).
+                    if section is None:
+                        section = "A"
+                else:
+                    continue
 
             # Normalize: force "Lab" suffix when inside the lab block
             if is_lab_section and not course_name.lower().endswith("lab"):

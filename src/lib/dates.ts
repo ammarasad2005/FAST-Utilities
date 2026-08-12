@@ -175,4 +175,236 @@ export function clampMondayToSemesterStart(monday: Date): Date {
   return clamped;
 }
 
+// ── Semester timeline helpers ────────────────────────────────────────────────
+
+interface KeyDate {
+  label: string;
+  date: string;
+  endDate?: string;
+  type?: string;
+  icon?: string;
+}
+
+interface AcademicRange {
+  label: string;
+  start: string;
+  end: string;
+  color: string;
+}
+
+interface SemesterCalendar {
+  semester: string;
+  keyDates: KeyDate[];
+  holidays: KeyDate[];
+  academicRanges: AcademicRange[];
+  weekCount?: number;
+}
+
+function getCalendar(): SemesterCalendar | null {
+  try {
+    if (!_semesterCalendarCache) {
+      // eslint-disable-next-line
+      _semesterCalendarCache = require('../../public/data/semester_calendar.json');
+    }
+    return _semesterCalendarCache as SemesterCalendar;
+  } catch {
+    return null;
+  }
+}
+
+/** Returns the "Last Day of Classes" ISO date, or null. */
+export function getSemesterEndDate(): string | null {
+  const cal = getCalendar();
+  if (!cal?.keyDates) return null;
+  const lastDay = cal.keyDates.find(
+    (k) => k.label.toLowerCase().includes('last day of classes')
+  );
+  return lastDay?.date ?? null;
+}
+
+/** Returns the "Final Examinations" start ISO date, or null. */
+export function getFinalExamsStartDate(): string | null {
+  const cal = getCalendar();
+  if (!cal?.keyDates) return null;
+  const finals = cal.keyDates.find(
+    (k) => k.label.toLowerCase().includes('final examination')
+  );
+  return finals?.date ?? null;
+}
+
+/** Returns the "Final Examinations" end ISO date, or null. */
+export function getFinalExamsEndDate(): string | null {
+  const cal = getCalendar();
+  if (!cal?.keyDates) return null;
+  const finals = cal.keyDates.find(
+    (k) => k.label.toLowerCase().includes('final examination')
+  );
+  return finals?.endDate ?? finals?.date ?? null;
+}
+
+/**
+ * Returns the current semester week number (1-based).
+ * Week 1 starts on the semester's first day. Returns null if before start
+ * or after the semester ends.
+ */
+export function getSemesterWeekNumber(now: Date = new Date()): number | null {
+  const startISO = getSemesterStartDate();
+  const endISO = getSemesterEndDate();
+  if (!startISO || !endISO) return null;
+  const today = new Date(now);
+  today.setHours(0, 0, 0, 0);
+  const start = new Date(startISO + 'T00:00:00');
+  if (today < start) return null;
+  const diffMs = today.getTime() - start.getTime();
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  return Math.floor(diffDays / 7) + 1;
+}
+
+/**
+ * Returns semester progress as a float 0-100.
+ * 0 = semester just started, 100 = semester ended (including finals).
+ * The timeline extends from First Day of Classes to the end of Final
+ * Examinations, so the FE marker sits at its true proportional position.
+ * Returns null if dates unavailable. Can return <0 (pre-semester).
+ */
+export function getSemesterProgress(now: Date = new Date()): number | null {
+  const startISO = getSemesterStartDate();
+  const endISO = getSemesterEndDate();
+  const finalsEndISO = getFinalExamsEndDate();
+  if (!startISO || !endISO) return null;
+  // Extend timeline to include finals period if available
+  const timelineEndISO = finalsEndISO || endISO;
+  const today = new Date(now);
+  today.setHours(0, 0, 0, 0);
+  const start = new Date(startISO + 'T00:00:00');
+  const end = new Date(timelineEndISO + 'T00:00:00');
+  const total = end.getTime() - start.getTime();
+  if (total <= 0) return null;
+  const elapsed = today.getTime() - start.getTime();
+  return (elapsed / total) * 100;
+}
+
+/**
+ * Returns key exam milestones for the timeline bar markings.
+ * Each milestone has a label, date, and progressPercent (0-100 position on bar).
+ */
+export interface SemesterMilestone {
+  label: string;
+  shortLabel: string;
+  date: string;
+  progressPercent: number;
+}
+
+export function getSemesterMilestones(): SemesterMilestone[] {
+  const cal = getCalendar();
+  const startISO = getSemesterStartDate();
+  const endISO = getSemesterEndDate();
+  const finalsEndISO = getFinalExamsEndDate();
+  if (!cal?.keyDates || !startISO || !endISO) return [];
+
+  // Use the same extended timeline as getSemesterProgress (includes finals)
+  const timelineEndISO = finalsEndISO || endISO;
+  const start = new Date(startISO + 'T00:00:00').getTime();
+  const end = new Date(timelineEndISO + 'T00:00:00').getTime();
+  const total = end - start;
+  if (total <= 0) return [];
+
+  const milestones: SemesterMilestone[] = [];
+  const findKeyDate = (needle: string) =>
+    cal.keyDates.find((k) => k.label.toLowerCase().includes(needle));
+
+  const sessional1 = findKeyDate('first sessional');
+  const sessional2 = findKeyDate('second sessional');
+  const finals = findKeyDate('final examination');
+
+  for (const [kd, short] of [
+    [sessional1, 'S1'],
+    [sessional2, 'S2'],
+    [finals, 'FE'],
+  ] as [KeyDate | undefined, string][]) {
+    if (kd?.date) {
+      const d = new Date(kd.date + 'T00:00:00').getTime();
+      const pct = ((d - start) / total) * 100;
+      milestones.push({
+        label: kd.label,
+        shortLabel: short,
+        date: kd.date,
+        progressPercent: Math.max(0, Math.min(100, pct)),
+      });
+    }
+  }
+
+  return milestones;
+}
+
+/**
+ * Returns the next N upcoming key dates from today.
+ * Used in the expanded timeline dropdown.
+ */
+export function getUpcomingMilestones(
+  count: number = 5,
+  now: Date = new Date()
+): KeyDate[] {
+  const cal = getCalendar();
+  if (!cal?.keyDates) return [];
+  const today = new Date(now);
+  today.setHours(0, 0, 0, 0);
+  const todayISO = today.toISOString().slice(0, 10);
+  return cal.keyDates
+    .filter((k) => k.date >= todayISO)
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(0, count);
+}
+
+/**
+ * Formats a duration between two dates as "X months, Y weeks, Z days".
+ * Uses calendar-aware month approximation (30.44 days/month).
+ */
+export function formatMonthsWeeksDays(
+  startISO: string,
+  endISO: string,
+  now: Date = new Date()
+): { months: number; weeks: number; days: number; direction: 'elapsed' | 'remaining' } {
+  const today = new Date(now);
+  today.setHours(0, 0, 0, 0);
+  const start = new Date(startISO + 'T00:00:00');
+  const end = new Date(endISO + 'T00:00:00');
+
+  // Determine direction: if today is between start and end, "elapsed".
+  // If today is before start, count "until start". If after end, count "since end".
+  let from: Date, to: Date, direction: 'elapsed' | 'remaining';
+  if (today < start) {
+    from = today;
+    to = start;
+    direction = 'remaining';
+  } else if (today > end) {
+    from = end;
+    to = today;
+    direction = 'elapsed';
+  } else {
+    from = start;
+    to = today;
+    direction = 'elapsed';
+  }
+
+  const totalDays = Math.floor((to.getTime() - from.getTime()) / (1000 * 60 * 60 * 24));
+  const months = Math.floor(totalDays / 30.44);
+  const remainingDays = totalDays - Math.floor(months * 30.44);
+  const weeks = Math.floor(remainingDays / 7);
+  const days = remainingDays - weeks * 7;
+
+  return { months, weeks, days, direction };
+}
+
+/**
+ * Returns the number of days from today to the given ISO date.
+ * Positive = future, negative = past.
+ */
+export function daysUntil(isoDate: string, now: Date = new Date()): number {
+  const today = new Date(now);
+  today.setHours(0, 0, 0, 0);
+  const target = new Date(isoDate + 'T00:00:00');
+  return Math.round((target.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+}
+
 import type { ExamEntry } from './types';
