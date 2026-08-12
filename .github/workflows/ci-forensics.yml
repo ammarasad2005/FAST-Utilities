@@ -1,0 +1,109 @@
+name: CI Forensics
+
+on:
+  # Manual trigger only — this is a diagnostic tool, not a scheduled job
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # 1. Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Run the standalone API forensics script
+      - name: Run API forensics
+        env:
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+        run: |
+          echo "=== Running CI Forensics Diagnostic ==="
+          python3 scripts/ci_forensics.py 2>&1 | tee forensics.log
+          echo ""
+          echo "=== Forensics exit code: $? ==="
+
+      # 4. Run the actual scraper (with colors enabled — this branch has f8662c3)
+      #    Use continue-on-error so the workflow doesn't fail even if the
+      #    scraper crashes (which is exactly what we're investigating)
+      - name: Run scraper with colors enabled
+        continue-on-error: true
+        env:
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          echo "=== Running scraper (all_courses_schedule.py) ==="
+          python3 all_courses_schedule.py 2>&1 | tee scraper.log
+          SCRAPER_EXIT=$?
+          echo ""
+          echo "=== Scraper exit code: $SCRAPER_EXIT ==="
+          exit 0
+
+      # 5. Analyze the scraper's output
+      - name: Analyze scraper output
+        run: |
+          echo "=== timetable.json analysis ==="
+          if [ -f timetable.json ]; then
+            python3 -c "
+            import json, re
+            with open('timetable.json') as f:
+                d = json.load(f)
+            batches = [k for k in d.keys() if re.match(r'^20\d{2}\$', k)]
+            print(f'top-level keys: {list(d.keys())[:10]}')
+            print(f'year batches found: {batches}')
+            print(f'file size: {len(json.dumps(d))} bytes')
+            if batches:
+                print('RESULT: Scraper produced batch data (SUCCESS)')
+            else:
+                print('RESULT: Scraper produced EMPTY output (only __meta__)')
+            "
+          else
+            echo "timetable.json NOT FOUND — scraper crashed before writing"
+          fi
+          echo ""
+          echo "=== Last 30 lines of scraper log ==="
+          tail -30 scraper.log || echo "(no scraper.log)"
+
+      # 6. Upload all artifacts for offline analysis
+      - name: Upload forensics log
+        uses: actions/upload-artifact@v4
+        with:
+          name: forensics-log
+          path: forensics.log
+          retention-days: 30
+
+      - name: Upload scraper log
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-log
+          path: scraper.log
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Upload raw API response
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-api-response
+          path: raw_api_response.json
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Upload scraper timetable output
+        uses: actions/upload-artifact@v4
+        with:
+          name: timetable-output
+          path: timetable.json
+          retention-days: 30
+          if-no-files-found: ignore
