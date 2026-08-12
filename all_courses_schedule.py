@@ -954,6 +954,181 @@ print("Fetching and parsing unified timetable (2-pass constraint satisfaction)..
 day_sheets = resolve_timetable_sheets(sheet_id, _sheet_name_mappings)
 
 # ==============================================================================
+# GOOGLE SHEETS API v4 — COLOR-BASED BATCH/DEPT/CATEGORY DETECTION
+#
+# The timetable sheet uses background colors to encode (department, batch):
+#   - Each dept has a hue family (orange=CS, purple=DS, green=AI, blue=CY, red=SE)
+#   - Each batch has a different saturation/lightness within that hue
+#   - Repeat courses are solid yellow (#FFFF00)
+#
+# This provides DETERMINISTIC identification of dept, batch, and category
+# from cell color — no guessing, no constraint satisfaction needed.
+#
+# If the API call fails (key missing, network error, rate limit), the scraper
+# falls back to the existing heuristic pipeline (gviz CSV + text parsing +
+# constraint satisfaction). The API is an ASSISTANCE layer, not a replacement.
+# ==============================================================================
+
+# The API key. In CI, this comes from GOOGLE_SHEETS_API_KEY env var.
+# If not set, color-based detection is disabled and the scraper uses heuristics only.
+SHEETS_API_KEY = os.environ.get("GOOGLE_SHEETS_API_KEY", "")
+
+# Color map: (R, G, B) → (dept, batch)
+# Built dynamically from the timetable's header rows (rows 0-3).
+# The header cells "BS CS (2026)", "BS CS (2025)", etc. have colored backgrounds
+# that match the data cells below them.
+COLOR_MAP = {}  # {(r, g, b): {"dept": "CS", "batch": "2026"}}
+
+# Yellow threshold for repeat detection
+REPEAT_YELLOW_THRESHOLD = 0.95  # R > 0.95 AND G > 0.95 AND B < 0.10
+
+def build_color_map(sheet_id, day_sheet_name):
+    """
+    Fetch the header rows (rows 1-4) of a day sheet via the Sheets API
+    and build a color-to-(dept, batch) mapping from the header cell colors.
+
+    Returns True if the color map was built successfully, False if the API
+    call failed (scraper falls back to heuristics).
+    """
+    if not SHEETS_API_KEY:
+        return False
+
+    url = (
+        f"https://sheets.googleapis.com/v4/spreadsheets/{sheet_id}"
+        f"?key={SHEETS_API_KEY}"
+        f"&includeGridData=true"
+        f"&ranges={urllib.parse.quote(day_sheet_name)}!A1:AH4"
+        f"&fields=sheets(data(rowData(values(userEnteredValue,userEnteredFormat(backgroundColor)))))"
+    )
+    try:
+        resp = urllib.request.urlopen(url, timeout=15)
+        data = json.loads(resp.read().decode("utf-8"))
+        sheets = data.get("sheets", [])
+        if not sheets:
+            return False
+        grid_data = sheets[0].get("data", [])
+        if not grid_data:
+            return False
+        row_data = grid_data[0].get("rowData", [])
+
+        for r in range(min(4, len(row_data))):
+            cells = row_data[r].get("values", [])
+            for cell in cells:
+                value = cell.get("userEnteredValue", {}).get("stringValue", "")
+                fmt = cell.get("userEnteredFormat", {})
+                bg = fmt.get("backgroundColor", {})
+                if not value or not bg:
+                    continue
+
+                rv = bg.get("red", 0)
+                gv = bg.get("green", 0)
+                bv = bg.get("blue", 0)
+
+                # Skip white/default and gray (header row 4)
+                if rv > 0.98 and gv > 0.98 and bv > 0.98:
+                    continue
+                if abs(rv - 0.65) < 0.02 and abs(gv - 0.65) < 0.02 and abs(bv - 0.65) < 0.02:
+                    continue
+
+                # Parse "BS CS (2026)" → dept=CS, batch=2026
+                if "BS" in value and "(" in value:
+                    parts = value.split("(")
+                    batch_year = parts[1].strip(")").strip()
+                    dept_part = parts[0].strip()
+                    if "Repeat" in dept_part:
+                        continue  # Yellow repeat column — handled separately
+                    if "MS" in dept_part:
+                        continue  # MS columns — filtered by time
+                    dept = dept_part.replace("BS ", "").strip()
+                    if dept and batch_year:
+                        rgb_key = (round(rv, 2), round(gv, 2), round(bv, 2))
+                        COLOR_MAP[rgb_key] = {"dept": dept, "batch": batch_year}
+
+        return len(COLOR_MAP) > 0
+    except Exception as e:
+        print(f"⚠  Could not fetch color map from Sheets API: {e}")
+        return False
+
+def identify_from_color(rv, gv, bv):
+    """
+    Given a cell's background RGB (0-1 floats), identify (dept, batch, is_repeat).
+    Returns (dept, batch, is_repeat) or None if color doesn't match any known mapping.
+
+    Uses approximate matching (±0.03 tolerance) to handle minor color variations.
+    """
+    # Check for repeat yellow
+    if rv > REPEAT_YELLOW_THRESHOLD and gv > REPEAT_YELLOW_THRESHOLD and bv < 0.10:
+        return (None, None, True)  # Repeat — batch determined by cell text
+
+    # Match against color map with tolerance
+    for (cr, cg, cb), info in COLOR_MAP.items():
+        if abs(cr - rv) < 0.03 and abs(cg - gv) < 0.03 and abs(cb - bv) < 0.03:
+            return (info["dept"], info["batch"], False)
+
+    return None  # No match — fall back to text-based detection
+
+def fetch_cell_colors(sheet_id, day_sheet_name):
+    """
+    Fetch background colors for ALL data cells in a day sheet via the Sheets API.
+    Returns a dict: {(row_idx, col_idx): (r, g, b)} or None if API fails.
+
+    The dict is 0-indexed: row 0 = first row of the sheet (header row 0).
+    """
+    if not SHEETS_API_KEY:
+        return None
+
+    # Fetch rows 1-80, columns A-AH (covers all timetable data)
+    url = (
+        f"https://sheets.googleapis.com/v4/spreadsheets/{sheet_id}"
+        f"?key={SHEETS_API_KEY}"
+        f"&includeGridData=true"
+        f"&ranges={urllib.parse.quote(day_sheet_name)}!A1:AH80"
+        f"&fields=sheets(data(rowData(values(userEnteredValue,userEnteredFormat(backgroundColor)))))"
+    )
+    try:
+        resp = urllib.request.urlopen(url, timeout=30)
+        data = json.loads(resp.read().decode("utf-8"))
+        sheets = data.get("sheets", [])
+        if not sheets:
+            return None
+        grid_data = sheets[0].get("data", [])
+        if not grid_data:
+            return None
+        row_data = grid_data[0].get("rowData", [])
+
+        colors = {}
+        for r, row in enumerate(row_data):
+            cells = row.get("values", [])
+            for c, cell in enumerate(cells):
+                value = cell.get("userEnteredValue", {})
+                fmt = cell.get("userEnteredFormat", {})
+                bg = fmt.get("backgroundColor", {})
+                if bg:
+                    rv = bg.get("red", 0)
+                    gv = bg.get("green", 0)
+                    bv = bg.get("blue", 0)
+                    # Skip white/default
+                    if rv > 0.98 and gv > 0.98 and bv > 0.98:
+                        continue
+                    colors[(r, c)] = (rv, gv, bv)
+        return colors
+    except Exception as e:
+        print(f"⚠  Could not fetch cell colors for {day_sheet_name}: {e}")
+        return None
+
+# Build the color map from the first day sheet (Monday)
+# All day sheets use the same color scheme
+if day_sheets:
+    _first_sheet_name = day_sheets[0]["sheet_name"]
+    _color_map_ok = build_color_map(sheet_id, _first_sheet_name)
+    if _color_map_ok:
+        print(f"✅ Built color map from Sheets API: {len(COLOR_MAP)} (dept, batch) color entries")
+    else:
+        print("ℹ  Color map not available — using text-based heuristic detection (fallback mode)")
+else:
+    print("⚠  No day sheets found — cannot build color map")
+
+# ==============================================================================
 # ROBUST CELL PARSER — validates against known vocabularies instead of
 # permissive regexes + fix-up loops.
 #
@@ -1064,6 +1239,11 @@ for day_info in day_sheets:
         "isMakeup": day_info.get("isMakeup", False)
     })
 
+    # Fetch cell colors for this day sheet (if API is available)
+    cell_colors = fetch_cell_colors(sheet_id, sheet_name)
+    if cell_colors:
+        print(f"  📊 Color data loaded for {sheet_name}: {len(cell_colors)} colored cells")
+
     req_url = (
         f"https://docs.google.com/spreadsheets/d/{sheet_id}"
         f"/gviz/tq?tqx=out:json&sheet={urllib.parse.quote(sheet_name, safe='')}"
@@ -1082,7 +1262,7 @@ for day_info in day_sheets:
         current_room    = ""
         is_lab_section  = False
 
-        for r in rows:
+        for row_idx, r in enumerate(rows):
             cells = r.get("c", [])
             if not cells:
                 continue
@@ -1195,6 +1375,34 @@ for day_info in day_sheets:
                             dept = possible[0][1]
                         else:
                             dept = "CS"  # Fallback
+
+                # ── Sheets API color-based override ─────────────────────
+                # If cell color data is available, use it to DETERMINISTICALLY
+                # identify dept, batch, and category. This overrides the
+                # text-based parsing for batch and category (which are
+                # heuristic), while keeping the text-based course_name and
+                # section (which are reliable from cell text).
+                if cell_colors and COLOR_MAP:
+                    color_key = (row_idx, i)
+                    if color_key in cell_colors:
+                        rv, gv, bv = cell_colors[color_key]
+                        color_result = identify_from_color(rv, gv, bv)
+                        if color_result:
+                            color_dept, color_batch, is_repeat = color_result
+                            # Override batch and category from color
+                            if is_repeat:
+                                category = "repeat"
+                                # Batch still from text suffix if available,
+                                # otherwise from color (yellow doesn't encode batch)
+                                if not batch:
+                                    batch = None  # Will be resolved via constraint satisfaction
+                            else:
+                                # Color gives us dept AND batch deterministically
+                                category = "regular"
+                                if color_batch:
+                                    batch = color_batch
+                                if color_dept:
+                                    dept = color_dept
 
                 if not category:
                     continue
