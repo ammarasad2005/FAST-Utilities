@@ -1069,6 +1069,66 @@ def fetch_cell_colors(sheet_id, day_sheet_name):
         print(f"  Could not fetch cell colors for {day_sheet_name}: {e}")
         return None
 
+def fetch_all_cell_colors(sheet_id, day_sheet_names):
+    """
+    Fetch background colors for ALL day sheets in a SINGLE API call.
+    Returns a dict: {sheet_name: {(row_idx, col_idx): (r, g, b)}} or {} if API fails.
+
+    Uses the Sheets API's multi-range support (multiple ranges= params).
+    This makes exactly 1 API call instead of 6, avoiding Google's rate-limiting
+    on CI IPs that caused empty output in PR #25 and PR #28.
+    """
+    api_key = os.environ.get("GOOGLE_SHEETS_API_KEY", "")
+    if not api_key:
+        return {}
+
+    # Build URL with multiple ranges= query params (one per sheet)
+    base_url = f"https://sheets.googleapis.com/v4/spreadsheets/{sheet_id}"
+    params = [
+        f"key={api_key}",
+        "includeGridData=true",
+        "fields=sheets(data(rowData(values(userEnteredValue,userEnteredFormat(backgroundColor)))))",
+    ]
+    for name in day_sheet_names:
+        params.append(f"ranges={urllib.parse.quote(name + '!A1:AH80', safe='!')}")
+    url = base_url + "?" + "&".join(params)
+
+    try:
+        resp = urllib.request.urlopen(url, timeout=60)
+        data = json.loads(resp.read().decode("utf-8"))
+        sheets = data.get("sheets", [])
+        if not sheets:
+            return {}
+
+        result = {}
+        for i, sheet in enumerate(sheets):
+            if i >= len(day_sheet_names):
+                break
+            sheet_name = day_sheet_names[i]
+            grid_data = sheet.get("data", [])
+            if not grid_data:
+                result[sheet_name] = {}
+                continue
+            row_data = grid_data[0].get("rowData", [])
+            colors = {}
+            for r, row in enumerate(row_data):
+                cells = row.get("values", [])
+                for c, cell in enumerate(cells):
+                    fmt = cell.get("userEnteredFormat", {})
+                    bg = fmt.get("backgroundColor", {})
+                    if bg:
+                        rv = bg.get("red", 0)
+                        gv = bg.get("green", 0)
+                        bv = bg.get("blue", 0)
+                        if rv > 0.98 and gv > 0.98 and bv > 0.98:
+                            continue
+                        colors[(r, c)] = (rv, gv, bv)
+            result[sheet_name] = colors
+        return result
+    except Exception as e:
+        print(f"  Could not fetch cell colors via batch API: {e}")
+        return {}
+
 # ==============================================================================
 # ROBUST CELL PARSER — validates against known vocabularies instead of
 # permissive regexes + fix-up loops.
@@ -1161,6 +1221,20 @@ ambiguous_pool      = []   # list of records still needing deduction
 timetable_meta      = {"days": []}
 
 # ==============================================================================
+# Fetch ALL cell colors in a SINGLE API call (before the loop).
+# This avoids Google's rate-limiting on CI IPs — 1 API call instead of 6.
+# If the API fails, all_cell_colors is empty and the scraper falls back
+# to text-based detection (the existing heuristic pipeline).
+# ==============================================================================
+_all_sheet_names = [ds["sheet_name"] for ds in day_sheets]
+all_cell_colors = fetch_all_cell_colors(sheet_id, _all_sheet_names)
+if all_cell_colors:
+    total = sum(len(v) for v in all_cell_colors.values())
+    print(f"Color data loaded: {len(all_cell_colors)} sheets, {total} colored cells (1 API call)")
+else:
+    print("Color data unavailable — using text-based detection (fallback mode)")
+
+# ==============================================================================
 # PASS 1 — ANCHOR PASS
 # Parse every sheet cell across all five day-tabs.
 #   • Repeat courses   → batch is encoded in the cell text → anchor immediately.
@@ -1180,23 +1254,8 @@ for day_info in day_sheets:
         "isMakeup": day_info.get("isMakeup", False)
     })
 
-    # Fetch cell colors for this day sheet via Sheets API.
-    # Rate-limit protection: 2-second delay before each API call to avoid
-    # triggering Google's throttling on CI IPs (which caused empty output
-    # in PR #25). If the API fails, the scraper falls back to text-based
-    # detection — the existing heuristic pipeline handles it correctly.
-    cell_colors = None
-    try:
-        import time as _time
-        _time.sleep(2)  # Rate-limit protection
-        cell_colors = fetch_cell_colors(sheet_id, sheet_name)
-        if cell_colors:
-            print(f"  Color data loaded for {sheet_name}: {len(cell_colors)} colored cells")
-        else:
-            print(f"  Color data unavailable for {sheet_name} — using text-based detection")
-    except Exception as e:
-        print(f"  Color fetch failed for {sheet_name}: {e} — using text-based detection")
-        cell_colors = None
+    # Get cell colors for this sheet from the batch fetch (no additional API call)
+    cell_colors = all_cell_colors.get(sheet_name, {})
 
     req_url = (
         f"https://docs.google.com/spreadsheets/d/{sheet_id}"
