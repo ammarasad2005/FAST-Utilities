@@ -885,22 +885,39 @@ def is_overlap(t1_str, t2_str):
 
 def get_slot_quota(t_str):
     """
-    80 min -> 2 slots
-    105 min -> 1 slot
-    165 min -> 1 slot
+    80 min -> 2 slots (standard lecture, meets 2x/week)
+    105 min -> 1 slot (long lecture or lab)
+    165 min -> 1 slot (full lab)
+    Other durations -> 1 slot (conservative default for explicit-time
+    override cells like Seerah 55min, UHQ 110min, Ideology of Pak 105min)
+
+    Previously, unrecognized durations returned quota=999 (unlimited),
+    which caused the constraint satisfaction to assign ALL cells of a
+    shared-section course to the same batch — leaving the other batch
+    with nothing. This happened when two batches both offer a course to
+    the same section letter (e.g., Seerah for both 2025/CS/B and
+    2026/CS/B). With unlimited quota, both cells went to 2026, and 2025
+    got zero.
+
+    Default quota=1 ensures each (batch, dept, section, course) gets at
+    most 1 slot from the constraint satisfaction's best-effort assignment.
+    If a course genuinely needs 2+ slots, its duration will match 80 min
+    (quota=2). Explicit-time override cells (Seerah 55min, etc.) are
+    typically 1-ch courses that meet 1x/week → quota=1 is correct.
+
     Returns (duration_mins, quota)
     """
     if t_str == "Unknown Time":
-        return 0, 999
+        return 0, 999  # Unknown time → can't determine duration → unlimited
     try:
         s, e = parse_time_to_minutes(t_str)
         duration = e - s
         if abs(duration - 80) <= 5: return duration, 2
         if abs(duration - 105) <= 5: return duration, 1
         if abs(duration - 165) <= 5: return duration, 1
-        return duration, 999 # Default for unknown durations
+        return duration, 1  # Default: 1 slot for unrecognized durations
     except:
-        return 0, 999
+        return 0, 999  # Parse error → can't determine → unlimited
 
 def is_batch_busy(batch, dept, section, day, check_time, busy_calendar):
     key = f"{batch}-{dept}-{section}-{day}"
