@@ -33,7 +33,7 @@ export function TimetableCard({
   const sectionMenuRef = useRef<HTMLDivElement | null>(null);
 
   const isLab = entry.type === 'lab';
-  const canChangeSection = !!onChangeSection && availableSections.length > 0;
+  const canChangeSection = !!onChangeSection && availableSections.length > 1;
 
   useEffect(() => {
     if (!isSectionMenuOpen) return;
@@ -51,7 +51,7 @@ export function TimetableCard({
 
   return (
     <div
-      className={`timetable-card group relative overflow-hidden w-full text-left border border-[var(--color-border)] rounded-lg p-4 flex flex-col gap-2 active:scale-[0.98] transition-all duration-100 focus-visible:outline-none focus-visible:ring-2 ${entry.cancelled ? 'opacity-65' : ''}`}
+      className={`timetable-card group relative overflow-visible w-full text-left border border-[var(--color-border)] rounded-lg p-4 flex flex-col gap-2 active:scale-[0.98] transition-all duration-100 focus-visible:outline-none focus-visible:ring-2 ${entry.cancelled ? 'opacity-65' : ''}`}
       style={{
         background: isRepeat
           ? 'linear-gradient(135deg, var(--color-bg-raised) 50%, color-mix(in srgb, var(--color-bg-raised) 80%, #f59e0b 20%))'
@@ -163,7 +163,7 @@ export function TimetableCard({
             )}
 
             {isSectionMenuOpen && canChangeSection && (
-              <div className="absolute left-0 bottom-9 z-20 min-w-[10rem] rounded-md border border-[var(--color-border-strong)] bg-[var(--color-bg-raised)] shadow-lg p-1">
+              <div className="absolute left-0 bottom-9 z-30 min-w-[10rem] max-h-[280px] overflow-y-auto rounded-md border border-[var(--color-border-strong)] bg-[var(--color-bg-raised)] shadow-lg p-1">
                 {availableSections.map(sectionOption => {
                   const isCurrent = sectionOption === entry.section;
                   return (

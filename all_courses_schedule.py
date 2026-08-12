@@ -1389,6 +1389,18 @@ for day_info in day_sheets:
             time_map = local_time_map
             continue
 
+        # Skip title/header rows that appear BEFORE the first "Room"/"Lab"
+        # header. These rows contain day names ("Monday"), batch labels
+        # ("BS CS (2026)"), and program labels ("MS (CS)") in col 0 and
+        # other columns. Without this guard, the scraper treats the day name
+        # as a room name and parses program-label cells like "MS (CS)" as
+        # course entries — producing phantom courses with room="Monday" and
+        # time="Unknown Time". master_time_map is only populated after the
+        # first Room/Lab header, so it serves as a reliable "have we started
+        # data rows yet?" flag.
+        if not master_time_map:
+            continue
+
         if first_val:
             current_room = first_val
         if not current_room:
