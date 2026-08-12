@@ -1102,7 +1102,7 @@ function CustomTimetableInner() {
 const GRID_START = 8 * 60; // 08:00
 const GRID_END   = 18.5 * 60; // 18:30
 const PX_PER_MIN = 1.35;
-const TIME_COL_WIDTH = 56;
+const TIME_COL_WIDTH = 64;
 
 function GridViewCustom({
   groupedDays,
@@ -1130,25 +1130,27 @@ function GridViewCustom({
   }
 
   return (
-    <div className="mt-8 overflow-x-auto select-none rounded-xl border border-[var(--color-border)] shadow-sm bg-[var(--color-bg-raised)]">
+    <div className="mt-8 overflow-x-auto select-none rounded-xl border border-[var(--color-border-strong)] shadow-sm bg-[var(--color-bg-raised)]">
       <div className="w-full min-w-[980px] relative flex flex-col">
         <div
-          className="grid sticky top-0 z-20 bg-[var(--color-bg-raised)]/95 backdrop-blur-sm border-b border-[var(--color-border)]"
+          className="grid sticky top-0 z-20 bg-[var(--color-bg-raised)]/95 backdrop-blur-sm border-b-2 border-[var(--color-border-strong)]"
           style={{ gridTemplateColumns }}
         >
-          <div className="h-10 border-r border-[var(--color-border)] sticky left-0 z-30 bg-[var(--color-bg-raised)]" />
+          <div className="h-12 border-r border-[var(--color-border-strong)] sticky left-0 z-30 bg-[var(--color-bg-raised)]" />
           {groupedDays.map(d => {
             const shortDay = d.dayName.slice(0, 3).toUpperCase();
             const label = d.isMakeup ? `${shortDay} (MKP)` : shortDay;
             return (
-              <div 
-                key={d.day} 
-                className={`text-center font-mono text-[10px] uppercase tracking-widest flex flex-col items-center justify-center border-r border-[var(--color-border)] last:border-r-0 py-1 ${
-                  d.isToday ? 'bg-[var(--color-text-primary)]/5 font-bold text-[var(--color-text-primary)]' : 'text-[var(--color-text-tertiary)]'
+              <div
+                key={d.day}
+                className={`text-center font-mono text-[11px] uppercase tracking-widest flex flex-col items-center justify-center border-r border-[var(--color-border)] last:border-r-0 py-1.5 ${
+                  d.isToday
+                    ? 'bg-[var(--color-text-primary)]/[0.07] font-bold text-[var(--color-text-primary)] border-b-2 border-[var(--color-text-primary)]'
+                    : 'text-[var(--color-text-secondary)]'
                 }`}
               >
                 <span>{label}</span>
-                {d.dateStr && <span className="text-[8px] opacity-80 mt-0.5">{d.dateStr}</span>}
+                {d.dateStr && <span className={`text-[9px] mt-0.5 ${d.isToday ? 'opacity-90' : 'opacity-70'}`}>{d.dateStr}</span>}
               </div>
             );
           })}
@@ -1165,8 +1167,8 @@ function GridViewCustom({
             {hours.map(m => {
               const top = (m - GRID_START) * PX_PER_MIN;
               return (
-                <div key={m} className="absolute left-0 right-0 border-t border-[var(--color-border)] opacity-30 flex items-start" style={{ top: `${top}px` }}>
-                  <span className="sticky left-1 z-30 font-mono text-[8px] md:text-[9px] -mt-2 text-[var(--color-text-tertiary)] bg-[var(--color-bg-raised)] px-1">
+                <div key={m} className="absolute left-0 right-0 border-t border-[var(--color-border-strong)] opacity-50 flex items-start" style={{ top: `${top}px` }}>
+                  <span className="sticky left-1 z-30 font-mono text-[10px] md:text-[11px] -mt-2 text-[var(--color-text-secondary)] bg-[var(--color-bg-raised)] px-1.5 font-medium">
                     {Math.floor(m / 60)}:00
                   </span>
                 </div>
@@ -1174,9 +1176,9 @@ function GridViewCustom({
             })}
 
             <div className="absolute inset-0 grid" style={{ gridTemplateColumns }}>
-              <div className="border-r border-[var(--color-border)] bg-[var(--color-bg-subtle)]/30 sticky left-0 z-20" />
+              <div className="border-r border-[var(--color-border-strong)] bg-[var(--color-bg-subtle)]/40 sticky left-0 z-20" />
               {groupedDays.map(d => (
-                <div key={d.day} className={`border-r border-[var(--color-border)] last:border-r-0 ${d.isToday ? 'bg-[var(--color-text-primary)]/[0.02]' : ''}`} />
+                <div key={d.day} className={`border-r border-[var(--color-border)] last:border-r-0 ${d.isToday ? 'bg-[var(--color-text-primary)]/[0.04]' : ''}`} />
               ))}
             </div>
           </div>
@@ -1192,24 +1194,33 @@ function GridViewCustom({
                     const key = `${e.day}|${e.time}|${e.courseName}|${e.section}`;
                     const isConflict = conflicts.has(key);
                     const isRepeat = e.category === 'repeat';
-                    const accentColor = `var(--accent-${e.department.toLowerCase()})`;
-                    const accentBg = `var(--accent-${e.department.toLowerCase()}-bg)`;
+                    const isLab = e.type === 'lab';
+                    const entryDeptKey = e.department.toLowerCase();
+                    const accentColor = `var(--accent-${entryDeptKey})`;
+                    const accentBg = `var(--accent-${entryDeptKey}-bg)`;
+                    const accentFg = `var(--accent-${entryDeptKey}-fg, var(--accent-${entryDeptKey}))`;
 
                     return (
                       <button
                         key={idx}
                         onClick={() => onSelect(e)}
-                        className="absolute left-0.5 right-0.5 md:left-1 md:right-1 rounded-md text-[9px] md:text-[10px] transition-all hover:ring-1 hover:ring-[var(--color-text-tertiary)] active:scale-[0.98] focus-visible:outline-none overflow-hidden text-left flex items-center justify-center"
+                        className="absolute left-0.5 right-0.5 md:left-1 md:right-1 rounded-md text-[10px] md:text-[11px] transition-all hover:ring-2 hover:ring-[var(--color-text-secondary)] active:scale-[0.98] focus-visible:outline-none overflow-hidden text-left flex items-center justify-center"
                         style={{
                           top: `${top}px`,
                           height: `${height}px`,
                           background: isConflict
-                            ? (isRepeat ? 'repeating-linear-gradient(45deg, #fef2f2, #fef2f2 10px, #fff1f2 10px, #fff1f2 20px)' : '#fef2f2')
-                            : (isRepeat
-                              ? 'linear-gradient(135deg, var(--color-bg-raised) 50%, color-mix(in srgb, var(--color-bg-raised) 80%, #f59e0b 20%))'
+                            ? (isRepeat
+                              ? 'repeating-linear-gradient(45deg, color-mix(in srgb, var(--color-bg-raised) 85%, #dc2626 15%), color-mix(in srgb, var(--color-bg-raised) 85%, #dc2626 15%) 8px, color-mix(in srgb, var(--color-bg-raised) 75%, #f87171 25%) 8px, color-mix(in srgb, var(--color-bg-raised) 75%, #f87171 25%) 16px)'
+                              : 'color-mix(in srgb, var(--color-bg-raised) 82%, #dc2626 18%)')
+                            : (isLab
+                              ? 'color-mix(in srgb, var(--color-bg-raised) 60%, var(--accent-ds-bg) 40%)'
                               : accentBg),
-                          color: isConflict ? '#dc2626' : accentColor,
-                          borderLeft: isConflict ? '2px solid #f87171' : (isRepeat ? '2px solid #f59e0b' : `2px solid ${accentColor}`),
+                          color: isConflict ? '#ef4444' : accentFg,
+                          borderLeft: isConflict
+                            ? '3px solid #ef4444'
+                            : (isLab
+                              ? `3px dashed ${accentColor}`
+                              : `3px solid ${accentColor}`),
                           boxShadow: 'var(--shadow-card)',
                           zIndex: isConflict ? 10 : 1,
                         }}
@@ -1217,9 +1228,9 @@ function GridViewCustom({
                         <div className="flex flex-col h-full w-full justify-between gap-1 p-1 md:p-2">
                           <div className="min-w-0">
                             <p className="font-bold leading-tight line-clamp-2 uppercase break-words">{e.courseName}</p>
-                            <p className="mt-0.5 opacity-80 font-mono text-[8.5px] whitespace-nowrap overflow-hidden text-ellipsis">{formatTimeRange(e.time)}</p>
+                            <p className="mt-0.5 font-mono text-[9px] md:text-[10px] whitespace-nowrap overflow-hidden text-ellipsis opacity-90">{formatTimeRange(e.time)}</p>
                           </div>
-                          <p className="font-medium opacity-80 self-end text-[8.5px] truncate max-w-full">{e.room}</p>
+                          <p className="font-medium self-end text-[9px] md:text-[10px] truncate max-w-full opacity-85">{e.room}</p>
                         </div>
                       </button>
                     );

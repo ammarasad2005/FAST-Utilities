@@ -133,6 +133,21 @@
   --accent-ft-bg: #2d0f3d;
   --accent-ee-bg: #3d0f1f;
   --accent-ce-bg: #0f2d4a;
+
+  /* Lighter accent foregrounds for dark mode — the base --accent-* values
+     are too dark (e.g. #1D4ED8) to be readable as text on the dark
+     --accent-*-bg values. These fg variants are brightened for contrast. */
+  --accent-cs-fg: #60A5FA;
+  --accent-ai-fg: #A78BFA;
+  --accent-ds-fg: #2DD4BF;
+  --accent-cy-fg: #FBBF24;
+  --accent-se-fg: #F472B6;
+  --accent-bba-fg:#60A5FA;
+  --accent-af-fg: #34D399;
+  --accent-ba-fg: #FBBF24;
+  --accent-ft-fg: #C084FC;
+  --accent-ee-fg: #FB7185;
+  --accent-ce-fg: #38BDF8;
   --color-success: #4ade80;
   --color-success-bg: #064e3b;
 
@@ -187,6 +202,19 @@
     --accent-ft-bg: #2d0f3d;
     --accent-ee-bg: #3d0f1f;
     --accent-ce-bg: #0f2d4a;
+
+    /* Lighter accent foregrounds for dark mode (prefers-color-scheme) */
+    --accent-cs-fg: #60A5FA;
+    --accent-ai-fg: #A78BFA;
+    --accent-ds-fg: #2DD4BF;
+    --accent-cy-fg: #FBBF24;
+    --accent-se-fg: #F472B6;
+    --accent-bba-fg:#60A5FA;
+    --accent-af-fg: #34D399;
+    --accent-ba-fg: #FBBF24;
+    --accent-ft-fg: #C084FC;
+    --accent-ee-fg: #FB7185;
+    --accent-ce-fg: #38BDF8;
   --color-success: #4ade80;
   --color-success-bg: #064e3b;
 
