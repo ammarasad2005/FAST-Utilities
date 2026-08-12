@@ -971,7 +971,13 @@ day_sheets = resolve_timetable_sheets(sheet_id, _sheet_name_mappings)
 
 # The API key. In CI, this comes from GOOGLE_SHEETS_API_KEY env var.
 # If not set, color-based detection is disabled and the scraper uses heuristics only.
-SHEETS_API_KEY = os.environ.get("GOOGLE_SHEETS_API_KEY", "")
+# TEMPORARILY DISABLED: The color API integration is causing empty output in CI.
+# The API calls may be interfering with the gviz fetch or timing out.
+# Until the root cause is identified, color detection is disabled and the
+# existing heuristic pipeline (which was working before PR #25) runs.
+# To re-enable: set USE_COLOR_API = True and ensure GOOGLE_SHEETS_API_KEY is valid.
+USE_COLOR_API = False
+SHEETS_API_KEY = os.environ.get("GOOGLE_SHEETS_API_KEY", "") if USE_COLOR_API else ""
 
 # Color map: (R, G, B) → (dept, batch)
 # Built dynamically from the timetable's header rows (rows 0-3).
