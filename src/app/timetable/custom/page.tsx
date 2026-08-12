@@ -8,6 +8,7 @@ import { TimetableExportButton } from '@/components/TimetableExportButton';
 import { EmptyState } from '@/components/EmptyState';
 import { Header } from '@/components/Header';
 import { MakeupDaysSidebar } from '@/components/MakeupDaysSidebar';
+import { clampMondayToSemesterStart, isBeforeSemesterStart } from '@/lib/dates';
 
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { ShieldAlert, AlertCircle, Info } from 'lucide-react';
@@ -113,35 +114,12 @@ function CustomTimetableInner() {
     const daysToMonday = currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1;
 
     // ── Semester start date constraint ──
-    // The earliest date any day can have is the semester's "First Day of
-    // Classes" (from semester_calendar.json). If today is before the semester
-    // start (e.g., during orientation week), we clamp the reference Monday to
-    // the semester start week's Monday so days don't show pre-semester dates.
-    let semesterStartISO: string | null = null;
-    try {
-      const cal = require('../../../public/data/semester_calendar.json');
-      const firstDay = cal?.keyDates?.find((k: { label: string }) =>
-        k.label.toLowerCase().includes('first day of classes')
-      );
-      if (firstDay?.date) {
-        semesterStartISO = firstDay.date;
-      }
-    } catch {}
+    const beforeSemesterStart = isBeforeSemesterStart();
 
     let monday = new Date(today);
     monday.setDate(today.getDate() - daysToMonday);
     monday.setHours(0, 0, 0, 0);
-
-    if (semesterStartISO) {
-      const semesterStart = new Date(semesterStartISO + 'T00:00:00');
-      if (!isNaN(semesterStart.getTime()) && monday < semesterStart) {
-        const ssDayOfWeek = semesterStart.getDay();
-        const ssDaysToMonday = ssDayOfWeek === 0 ? 6 : ssDayOfWeek - 1;
-        monday = new Date(semesterStart);
-        monday.setDate(semesterStart.getDate() - ssDaysToMonday);
-        monday.setHours(0, 0, 0, 0);
-      }
-    }
+    monday = clampMondayToSemesterStart(monday);
 
     const sunday = new Date(monday);
     sunday.setDate(monday.getDate() + 6);
@@ -297,8 +275,8 @@ function CustomTimetableInner() {
 
     // Sort resolved sheets: Today first, then other days by isoDate / DAYS_ORDER index
     resolvedSheets.sort((a, b) => {
-      const isTodayA = a.isoDate === todayISO || a.day.toLowerCase() === todayDayName.toLowerCase();
-      const isTodayB = b.isoDate === todayISO || b.day.toLowerCase() === todayDayName.toLowerCase();
+      const isTodayA = !beforeSemesterStart && (a.isoDate ? (a.isoDate === todayISO) : (a.day.toLowerCase() === todayDayName.toLowerCase()));
+      const isTodayB = !beforeSemesterStart && (b.isoDate ? (b.isoDate === todayISO) : (b.day.toLowerCase() === todayDayName.toLowerCase()));
 
       if (isTodayA) return -1;
       if (isTodayB) return 1;
@@ -318,7 +296,8 @@ function CustomTimetableInner() {
       resolvedSheets,
       sidebarMakeupDays,
       todayISO,
-      todayDayName
+      todayDayName,
+      beforeSemesterStart
     };
   }, [rawDaysList]);
 
@@ -559,7 +538,7 @@ function CustomTimetableInner() {
   const grouped = useMemo(() => groupByDayTimetable(filtered), [filtered]);
   const conflicts = useMemo(() => detectConflicts(filtered), [filtered]);
   const reorderedGrouped = useMemo(() => {
-    const { resolvedSheets, todayISO, todayDayName } = resolvedData;
+    const { resolvedSheets, todayISO, todayDayName, beforeSemesterStart } = resolvedData;
 
     const groupedMap = new Map(grouped.map(g => [g.day, g.entries]));
     const result: {
@@ -572,7 +551,7 @@ function CustomTimetableInner() {
     }[] = [];
 
     resolvedSheets.forEach((s) => {
-      const isToday = s.isoDate === todayISO || s.day.toLowerCase() === todayDayName.toLowerCase();
+      const isToday = !beforeSemesterStart && (s.isoDate ? (s.isoDate === todayISO) : (s.day.toLowerCase() === todayDayName.toLowerCase()));
       const entries = groupedMap.get(s.sheetName) || [];
 
       if (isToday || entries.length > 0) {

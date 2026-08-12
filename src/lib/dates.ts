@@ -115,4 +115,64 @@ export function sortByChronological(a: ExamEntry, b: ExamEntry): number {
   return parseTime(a.time) - parseTime(b.time);
 }
 
+// ── Semester start date helpers ─────────────────────────────────────────────
+// eslint-disable-next-line
+let _semesterCalendarCache: any = null;
+
+/**
+ * Returns the semester's "First Day of Classes" as an ISO date string (YYYY-MM-DD),
+ * or null if not found / not parseable. Caches the calendar JSON on first load.
+ */
+export function getSemesterStartDate(): string | null {
+  try {
+    if (!_semesterCalendarCache) {
+      // eslint-disable-next-line
+      _semesterCalendarCache = require('../../public/data/semester_calendar.json');
+    }
+    const firstDay = _semesterCalendarCache?.keyDates?.find(
+      (k: { label: string }) => k.label.toLowerCase().includes('first day of classes')
+    );
+    return firstDay?.date ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Returns true if today's date is before the semester start date.
+ * Used to suppress "today" highlighting and ongoing-class detection
+ * during pre-semester periods (orientation week, etc.).
+ */
+export function isBeforeSemesterStart(): boolean {
+  const startISO = getSemesterStartDate();
+  if (!startISO) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const start = new Date(startISO + 'T00:00:00');
+  if (isNaN(start.getTime())) return false;
+  return today < start;
+}
+
+/**
+ * Clamps a Monday reference date to the semester start week if the Monday
+ * falls before the semester's "First Day of Classes". This ensures day
+ * labels never show pre-semester dates.
+ *
+ * Returns the (possibly clamped) Monday Date.
+ */
+export function clampMondayToSemesterStart(monday: Date): Date {
+  const startISO = getSemesterStartDate();
+  if (!startISO) return monday;
+  const start = new Date(startISO + 'T00:00:00');
+  if (isNaN(start.getTime())) return monday;
+  if (monday >= start) return monday;
+  // Clamp to the Monday of the semester start week
+  const ssDayOfWeek = start.getDay();
+  const ssDaysToMonday = ssDayOfWeek === 0 ? 6 : ssDayOfWeek - 1;
+  const clamped = new Date(start);
+  clamped.setDate(start.getDate() - ssDaysToMonday);
+  clamped.setHours(0, 0, 0, 0);
+  return clamped;
+}
+
 import type { ExamEntry } from './types';

@@ -11,6 +11,7 @@ import {
   type TimetableResultPreference,
   type UserConfig,
 } from '@/lib/timetable-live';
+import { clampMondayToSemesterStart, isBeforeSemesterStart } from '@/lib/dates';
 
 // eslint-disable-next-line
 const timetableRaw: RawTimetableJSON = require('../../public/data/timetable.json');
@@ -107,8 +108,9 @@ export function DesktopTicker({
     const monday = new Date(today);
     monday.setDate(today.getDate() - daysToMonday);
     monday.setHours(0, 0, 0, 0);
+    const clampedMonday = clampMondayToSemesterStart(monday);
 
-    const sunday = new Date(monday);
+    const sunday = new Date(clampedMonday);
     sunday.setDate(sunday.getDate() + 6);
     sunday.setHours(23, 59, 59, 999);
 
@@ -219,8 +221,8 @@ export function DesktopTicker({
     // Process undated sheets
     undatedSheets.forEach(s => {
       const dayIndex = DAYS_ORDER.indexOf(s.day);
-      const targetDate = new Date(monday);
-      targetDate.setDate(monday.getDate() + dayIndex);
+      const targetDate = new Date(clampedMonday);
+      targetDate.setDate(clampedMonday.getDate() + dayIndex);
       targetDate.setHours(0, 0, 0, 0);
 
       const hasCurrentWeekDated = currentWeekDatedDays.has(s.day.toLowerCase());
@@ -358,28 +360,33 @@ export function DesktopTicker({
   const status = useMemo((): TickerStatus | null => {
     if (relevantEntries.length === 0) return null;
 
-    // A class is ongoing if today's date matches the sheet's isoDate, or falls back to canonical weekday
-    const ongoing = relevantEntries.filter(e => {
-      if (e.cancelled) return false;
-      const meta = sheetToMeta[e.day];
-      const canonicalDay = meta?.day ?? e.day;
-      const isoDate = meta?.isoDate ?? '';
+    // Before semester start: no class can be "ongoing" — today is in pre-semester
+    // period, so all classes are future events relative to the semester start week.
+    const beforeStart = isBeforeSemesterStart();
+    if (!beforeStart) {
+      // A class is ongoing if today's date matches the sheet's isoDate, or falls back to canonical weekday
+      const ongoing = relevantEntries.filter(e => {
+        if (e.cancelled) return false;
+        const meta = sheetToMeta[e.day];
+        const canonicalDay = meta?.day ?? e.day;
+        const isoDate = meta?.isoDate ?? '';
 
-      const isToday = isoDate ? (isoDate === todayISO) : (canonicalDay === currentDay);
-      if (!isToday) return false;
+        const isToday = isoDate ? (isoDate === todayISO) : (canonicalDay === currentDay);
+        if (!isToday) return false;
 
-      const { start, end } = parseTimeRange(e.time);
-      return currentMins >= start && currentMins < end;
-    });
+        const { start, end } = parseTimeRange(e.time);
+        return currentMins >= start && currentMins < end;
+      });
 
-    if (ongoing.length > 0) {
-      return {
-        type: 'ongoing',
-        classes: ongoing.map(e => ({
-          ...e,
-          remaining: parseTimeRange(e.time).end - currentMins,
-        })),
-      };
+      if (ongoing.length > 0) {
+        return {
+          type: 'ongoing',
+          classes: ongoing.map(e => ({
+            ...e,
+            remaining: parseTimeRange(e.time).end - currentMins,
+          })),
+        };
+      }
     }
 
     const WEEKDAYS_MAP: Record<string, number> = {

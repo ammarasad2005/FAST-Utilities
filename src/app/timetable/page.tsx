@@ -22,6 +22,7 @@ import { AlertCircle } from 'lucide-react';
 import type { TimetableEntry, RawTimetableJSON, SummerCourseCatalogEntry } from '@/lib/types';
 import { DAYS_ORDER } from '@/lib/types';
 import { MakeupDaysSidebar } from '@/components/MakeupDaysSidebar';
+import { clampMondayToSemesterStart, isBeforeSemesterStart } from '@/lib/dates';
 
 // eslint-disable-next-line
 const timetableRaw: RawTimetableJSON = require('../../../public/data/timetable.json');
@@ -106,35 +107,14 @@ function TimetablePageInner() {
 
     // ── Semester start date constraint ──
     // The earliest date any day can have is the semester's "First Day of
-    // Classes" (from semester_calendar.json). If today is before the semester
-    // start (e.g., during orientation week), we clamp the reference Monday to
-    // the semester start week's Monday so days don't show pre-semester dates.
-    let semesterStartISO: string | null = null;
-    try {
-      const cal = require('../../../public/data/semester_calendar.json');
-      const firstDay = cal?.keyDates?.find((k: { label: string }) =>
-        k.label.toLowerCase().includes('first day of classes')
-      );
-      if (firstDay?.date) {
-        semesterStartISO = firstDay.date;
-      }
-    } catch {}
+    // Classes". If today is before the semester start, clamp the reference
+    // Monday to the semester start week so days don't show pre-semester dates.
+    const beforeSemesterStart = isBeforeSemesterStart();
 
     let monday = new Date(today);
     monday.setDate(today.getDate() - daysToMonday);
     monday.setHours(0, 0, 0, 0);
-
-    if (semesterStartISO) {
-      const semesterStart = new Date(semesterStartISO + 'T00:00:00');
-      if (!isNaN(semesterStart.getTime()) && monday < semesterStart) {
-        // Clamp Monday to the semester start (or the Monday of that week)
-        const ssDayOfWeek = semesterStart.getDay();
-        const ssDaysToMonday = ssDayOfWeek === 0 ? 6 : ssDayOfWeek - 1;
-        monday = new Date(semesterStart);
-        monday.setDate(semesterStart.getDate() - ssDaysToMonday);
-        monday.setHours(0, 0, 0, 0);
-      }
-    }
+    monday = clampMondayToSemesterStart(monday);
 
     const sunday = new Date(monday);
     sunday.setDate(monday.getDate() + 6);
@@ -289,9 +269,14 @@ function TimetablePageInner() {
     });
 
     // Sort resolved sheets: Today first, then other days by isoDate / DAYS_ORDER index
+    // "Today" is only highlighted if today >= semester start (otherwise no day is "today")
+    const todayMatch = (s: { isoDate: string; day: string }): boolean => {
+      if (beforeSemesterStart) return false;
+      return s.isoDate ? (s.isoDate === todayISO) : (s.day.toLowerCase() === todayDayName.toLowerCase());
+    };
     resolvedSheets.sort((a, b) => {
-      const isTodayA = a.isoDate === todayISO || a.day.toLowerCase() === todayDayName.toLowerCase();
-      const isTodayB = b.isoDate === todayISO || b.day.toLowerCase() === todayDayName.toLowerCase();
+      const isTodayA = todayMatch(a);
+      const isTodayB = todayMatch(b);
 
       if (isTodayA) return -1;
       if (isTodayB) return 1;
@@ -311,7 +296,8 @@ function TimetablePageInner() {
       resolvedSheets,
       sidebarMakeupDays,
       todayISO,
-      todayDayName
+      todayDayName,
+      beforeSemesterStart
     };
   }, [rawDaysList]);
 
@@ -774,7 +760,7 @@ function TimetablePageInner() {
   const conflicts = useMemo(() => detectConflicts(filtered, includeRepeats), [filtered, includeRepeats]);
 
   const reorderedGrouped = useMemo(() => {
-    const { resolvedSheets, todayISO, todayDayName } = resolvedData;
+    const { resolvedSheets, todayISO, todayDayName, beforeSemesterStart } = resolvedData;
 
     const groupedMap = new Map(grouped.map(g => [g.day, g.entries]));
     const result: {
@@ -787,7 +773,10 @@ function TimetablePageInner() {
     }[] = [];
 
     resolvedSheets.forEach((s) => {
-      const isToday = s.isoDate === todayISO || s.day.toLowerCase() === todayDayName.toLowerCase();
+      // "Today" only highlighted if today >= semester start
+      const isToday = !beforeSemesterStart && (
+        s.isoDate ? (s.isoDate === todayISO) : (s.day.toLowerCase() === todayDayName.toLowerCase())
+      );
       const entries = groupedMap.get(s.sheetName) || [];
 
       if (isToday || entries.length > 0) {
