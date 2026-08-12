@@ -101,7 +101,6 @@ export async function POST(req: NextRequest) {
     const days = DAY_ORDER.map(dayName => ({
       day: dayName,
       dayName,
-      isToday: config.todayDayName?.toLowerCase() === dayName.toLowerCase(),
       entries: dayMap.get(dayName) || [],
     }));
 
@@ -219,15 +218,9 @@ export async function POST(req: NextRequest) {
                     fontSize: '17px',
                     fontWeight: 'bold',
                     borderRight: '2px solid #2A4A7F',
-                    backgroundColor: d.isToday ? '#2A4A7F' : 'transparent',
                   }}
                 >
                   <div>{d.dayName.slice(0, 3).toUpperCase()}</div>
-                  {d.isToday && (
-                    <div style={{ fontSize: '11px', fontWeight: 'normal', marginTop: '2px', opacity: 0.9 }}>
-                      TODAY
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
@@ -304,7 +297,6 @@ export async function POST(req: NextRequest) {
                     flexDirection: 'column',
                     width: dayColWidth,
                     borderRight: '2px solid #e5e7eb',
-                    backgroundColor: d.isToday ? '#F0F4FA' : 'transparent',
                     position: 'relative',
                   }}
                 >

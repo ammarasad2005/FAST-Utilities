@@ -104,9 +104,37 @@ function TimetablePageInner() {
     const currentDayOfWeek = today.getDay();
     const daysToMonday = currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1;
 
-    const monday = new Date(today);
+    // ── Semester start date constraint ──
+    // The earliest date any day can have is the semester's "First Day of
+    // Classes" (from semester_calendar.json). If today is before the semester
+    // start (e.g., during orientation week), we clamp the reference Monday to
+    // the semester start week's Monday so days don't show pre-semester dates.
+    let semesterStartISO: string | null = null;
+    try {
+      const cal = require('../../../public/data/semester_calendar.json');
+      const firstDay = cal?.keyDates?.find((k: { label: string }) =>
+        k.label.toLowerCase().includes('first day of classes')
+      );
+      if (firstDay?.date) {
+        semesterStartISO = firstDay.date;
+      }
+    } catch {}
+
+    let monday = new Date(today);
     monday.setDate(today.getDate() - daysToMonday);
     monday.setHours(0, 0, 0, 0);
+
+    if (semesterStartISO) {
+      const semesterStart = new Date(semesterStartISO + 'T00:00:00');
+      if (!isNaN(semesterStart.getTime()) && monday < semesterStart) {
+        // Clamp Monday to the semester start (or the Monday of that week)
+        const ssDayOfWeek = semesterStart.getDay();
+        const ssDaysToMonday = ssDayOfWeek === 0 ? 6 : ssDayOfWeek - 1;
+        monday = new Date(semesterStart);
+        monday.setDate(semesterStart.getDate() - ssDaysToMonday);
+        monday.setHours(0, 0, 0, 0);
+      }
+    }
 
     const sunday = new Date(monday);
     sunday.setDate(monday.getDate() + 6);
