@@ -419,27 +419,50 @@ export function DesktopTicker({
         const minsUntil = Math.max(0, Math.floor(diffMs / 60000));
         return { minsUntil, dateISO: isoDate };
       } else {
-        const targetDayIdx = WEEKDAYS_MAP[canonicalDay];
-        if (targetDayIdx === undefined) return null;
-
-        let daysDiff = (targetDayIdx - currentDayIdx + 7) % 7;
-        if (daysDiff === 0 && currentMins >= end) {
-          daysDiff = 7;
+        // Use the resolved isoDate from meta (already clamped to semester start
+        // week) instead of computing from today's weekday. This ensures the
+        // "next up" target respects the semester start constraint — e.g., if
+        // today is Aug 13 (pre-semester) and semester starts Aug 17, a Friday
+        // class's next occurrence is Aug 21 (semester start week's Friday),
+        // not Aug 14 (tomorrow, pre-semester).
+        if (!isoDate) {
+          // Fallback: no isoDate in meta (shouldn't happen for non-makeup)
+          const targetDayIdx = WEEKDAYS_MAP[canonicalDay];
+          if (targetDayIdx === undefined) return null;
+          let daysDiff = (targetDayIdx - currentDayIdx + 7) % 7;
+          if (daysDiff === 0 && currentMins >= end) daysDiff = 7;
+          const targetDate = new Date(now);
+          targetDate.setDate(now.getDate() + daysDiff);
+          const targetYear = targetDate.getFullYear();
+          const targetMonth = String(targetDate.getMonth() + 1).padStart(2, '0');
+          const targetDayStr = String(targetDate.getDate()).padStart(2, '0');
+          const dateISO = `${targetYear}-${targetMonth}-${targetDayStr}`;
+          const sh = Math.floor(start / 60);
+          const sm = start % 60;
+          const tDate = new Date(targetYear, targetDate.getMonth(), targetDate.getDate(), sh, sm, 0);
+          const diffMs = tDate.getTime() - now.getTime();
+          const minsUntil = Math.max(0, Math.floor(diffMs / 60000));
+          return { minsUntil, dateISO };
         }
 
-        const targetDate = new Date(now);
-        targetDate.setDate(now.getDate() + daysDiff);
+        // Construct target datetime from the clamped isoDate + class start time
+        const [ny, nm, nd] = isoDate.split('-').map(Number);
+        const sh = Math.floor(start / 60);
+        const sm = start % 60;
+        let targetDate = new Date(ny, nm - 1, nd, sh, sm, 0);
 
+        // If the target is in the past (class already happened this week),
+        // push to next week
+        if (targetDate.getTime() <= now.getTime()) {
+          targetDate = new Date(targetDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+        }
+
+        const diffMs = targetDate.getTime() - now.getTime();
+        const minsUntil = Math.max(0, Math.floor(diffMs / 60000));
         const targetYear = targetDate.getFullYear();
         const targetMonth = String(targetDate.getMonth() + 1).padStart(2, '0');
         const targetDayStr = String(targetDate.getDate()).padStart(2, '0');
         const dateISO = `${targetYear}-${targetMonth}-${targetDayStr}`;
-
-        const sh = Math.floor(start / 60);
-        const sm = start % 60;
-        const tDate = new Date(targetYear, targetDate.getMonth(), targetDate.getDate(), sh, sm, 0);
-        const diffMs = tDate.getTime() - now.getTime();
-        const minsUntil = Math.max(0, Math.floor(diffMs / 60000));
 
         return { minsUntil, dateISO };
       }
