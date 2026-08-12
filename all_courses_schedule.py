@@ -1226,13 +1226,17 @@ timetable_meta      = {"days": []}
 # If the API fails, all_cell_colors is empty and the scraper falls back
 # to text-based detection (the existing heuristic pipeline).
 # ==============================================================================
-_all_sheet_names = [ds["sheet_name"] for ds in day_sheets]
-all_cell_colors = fetch_all_cell_colors(sheet_id, _all_sheet_names)
-if all_cell_colors:
-    total = sum(len(v) for v in all_cell_colors.values())
-    print(f"Color data loaded: {len(all_cell_colors)} sheets, {total} colored cells (1 API call)")
-else:
-    print("Color data unavailable — using text-based detection (fallback mode)")
+# DISABLED: Even a single Google Sheets API v4 call from GitHub Actions
+# CI IPs triggers throttling that also affects the gviz endpoint,
+# causing ALL gviz fetches to return empty data → empty timetable.json.
+# The color API is completely disabled until a rate-limit-safe method
+# is found (e.g., running the API call from a non-CI environment, or
+# using a different authentication method).
+# To re-enable: uncomment the 2 lines below.
+# _all_sheet_names = [ds["sheet_name"] for ds in day_sheets]
+# all_cell_colors = fetch_all_cell_colors(sheet_id, _all_sheet_names)
+all_cell_colors = {}
+print("Color API disabled — using text-based detection (fallback mode)")
 
 # ==============================================================================
 # PASS 1 — ANCHOR PASS
@@ -2002,17 +2006,52 @@ for rec in unambiguous_classes:
     target[course_name][section][sheet_name].append(slot_data)
 
 # ==============================================================================
-# OUTPUT
+# OUTPUT with FALLBACK PROTECTION
+#
+# If the scraper produces an empty timetable (only __meta__, no batch data),
+# it means the gviz fetch was throttled or failed. In this case, DON'T
+# overwrite the existing timetable.json — keep the previous (working) version.
+# This prevents the website from losing all batch data when the scraper fails.
 # ==============================================================================
 output_filename = "timetable.json"
 data_hierarchy["__meta__"] = timetable_meta
-with open(output_filename, "w") as json_file:
-    json.dump(data_hierarchy, json_file, indent=4)
 
-total_resolved  = len(unambiguous_classes)
+# Count batch entries (non-meta keys)
+batch_count = len([k for k in data_hierarchy.keys() if k != "__meta__"])
+total_resolved = len(unambiguous_classes)
 total_ambiguous = len(ambiguous_pool)
-print(f"\\n✅ Success! Unified schedule exported to: {output_filename}")
-print(
-    f"   Total resolved: {total_resolved} class slots "
-    f"({total_ambiguous} passed through the deduction pass)"
-)
+
+if batch_count == 0:
+    # Empty output — scraper failed (likely gviz throttling)
+    print("\n⚠  WARNING: Scraper produced 0 batch entries!")
+    print("   This is likely caused by Google API rate-limiting on CI IPs.")
+    print("   Keeping previous timetable.json to avoid breaking the website.")
+    
+    # Check if a previous timetable.json exists in public/data/
+    import shutil
+    prev_path = "public/data/timetable.json"
+    if os.path.exists(prev_path):
+        shutil.copy2(prev_path, output_filename)
+        with open(prev_path, "r") as f:
+            prev_data = json.load(f)
+        prev_batches = len([k for k in prev_data.keys() if k != "__meta__"])
+        print(f"   Restored previous timetable.json ({prev_batches} batches, "
+              f"{sum(len(v) for k, v in prev_data.items() if k != '__meta__' and isinstance(v, dict))} dept entries)")
+    else:
+        # No previous file — write the empty output as last resort
+        with open(output_filename, "w") as json_file:
+            json.dump(data_hierarchy, json_file, indent=4)
+        print("   No previous timetable.json found — wrote empty output (website will show no batches)")
+    
+    print(f"   Scraper stats: {total_resolved} resolved, {total_ambiguous} ambiguous")
+else:
+    # Normal output — write the new timetable
+    with open(output_filename, "w") as json_file:
+        json.dump(data_hierarchy, json_file, indent=4)
+    
+    print(f"\n✅ Success! Unified schedule exported to: {output_filename}")
+    print(
+        f"   Total resolved: {total_resolved} class slots "
+        f"({total_ambiguous} passed through the deduction pass)"
+    )
+    print(f"   Batches: {batch_count}")
