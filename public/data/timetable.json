@@ -9639,30 +9639,6 @@
         "CY": {
             "regular": {},
             "repeat": {
-                "Sec Ops": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-505",
-                                "time": "02:30-03:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "D-505",
-                                "time": "02:30-03:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "MG Elective": {
                     "A": {
                         "Tuesday": [
@@ -9679,6 +9655,30 @@
                             {
                                 "room": "D-506",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "Sec Ops Lab": {
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -11559,29 +11559,21 @@
                         ]
                     }
                 },
-                "Security Ops": {
+                "Security Ops (CY-A) CY Lab": {
                     "A": {
                         "Monday": [
                             {
                                 "room": "D-503",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "D-505",
-                                "time": "10:00-11:20",
+                                "time": "10:00-12:45",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
                         ]
-                    },
+                    }
+                },
+                "Security Ops": {
                     "B": {
                         "Monday": [
                             {
@@ -11592,11 +11584,13 @@
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ],
+                        ]
+                    },
+                    "A": {
                         "Wednesday": [
                             {
                                 "room": "D-505",
-                                "time": "01:00-02:20",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
@@ -11727,6 +11721,32 @@
                         ]
                     }
                 },
+                "Security Ops Lab": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Wednesday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "Info Assur": {
                     "A": {
                         "Tuesday": [
@@ -11813,6 +11833,20 @@
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "Security Ops (CY-B) CY Lab": {
+                    "A": {
+                        "Wednesday": [
+                            {
+                                "room": "D-505",
+                                "time": "01:00-03:45",
+                                "rescheduled": false,
+                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
