@@ -6304,7 +6304,7 @@
         },
         "CY": {
             "regular": {
-                "Cy Sec": {
+                "Data St": {
                     "A": {
                         "Monday": [
                             {
@@ -6353,7 +6353,7 @@
                         "Tuesday": [
                             {
                                 "room": "D-502",
-                                "time": "10:00-11:20",
+                                "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6363,7 +6363,7 @@
                         "Thursday": [
                             {
                                 "room": "D-502",
-                                "time": "10:00-11:20",
+                                "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6440,7 +6440,7 @@
                         ]
                     }
                 },
-                "Data St": {
+                "Cy Sec": {
                     "A": {
                         "Monday": [
                             {
@@ -6489,7 +6489,7 @@
                         "Tuesday": [
                             {
                                 "room": "D-502",
-                                "time": "08:30-09:50",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6499,7 +6499,7 @@
                         "Thursday": [
                             {
                                 "room": "D-502",
-                                "time": "08:30-09:50",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -7100,7 +7100,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ],
                         "Wednesday": [
@@ -7122,7 +7123,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ],
                         "Wednesday": [
