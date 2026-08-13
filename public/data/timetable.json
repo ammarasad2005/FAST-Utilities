@@ -888,7 +888,7 @@
                     "D": {
                         "Tuesday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -998,7 +998,7 @@
                     "A1": {
                         "Tuesday": [
                             {
-                                "room": "A-Khyber 3",
+                                "room": "C-CALL-1",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1010,7 +1010,7 @@
                     "A2": {
                         "Tuesday": [
                             {
-                                "room": "A-Khyber 4",
+                                "room": "C-CALL-2",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1022,7 +1022,7 @@
                     "D1": {
                         "Tuesday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-3",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1034,7 +1034,7 @@
                     "D2": {
                         "Tuesday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "Mehran-2",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1046,7 +1046,7 @@
                     "C1": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "Rawal-3",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1058,7 +1058,7 @@
                     "C2": {
                         "Tuesday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "B-Digital",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1633,7 +1633,7 @@
                     "D": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1645,7 +1645,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1683,7 +1683,7 @@
                     "C": {
                         "Monday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1707,7 +1707,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1719,7 +1719,7 @@
                     "E": {
                         "Friday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "10:00-12:45",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1757,7 +1757,7 @@
                     "B1": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "Rawal-3",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1769,7 +1769,7 @@
                     "B2": {
                         "Tuesday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "B-Digital",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2220,7 +2220,7 @@
                     "B2": {
                         "Saturday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2441,7 +2441,7 @@
                     "B": {
                         "Monday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2479,7 +2479,7 @@
                     "A": {
                         "Monday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2691,7 +2691,7 @@
                     "B1": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "Rawal-3",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2703,7 +2703,7 @@
                     "B2": {
                         "Tuesday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "B-Digital",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3216,7 +3216,7 @@
                     "C": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3228,7 +3228,7 @@
                     "A": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3266,7 +3266,7 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4455,7 +4455,7 @@
                     "J": {
                         "Monday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4467,7 +4467,7 @@
                     "H": {
                         "Monday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4479,7 +4479,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4491,7 +4491,7 @@
                     "D": {
                         "Tuesday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4515,7 +4515,7 @@
                     "G": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4539,7 +4539,7 @@
                     "C": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4551,7 +4551,7 @@
                     "A": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4625,7 +4625,7 @@
                     "H": {
                         "Wednesday": [
                             {
-                                "room": "B-Digital",
+                                "room": "Rawal-3",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4637,7 +4637,7 @@
                     "J": {
                         "Wednesday": [
                             {
-                                "room": "B-Digital",
+                                "room": "Rawal-3",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4649,7 +4649,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "B-Digital",
+                                "room": "Rawal-3",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4661,7 +4661,7 @@
                     "D": {
                         "Thursday": [
                             {
-                                "room": "B-Digital",
+                                "room": "Rawal-3",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4813,7 +4813,7 @@
                     "C": {
                         "Monday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4825,7 +4825,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4837,7 +4837,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4849,7 +4849,7 @@
                     "D": {
                         "Friday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5327,7 +5327,7 @@
                     "D": {
                         "Monday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5339,7 +5339,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5351,7 +5351,7 @@
                     "C": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5363,7 +5363,7 @@
                     "A": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5377,7 +5377,7 @@
                     "C": {
                         "Monday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5389,7 +5389,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5401,7 +5401,7 @@
                     "D": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5413,7 +5413,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5453,7 +5453,7 @@
                     "A": {
                         "Thursday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5755,7 +5755,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5767,7 +5767,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5919,7 +5919,7 @@
                     "A": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6099,7 +6099,7 @@
                     "A": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6139,7 +6139,7 @@
                     "B": {
                         "Monday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6151,7 +6151,7 @@
                     "A": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6694,7 +6694,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6706,7 +6706,7 @@
                     "C": {
                         "Wednesday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6718,7 +6718,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7521,7 +7521,7 @@
                     "E": {
                         "Monday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7533,7 +7533,7 @@
                     "F": {
                         "Monday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7545,7 +7545,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7557,7 +7557,7 @@
                     "D": {
                         "Tuesday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7569,7 +7569,7 @@
                     "G": {
                         "Wednesday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7581,7 +7581,7 @@
                     "C": {
                         "Thursday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7593,7 +7593,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7655,7 +7655,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7667,7 +7667,7 @@
                     "B": {
                         "Friday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8025,7 +8025,7 @@
                     "C": {
                         "Monday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8037,7 +8037,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8049,7 +8049,7 @@
                     "A": {
                         "Thursday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8336,49 +8336,11 @@
                         ]
                     }
                 },
-                "Comp Net Lab": {
-                    "B": {
-                        "Monday": [
-                            {
-                                "room": "C-Rawal 4",
-                                "time": "11:30-02:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "C": {
-                        "Wednesday": [
-                            {
-                                "room": "C-Rawal 4",
-                                "time": "08:30-11:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Thursday": [
-                            {
-                                "room": "C-Rawal 1",
-                                "time": "11:30-02:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "ML Lab": {
                     "C": {
                         "Monday": [
                             {
-                                "room": "C-Rawal 3 (GPU)",
+                                "room": "Rawal 3-GPU (C-511)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8390,7 +8352,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "Rawal 3 (GPU)",
+                                "room": "Rawal 3-GPU (C-511)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8402,7 +8364,45 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "Rawal 3 (GPU)",
+                                "room": "Rawal 3-GPU (C-511)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "Comp Net Lab": {
+                    "B": {
+                        "Monday": [
+                            {
+                                "room": "C-Rawal 4 (C-512)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "C": {
+                        "Wednesday": [
+                            {
+                                "room": "C-Rawal 4 (C-512)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Thursday": [
+                            {
+                                "room": "Rawal 1 (C-509)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8577,11 +8577,11 @@
                         ]
                     }
                 },
-                "Data Ware & BI Lab": {
-                    "B": {
+                "DAV Lab": {
+                    "A": {
                         "Monday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "Rawal 3-GPU (C-511)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8590,10 +8590,10 @@
                             }
                         ]
                     },
-                    "A": {
+                    "B": {
                         "Wednesday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "Rawal 3-GPU (C-511)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8603,11 +8603,11 @@
                         ]
                     }
                 },
-                "DAV Lab": {
-                    "A": {
+                "Data Ware & BI Lab": {
+                    "B": {
                         "Monday": [
                             {
-                                "room": "C-Rawal 3 (GPU)",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8616,10 +8616,10 @@
                             }
                         ]
                     },
-                    "B": {
+                    "A": {
                         "Wednesday": [
                             {
-                                "room": "Rawal 3 (GPU)",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8797,7 +8797,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9193,7 +9193,7 @@
                     "A": {
                         "Wednesday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9205,7 +9205,7 @@
                     "C": {
                         "Thursday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9217,7 +9217,7 @@
                     "B": {
                         "Friday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9231,7 +9231,7 @@
                     "C": {
                         "Thursday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9243,7 +9243,7 @@
                     "B": {
                         "Friday": [
                             {
-                                "room": "C-Margala 1",
+                                "room": "Margala 1 (C-209)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9299,7 +9299,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "C-Margala 4",
+                                "room": "Margala 4 (C-212",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9438,7 +9438,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10177,7 +10177,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "C-Rawal 3 (GPU)",
+                                "room": "Rawal 3-GPU (C-511)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10195,7 +10195,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "Rawal 3 (GPU)",
+                                "room": "Rawal 3-GPU (C-511)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10203,7 +10203,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "Rawal 3 (GPU)",
+                                "room": "Rawal 3-GPU (C-511)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10448,7 +10448,7 @@
                     "A": {
                         "Monday": [
                             {
-                                "room": "C-Rawal 4",
+                                "room": "C-Rawal 4 (C-512)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10460,7 +10460,7 @@
                     "C": {
                         "Tuesday": [
                             {
-                                "room": "C-Margala 3",
+                                "room": "Margala 3 (C-211)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10472,7 +10472,7 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "C-Rawal 1",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
