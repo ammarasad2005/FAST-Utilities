@@ -1431,7 +1431,7 @@
                         ]
                     }
                 },
-                "Ideology of Pak": {
+                "Arts & Humanities": {
                     "B": {
                         "Monday": [
                             {
@@ -1444,8 +1444,32 @@
                             }
                         ]
                     },
+                    "A": {
+                        "Wednesday": [
+                            {
+                                "room": "C-409",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "D": {
-                        "Tuesday": [
+                        "Wednesday": [
+                            {
+                                "room": "C-602",
+                                "time": "02:30-04:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "C": {
+                        "Thursday": [
                             {
                                 "room": "C-601",
                                 "time": "01:00-02:45",
@@ -1456,34 +1480,10 @@
                             }
                         ]
                     },
-                    "C": {
-                        "Wednesday": [
-                            {
-                                "room": "C-602",
-                                "time": "09:30-11:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
                     "E": {
-                        "Wednesday": [
-                            {
-                                "room": "C-603",
-                                "time": "01:00-02:45",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
                         "Thursday": [
                             {
-                                "room": "C-409",
+                                "room": "C-603",
                                 "time": "08:30-10:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1851,11 +1851,11 @@
                         ]
                     }
                 },
-                "Elective": {
-                    "A": {
-                        "Wednesday": [
+                "Ideology of Pak": {
+                    "D": {
+                        "Tuesday": [
                             {
-                                "room": "C-409",
+                                "room": "C-601",
                                 "time": "01:00-02:45",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1864,11 +1864,35 @@
                             }
                         ]
                     },
-                    "D": {
+                    "C": {
                         "Wednesday": [
                             {
                                 "room": "C-602",
-                                "time": "02:30-04:15",
+                                "time": "09:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "E": {
+                        "Wednesday": [
+                            {
+                                "room": "C-603",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Thursday": [
+                            {
+                                "room": "C-409",
+                                "time": "08:30-10:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1881,30 +1905,6 @@
                             {
                                 "room": "C-409",
                                 "time": "02:30-04:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "C": {
-                        "Thursday": [
-                            {
-                                "room": "C-601",
-                                "time": "01:00-02:45",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "E": {
-                        "Thursday": [
-                            {
-                                "room": "C-603",
-                                "time": "08:30-10:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
