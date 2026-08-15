@@ -1338,7 +1338,7 @@ for day_info in day_sheets:
             else ""
         )
 
-        if first_val in ("Room", "Lab"):
+        if first_val in ("Room", "Lab") or first_val.lower().startswith("room"):
             is_lab_section = (first_val == "Lab")
             local_time_map = {}
             row_last_time  = "Unknown Time"
@@ -1348,7 +1348,7 @@ for day_info in day_sheets:
             header_seen = 0
             for i in range(0, len(cells)):
                 c_val = str(cells[i].get("v", "")).strip() if cells[i] and cells[i].get("v") else ""
-                if c_val in ("Room", "Lab"):
+                if c_val in ("Room", "Lab") or c_val.lower().startswith("room"):
                     header_seen += 1
                     if header_seen == 2:
                         ms_boundary = i
@@ -1362,7 +1362,7 @@ for day_info in day_sheets:
 
                 c_val = str(cells[i].get("v", "")).strip() if cells[i] and cells[i].get("v") else ""
 
-                if c_val and c_val not in ("Room", "Lab"):
+                if c_val and not (c_val in ("Room", "Lab") or c_val.lower().startswith("room")):
                     row_last_time = c_val
                 elif not c_val and i in master_time_map:
                     # Fallback logic: 
