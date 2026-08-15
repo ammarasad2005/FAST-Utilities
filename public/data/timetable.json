@@ -5777,7 +5777,7 @@
                         ]
                     }
                 },
-                "Prof for AI Lab": {
+                "Data St Lab": {
                     "C": {
                         "Monday": [
                             {
@@ -5790,6 +5790,32 @@
                             }
                         ]
                     },
+                    "B": {
+                        "Thursday": [
+                            {
+                                "room": "D-IT Lab 3",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Thursday": [
+                            {
+                                "room": "Margala 4 (C-212",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "Prof for AI Lab": {
                     "A": {
                         "Tuesday": [
                             {
@@ -5806,6 +5832,18 @@
                         "Tuesday": [
                             {
                                 "room": "D-IT Lab 4 (GPU)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "C": {
+                        "Wednesday": [
+                            {
+                                "room": "D-IT Lab 3",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5883,44 +5921,6 @@
                             {
                                 "room": "D-402",
                                 "time": "09:30-11:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Data St Lab": {
-                    "C": {
-                        "Wednesday": [
-                            {
-                                "room": "D-IT Lab 3",
-                                "time": "02:30-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Thursday": [
-                            {
-                                "room": "D-IT Lab 3",
-                                "time": "02:30-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Thursday": [
-                            {
-                                "room": "Margala 4 (C-212",
-                                "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
