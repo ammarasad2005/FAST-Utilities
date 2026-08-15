@@ -2428,7 +2428,7 @@
                         "Friday": [
                             {
                                 "room": "C-304",
-                                "time": "11:30-01:15",
+                                "time": "09:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -2572,7 +2572,7 @@
                         "Friday": [
                             {
                                 "room": "C-304",
-                                "time": "10:00-11:20",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
