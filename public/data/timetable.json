@@ -998,7 +998,7 @@
                     "A1": {
                         "Tuesday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "Kybher-3",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1010,7 +1010,7 @@
                     "A2": {
                         "Tuesday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "Kybher-4",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1022,7 +1022,7 @@
                     "D1": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "C-CALL-1",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1034,7 +1034,7 @@
                     "D2": {
                         "Tuesday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "C-CALL-2",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1046,7 +1046,7 @@
                     "C1": {
                         "Tuesday": [
                             {
-                                "room": "Rawal-3",
+                                "room": "A-CALL-3",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1058,7 +1058,7 @@
                     "C2": {
                         "Tuesday": [
                             {
-                                "room": "B-Digital",
+                                "room": "A-Mehran-2",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1757,7 +1757,7 @@
                     "B1": {
                         "Tuesday": [
                             {
-                                "room": "Rawal-3",
+                                "room": "A-CALL-3",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1769,7 +1769,7 @@
                     "B2": {
                         "Tuesday": [
                             {
-                                "room": "B-Digital",
+                                "room": "A-Mehran-2",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2691,7 +2691,7 @@
                     "B1": {
                         "Tuesday": [
                             {
-                                "room": "Rawal-3",
+                                "room": "A-CALL-3",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2703,7 +2703,7 @@
                     "B2": {
                         "Tuesday": [
                             {
-                                "room": "B-Digital",
+                                "room": "A-Mehran-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4625,7 +4625,7 @@
                     "H": {
                         "Wednesday": [
                             {
-                                "room": "Rawal-3",
+                                "room": "B-Digital",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4637,7 +4637,7 @@
                     "J": {
                         "Wednesday": [
                             {
-                                "room": "Rawal-3",
+                                "room": "B-Digital",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4649,7 +4649,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "Rawal-3",
+                                "room": "B-Digital",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4661,7 +4661,7 @@
                     "D": {
                         "Thursday": [
                             {
-                                "room": "Rawal-3",
+                                "room": "B-Digital",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
