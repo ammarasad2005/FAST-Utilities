@@ -9569,7 +9569,7 @@
                         "Tuesday": [
                             {
                                 "room": "D-404",
-                                "time": "02:30-03:50",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -9579,7 +9579,7 @@
                         "Thursday": [
                             {
                                 "room": "D-404",
-                                "time": "02:30-03:50",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
