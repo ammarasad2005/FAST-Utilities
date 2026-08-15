@@ -1460,7 +1460,7 @@
                         "Wednesday": [
                             {
                                 "room": "C-602",
-                                "time": "02:30-04:15",
+                                "time": "03:00-04:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
