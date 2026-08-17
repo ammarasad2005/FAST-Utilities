@@ -599,7 +599,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -623,7 +624,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -950,7 +952,7 @@
                     "E1": {
                         "Monday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -962,7 +964,7 @@
                     "E2": {
                         "Monday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1022,7 +1024,7 @@
                     "D1": {
                         "Tuesday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1034,7 +1036,7 @@
                     "D2": {
                         "Tuesday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1070,7 +1072,7 @@
                     "G1": {
                         "Wednesday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1082,7 +1084,7 @@
                     "G2": {
                         "Wednesday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1106,7 +1108,7 @@
                     "F2": {
                         "Wednesday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "A-Mehran-2",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1118,7 +1120,7 @@
                     "B1": {
                         "Thursday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1130,7 +1132,7 @@
                     "B2": {
                         "Thursday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1793,7 +1795,7 @@
                     "C2": {
                         "Wednesday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "A-Mehran-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1817,7 +1819,7 @@
                     "A2": {
                         "Thursday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "A-Mehran-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1829,7 +1831,7 @@
                     "E1": {
                         "Saturday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1841,7 +1843,7 @@
                     "E2": {
                         "Saturday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2208,7 +2210,7 @@
                     "A2": {
                         "Thursday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "A-Mehran-2",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2715,7 +2717,7 @@
                     "A1": {
                         "Wednesday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2727,7 +2729,7 @@
                     "A2": {
                         "Wednesday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2739,7 +2741,7 @@
                     "C1": {
                         "Saturday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2751,7 +2753,7 @@
                     "C2": {
                         "Saturday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3330,7 +3332,7 @@
                     "C1": {
                         "Thursday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3342,7 +3344,7 @@
                     "C2": {
                         "Thursday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3354,7 +3356,7 @@
                     "A1": {
                         "Friday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3366,7 +3368,7 @@
                     "A2": {
                         "Friday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3390,7 +3392,7 @@
                     "B2": {
                         "Friday": [
                             {
-                                "room": "Mehran-2",
+                                "room": "A-Mehran-2",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3402,7 +3404,7 @@
                     "D1": {
                         "Saturday": [
                             {
-                                "room": "C-CALL-1",
+                                "room": "A-CALL-1",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3414,7 +3416,7 @@
                     "D2": {
                         "Saturday": [
                             {
-                                "room": "C-CALL-2",
+                                "room": "A-CALL-2",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3496,7 +3498,7 @@
                         "Wednesday": [
                             {
                                 "room": "C-311",
-                                "time": "02:30-03:25",
+                                "time": "02:50-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -4976,28 +4978,6 @@
                             }
                         ]
                     },
-                    "B": {
-                        "Monday": [
-                            {
-                                "room": "C-604",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "C-607",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
                     "C": {
                         "Tuesday": [
                             {
@@ -5035,6 +5015,18 @@
                             {
                                 "room": "C-604",
                                 "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Wednesday": [
+                            {
+                                "room": "C-607",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -5069,7 +5061,7 @@
                     "B": {
                         "Monday": [
                             {
-                                "room": "C-604",
+                                "room": "C-603",
                                 "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5133,12 +5125,102 @@
                         ]
                     }
                 },
-                "LA (SE-C) C-407": {
-                    "A": {
+                "LA": {
+                    "C": {
                         "Monday": [
                             {
                                 "room": "C-604",
                                 "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "C-604",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "D": {
+                        "Monday": [
+                            {
+                                "room": "C-607",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "C-605",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Tuesday": [
+                            {
+                                "room": "C-602",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "C-604",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "C-605",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "C-602",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "Intro to SE (SE-B) C-605": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "C-604",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
@@ -5189,86 +5271,6 @@
                             {
                                 "room": "C-602",
                                 "time": "11:30-01:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "LA": {
-                    "D": {
-                        "Monday": [
-                            {
-                                "room": "C-607",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "C-605",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Tuesday": [
-                            {
-                                "room": "C-602",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "C-604",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "C-605",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "C-602",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "C": {
-                        "Wednesday": [
-                            {
-                                "room": "C-604",
-                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6529,7 +6531,7 @@
                         "Thursday": [
                             {
                                 "room": "D-501",
-                                "time": "09:00-09:55",
+                                "time": "09:30-10:25",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6541,7 +6543,7 @@
                         "Thursday": [
                             {
                                 "room": "D-501",
-                                "time": "10:00-10:55",
+                                "time": "10:30-11:25",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -11086,8 +11088,8 @@
                     "F": {
                         "Tuesday": [
                             {
-                                "room": "D-413",
-                                "time": "08:30-09:50",
+                                "room": "D-412",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -11096,8 +11098,8 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "D-413",
-                                "time": "08:30-09:50",
+                                "room": "D-412",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -11888,42 +11890,42 @@
             {
                 "day": "Monday",
                 "sheetName": "Monday",
-                "date": "17 Aug",
+                "date": "",
                 "isoDate": "2026-08-17",
                 "isMakeup": false
             },
             {
                 "day": "Tuesday",
                 "sheetName": "Tuesday",
-                "date": "18 Aug",
+                "date": "",
                 "isoDate": "2026-08-18",
                 "isMakeup": false
             },
             {
                 "day": "Wednesday",
                 "sheetName": "Wednesday",
-                "date": "19 Aug",
+                "date": "",
                 "isoDate": "2026-08-19",
                 "isMakeup": false
             },
             {
                 "day": "Thursday",
                 "sheetName": "Thursday",
-                "date": "20 Aug",
+                "date": "",
                 "isoDate": "2026-08-20",
                 "isMakeup": false
             },
             {
                 "day": "Friday",
                 "sheetName": "Friday",
-                "date": "21 Aug",
+                "date": "",
                 "isoDate": "2026-08-21",
                 "isMakeup": false
             },
             {
                 "day": "Saturday",
                 "sheetName": "Saturday",
-                "date": "22 Aug",
+                "date": "",
                 "isoDate": "2026-08-22",
                 "isMakeup": false
             }
