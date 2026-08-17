@@ -9378,7 +9378,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -9388,7 +9388,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -9400,7 +9400,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "03:55-05:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -9410,7 +9410,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "03:55-05:15",
                                 "rescheduled": false,
                                 "is_elective": true,
