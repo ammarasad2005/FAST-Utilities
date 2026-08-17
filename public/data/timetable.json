@@ -6962,28 +6962,6 @@
                             }
                         ]
                     },
-                    "D": {
-                        "Monday": [
-                            {
-                                "room": "C-405",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "C-405",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
                     "E": {
                         "Tuesday": [
                             {
@@ -7043,6 +7021,18 @@
                             {
                                 "room": "C-407",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "D": {
+                        "Wednesday": [
+                            {
+                                "room": "C-405",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -7515,6 +7505,20 @@
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "App HCI (CS-D) C-407": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "C-405",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
