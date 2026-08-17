@@ -1,0 +1,48 @@
+name: Update FSM Timetable Data
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-fsm-timetable:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.MAIN_PUSH_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate fsm_timetable.json
+        run: python3 scripts/fsm_schedule.py
+        env:
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+
+      - name: Copy to public/data
+        run: |
+          mkdir -p public/data
+          cp fsm_timetable.json public/data/fsm_timetable.json
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/fsm_timetable.json
+          if git diff --staged --quiet; then
+            echo "No changes detected — FSM timetable is up to date."
+          else
+            git commit -m "chore: auto-update fsm_timetable.json [$(date -u +'%Y-%m-%d %H:%M UTC')]"
+            git push
+            echo "FSM timetable updated and pushed."
+          fi
