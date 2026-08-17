@@ -24,10 +24,13 @@ import { DAYS_ORDER } from '@/lib/types';
 import { MakeupDaysSidebar } from '@/components/MakeupDaysSidebar';
 import { clampMondayToSemesterStart, isBeforeSemesterStart } from '@/lib/dates';
 
+// Load BOTH school timetables at module level
 // eslint-disable-next-line
-const timetableRaw: RawTimetableJSON = require('../../../public/data/timetable.json');
-const allEntries: TimetableEntry[] = flattenTimetable(timetableRaw);
-const timetableDayMeta = timetableRaw.__meta__?.days ?? {};
+const fscRaw: RawTimetableJSON = require('../../../public/data/timetable.json');
+const fscEntries: TimetableEntry[] = flattenTimetable(fscRaw);
+// eslint-disable-next-line
+const fsmRaw: RawTimetableJSON = require('../../../public/data/fsm_timetable.json');
+const fsmEntries: TimetableEntry[] = flattenTimetable(fsmRaw);
 
 // ─── Time slots for the grid view ─────────────────────────────────────────────
 const GRID_SLOTS = ['08:00', '09:30', '11:00', '12:30', '14:00', '15:30', '17:00'];
@@ -72,6 +75,15 @@ function TimetablePageInner() {
   const batch   = params?.get('batch')   ?? '';
   const dept    = params?.get('dept')    ?? 'CS';
   const section = params?.get('section') ?? '';
+  const schoolParam = params?.get('school') ?? '';
+  const school: 'FSC' | 'FSM' = schoolParam === 'FSM' ? 'FSM' : 'FSC';
+
+  // Select entries based on school
+  const allEntries: TimetableEntry[] = school === 'FSM' ? fsmEntries : fscEntries;
+  const timetableRaw: RawTimetableJSON = school === 'FSM' ? fsmRaw : fscRaw;
+  const timetableDayMeta = timetableRaw.__meta__?.days ?? {};
+
+  const [entries, setEntries] = useState<TimetableEntry[]>(allEntries);
 
   const [query,    setQuery]    = useState('');
   const [selected, setSelected] = useState<TimetableEntry | null>(null);
@@ -309,7 +321,6 @@ function TimetablePageInner() {
     return new Date().toLocaleDateString('en-US', { month: 'long' });
   }, []);
 
-  const [entries, setEntries] = useState<TimetableEntry[]>(allEntries);
   const [isSummer, setIsSummer] = useState<boolean>(false);
   const [semesterName, setSemesterName] = useState<string>('Spring 2026');
   const [summerSelections, setSummerSelections] = useState<Record<string, string>>({});

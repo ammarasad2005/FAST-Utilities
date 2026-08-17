@@ -22,16 +22,23 @@ const batches: string[] = [...new Set<string>(scheduleRaw.map((e: { batch: strin
   .sort()
   .reverse();
 
+// Load BOTH school timetables at module level
 // eslint-disable-next-line
-const timetableRaw: RawTimetableJSON = require('../../../public/data/timetable.json');
-const allTimetableEntries = flattenTimetable(timetableRaw);
-const timetableBatches: string[] = [...new Set<string>(allTimetableEntries.map(e => e.batch))].sort().reverse();
+const fscTimetableRaw: RawTimetableJSON = require('../../../public/data/timetable.json');
+const fscTimetableEntries = flattenTimetable(fscTimetableRaw);
+const fscBatches: string[] = [...new Set<string>(fscTimetableEntries.map(e => e.batch))].sort().reverse();
+
+// eslint-disable-next-line
+const fsmTimetableRaw: RawTimetableJSON = require('../../../public/data/fsm_timetable.json');
+const fsmTimetableEntries = flattenTimetable(fsmTimetableRaw);
+const fsmBatches: string[] = [...new Set<string>(fsmTimetableEntries.map(e => e.batch))].sort().reverse();
 
 type Mode = 'default' | 'custom';
 type Feature = 'exams' | 'timetable' | 'rooms' | 'faculty';
 
 // FSC-only departments for the timetable (from the Python data)
-const TIMETABLE_DEPTS = ['CS', 'AI', 'DS', 'CY', 'SE'];
+const FSC_DEPTS = ['CS', 'AI', 'DS', 'CY', 'SE'];
+const FSM_DEPTS = ['BBA', 'BA', 'FT', 'AF'];
 
 interface UserConfig {
   batch: string;
@@ -73,6 +80,7 @@ export default function SetupPage() {
 
   const [feature, setFeature] = useState<Feature>('timetable');
   const [mode, setMode] = useState<Mode>('default');
+  const [timetableSchool, setTimetableSchool] = useState<'FSC' | 'FSM'>('FSC');
 
   // Summer mode states
   const [isSummerMode, setIsSummerMode] = useState<boolean>(false);
@@ -99,9 +107,18 @@ export default function SetupPage() {
   const [exclusivityError, setExclusivityError] = useState<string | null>(null);
   const [bundles, setBundles] = useState<any[]>([]);
 
+  // Computed: which timetable entries/batches/depts to use based on school
+  const allTimetableEntries = timetableSchool === 'FSM' ? fsmTimetableEntries : fscTimetableEntries;
+  const timetableBatches = timetableSchool === 'FSM' ? fsmBatches : fscBatches;
+  const timetableDepts = timetableSchool === 'FSM' ? FSM_DEPTS : FSC_DEPTS;
+
 
   // Load userConfig on mount
   useEffect(() => {
+    // Load persisted timetable school
+    const storedSchool = localStorage.getItem('fsc_timetable_school');
+    if (storedSchool === 'FSM') setTimetableSchool('FSM');
+
     const stored = localStorage.getItem('fsc_user_config');
     if (stored) {
       try {
@@ -412,7 +429,7 @@ export default function SetupPage() {
         const targetDept = userConfig?.dept || dept;
         const targetSection = userConfig?.section || section;
         if (targetBatch === '-' || !targetDept || !targetSection) return;
-        router.push(`/timetable?batch=${targetBatch}&dept=${targetDept}&section=${targetSection}`);
+        router.push(`/timetable?batch=${targetBatch}&dept=${targetDept}&section=${targetSection}&school=${timetableSchool}`);
       } else {
         router.push('/timetable/custom');
       }
@@ -572,6 +589,38 @@ export default function SetupPage() {
   // Batch selector — shared between both features but only shown in 'default' mode
   const batchSelector = (feature !== 'rooms' && mode === 'default') ? (
     <div>
+      {/* School toggle — only for timetable feature */}
+      {feature === 'timetable' && (
+        <div className="mb-4">
+          <label className="block font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)] mb-2">
+            School
+          </label>
+          <div className="flex gap-1 bg-[var(--color-bg-subtle)] rounded-lg p-1">
+            {(['FSC', 'FSM'] as const).map(s => (
+              <button
+                key={s}
+                onClick={() => {
+                  setTimetableSchool(s);
+                  localStorage.setItem('fsc_timetable_school', s);
+                  setBatch('-');
+                  setDept('');
+                  setSection('');
+                }}
+                aria-pressed={timetableSchool === s}
+                className="flex-1 h-9 rounded-md font-body text-sm font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2"
+                style={timetableSchool === s ? {
+                  backgroundColor: 'var(--color-text-primary)',
+                  color: 'var(--color-bg)',
+                } : {
+                  color: 'var(--color-text-secondary)',
+                }}
+              >
+                {s === 'FSC' ? 'Computing' : 'Management'}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
       <label
         htmlFor="batch-select"
         className="block font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)] mb-2"
@@ -630,7 +679,7 @@ export default function SetupPage() {
     </div>
   ) : null;
 
-  // Department pills — for exams (school-gated) or timetable (FSC only)
+  // Department pills — for exams (school-gated) or timetable (school-gated)
   const deptPills = (feature === 'exams' && mode === 'default') ? (
     <div>
       {school === '-' ? (
@@ -659,7 +708,7 @@ export default function SetupPage() {
         Department
       </p>
       <div role="group" aria-labelledby="tt-department-label" className="grid grid-cols-3 gap-2 sm:grid-cols-5">
-        {TIMETABLE_DEPTS.map(d => (
+        {timetableDepts.map(d => (
           <DepartmentPill key={d} dept={d} selected={dept === d} onClick={() => setDept(d)} />
         ))}
       </div>

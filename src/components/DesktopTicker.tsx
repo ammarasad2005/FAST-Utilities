@@ -14,7 +14,9 @@ import {
 import { clampMondayToSemesterStart, isBeforeSemesterStart } from '@/lib/dates';
 
 // eslint-disable-next-line
-const timetableRaw: RawTimetableJSON = require('../../public/data/timetable.json');
+const fscRaw: RawTimetableJSON = require('../../public/data/timetable.json');
+// eslint-disable-next-line
+const fsmRaw: RawTimetableJSON = require('../../public/data/fsm_timetable.json');
 
 interface Bundle {
   id: string;
@@ -85,8 +87,8 @@ export function DesktopTicker({
   }, [userConfig]);
 
   const rawDaysList = useMemo(() => {
-    return Array.isArray(timetableRaw.__meta__?.days)
-      ? timetableRaw.__meta__.days
+    return Array.isArray(fscRaw.__meta__?.days)
+      ? fscRaw.__meta__.days
       : DAYS_ORDER.map(d => ({
           day: d,
           sheetName: d,

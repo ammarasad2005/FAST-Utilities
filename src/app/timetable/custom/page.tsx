@@ -16,16 +16,22 @@ import { flattenTimetable, groupByDayTimetable, detectConflicts, formatTimeRange
 import type { TimetableEntry, RawTimetableJSON, SummerCourseCatalogEntry } from '@/lib/types';
 import { DAYS_ORDER } from '@/lib/types';
 
+// Load BOTH school timetables
 // eslint-disable-next-line
-const timetableRaw: RawTimetableJSON = require('../../../../public/data/timetable.json');
-const allTimetableEntries = flattenTimetable(timetableRaw);
+const fscRaw: RawTimetableJSON = require('../../../../public/data/timetable.json');
+const fscTimetableEntries = flattenTimetable(fscRaw);
+// eslint-disable-next-line
+const fsmRaw: RawTimetableJSON = require('../../../../public/data/fsm_timetable.json');
+const fsmTimetableEntries = flattenTimetable(fsmRaw);
+// Merge both for the custom timetable (users can mix courses from both schools)
+const allTimetableEntries: TimetableEntry[] = [...fscTimetableEntries, ...fsmTimetableEntries];
 
 // Derive available batches from data
 const availableBatches: string[] = [...new Set<string>(allTimetableEntries.map(e => e.batch))]
   .sort()
   .reverse();
 
-const TIMETABLE_DEPTS = ['CS', 'AI', 'DS', 'CY', 'SE', 'AI/DS'];
+const TIMETABLE_DEPTS = ['CS', 'AI', 'DS', 'CY', 'SE', 'AI/DS', 'BBA', 'BA', 'FT', 'AF'];
 const CATEGORIES = ['regular', 'repeat'];
 
 interface CourseRow {
@@ -93,8 +99,8 @@ function CustomTimetableInner() {
   const [isMakeupSidebarOpen, setIsMakeupSidebarOpen] = useState(false);
 
   const rawDaysList = useMemo(() => {
-    return Array.isArray(timetableRaw.__meta__?.days)
-      ? timetableRaw.__meta__.days
+    return Array.isArray(fscRaw.__meta__?.days)
+      ? fscRaw.__meta__.days
       : DAYS_ORDER.map(d => ({
           day: d,
           sheetName: d,

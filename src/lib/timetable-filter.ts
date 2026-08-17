@@ -145,7 +145,12 @@ export function getAvailableSections(
   batch: string,
   department: string
 ): string[] {
-  const set = new Set<string>();
+  // Track which sections have at least one non-elective entry.
+  // Elective-only sections (e.g., "A/B" combined sections) should not
+  // appear in the section picker — they show in the Electives/Others panel.
+  const allSections = new Set<string>();
+  const nonElectiveSections = new Set<string>();
+
   for (const e of entries) {
     if (e.batch === batch && isDepartmentMatch(e.department, department)) {
       // Skip empty sections (department-level electives) from the dropdown
@@ -161,15 +166,23 @@ export function getAvailableSections(
       }
 
       // Section-choice normalization: A1 and A2 are sub-sections of "A".
-      // Show "A" in the picker, not "A1" / "A2" separately. The user picks
-      // A1 or A2 per-course on the results page via the "Change Section"
-      // dropdown. This applies to ALL batches.
       const normalized = e.section.replace(/\d+$/, '');
-      set.add(normalized);
+      allSections.add(normalized);
+
+      // If this entry is NOT an elective, mark the section as having
+      // regular (non-elective) content
+      if (!e.isElective) {
+        nonElectiveSections.add(normalized);
+      }
     }
   }
+
+  // Only show sections that have at least one non-elective entry.
+  // This filters out "A/B" sections that are elective-only.
+  const filtered = [...allSections].filter(s => nonElectiveSections.has(s));
+
   // Return sorted: single-letter first (A, B, C…), then compound (BX, A1…)
-  return [...set].sort((a, b) => {
+  return filtered.sort((a, b) => {
     if (a.length !== b.length) return a.length - b.length;
     return a.localeCompare(b);
   });
