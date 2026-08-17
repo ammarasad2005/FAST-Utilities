@@ -5133,22 +5133,26 @@
                         ]
                     }
                 },
-                "LA": {
-                    "C": {
+                "LA (SE-C) C-407": {
+                    "A": {
                         "Monday": [
                             {
                                 "room": "C-604",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
-                                "is_elective": false,
+                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ],
-                        "Wednesday": [
+                        ]
+                    }
+                },
+                "Pak Studies": {
+                    "C": {
+                        "Monday": [
                             {
-                                "room": "C-604",
-                                "time": "10:00-11:20",
+                                "room": "C-605",
+                                "time": "11:30-01:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -5156,6 +5160,44 @@
                             }
                         ]
                     },
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "C-602",
+                                "time": "11:30-01:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "D": {
+                        "Wednesday": [
+                            {
+                                "room": "C-603",
+                                "time": "11:00-12:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Thursday": [
+                            {
+                                "room": "C-602",
+                                "time": "11:30-01:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "LA": {
                     "D": {
                         "Monday": [
                             {
@@ -5221,50 +5263,12 @@
                                 "exam": false
                             }
                         ]
-                    }
-                },
-                "Pak Studies": {
+                    },
                     "C": {
-                        "Monday": [
-                            {
-                                "room": "C-605",
-                                "time": "11:30-01:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "C-602",
-                                "time": "11:30-01:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "D": {
                         "Wednesday": [
                             {
-                                "room": "C-603",
-                                "time": "11:00-12:45",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Thursday": [
-                            {
-                                "room": "C-602",
-                                "time": "11:30-01:15",
+                                "room": "C-604",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
