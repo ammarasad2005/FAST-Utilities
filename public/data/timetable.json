@@ -9566,54 +9566,6 @@
         "CS": {
             "regular": {},
             "repeat": {
-                "Digital Sustain": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-404",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "D-404",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Tuesday": [
-                            {
-                                "room": "D-404",
-                                "time": "03:55-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "D-404",
-                                "time": "03:55-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "Stat Modeling": {
                     "A": {
                         "Tuesday": [
@@ -9621,7 +9573,7 @@
                                 "room": "D-413",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
-                                "is_elective": true,
+                                "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -9631,7 +9583,7 @@
                                 "room": "D-403",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
-                                "is_elective": true,
+                                "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -9659,30 +9611,6 @@
                             {
                                 "room": "CY Lab",
                                 "time": "02:30-03:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "MG Elective": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-506",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "D-506",
-                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
