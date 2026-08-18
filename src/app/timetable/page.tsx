@@ -1468,11 +1468,11 @@ function ListView({
           } : {}}
         >
           {isToday && (
-            <div 
+            <div
               className="absolute top-0 right-0 px-4 py-1.5 text-[var(--color-bg)] font-mono text-[10px] font-bold uppercase tracking-[0.2em] rounded-bl-xl shadow-md"
-              style={{ background: 'var(--today-label-bg)' }}
+              style={{ background: isTomorrowPreview() ? 'var(--others-label-bg)' : 'var(--today-label-bg)' }}
             >
-              Today
+              {isTomorrowPreview() ? 'Tomorrow' : 'Today'}
             </div>
           )}
 
