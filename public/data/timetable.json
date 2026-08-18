@@ -1000,7 +1000,7 @@
                     "A1": {
                         "Tuesday": [
                             {
-                                "room": "Kybher-3",
+                                "room": "Kybher-2",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1012,7 +1012,7 @@
                     "A2": {
                         "Tuesday": [
                             {
-                                "room": "Kybher-4",
+                                "room": "Kybher-3",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1968,7 +1968,7 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "D-302",
+                                "room": "D-311",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2036,7 +2036,7 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "D-302",
+                                "room": "D-311",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2122,7 +2122,7 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "D-302",
+                                "room": "D-311",
                                 "time": "08:30-10:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8080,7 +8080,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "D-311",
+                                "room": "D-315",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8148,7 +8148,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "D-311",
+                                "room": "D-314",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8216,7 +8216,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "D-311",
+                                "room": "D-314",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10017,7 +10017,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "D-504",
+                                "room": "D-302",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10039,7 +10039,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "D-504",
+                                "room": "D-302",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
