@@ -84,6 +84,12 @@ function TimetablePageInner() {
   const timetableDayMeta = timetableRaw.__meta__?.days ?? {};
 
   const [entries, setEntries] = useState<TimetableEntry[]>(allEntries);
+  // Mounted state — forces re-computation of time-dependent values after
+  // SSR hydration. During SSR, the server uses UTC time; the user's browser
+  // uses local timezone. Without this, the "effective today" (5:30 PM shift)
+  // computes with UTC during SSR and doesn't shift correctly.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
   const [query,    setQuery]    = useState('');
   const [selected, setSelected] = useState<TimetableEntry | null>(null);
@@ -312,7 +318,7 @@ function TimetablePageInner() {
       todayDayName,
       beforeSemesterStart
     };
-  }, [rawDaysList]);
+  }, [rawDaysList, mounted]);
 
   const currentMonthMakeupDays = useMemo(() => {
     return resolvedData.sidebarMakeupDays;

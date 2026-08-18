@@ -97,6 +97,9 @@ function CustomTimetableInner() {
   const [isMobileClassesExpanded, setIsMobileClassesExpanded] = useState(false);
   const [isDesktopClassesExpanded, setIsDesktopClassesExpanded] = useState(false);
   const [isMakeupSidebarOpen, setIsMakeupSidebarOpen] = useState(false);
+  // Mounted state for client-side time recomputation after SSR
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
   const rawDaysList = useMemo(() => {
     return Array.isArray(fscRaw.__meta__?.days)
@@ -304,7 +307,7 @@ function CustomTimetableInner() {
       todayDayName,
       beforeSemesterStart
     };
-  }, [rawDaysList]);
+  }, [rawDaysList, mounted]);
 
   const currentMonthMakeupDays = useMemo(() => {
     return resolvedData.sidebarMakeupDays;
