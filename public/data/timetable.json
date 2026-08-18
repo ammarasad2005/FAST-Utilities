@@ -780,7 +780,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -792,7 +792,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -804,7 +804,7 @@
                     "H": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -816,7 +816,7 @@
                     "E": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -828,7 +828,7 @@
                     "D": {
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -840,7 +840,7 @@
                     "C": {
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -878,7 +878,7 @@
                     "C": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -902,7 +902,7 @@
                     "F": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -914,7 +914,7 @@
                     "G": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -926,7 +926,7 @@
                     "A": {
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -938,7 +938,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -952,7 +952,7 @@
                     "E1": {
                         "Monday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -964,7 +964,7 @@
                     "E2": {
                         "Monday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -976,7 +976,7 @@
                     "H1": {
                         "Monday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -988,7 +988,7 @@
                     "H2": {
                         "Monday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1024,7 +1024,7 @@
                     "D1": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1036,7 +1036,7 @@
                     "D2": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1048,7 +1048,7 @@
                     "C1": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1060,7 +1060,7 @@
                     "C2": {
                         "Tuesday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1072,7 +1072,7 @@
                     "G1": {
                         "Wednesday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1084,7 +1084,7 @@
                     "G2": {
                         "Wednesday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1096,7 +1096,7 @@
                     "F1": {
                         "Wednesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1108,7 +1108,7 @@
                     "F2": {
                         "Wednesday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1120,7 +1120,7 @@
                     "B1": {
                         "Thursday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1132,7 +1132,7 @@
                     "B2": {
                         "Thursday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1623,7 +1623,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1659,7 +1659,7 @@
                     "E": {
                         "Saturday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1697,7 +1697,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1735,7 +1735,7 @@
                     "D1": {
                         "Monday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1759,7 +1759,7 @@
                     "B1": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1771,7 +1771,7 @@
                     "B2": {
                         "Tuesday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1783,7 +1783,7 @@
                     "C1": {
                         "Wednesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1795,7 +1795,7 @@
                     "C2": {
                         "Wednesday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1807,7 +1807,7 @@
                     "A1": {
                         "Thursday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1819,7 +1819,7 @@
                     "A2": {
                         "Thursday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1831,7 +1831,7 @@
                     "E1": {
                         "Saturday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1843,7 +1843,7 @@
                     "E2": {
                         "Saturday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2148,7 +2148,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2160,7 +2160,7 @@
                     "B": {
                         "Saturday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2174,7 +2174,7 @@
                     "C1": {
                         "Monday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2186,7 +2186,7 @@
                     "C2": {
                         "Monday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2198,7 +2198,7 @@
                     "A1": {
                         "Thursday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2210,7 +2210,7 @@
                     "A2": {
                         "Thursday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2234,7 +2234,7 @@
                     "B1": {
                         "Saturday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2248,7 +2248,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2260,7 +2260,7 @@
                     "C": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2272,7 +2272,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2455,7 +2455,7 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2467,7 +2467,7 @@
                     "C": {
                         "Saturday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2493,7 +2493,7 @@
                     "A": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2505,7 +2505,7 @@
                     "C": {
                         "Friday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2693,7 +2693,7 @@
                     "B1": {
                         "Tuesday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2705,7 +2705,7 @@
                     "B2": {
                         "Tuesday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2717,7 +2717,7 @@
                     "A1": {
                         "Wednesday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2729,7 +2729,7 @@
                     "A2": {
                         "Wednesday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2741,7 +2741,7 @@
                     "C1": {
                         "Saturday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2753,7 +2753,7 @@
                     "C2": {
                         "Saturday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3242,7 +3242,7 @@
                     "B": {
                         "Friday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "10:00-12:45",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3254,7 +3254,7 @@
                     "D": {
                         "Friday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3280,7 +3280,7 @@
                     "C": {
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3292,7 +3292,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3304,7 +3304,7 @@
                     "D": {
                         "Saturday": [
                             {
-                                "room": "D-IT Lab 1",
+                                "room": "IT Lab 1 (D-210)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3332,7 +3332,7 @@
                     "C1": {
                         "Thursday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3344,7 +3344,7 @@
                     "C2": {
                         "Thursday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3356,7 +3356,7 @@
                     "A1": {
                         "Friday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3368,7 +3368,7 @@
                     "A2": {
                         "Friday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3380,7 +3380,7 @@
                     "B1": {
                         "Friday": [
                             {
-                                "room": "A-CALL-3",
+                                "room": "CALL-3 (A-308)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3392,7 +3392,7 @@
                     "B2": {
                         "Friday": [
                             {
-                                "room": "A-Mehran-2",
+                                "room": "Mehran-2 (A-306)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3404,7 +3404,7 @@
                     "D1": {
                         "Saturday": [
                             {
-                                "room": "A-CALL-1",
+                                "room": "CALL-1 (A-213)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3416,7 +3416,7 @@
                     "D2": {
                         "Saturday": [
                             {
-                                "room": "A-CALL-2",
+                                "room": "CALL-2 (A-214)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4505,7 +4505,7 @@
                     "F": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4529,7 +4529,7 @@
                     "E": {
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5241,7 +5241,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "C-602",
+                                "room": "11:30-01:15 Room B-129",
                                 "time": "11:30-01:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5757,7 +5757,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5795,7 +5795,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5807,7 +5807,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5845,7 +5845,7 @@
                     "C": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5987,7 +5987,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "10:00-12:45",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5999,7 +5999,7 @@
                     "B": {
                         "Friday": [
                             {
-                                "room": "D-IT Lab 2",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6127,7 +6127,7 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6632,7 +6632,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 3",
+                                "room": "IT Lab 3 (D-213)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10544,7 +10544,7 @@
                         ],
                         "Tuesday": [
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10570,7 +10570,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10578,7 +10578,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10588,7 +10588,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10596,7 +10596,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -10604,7 +10604,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "D-IT Lab 4 (GPU)",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": true,
