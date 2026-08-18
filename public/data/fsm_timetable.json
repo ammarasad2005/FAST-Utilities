@@ -370,8 +370,8 @@
                     "D": {
                         "Tuesday": [
                             {
-                                "room": "A-210",
-                                "time": "02:25-03:45",
+                                "room": "A--211",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -2276,145 +2276,6 @@
         }
     },
     "2023": {
-        "FT": {
-            "regular": {
-                "CY 4053Cybersecurity for FinTech": {
-                    "A/B": {
-                        "Monday": [
-                            {
-                                "room": "A-01",
-                                "time": "02:25-03:45",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "A-01",
-                                "time": "03:50-05:10",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "AF4011 Investment and Portfolio Analytics": {
-                    "A": {
-                        "Monday": [
-                            {
-                                "room": "A-04",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "C-406",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Monday": [
-                            {
-                                "room": "A-04",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "C-406",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "AF4017 Digital Assets and Cryptocurrencies; Conventional and Shariah Perspectives": {
-                    "A/B": {
-                        "Wednesday": [
-                            {
-                                "room": "A-102",
-                                "time": "02:25-03:45",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "A-102",
-                                "time": "03:50-05:10",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "FT4005 \tDigital Bank and Payment Industry": {
-                    "A/B": {
-                        "Friday": [
-                            {
-                                "room": "A-301",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "A-301",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "AF3006 Financing New Ventures": {
-                    "A/B": {
-                        "Friday": [
-                            {
-                                "room": "A-301",
-                                "time": "02:25-03:45",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "A-301",
-                                "time": "03:50-05:10",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                }
-            },
-            "repeat": {}
-        },
         "AF": {
             "regular": {
                 "MG4011 Entrepreneurship": {
@@ -2754,6 +2615,151 @@
                             {
                                 "room": "A-01",
                                 "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                }
+            },
+            "repeat": {}
+        },
+        "FT": {
+            "regular": {
+                "AF4011 Investment and Portfolio Analytics": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "A-04",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "C-406",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Monday": [
+                            {
+                                "room": "A-04",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "C-406",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "CY4053 Cybersecurity for FinTech": {
+                    "A/B": {
+                        "Tuesday": [
+                            {
+                                "room": "A-101",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "CY 4053Cybersecurity for FinTech": {
+                    "A/B": {
+                        "Tuesday": [
+                            {
+                                "room": "A-101",
+                                "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "AF4017 Digital Assets and Cryptocurrencies; Conventional and Shariah Perspectives": {
+                    "A/B": {
+                        "Wednesday": [
+                            {
+                                "room": "A-102",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "A-102",
+                                "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "FT4005 \tDigital Bank and Payment Industry": {
+                    "A/B": {
+                        "Friday": [
+                            {
+                                "room": "A-301",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "A-301",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "AF3006 Financing New Ventures": {
+                    "A/B": {
+                        "Friday": [
+                            {
+                                "room": "A-301",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "A-301",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
