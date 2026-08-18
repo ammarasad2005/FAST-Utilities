@@ -11,7 +11,7 @@ import {
   type TimetableResultPreference,
   type UserConfig,
 } from '@/lib/timetable-live';
-import { clampMondayToSemesterStart, isBeforeSemesterStart } from '@/lib/dates';
+import { clampMondayToSemesterStart, isBeforeSemesterStart, getEffectiveToday } from '@/lib/dates';
 
 // eslint-disable-next-line
 const fscRaw: RawTimetableJSON = require('../../public/data/timetable.json');
@@ -99,8 +99,8 @@ export function DesktopTicker({
   }, []);
 
   const resolvedData = useMemo(() => {
-    const today = new Date(now);
-    today.setHours(0, 0, 0, 0);
+    // Use effective today: after 5:30 PM, shift to tomorrow
+    const today = getEffectiveToday(now);
 
     const currentYear = today.getFullYear();
 
@@ -350,13 +350,15 @@ export function DesktopTicker({
     return [];
   }, [isSummer, summerSelections, summerCatalog, userConfig, bundles, allTimetableEntries, resultPreferences]);
 
-  const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' });
+  // Use effective today for day-of-week and ISO date matching
+  const effectiveToday = getEffectiveToday(now);
+  const currentDay = effectiveToday.toLocaleDateString('en-US', { weekday: 'long' });
   const currentMins = now.getHours() * 60 + now.getMinutes();
 
-  // local date YYYY-MM-DD
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, '0');
-  const dayStr = String(now.getDate()).padStart(2, '0');
+  // local date YYYY-MM-DD (from effective today, not raw now)
+  const year = effectiveToday.getFullYear();
+  const month = String(effectiveToday.getMonth() + 1).padStart(2, '0');
+  const dayStr = String(effectiveToday.getDate()).padStart(2, '0');
   const todayISO = `${year}-${month}-${dayStr}`;
 
   const status = useMemo((): TickerStatus | null => {

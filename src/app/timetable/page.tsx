@@ -22,7 +22,7 @@ import { AlertCircle } from 'lucide-react';
 import type { TimetableEntry, RawTimetableJSON, SummerCourseCatalogEntry } from '@/lib/types';
 import { DAYS_ORDER } from '@/lib/types';
 import { MakeupDaysSidebar } from '@/components/MakeupDaysSidebar';
-import { clampMondayToSemesterStart, isBeforeSemesterStart } from '@/lib/dates';
+import { clampMondayToSemesterStart, isBeforeSemesterStart, getEffectiveToday } from '@/lib/dates';
 
 // Load BOTH school timetables at module level
 // eslint-disable-next-line
@@ -109,8 +109,9 @@ function TimetablePageInner() {
   }, []);
 
   const resolvedData = useMemo(() => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    // Use effective today: after 5:30 PM, shift "today" to tomorrow
+    // so the user sees the next day's schedule instead of the empty evening.
+    const today = getEffectiveToday();
 
     const currentYear = today.getFullYear();
 

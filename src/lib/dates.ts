@@ -154,6 +154,28 @@ export function isBeforeSemesterStart(): boolean {
 }
 
 /**
+ * Returns the "effective today" — the date that should be treated as "Today"
+ * for display purposes.
+ *
+ * From 12:00 AM to 5:29 PM: effective today = actual today
+ * From 5:30 PM to 11:59 PM: effective today = tomorrow
+ *
+ * After 5:30 PM, all BS classes are done (last slot ends at 5:15-5:20 PM).
+ * Showing the empty remainder of today is useless, so we shift "Today" to
+ * tomorrow. At midnight, tomorrow becomes today naturally.
+ */
+export function getEffectiveToday(now: Date = new Date()): Date {
+  const today = new Date(now);
+  today.setHours(0, 0, 0, 0);
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+  if (currentMinutes >= 17 * 60 + 30) {
+    // After 5:30 PM — shift to tomorrow
+    today.setDate(today.getDate() + 1);
+  }
+  return today;
+}
+
+/**
  * Clamps a Monday reference date to the semester start week if the Monday
  * falls before the semester's "First Day of Classes". This ensures day
  * labels never show pre-semester dates.

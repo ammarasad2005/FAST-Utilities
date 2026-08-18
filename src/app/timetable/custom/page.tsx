@@ -8,7 +8,7 @@ import { TimetableExportButton } from '@/components/TimetableExportButton';
 import { EmptyState } from '@/components/EmptyState';
 import { Header } from '@/components/Header';
 import { MakeupDaysSidebar } from '@/components/MakeupDaysSidebar';
-import { clampMondayToSemesterStart, isBeforeSemesterStart } from '@/lib/dates';
+import { clampMondayToSemesterStart, isBeforeSemesterStart, getEffectiveToday } from '@/lib/dates';
 
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { ShieldAlert, AlertCircle, Info } from 'lucide-react';
@@ -111,8 +111,7 @@ function CustomTimetableInner() {
   }, []);
 
   const resolvedData = useMemo(() => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const today = getEffectiveToday();
 
     const currentYear = today.getFullYear();
 
