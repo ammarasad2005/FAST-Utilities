@@ -1173,20 +1173,47 @@ time_pattern = re.compile(r'\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2}')
 def parse_cell_parens(val):
     """
     Parse a timetable cell's parenthetical content.
-    Returns (course_name, dept, section, batch, category) or None if unparseable.
+    Returns (course_name, dept, section, batch, category, location_override) or None.
 
-    - section is None when the cell has no section letter (Pattern 3 and 4).
-      Caller should default it to "A".
-    - batch is None for non-repeat cells (Pattern 1 and 4).
-    - category is "repeat" when batch is not None, "regular" otherwise.
+    Handles these patterns:
+      1. PF (CS-A)                     → regular
+      2. OOP (CS-A, 25)                → repeat
+      3. Algo (CS, 23)                 → repeat, no section
+      4. SMD (CS)                      → regular, no section
+      5. PPIT (CS-B) Audi-Grd Flr, Block-D  → regular, location override
+
+    Pattern 5: when the cell has text AFTER the closing paren, that text is
+    a location annotation (e.g., "Audi-Grd Flr, Block-D" = Auditorium Ground
+    Floor, Block-D). The location overrides the room column assignment.
+
+    Returns a 6th element: location_override (string or None).
     """
     # 1. Strip trailing time annotation (e.g., "Func Eng (CS-G) 08:30-10:15")
     text = re.sub(r'\s+\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2}\s*$', '', val).strip()
 
-    # 2. Extract parenthetical content (last parens group in the cell)
+    # 2. Extract parenthetical content.
+    # First try: parens at the END (the normal pattern for 99% of cells)
     m = re.search(r'\(([^)]+)\)\s*$', text)
+    location_override = None
+
     if not m:
-        return None
+        # Second try: parens NOT at the end — there's trailing text after the
+        # closing paren. This is the location annotation pattern:
+        # "PPIT (CS-B) Audi-Grd Flr, Block-D"
+        # The trailing text is a location override (not part of the course name).
+        m = re.search(r'\(([^)]+)\)', text)
+        if not m:
+            return None
+        # Check if the text before the parens looks like a course name
+        # (not just whitespace or empty)
+        course_before = text[:m.start()].strip()
+        if not course_before:
+            return None
+        # Trailing text after the closing paren is the location annotation
+        after_paren = text[m.end():].strip()
+        if after_paren:
+            location_override = after_paren
+
     course_name = text[:m.start()].strip()
     paren = m.group(1).strip()
 
@@ -1216,7 +1243,7 @@ def parse_cell_parens(val):
     # 6. Determine category
     category = "repeat" if batch is not None else "regular"
 
-    return (course_name, dept, section, batch, category)
+    return (course_name, dept, section, batch, category, location_override)
 
 # ==============================================================================
 # CONSTRAINT SATISFACTION DATA STRUCTURES
@@ -1459,8 +1486,12 @@ for day_info in day_sheets:
             # Handles all 4 cell patterns via VALID_DEPTS validation.
             # Replaces the old repeat_pattern/regular_pattern + fix-up loop.
             parsed = parse_cell_parens(val)
+            location_override = None
             if parsed:
-                course_name, dept, section, batch, category = parsed
+                if len(parsed) == 6:
+                    course_name, dept, section, batch, category, location_override = parsed
+                else:
+                    course_name, dept, section, batch, category = parsed
                 # Default section to "A" when cell has no section letter
                 # (Pattern 3: "Algo (CS, 23)" and Pattern 4: "SMD (CS)")
                 if section is None:
@@ -1598,6 +1629,8 @@ for day_info in day_sheets:
             duration, quota = get_slot_quota(actual_time)
 
             # Base record — batch filled in when resolved
+            # Use location_override (from cell text like "Audi-Grd Flr, Block-D")
+            # instead of the room column when present.
             record = {
                 "course_name": course_name,
                 "dept":        dept,
@@ -1606,7 +1639,7 @@ for day_info in day_sheets:
                 "sheet_name":  sheet_name,
                 "time":        actual_time,
                 "blocking_time": blocking_time,
-                "room":        current_room,
+                "room":        location_override or current_room,
                 "category":    category,
                 "batch":       batch,        # None for regular until resolved
                 "is_rescheduled": is_rescheduled,
