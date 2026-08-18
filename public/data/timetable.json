@@ -4978,6 +4978,28 @@
                             }
                         ]
                     },
+                    "B": {
+                        "Monday": [
+                            {
+                                "room": "C-605",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "C-607",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "C": {
                         "Tuesday": [
                             {
@@ -5015,18 +5037,6 @@
                             {
                                 "room": "C-604",
                                 "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Wednesday": [
-                            {
-                                "room": "C-607",
-                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -5209,20 +5219,6 @@
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Intro to SE (SE-B) C-605": {
-                    "A": {
-                        "Monday": [
-                            {
-                                "room": "C-604",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -6964,6 +6960,28 @@
                             }
                         ]
                     },
+                    "D": {
+                        "Monday": [
+                            {
+                                "room": "C-407",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "C-405",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "E": {
                         "Tuesday": [
                             {
@@ -7023,18 +7041,6 @@
                             {
                                 "room": "C-407",
                                 "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "D": {
-                        "Wednesday": [
-                            {
-                                "room": "C-405",
-                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -7507,20 +7513,6 @@
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "App HCI (CS-D) C-407": {
-                    "A": {
-                        "Monday": [
-                            {
-                                "room": "C-405",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -9093,30 +9085,6 @@
                         ]
                     }
                 },
-                "OS (CY-A) C-307": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-503",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "D-503",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "DB": {
                     "A": {
                         "Tuesday": [
@@ -9255,20 +9223,6 @@
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "DB (CY-A) D-301": {
-                    "A": {
-                        "Thursday": [
-                            {
-                                "room": "D-503",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -9687,6 +9641,30 @@
         "CY": {
             "regular": {},
             "repeat": {
+                "Sec Ops": {
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "CY Lab",
+                                "time": "02:30-03:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "CY Lab",
+                                "time": "02:30-03:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "MG Elective": {
                     "A": {
                         "Tuesday": [
@@ -10071,21 +10049,29 @@
                         ]
                     }
                 },
-                "Security Ops (CY-A) CY Lab": {
+                "Security Ops": {
                     "A": {
                         "Monday": [
                             {
-                                "room": "D-503",
-                                "time": "10:00-12:45",
+                                "room": "CY Lab",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "D-505",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
                         ]
-                    }
-                },
-                "Security Ops": {
+                    },
                     "B": {
                         "Monday": [
                             {
@@ -10096,13 +10082,11 @@
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ]
-                    },
-                    "A": {
+                        ],
                         "Wednesday": [
                             {
-                                "room": "D-505",
-                                "time": "10:00-11:20",
+                                "room": "CY Lab",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
@@ -10347,20 +10331,6 @@
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Security Ops (CY-B) CY Lab": {
-                    "A": {
-                        "Wednesday": [
-                            {
-                                "room": "D-505",
-                                "time": "01:00-03:45",
-                                "rescheduled": false,
-                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -11281,6 +11251,28 @@
                             }
                         ]
                     },
+                    "B": {
+                        "Tuesday": [
+                            {
+                                "room": "Audi-Grd Flr, Block-D",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "D-405",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "C": {
                         "Tuesday": [
                             {
@@ -11303,6 +11295,28 @@
                             }
                         ]
                     },
+                    "D": {
+                        "Tuesday": [
+                            {
+                                "room": "Audi-Grd Flr, Block-D",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "D-411",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "H": {
                         "Tuesday": [
                             {
@@ -11318,30 +11332,6 @@
                             {
                                 "room": "D-411",
                                 "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Thursday": [
-                            {
-                                "room": "D-405",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "D": {
-                        "Thursday": [
-                            {
-                                "room": "D-411",
-                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -11736,20 +11726,6 @@
                         ]
                     }
                 },
-                "PPIT (CS-B) Audi-Grd Flr, Block-D": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-405",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "Gen AI": {
                     "A": {
                         "Tuesday": [
@@ -11788,20 +11764,6 @@
                             {
                                 "room": "D-405",
                                 "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "PPIT (CS-D) Audi-Grd Flr, Block-D": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-411",
-                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
