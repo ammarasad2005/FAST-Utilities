@@ -2917,7 +2917,7 @@
         "BBA": {
             "regular": {
                 "MG2003 Consumer Behaviour": {
-                    "A": {
+                    "B": {
                         "Monday": [
                             {
                                 "room": "A-04",
@@ -2939,7 +2939,7 @@
                             }
                         ]
                     },
-                    "B": {
+                    "A": {
                         "Monday": [
                             {
                                 "room": "A-101",
@@ -2952,7 +2952,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A-03",
+                                "room": "A-04",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2985,7 +2985,7 @@
                     }
                 },
                 "AF 3001 Financial Management": {
-                    "A": {
+                    "B": {
                         "Monday": [
                             {
                                 "room": "A-04",
@@ -2998,7 +2998,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A-316",
+                                "room": "A-03",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3007,7 +3007,7 @@
                             }
                         ]
                     },
-                    "B": {
+                    "A": {
                         "Monday": [
                             {
                                 "room": "A-101",
@@ -3066,7 +3066,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A-04",
+                                "room": "A-210",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3572,6 +3572,26 @@
                             }
                         ]
                     },
+                    "A": {
+                        "Friday": [
+                            {
+                                "room": "A-02",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "A-02",
+                                "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "B": {
                         "Friday": [
                             {
@@ -3585,26 +3605,6 @@
                             {
                                 "room": "A-302",
                                 "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Friday": [
-                            {
-                                "room": "A-302",
-                                "time": "02:25-03:45",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "A-302",
-                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
