@@ -22,7 +22,7 @@ import { AlertCircle } from 'lucide-react';
 import type { TimetableEntry, RawTimetableJSON, SummerCourseCatalogEntry } from '@/lib/types';
 import { DAYS_ORDER } from '@/lib/types';
 import { MakeupDaysSidebar } from '@/components/MakeupDaysSidebar';
-import { clampMondayToSemesterStart, isBeforeSemesterStart, getEffectiveToday } from '@/lib/dates';
+import { clampMondayToSemesterStart, isBeforeSemesterStart, getEffectiveToday, isTomorrowPreview } from '@/lib/dates';
 
 // Load BOTH school timetables at module level
 // eslint-disable-next-line
@@ -1482,8 +1482,8 @@ function ListView({
                 ? 'text-sm font-black text-[var(--color-text-primary)]' 
                 : 'text-[11px] font-bold text-[var(--color-text-tertiary)] uppercase'
             }`}>
-              {isToday 
-                ? `TODAY (${dayName.toUpperCase()}${isMakeup ? ' (MAKEUP)' : ''}${dateStr ? ` ${dateStr.toUpperCase()}` : ''})` 
+              {isToday
+                ? `${isTomorrowPreview() ? 'TOMORROW' : 'TODAY'} (${dayName.toUpperCase()}${isMakeup ? ' (MAKEUP)' : ''}${dateStr ? ` ${dateStr.toUpperCase()}` : ''})`
                 : `${dayName.toUpperCase()}${isMakeup ? ' (MAKEUP)' : ''}${dateStr ? ` ${dateStr.toUpperCase()}` : ''}`}
             </h2>
           </div>

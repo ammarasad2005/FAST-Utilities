@@ -176,6 +176,20 @@ export function getEffectiveToday(now: Date = new Date()): Date {
 }
 
 /**
+ * Returns true if we're in the "tomorrow preview" window:
+ * 5:30 PM to 11:59 PM. During this window, the label should be
+ * "TOMORROW" instead of "TODAY" (since we're showing tomorrow's
+ * schedule, not today's).
+ *
+ * From 12:00 AM to 5:29 PM: returns false (show "TODAY")
+ * From 5:30 PM to 11:59 PM: returns true (show "TOMORROW")
+ */
+export function isTomorrowPreview(now: Date = new Date()): boolean {
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+  return currentMinutes >= 17 * 60 + 30;
+}
+
+/**
  * Clamps a Monday reference date to the semester start week if the Monday
  * falls before the semester's "First Day of Classes". This ensures day
  * labels never show pre-semester dates.

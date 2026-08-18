@@ -8,7 +8,7 @@ import { TimetableExportButton } from '@/components/TimetableExportButton';
 import { EmptyState } from '@/components/EmptyState';
 import { Header } from '@/components/Header';
 import { MakeupDaysSidebar } from '@/components/MakeupDaysSidebar';
-import { clampMondayToSemesterStart, isBeforeSemesterStart, getEffectiveToday } from '@/lib/dates';
+import { clampMondayToSemesterStart, isBeforeSemesterStart, getEffectiveToday, isTomorrowPreview } from '@/lib/dates';
 
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { ShieldAlert, AlertCircle, Info } from 'lucide-react';
@@ -991,8 +991,8 @@ function CustomTimetableInner() {
                           ? 'text-sm font-black text-[var(--color-text-primary)]'
                           : 'text-[11px] font-bold text-[var(--color-text-tertiary)] uppercase'
                       }`}>
-                        {isToday 
-                          ? `TODAY (${dayName.toUpperCase()}${isMakeup ? ' (MAKEUP)' : ''}${dateStr ? ` ${dateStr.toUpperCase()}` : ''})` 
+                        {isToday
+                          ? `${isTomorrowPreview() ? 'TOMORROW' : 'TODAY'} (${dayName.toUpperCase()}${isMakeup ? ' (MAKEUP)' : ''}${dateStr ? ` ${dateStr.toUpperCase()}` : ''})`
                           : `${dayName.toUpperCase()}${isMakeup ? ' (MAKEUP)' : ''}${dateStr ? ` ${dateStr.toUpperCase()}` : ''}`}
                       </h2>
                     </div>
