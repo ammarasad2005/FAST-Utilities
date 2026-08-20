@@ -10415,30 +10415,6 @@
                         ]
                     }
                 },
-                "Edge Comp": {
-                    "A": {
-                        "Monday": [
-                            {
-                                "room": "D-316",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "D-402",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "AI Prod Dev": {
                     "A": {
                         "Monday": [
@@ -10479,6 +10455,30 @@
                             {
                                 "room": "D-403",
                                 "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "Edge Comp": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "D-401",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "D-402",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
