@@ -1379,7 +1379,7 @@
                     }
                 },
                 "MG1002 Marketing Management": {
-                    "B": {
+                    "A": {
                         "Tuesday": [
                             {
                                 "room": "A-315",
@@ -1393,7 +1393,7 @@
                         "Thursday": [
                             {
                                 "room": "A- 202",
-                                "time": "02:25-03:45",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1401,7 +1401,7 @@
                             }
                         ]
                     },
-                    "A": {
+                    "B": {
                         "Tuesday": [
                             {
                                 "room": "A-315",
@@ -1415,7 +1415,7 @@
                         "Thursday": [
                             {
                                 "room": "A- 202",
-                                "time": "03:50-05:10",
+                                "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1442,32 +1442,32 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "Khyber II",
-                                "time": "08:30-09:50",
+                                "room": "Cal-I lab",
+                                "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             },
                             {
-                                "room": "Khyber II",
-                                "time": "10:00-11:20",
+                                "room": "Cal-I lab",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             },
                             {
-                                "room": "Khyber III",
-                                "time": "08:30-09:50",
+                                "room": "Cal-II lab",
+                                "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             },
                             {
-                                "room": "Khyber III",
-                                "time": "10:00-11:20",
+                                "room": "Cal-II lab",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -5328,7 +5328,7 @@
                     "C": {
                         "Monday": [
                             {
-                                "room": "KK-III",
+                                "room": "Khyber I",
                                 "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5336,7 +5336,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "KK-III",
+                                "room": "Khyber I",
                                 "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
