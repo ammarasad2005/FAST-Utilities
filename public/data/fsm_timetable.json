@@ -874,6 +874,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "A-305",
+                                "time": "08:30-10:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     }
                 },
@@ -1020,16 +1030,6 @@
                         "Tuesday": [
                             {
                                 "room": "A-01",
-                                "time": "02:25-04:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Friday": [
-                            {
-                                "room": "A-303",
                                 "time": "02:25-04:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1205,12 +1205,12 @@
                         ]
                     }
                 },
-                "SS1016 English - I (11:30-1:20)": {
+                "SS1007 Islamic Studies/Ethics (08:30-10:20)": {
                     "A": {
                         "Friday": [
                             {
-                                "room": "A-305",
-                                "time": "11:30-1:20",
+                                "room": "A-303",
+                                "time": "08:30-10:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6282,7 +6282,7 @@
                         ]
                     }
                 },
-                "SS1022 U-Holy Quran-I&II  (02:25 - 04:15)": {
+                "SS1022/SS1021 U-Holy Quran-I&II  (02:25 - 04:15)": {
                     "A": {
                         "Monday": [
                             {
@@ -6494,7 +6494,7 @@
                         ]
                     }
                 },
-                "SS1022 U-Holy Quran-I&II (02:25-04:15)": {
+                "SS1022/SS1021 U-Holy Quran-I&II (02:25-04:15)": {
                     "A": {
                         "Tuesday": [
                             {
@@ -6857,7 +6857,7 @@
                         ]
                     }
                 },
-                "SS1022 U-Holy Quran-I&II  (11:30-01:20)": {
+                "SS1022/SS1021 U-Holy Quran-I&II  (11:30-01:20)": {
                     "A": {
                         "Wednesday": [
                             {
@@ -6871,7 +6871,7 @@
                         ]
                     }
                 },
-                "SS1022 U-Holy Quran-I&II (08:30-10:20)": {
+                "SS1022/SS1021 U-Holy Quran-I&II (08:30-10:20)": {
                     "A": {
                         "Thursday": [
                             {
