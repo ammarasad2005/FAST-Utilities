@@ -3697,7 +3697,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -9096,10 +9097,20 @@
                     }
                 },
                 "DB": {
-                    "B": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "ReSch",
+                                "time": "02:30-03:50",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Tuesday": [
                             {
-                                "room": "D-302",
+                                "room": "D-503",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9109,19 +9120,30 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "D-302",
+                                "room": "D-503",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
-                    "A": {
+                    "B": {
+                        "Monday": [
+                            {
+                                "room": "ReSch",
+                                "time": "02:30-03:50",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Tuesday": [
                             {
-                                "room": "D-503",
+                                "room": "D-302",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9131,12 +9153,13 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "D-503",
+                                "room": "D-302",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -11205,7 +11228,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "D-405",
+                                "room": "Audi, Grd Flr, Block-A",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -11249,7 +11272,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "D-411",
+                                "room": "Audi, Grd Flr, Block-A",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
