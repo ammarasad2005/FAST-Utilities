@@ -9283,16 +9283,6 @@
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ],
-                        "Friday": [
-                            {
-                                "room": "Margala 1 (C-209)",
-                                "time": "08:30-11:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
                         ]
                     },
                     "C": {
