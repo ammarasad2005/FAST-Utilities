@@ -11603,7 +11603,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "D-412",
+                                "room": "C-110",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -11613,7 +11613,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "D-412",
+                                "room": "C-110",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
