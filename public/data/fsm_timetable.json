@@ -654,15 +654,17 @@
                         "Tuesday": [
                             {
                                 "room": "A--211",
-                                "time": "08:30-09:50",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
-                            },
+                            }
+                        ],
+                        "Thursday": [
                             {
-                                "room": "A--211",
-                                "time": "10:00-11:20",
+                                "room": "A-305",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -671,15 +673,17 @@
                         ]
                     },
                     "A": {
-                        "Thursday": [
+                        "Tuesday": [
                             {
-                                "room": "A-316",
-                                "time": "08:30-09:50",
+                                "room": "A-311",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
-                            },
+                            }
+                        ],
+                        "Thursday": [
                             {
                                 "room": "A-316",
                                 "time": "10:00-11:20",
