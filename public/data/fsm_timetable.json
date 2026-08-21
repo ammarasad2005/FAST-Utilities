@@ -1025,12 +1025,12 @@
                         ]
                     }
                 },
-                "CS1001 IT in Business (08:30-10:20)": {
+                "SS1007 Islamic Studies/Ethics (02:25-04:15)": {
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "A-101",
-                                "time": "08:30-10:20",
+                                "room": "A-210",
+                                "time": "02:25-04:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1039,12 +1039,12 @@
                         ]
                     }
                 },
-                "SS1007 Islamic Studies/Ethics (02:25-04:15)": {
+                "CS1001 IT in Business (08:30-10:20)": {
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "A-210",
-                                "time": "02:25-04:15",
+                                "room": "A-314",
+                                "time": "08:30-10:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1364,12 +1364,40 @@
                         ]
                     }
                 },
-                "SS2019Psychology (01:00-02:50)": {
-                    "A": {
+                "MG1002 Marketing Management": {
+                    "B": {
                         "Tuesday": [
                             {
-                                "room": "A-302",
-                                "time": "01:00-02:50",
+                                "room": "A-03",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "A-03",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Thursday": [
+                            {
+                                "room": "A-316",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "A-316",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1378,44 +1406,12 @@
                         ]
                     }
                 },
-                "MG1002 Marketing Management": {
+                "SS2019Psychology (01:00-02:50)": {
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "A-315",
-                                "time": "02:25-03:45",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A- 202",
-                                "time": "03:50-05:10",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Tuesday": [
-                            {
-                                "room": "A-315",
-                                "time": "03:50-05:10",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A- 202",
-                                "time": "02:25-03:45",
+                                "room": "A-302",
+                                "time": "01:00-02:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -2857,7 +2853,7 @@
                     "C": {
                         "Tuesday": [
                             {
-                                "room": "A-314",
+                                "room": "A-101",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2959,7 +2955,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A-210",
+                                "room": "A-104",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3049,7 +3045,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A-102",
+                                "room": "A-01",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3144,6 +3140,28 @@
                     }
                 },
                 "MG3014 Advanced Business Communication": {
+                    "C": {
+                        "Tuesday": [
+                            {
+                                "room": "A-101",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A-101",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "B": {
                         "Tuesday": [
                             {
@@ -3181,28 +3199,6 @@
                             {
                                 "room": "A-101",
                                 "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "C": {
-                        "Tuesday": [
-                            {
-                                "room": "A-314",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A-101",
-                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -3331,11 +3327,11 @@
                     }
                 },
                 "SS2006 Macroeconomics": {
-                    "A": {
+                    "B": {
                         "Monday": [
                             {
                                 "room": "A-303",
-                                "time": "08:30-09:50",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -3345,7 +3341,7 @@
                         "Wednesday": [
                             {
                                 "room": "A-210",
-                                "time": "08:30-09:50",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -3353,11 +3349,11 @@
                             }
                         ]
                     },
-                    "B": {
+                    "A": {
                         "Monday": [
                             {
-                                "room": "A-305",
-                                "time": "10:00-11:20",
+                                "room": "A-303",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -3366,8 +3362,8 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A--211",
-                                "time": "10:00-11:20",
+                                "room": "A-301",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -3378,7 +3374,7 @@
                     "D": {
                         "Thursday": [
                             {
-                                "room": "A-01",
+                                "room": "A-303",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3400,7 +3396,7 @@
                     "C": {
                         "Thursday": [
                             {
-                                "room": "A-01",
+                                "room": "A-303",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4611,7 +4607,7 @@
                     "A/B": {
                         "Thursday": [
                             {
-                                "room": "A-303",
+                                "room": "A-02",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -4619,7 +4615,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "A-303",
+                                "room": "A-02",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -5124,96 +5120,6 @@
                         ]
                     }
                 },
-                "AF2003 Management Accounting": {
-                    "B": {
-                        "Monday": [
-                            {
-                                "room": "A- 201",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "A-104",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Monday": [
-                            {
-                                "room": "A- 201",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "A-104",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "D": {
-                        "Tuesday": [
-                            {
-                                "room": "A-03",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A- 201",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "C": {
-                        "Tuesday": [
-                            {
-                                "room": "A-102",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A- 201",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "MG2009 Data Analysis for Business II": {
                     "D": {
                         "Monday": [
@@ -5386,6 +5292,96 @@
                         ]
                     }
                 },
+                "AF2003 Management Accounting": {
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "A-01",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A-305",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "D": {
+                        "Tuesday": [
+                            {
+                                "room": "A-03",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A- 201",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "C": {
+                        "Tuesday": [
+                            {
+                                "room": "A-102",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A- 201",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Wednesday": [
+                            {
+                                "room": "A-104",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "A-310",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "SS2041 Critical Thinking (02:25-04:15)": {
                     "A": {
                         "Tuesday": [
@@ -5442,12 +5438,12 @@
                         ]
                     }
                 },
-                "SS2041 Critical Thinking  (02:25-04:15)": {
+                "SS1013 Ideology and Constitution of Pakistan (10:00-11:50))": {
                     "A": {
                         "Friday": [
                             {
-                                "room": "A-311",
-                                "time": "02:25-04:15",
+                                "room": "A-310",
+                                "time": "10:00-11:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -5456,12 +5452,12 @@
                         ]
                     }
                 },
-                "SS1013 Ideology and Constitution of Pakistan (08:30-10:20)": {
+                "SS2041 Critical Thinking  (02:25-04:15)": {
                     "A": {
                         "Friday": [
                             {
-                                "room": "A-314",
-                                "time": "08:30-10:20",
+                                "room": "A-311",
+                                "time": "02:25-04:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6014,7 +6010,7 @@
                     "D": {
                         "Monday": [
                             {
-                                "room": "A-302",
+                                "room": "A-301",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6070,96 +6066,6 @@
                             {
                                 "room": "A-315",
                                 "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "MG2012 Business Economics": {
-                    "C": {
-                        "Monday": [
-                            {
-                                "room": "A-301",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "A--211",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "D": {
-                        "Monday": [
-                            {
-                                "room": "A-302",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "A-301",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Tuesday": [
-                            {
-                                "room": "A-305",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A-316",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "A-310",
-                                "time": "02:25-03:45",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A-316",
-                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6244,6 +6150,96 @@
                         ]
                     }
                 },
+                "MG2012 Business Economics": {
+                    "D": {
+                        "Monday": [
+                            {
+                                "room": "A-305",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "A--211",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "C": {
+                        "Monday": [
+                            {
+                                "room": "A-305",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "A--211",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Tuesday": [
+                            {
+                                "room": "A-305",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A-316",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "A-310",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A-316",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "SS1013 Ideology and Constitutions of Pakistan (02:25-04:15)": {
                     "A": {
                         "Monday": [
@@ -6293,7 +6289,7 @@
                         "Monday": [
                             {
                                 "room": "KK-II",
-                                "time": "08:30-09:50",
+                                "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6301,7 +6297,7 @@
                             },
                             {
                                 "room": "KK-II",
-                                "time": "10:00-11:20",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6332,16 +6328,16 @@
                     "B": {
                         "Wednesday": [
                             {
-                                "room": "Khyber I",
-                                "time": "08:30-09:50",
+                                "room": "Khyber II",
+                                "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             },
                             {
-                                "room": "Khyber I",
-                                "time": "10:00-11:20",
+                                "room": "Khyber II",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6441,80 +6437,12 @@
         },
         "BA": {
             "regular": {
-                "MG2012 Business Economics": {
-                    "C": {
-                        "Monday": [
-                            {
-                                "room": "A-305",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "A-302",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Monday": [
-                            {
-                                "room": "A-316",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A-301",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Monday": [
-                            {
-                                "room": "A-316",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A-301",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "CS2016 Programming for Business": {
                     "C": {
                         "Monday": [
                             {
                                 "room": "A-305",
-                                "time": "01:00-02:20",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6524,7 +6452,7 @@
                         "Wednesday": [
                             {
                                 "room": "A-302",
-                                "time": "01:00-02:20",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6569,6 +6497,74 @@
                             {
                                 "room": "A--211",
                                 "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "MG2012 Business Economics": {
+                    "C": {
+                        "Monday": [
+                            {
+                                "room": "A-305",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "A-302",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "A-316",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A-301",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Monday": [
+                            {
+                                "room": "A-316",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A-301",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
