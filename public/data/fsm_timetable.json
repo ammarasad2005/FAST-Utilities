@@ -3664,12 +3664,12 @@
                         ]
                     }
                 },
-                "CS3017 Enterprise Systems & Applications (08:00-11:00)": {
+                "CS3017 Enterprise Systems & Applications (08:30-11:00)": {
                     "A": {
                         "Tuesday": [
                             {
                                 "room": "A-03",
-                                "time": "08:00-11:00",
+                                "time": "08:30-11:00",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -4885,7 +4885,7 @@
                         ]
                     }
                 },
-                "MG4051  Digital Marketing": {
+                "MG4521  Digital Marketing": {
                     "A/B": {
                         "Tuesday": [
                             {
@@ -6090,7 +6090,7 @@
                     "C": {
                         "Tuesday": [
                             {
-                                "room": "A-315",
+                                "room": "A--211",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
