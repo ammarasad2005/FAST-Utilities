@@ -78,6 +78,7 @@ export default function AdminPage() {
   const [semesterType, setSemesterType] = useState<'regular' | 'summer'>('regular')
   const [semesterName, setSemesterName] = useState('Spring 2026')
   const [bypassCoursesConfig, setBypassCoursesConfig] = useState(false)
+  const [showExams, setShowExams] = useState(false)
   const [googleSheetsUrl, setGoogleSheetsUrl] = useState('')
   const [courseMappings, setCourseMappings] = useState('[]') // Used for regular (legacy fallback)
   const [summerCatalog, setSummerCatalog] = useState<SummerCourseCatalogEntry[]>([]) // Used for summer
@@ -212,6 +213,7 @@ export default function AdminPage() {
         setSemesterType(data.semester_type)
         setSemesterName(data.semester_name ?? 'Spring 2026')
         setBypassCoursesConfig(data.bypass_courses_config)
+        setShowExams(data.show_exams ?? false)
         setGoogleSheetsUrl(data.google_sheets_url)
         setOverrideCourseMappings(data.override_course_mappings ?? false)
         if (data.sheet_name_mappings && typeof data.sheet_name_mappings === 'object') {
@@ -279,6 +281,7 @@ export default function AdminPage() {
           semester_type: semesterType,
           semester_name: semesterName,
           bypass_courses_config: bypassCoursesConfig,
+          show_exams: showExams,
           google_sheets_url: googleSheetsUrl,
           override_course_mappings: overrideCourseMappings,
           regular_course_mappings: Object.keys(regularMappings).length > 0 ? regularMappings : null,
@@ -1487,6 +1490,38 @@ export default function AdminPage() {
                           <p className="text-[10px] text-[var(--color-text-secondary)] italic font-medium mt-1">
                             Name used globally across all headers, footers, lists, and pages (e.g. &quot;Spring 2026&quot;).
                           </p>
+                        </div>
+
+                        {/* Exam Finder Visibility */}
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-[0.1em] text-[var(--color-text-secondary)]">
+                            Exam Finder Visibility
+                          </label>
+                          <div className="flex items-center gap-3 rounded-xl px-4 py-3 border bg-[var(--color-bg-subtle)]" style={{ borderColor: 'var(--color-border)' }}>
+                            <button
+                              type="button"
+                              onClick={() => setShowExams(!showExams)}
+                              className="relative w-12 h-6 rounded-full transition-colors duration-200 shrink-0"
+                              style={{ backgroundColor: showExams ? 'var(--accent-cs)' : 'var(--color-border-strong)' }}
+                              aria-pressed={showExams}
+                              aria-label="Toggle exam finder visibility"
+                            >
+                              <span
+                                className="absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow-sm transition-transform duration-200"
+                                style={{ transform: showExams ? 'translateX(24px)' : 'translateX(0)' }}
+                              />
+                            </button>
+                            <div className="min-w-0">
+                              <p className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
+                                {showExams ? 'Exams are visible' : 'Exams are hidden'}
+                              </p>
+                              <p className="text-[10px] text-[var(--color-text-secondary)] italic font-medium mt-0.5">
+                                {showExams
+                                  ? 'Students can view exam schedules. Turn off when exams are over or not yet scheduled.'
+                                  : 'Students see a "no exams right now" message. Turn on when exam schedules are ready.'}
+                              </p>
+                            </div>
+                          </div>
                         </div>
 
                         {/* Google Sheets URL */}

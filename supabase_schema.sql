@@ -131,6 +131,7 @@ CREATE TABLE IF NOT EXISTS semester_settings (
   semester_name TEXT NOT NULL DEFAULT 'Spring 2026',
   course_mappings JSONB NOT NULL DEFAULT '[]'::jsonb,
   sheet_name_mappings JSONB NOT NULL DEFAULT '{}'::jsonb,
+  show_exams BOOLEAN NOT NULL DEFAULT false,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
