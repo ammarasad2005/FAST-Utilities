@@ -502,7 +502,7 @@ Every schedule view supports multiple export formats:
 ## Project Structure
 
 ```
-Exam-Table/
+FAST-Utilities/
 ├── public/
 │   ├── data/                          # Static data files
 │   │   ├── timetable.json             # Weekly class schedules (all batches/depts)
@@ -624,8 +624,8 @@ Exam-Table/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/ammarasad2005/Exam-Table.git
-   cd Exam-Table
+   git clone https://github.com/ammarasad2005/FAST-Utilities.git
+   cd FAST-Utilities
    ```
 
 2. **Install dependencies:**

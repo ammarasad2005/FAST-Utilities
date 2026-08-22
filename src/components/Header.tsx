@@ -61,7 +61,7 @@ export function Header({ children, rightActions, hideTimeline }: HeaderProps) {
         <div className="flex items-center justify-end min-w-[60px] md:min-w-[100px] gap-3 md:gap-4">
           {rightActions}
           <a
-            href="https://github.com/ammarasad2005/Exam-Table"
+            href="https://github.com/ammarasad2005/FAST-Utilities"
             target="_blank"
             rel="noopener noreferrer"
             className="md:hidden text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"

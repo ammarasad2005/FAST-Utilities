@@ -1129,7 +1129,7 @@ export default function SetupPage() {
             {/* Social / Developer Links */}
             <div className="relative z-10 flex gap-8">
               <a
-                href="https://github.com/ammarasad2005/Exam-Table"
+                href="https://github.com/ammarasad2005/FAST-Utilities"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col gap-1 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"

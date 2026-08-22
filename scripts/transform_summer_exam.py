@@ -3,10 +3,10 @@
 Phase 4 — Summer Exam Schedule Transformation Script
 
 Reads the RAW messy Excel file (2D grid layout) and writes the structured
-`summer_schedule.json` consumed by the FAST-NUCES ISB exam-table frontend.
+`summer_schedule.json` consumed by the FAST-NUCES ISB FAST-Utilities frontend.
 
 Input  : /home/z/my-project/upload/Final Examination Schedule Summer 2026 Ver-Draft as on 04-08-2026.xlsx
-Output : /home/z/my-project/repo/exam-table/public/data/summer_schedule.json
+Output : /home/z/my-project/repo/FAST-Utilities/public/data/summer_schedule.json
 
 Re-runnable (idempotent): re-running on the same input produces the same output.
 Safety guard: never overwrites the existing JSON with an empty array.

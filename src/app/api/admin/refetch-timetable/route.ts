@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
   }
 
   const owner = 'ammarasad2005'
-  const repo = 'Exam-Table'
+  const repo = 'FAST-Utilities'
   const workflowId = 'update-timetable.yml'
 
   try {
