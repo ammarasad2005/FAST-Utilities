@@ -984,7 +984,7 @@
                     "A": {
                         "Monday": [
                             {
-                                "room": "KK-I",
+                                "room": "KK-II",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -992,7 +992,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "KK-I",
+                                "room": "KK-II",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
