@@ -4694,6 +4694,28 @@
                         ]
                     }
                 },
+                "Programming for Finance": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "B-227",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "B-227",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "CY4053 Cybersecurity for FinTech": {
                     "A/B": {
                         "Tuesday": [
