@@ -873,10 +873,10 @@
                             }
                         ]
                     },
-                    "C": {
+                    "D": {
                         "Tuesday": [
                             {
-                                "room": "IT Lab 2 (D-211)",
+                                "room": "Margala 4 (C-212",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -885,10 +885,10 @@
                             }
                         ]
                     },
-                    "D": {
+                    "C": {
                         "Tuesday": [
                             {
-                                "room": "Margala 4 (C-212",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1630,11 +1630,11 @@
                             }
                         ]
                     },
-                    "B": {
+                    "A": {
                         "Tuesday": [
                             {
-                                "room": "IT Lab 3 (D-213)",
-                                "time": "02:30-05:15",
+                                "room": "IT Lab 2 (D-211)",
+                                "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1642,11 +1642,11 @@
                             }
                         ]
                     },
-                    "A": {
+                    "B": {
                         "Tuesday": [
                             {
-                                "room": "Rawal 1 (C-509)",
-                                "time": "08:30-11:15",
+                                "room": "IT Lab 3 (D-213)",
+                                "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -3357,8 +3357,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
