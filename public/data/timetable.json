@@ -1805,7 +1805,7 @@
                     "A1": {
                         "Thursday": [
                             {
-                                "room": "CALL-3 (A-308)",
+                                "room": "CALL-1 (A-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3325,10 +3325,10 @@
                     }
                 },
                 "Func Eng Lab": {
-                    "C1": {
+                    "C2": {
                         "Thursday": [
                             {
-                                "room": "CALL-1 (A-213)",
+                                "room": "CALL-2 (A-214)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3337,10 +3337,10 @@
                             }
                         ]
                     },
-                    "C2": {
+                    "C1": {
                         "Thursday": [
                             {
-                                "room": "CALL-2 (A-214)",
+                                "room": "CALL-3 (A-308)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
