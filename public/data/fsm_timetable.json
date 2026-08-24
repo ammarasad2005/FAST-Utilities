@@ -4766,6 +4766,28 @@
                         ]
                     }
                 },
+                "Programming for Finance Lab": {
+                    "A": {
+                        "Thursday": [
+                            {
+                                "room": "KK-II",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "KK-II",
+                                "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "FT4005 \tDigital Bank and Payment Industry": {
                     "A/B": {
                         "Friday": [
