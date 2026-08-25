@@ -5128,7 +5128,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A-04",
+                                "room": "A- 201",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5150,7 +5150,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A-04",
+                                "room": "A- 201",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5368,7 +5368,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A- 201",
+                                "room": "A-04",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5390,7 +5390,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A- 201",
+                                "room": "A-04",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
