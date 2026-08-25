@@ -3442,16 +3442,18 @@
                                 "exam": false
                             },
                             {
-                                "room": "C-404",
-                                "time": "03:55-05:15",
+                                "room": "C-605",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
-                            },
+                            }
+                        ],
+                        "Tuesday": [
                             {
-                                "room": "C-605",
-                                "time": "10:00-11:20",
+                                "room": "D-306",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
