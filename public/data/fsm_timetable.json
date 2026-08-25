@@ -4577,6 +4577,20 @@
                         ]
                     }
                 },
+                "AF5007-Advanced Financial Management (2:00 to 5:00pm)": {
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "A-01",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "MG4062 Brand Management": {
                     "A/B": {
                         "Tuesday": [
