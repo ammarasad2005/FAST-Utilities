@@ -6463,7 +6463,7 @@
                         ]
                     }
                 },
-                "MT2004 Business Math-II": {
+                "MT2004 Business Math-II/ MG1004Calulus-II": {
                     "C": {
                         "Monday": [
                             {
@@ -6474,18 +6474,10 @@
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "A--211",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
                         ]
-                    },
+                    }
+                },
+                "MT2004 Business Math-II": {
                     "D": {
                         "Monday": [
                             {
@@ -6861,6 +6853,20 @@
                             {
                                 "room": "A-301",
                                 "time": "02:25-04:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "MT2004 Business Math-II/MG1004Calulus-II": {
+                    "C": {
+                        "Wednesday": [
+                            {
+                                "room": "A--211",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
