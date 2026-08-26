@@ -7663,7 +7663,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     }
@@ -11730,23 +11731,9 @@
         "days": [
             {
                 "day": "Monday",
-                "sheetName": "Mon",
-                "date": "",
-                "isoDate": "2026-08-24",
-                "isMakeup": false
-            },
-            {
-                "day": "Monday",
                 "sheetName": "Monday",
                 "date": "",
                 "isoDate": "2026-08-24",
-                "isMakeup": false
-            },
-            {
-                "day": "Tuesday",
-                "sheetName": "Tue",
-                "date": "",
-                "isoDate": "2026-08-25",
                 "isMakeup": false
             },
             {
@@ -11764,20 +11751,6 @@
                 "isMakeup": false
             },
             {
-                "day": "Wednesday",
-                "sheetName": "Wed",
-                "date": "",
-                "isoDate": "2026-08-26",
-                "isMakeup": false
-            },
-            {
-                "day": "Thursday",
-                "sheetName": "Thu",
-                "date": "",
-                "isoDate": "2026-08-27",
-                "isMakeup": false
-            },
-            {
                 "day": "Thursday",
                 "sheetName": "Thursday",
                 "date": "",
@@ -11786,23 +11759,9 @@
             },
             {
                 "day": "Friday",
-                "sheetName": "Fri",
-                "date": "",
-                "isoDate": "2026-08-28",
-                "isMakeup": false
-            },
-            {
-                "day": "Friday",
                 "sheetName": "Friday",
                 "date": "",
                 "isoDate": "2026-08-28",
-                "isMakeup": false
-            },
-            {
-                "day": "Saturday",
-                "sheetName": "Sat",
-                "date": "",
-                "isoDate": "2026-08-29",
                 "isMakeup": false
             },
             {
