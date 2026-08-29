@@ -6202,33 +6202,9 @@
                                 "exam": false
                             }
                         ]
-                    },
-                    "B": {
-                        "Friday": [
-                            {
-                                "room": "C-305",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
                     }
                 },
                 "OOP Lab": {
-                    "B": {
-                        "Friday": [
-                            {
-                                "room": "IT Lab 2 (D-211)",
-                                "time": "02:30-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
                     "A": {
                         "Friday": [
                             {
@@ -9876,6 +9852,30 @@
                         ]
                     }
                 },
+                "Vulnerability Asses.": {
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "D-505",
+                                "time": "03:55-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "D-505",
+                                "time": "03:55-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "Sec Ops Lab": {
                     "A": {
                         "Tuesday": [
@@ -9891,6 +9891,20 @@
                         "Thursday": [
                             {
                                 "room": "Cyber (D-514)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "Vulnerability Assesment Lab": {
+                    "A": {
+                        "Friday": [
+                            {
+                                "room": "Margala 3 (C-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
