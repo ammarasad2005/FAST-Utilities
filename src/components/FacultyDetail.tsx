@@ -55,7 +55,7 @@ export function FacultyDetail({ member, onClose }: Props) {
         role="dialog"
         aria-modal="true"
         aria-label={`${member.name} profile`}
-        className="fixed z-40 bottom-0 left-0 right-0 rounded-t-2xl overflow-y-auto md:bottom-0 md:top-14 md:left-auto md:right-0 md:w-[400px] md:rounded-none md:rounded-l-2xl md:max-h-[calc(100dvh-56px)] animate-in slide-in-from-bottom-4 md:slide-in-from-right-4 duration-300 ease-out h-[90dvh] md:h-auto"
+        className="fixed z-40 bottom-0 left-0 right-0 rounded-t-2xl overflow-y-auto md:bottom-0 md:top-14 md:left-auto md:right-0 md:w-[400px] md:rounded-none md:rounded-l-2xl md:max-h-[calc(100dvh-56px)] animate-in slide-in-from-bottom-4 md:slide-in-from-right-4 duration-300 ease-out h-[90dvh] md:h-auto pt-14 md:pt-0"
         style={{ backgroundColor: 'var(--color-bg-raised)', boxShadow: 'var(--shadow-float)' }}
       >
         {/* Mobile drag handle */}
