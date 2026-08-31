@@ -1340,7 +1340,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A-03",
+                                "room": "A-102",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4776,6 +4776,20 @@
                         ]
                     }
                 },
+                "SS 1018U-Holy Quran (04:20-05:10)": {
+                    "A": {
+                        "Thursday": [
+                            {
+                                "room": "A-301",
+                                "time": "04:20-05:10",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "BA4007 Empowering Organizations with Analytics and Data Visualization": {
                     "A/B": {
                         "Friday": [
@@ -5492,6 +5506,20 @@
                         ]
                     }
                 },
+                "SS2041 Critical Thinking (08:30-10:20)": {
+                    "A": {
+                        "Friday": [
+                            {
+                                "room": "A--211",
+                                "time": "08:30-10:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "SS1013 Ideology and Constitution of Pakistan (10:00-11:50))": {
                     "A": {
                         "Friday": [
@@ -5525,20 +5553,6 @@
                         "Friday": [
                             {
                                 "room": "A-315",
-                                "time": "08:30-10:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "SS2041 Critical Thinking (08:30-10:20)": {
-                    "A": {
-                        "Friday": [
-                            {
-                                "room": "A-316",
                                 "time": "08:30-10:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6608,16 +6622,6 @@
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A- 203",
-                                "time": "02:25 - 04:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
                         ]
                     }
                 },
@@ -6903,12 +6907,12 @@
                         ]
                     }
                 },
-                "FT03C": {
+                "SS2043 Civics and Community Engagement (08:30-10:20)": {
                     "A": {
                         "Thursday": [
                             {
-                                "room": "A- 203",
-                                "time": "03:50-05:10",
+                                "room": "A-03",
+                                "time": "08:30-10:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
