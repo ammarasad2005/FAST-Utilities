@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 import type { FacultyMember, DeptFileKey } from '@/lib/faculty';
 import { DEPT_LABELS, DEPT_ACCENT } from '@/lib/faculty';
@@ -16,6 +17,15 @@ export function FacultyDetail({ member, onClose }: Props) {
   const accentColor = `var(--accent-${accent})`;
   const accentBg = `var(--accent-${accent}-bg)`;
   const [imgError, setImgError] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  // Fallback for hanging connections: if the photo hasn't loaded within 4s,
+  // show the initials avatar instead of a blank box.
+  useEffect(() => {
+    if (imgError || loaded) return;
+    const t = setTimeout(() => setImgError(true), 4000);
+    return () => clearTimeout(t);
+  }, [imgError, loaded]);
 
   // Lock body scroll on mobile
   useEffect(() => {
@@ -81,11 +91,14 @@ export function FacultyDetail({ member, onClose }: Props) {
           {/* Photo */}
           <div className="relative w-28 h-28 rounded-2xl overflow-hidden" style={{ boxShadow: `0 0 0 4px ${accentBg}` }}>
             {!imgError ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={member.image_url}
                 alt={member.name}
-                className="w-full h-full object-cover object-top"
+                fill
+                sizes="112px"
+                className="object-cover object-top"
+                priority
+                onLoad={() => setLoaded(true)}
                 onError={() => setImgError(true)}
               />
             ) : (

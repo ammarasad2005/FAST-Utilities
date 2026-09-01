@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 import type { FacultyMember, DeptFileKey } from '@/lib/faculty';
 import { DEPT_LABELS, DEPT_ACCENT, getFacultyRank } from '@/lib/faculty';
@@ -16,6 +17,16 @@ export function FacultyCard({ member, priority = false, viewMode = 'grid', onCli
   const accentColor = `var(--accent-${accent})`;
   const accentBg = `var(--accent-${accent}-bg)`;
   const [imgError, setImgError] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  // Fallback for hanging connections: if the photo hasn't loaded within 4s,
+  // show the initials avatar instead of a blank box. This catches slow/failed
+  // third-party image hosts that never fire onError (e.g. TCP hangs).
+  useEffect(() => {
+    if (imgError || loaded) return;
+    const t = setTimeout(() => setImgError(true), 4000);
+    return () => clearTimeout(t);
+  }, [imgError, loaded]);
 
   // Extract initials for photo fallback
   const initials = member.name
@@ -46,12 +57,15 @@ export function FacultyCard({ member, priority = false, viewMode = 'grid', onCli
       >
         <div className="relative w-14 h-14 rounded-full bg-[var(--color-bg-subtle)] overflow-hidden shrink-0 ring-2 ring-[var(--color-bg)]">
           {!imgError ? (
-            <img
+            <Image
               src={member.image_url}
               alt={member.name}
-              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+              fill
+              sizes="56px"
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
               loading={priority ? 'eager' : 'lazy'}
-              decoding="async"
+              priority={priority}
+              onLoad={() => setLoaded(true)}
               onError={() => setImgError(true)}
             />
           ) : (
@@ -106,13 +120,15 @@ export function FacultyCard({ member, priority = false, viewMode = 'grid', onCli
       {/* Photo area */}
       <div className="relative w-full aspect-[4/3] bg-[var(--color-bg-subtle)] overflow-hidden">
         {!imgError ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={member.image_url}
             alt={member.name}
-            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            fill
+            sizes="(max-width: 768px) 45vw, (max-width: 1024px) 33vw, 22vw"
+            className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
             loading={priority ? 'eager' : 'lazy'}
-            decoding="async"
+            priority={priority}
+            onLoad={() => setLoaded(true)}
             onError={() => setImgError(true)}
           />
         ) : (
