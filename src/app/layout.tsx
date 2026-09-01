@@ -37,7 +37,10 @@ const instrumentSerif = Instrument_Serif({
 });
 
 
+const SITE_URL = 'https://fast-nuces-isb.vercel.app';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'FAST Isb Utilities',
   description: 'Find your weekly and exam schedules — FAST NUCES, Islamabad',
   icons: {
@@ -80,6 +83,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <GlobalShortcuts />
           <Toaster />
         </ThemeProvider>
+        {/* Crawlable footer navigation. Real <a> links so every public page is
+            reachable by plain HTML, independent of the JS-only app navigation. */}
+        <footer className="relative z-0 px-6 pt-10 pb-28 md:pb-10">
+          <nav aria-label="Footer" className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-[var(--color-border)] pt-6 text-xs">
+            <a href="/" className="hover:opacity-70">Home</a>
+            <a href="/timetable" className="hover:opacity-70">Timetable</a>
+            <a href="/timetable/optimizer" className="hover:opacity-70">Timetable Optimizer</a>
+            <a href="/rooms" className="hover:opacity-70">Free Rooms</a>
+            <a href="/faculty" className="hover:opacity-70">Faculty</a>
+            <a href="/semester" className="hover:opacity-70">Semester Schedule</a>
+            <a href="/events" className="hover:opacity-70">Campus Events</a>
+            <a href="/lost-found" className="hover:opacity-70">Lost &amp; Found</a>
+          </nav>
+        </footer>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -1,6 +1,6 @@
 'use client';
-import { useState, useEffect, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { DesktopTicker } from '@/components/DesktopTicker';
 import { flattenTimetable } from '@/lib/timetable-filter';
@@ -142,6 +142,19 @@ const FEATURES = [
   },
 ] as const;
 
+// Feature id -> crawlable public route.
+// Timetable points to its dedicated route rather than the /home?feature= query.
+const FEATURE_ROUTES: Record<string, string> = {
+  timetable: '/timetable',
+  optimizer: '/timetable/optimizer',
+  exams: '/home?feature=exams',
+  rooms: '/rooms',
+  faculty: '/faculty',
+  semester: '/semester',
+  events: '/events',
+  'lost-found': '/lost-found',
+};
+
 interface UserConfig {
   batch: string;
   school: string;
@@ -156,8 +169,6 @@ interface Bundle {
 }
 
 export default function RootPage() {
-  const router = useRouter();
-
   // Typing animation
   const [displayText, setDisplayText] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
@@ -252,21 +263,6 @@ export default function RootPage() {
     return () => clearInterval(iv);
   }, []);
 
-  function handleFeatureClick(id: string, placeholder: boolean) {
-    if (placeholder) return;
-    if (id === 'semester') {
-      router.push('/semester');
-    } else if (id === 'events') {
-      router.push('/events');
-    } else if (id === 'optimizer') {
-      router.push('/timetable/optimizer');
-    } else if (id === 'lost-found') {
-      router.push('/lost-found');
-    } else {
-      router.push(`/home?feature=${id}`);
-    }
-  }
-
   return (
     <>
       {/* ================================================================
@@ -295,11 +291,11 @@ export default function RootPage() {
           {/* Feature cards grid */}
           <div className="grid grid-cols-2 gap-3">
             {FEATURES.map((f) => (
-              <button
+              <Link
                 key={f.id}
-                onClick={() => handleFeatureClick(f.id, f.placeholder)}
-                disabled={f.placeholder}
-                className="relative overflow-hidden w-full text-left rounded-2xl bg-[var(--color-bg-raised)] p-4 flex flex-col justify-between aspect-ratio-square transition-all duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                href={FEATURE_ROUTES[f.id] ?? '/'}
+                aria-disabled={f.placeholder}
+                className="relative overflow-hidden w-full text-left rounded-2xl bg-[var(--color-bg-raised)] p-4 flex flex-col justify-between aspect-ratio-square transition-all duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 group"
                 style={{
                   border: `1.5px solid var(--accent-${f.accent})`,
                   boxShadow: 'var(--shadow-card)',
@@ -328,7 +324,7 @@ export default function RootPage() {
                     )}
                   </div>
                 </div>
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -448,11 +444,11 @@ export default function RootPage() {
 
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 content-start">
               {FEATURES.map((f) => (
-                <button
+                <Link
                   key={f.id}
-                  onClick={() => handleFeatureClick(f.id, f.placeholder)}
-                  disabled={f.placeholder}
-                  className="group relative overflow-hidden text-left rounded-2xl border bg-[var(--color-bg-raised)] p-6 flex flex-col gap-3 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  href={FEATURE_ROUTES[f.id] ?? '/'}
+                  aria-disabled={f.placeholder}
+                  className="group relative overflow-hidden text-left rounded-2xl border bg-[var(--color-bg-raised)] p-6 flex flex-col gap-3 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2"
                   style={{
                     borderColor: 'var(--color-border)',
                     boxShadow: 'var(--shadow-card), var(--border-inset)',
@@ -505,7 +501,7 @@ export default function RootPage() {
                     </h2>
                     <p className="font-body text-sm text-[var(--color-text-secondary)] leading-relaxed">{f.description}</p>
                   </div>
-                </button>
+                </Link>
               ))}
             </div>
 
