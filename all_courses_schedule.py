@@ -1210,9 +1210,18 @@ def parse_cell_parens(val):
         if not course_before:
             return None
         # Trailing text after the closing paren is the location annotation
+        # ONLY if it's not a known keyword (resch, rescheduled, mid, exam,
+        # sessional, cancel, etc.). Those keywords have specific meaning
+        # (flagging the class as rescheduled/exam) and must NOT be treated
+        # as room location overrides.
         after_paren = text[m.end():].strip()
         if after_paren:
-            location_override = after_paren
+            after_lower = after_paren.lower()
+            KEYWORDS = ['resch', 'rescheduled', 'mid', 'exam', 'sessional',
+                        'cancel', 'cancle', 'reserved']
+            is_keyword = any(kw in after_lower for kw in KEYWORDS)
+            if not is_keyword:
+                location_override = after_paren
 
     course_name = text[:m.start()].strip()
     paren = m.group(1).strip()
