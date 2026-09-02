@@ -56,7 +56,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "ReSch",
+                                "room": "C-302",
                                 "time": "11:30-12:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -88,7 +88,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-303",
                                 "time": "10:00-11:20",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -175,14 +175,6 @@
                                 "room": "C-302",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "ReSch",
-                                "time": "11:30-12:50",
-                                "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -416,7 +408,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "ReSch",
+                                "room": "C-302",
                                 "time": "11:30-12:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -507,38 +499,6 @@
                             }
                         ]
                     },
-                    "D": {
-                        "Tuesday": [
-                            {
-                                "room": "03:00-04:45 ReSch",
-                                "time": "03:00-04:45",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Wednesday": [
-                            {
-                                "room": "C-304",
-                                "time": "12:30-02:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Saturday (Sep. 05, 2026)": [
-                            {
-                                "room": "C-304",
-                                "time": "12:30-02:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
                     "H": {
                         "Tuesday": [
                             {
@@ -566,6 +526,28 @@
                             {
                                 "room": "C-302",
                                 "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "D": {
+                        "Wednesday": [
+                            {
+                                "room": "C-304",
+                                "time": "12:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Sep. 05, 2026)": [
+                            {
+                                "room": "C-304",
+                                "time": "12:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -631,8 +613,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -1256,8 +1237,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -1281,8 +1261,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -1600,7 +1579,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-309",
                                 "time": "08:30-09:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -1632,7 +1611,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "10:20-11:40 ReSch",
+                                "room": "C-307",
                                 "time": "10:20-11:40",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -1696,7 +1675,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "ReSch",
+                                "room": "D-302",
                                 "time": "11:30-12:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -1850,7 +1829,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-305",
                                 "time": "10:00-11:20",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -1892,7 +1871,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-307",
                                 "time": "11:45-01:05",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -1924,7 +1903,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-408",
+                                "room": "C-605",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2014,7 +1993,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "10:30-12:15 ReSch",
+                                "room": "C-401",
                                 "time": "10:30-12:15",
                                 "rescheduled": true,
                                 "is_elective": true,
@@ -2046,7 +2025,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "08:30-10:15 ReSch",
+                                "room": "C-401",
                                 "time": "08:30-10:15",
                                 "rescheduled": true,
                                 "is_elective": true,
@@ -2269,8 +2248,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -2568,7 +2546,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "ReSch",
+                                "room": "D-301",
                                 "time": "08:30-09:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -2622,7 +2600,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-609",
                                 "time": "03:55-05:15",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -3121,7 +3099,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "ReSch",
+                                "room": "IT Lab 4-GPU (D-203)",
                                 "time": "08:30-11:15",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -3416,8 +3394,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -3641,7 +3618,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "ReSch",
+                                "room": "D-501",
                                 "time": "03:55-05:15",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -3670,8 +3647,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -3693,8 +3669,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -3719,7 +3694,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "ReSch",
+                                "room": "D-416",
                                 "time": "03:55-05:15",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -3759,7 +3734,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "ReSch",
+                                "room": "D-416",
                                 "time": "02:30-03:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -4640,7 +4615,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-307",
                                 "time": "02:30-03:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -4714,17 +4689,6 @@
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
-                            }
-                        ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch -",
-                                "time": "11:30-12:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
                             }
                         ],
                         "Wednesday": [
@@ -4911,7 +4875,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-405",
                                 "time": "11:30-12:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -4960,8 +4924,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -5118,7 +5081,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-309",
                                 "time": "10:00-11:20",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -5320,16 +5283,6 @@
                                 "exam": false
                             }
                         ],
-                        "Friday": [
-                            {
-                                "room": "ReSch",
-                                "time": "08:30-09:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "C-305",
@@ -5394,16 +5347,6 @@
                                 "exam": false
                             }
                         ],
-                        "Friday": [
-                            {
-                                "room": "ReSch",
-                                "time": "10:00-11:20",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "C-311",
@@ -5423,8 +5366,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -5490,8 +5432,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -6132,7 +6073,7 @@
                         ],
                         "Saturday (Sep. 05, 2026)": [
                             {
-                                "room": "03:00-04:45 ReSch",
+                                "room": "C-607",
                                 "time": "03:00-04:45",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -6253,28 +6194,6 @@
                             }
                         ]
                     },
-                    "C": {
-                        "Tuesday": [
-                            {
-                                "room": "C-407",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "C-604",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
                     "D": {
                         "Tuesday": [
                             {
@@ -6296,6 +6215,28 @@
                                 "exam": false
                             }
                         ]
+                    },
+                    "C": {
+                        "Tuesday": [
+                            {
+                                "room": "C-605",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "C-604",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
                     }
                 },
                 "Intro to SE": {
@@ -6305,16 +6246,6 @@
                                 "room": "C-603",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "08:30-09:50",
-                                "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -6540,16 +6471,6 @@
                                 "exam": false
                             }
                         ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "11:30-12:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Wednesday": [
                             {
                                 "room": "C-604",
@@ -6592,7 +6513,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "ReSch",
+                                "room": "D-305",
                                 "time": "01:00-02:20",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -6684,8 +6605,8 @@
                     "C": {
                         "Wednesday": [
                             {
-                                "room": "C-602",
-                                "time": "08:30-09:25",
+                                "room": "C-607",
+                                "time": "09:00-09:55",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6890,20 +6811,6 @@
         },
         "AI": {
             "regular": {
-                "Prof for AI Lab (AI-C) (Room D-302)": {
-                    "A": {
-                        "Monday": [
-                            {
-                                "room": "D-302",
-                                "time": "02:30-03:50",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "COAL": {
                     "A": {
                         "Monday": [
@@ -7092,16 +6999,6 @@
                                 "exam": false
                             }
                         ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "02:30-03:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Wednesday": [
                             {
                                 "room": "D-306",
@@ -7256,14 +7153,38 @@
                         ]
                     }
                 },
-                "Prof for AI Lab (AI-C) (Room D-302) Lab": {
-                    "A": {
+                "Prof for AI Lab": {
+                    "C": {
                         "Monday": [
                             {
                                 "room": "IT Lab 4-GPU (D-203)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
-                                "is_elective": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "IT Lab 4-GPU (D-203)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Tuesday": [
+                            {
+                                "room": "IT Lab 4-GPU (D-203)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -7302,62 +7223,6 @@
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Prof for AI Lab (AI-B) (Room D-302)": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-302",
-                                "time": "02:30-03:50",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Prof for AI Lab (AI-A) (Room D-416)": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-416",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Prof for AI Lab (AI-A) (Room D-416) Lab": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "IT Lab 4-GPU (D-203)",
-                                "time": "08:30-11:15",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Prof for AI Lab (AI-B) (Room D-302) Lab": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "IT Lab 4-GPU (D-203)",
-                                "time": "02:30-05:15",
-                                "rescheduled": false,
-                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -7718,7 +7583,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "ReSch",
+                                "room": "IT Lab 2 (D-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -7887,8 +7752,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -8225,7 +8089,7 @@
                         "Monday": [
                             {
                                 "room": "D-416",
-                                "time": "08:30-09:25",
+                                "time": "09:00-09:55",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -8340,7 +8204,7 @@
                     "C": {
                         "Monday": [
                             {
-                                "room": "ReSch",
+                                "room": "D-416",
                                 "time": "03:55-05:15",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -8499,16 +8363,6 @@
                                 "exam": false
                             }
                         ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "02:30-03:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Wednesday": [
                             {
                                 "room": "C-403",
@@ -8536,16 +8390,6 @@
                                 "room": "C-403",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "11:30-12:50",
-                                "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -8862,8 +8706,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -8885,13 +8728,12 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Wednesday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-311",
                                 "time": "11:30-12:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -9048,8 +8890,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -9235,8 +9076,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -9258,8 +9098,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -9776,16 +9615,6 @@
                                 "exam": false
                             }
                         ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "02:30-03:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Wednesday": [
                             {
                                 "room": "C-605",
@@ -9847,8 +9676,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -10097,7 +9925,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-408",
+                                "room": "C-605",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -11059,16 +10887,6 @@
                                 "exam": false
                             }
                         ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "11:30-12:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Wednesday": [
                             {
                                 "room": "D-503",
@@ -11524,7 +11342,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -12131,7 +11950,7 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "C-605",
+                                "room": "C-407",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -12141,7 +11960,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -12153,7 +11972,7 @@
                     "B": {
                         "Tuesday": [
                             {
-                                "room": "C-605",
+                                "room": "C-407",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -12163,7 +11982,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -12365,9 +12184,17 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "D-302",
+                                "room": "Shifted to 11:30",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "D-313",
+                                "time": "11:30-12:50",
+                                "rescheduled": true,
                                 "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
@@ -13466,16 +13293,6 @@
                                 "exam": false
                             }
                         ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "02:30-03:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Wednesday": [
                             {
                                 "room": "D-406",
@@ -13488,8 +13305,16 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-303",
                                 "time": "02:30-03:50",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "D-406",
+                                "time": "08:30-09:50",
                                 "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -13518,16 +13343,6 @@
                                 "exam": false
                             }
                         ],
-                        "Tuesday": [
-                            {
-                                "room": "ReSch",
-                                "time": "03:55-05:15",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Wednesday": [
                             {
                                 "room": "D-406",
@@ -13540,8 +13355,16 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-303",
                                 "time": "03:55-05:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "D-411",
+                                "time": "10:00-11:20",
                                 "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -13589,8 +13412,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -13612,8 +13434,7 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ],
                         "Thursday": [
@@ -13645,6 +13466,14 @@
                                 "room": "D-404",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "D-404",
+                                "time": "02:30-03:50",
+                                "rescheduled": true,
                                 "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
@@ -13837,32 +13666,12 @@
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "D-406",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
                         ]
                     },
                     "D": {
                         "Tuesday": [
                             {
                                 "room": "Audi-Grd Flr, Block-D",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "Audi, Grd Flr, Block-A",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -14488,7 +14297,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "ReSch",
+                                "room": "C-407",
                                 "time": "02:30-03:50",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -14568,6 +14377,22 @@
                         ],
                         "Wednesday": [
                             {
+                                "room": "C-401",
+                                "time": "02:30-03:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "C-401",
+                                "time": "03:55-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
                                 "room": "C-110",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
@@ -14604,6 +14429,32 @@
                             {
                                 "room": "D-402",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Sep. 05, 2026)": [
+                            {
+                                "room": "C-310",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "C-310",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "C-310",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
