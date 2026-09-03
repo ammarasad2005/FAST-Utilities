@@ -1021,6 +1021,26 @@
                             }
                         ]
                     },
+                    "E": {
+                        "Wednesday": [
+                            {
+                                "room": "Khyber III",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "Khyber III",
+                                "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "C": {
                         "Wednesday": [
                             {
@@ -1054,6 +1074,108 @@
                             {
                                 "room": "Khyber I",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "FL1003 Introduction to Financial Accounting- Lab": {
+                    "E": {
+                        "Monday": [
+                            {
+                                "room": "KK-III",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "KK-III",
+                                "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "C": {
+                        "Tuesday": [
+                            {
+                                "room": "KK-II",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "KK-II",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Wednesday": [
+                            {
+                                "room": "KK-III",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "KK-III",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "A": {
+                        "Wednesday": [
+                            {
+                                "room": "Khyber II",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "Khyber II",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "D": {
+                        "Friday": [
+                            {
+                                "room": "KK-II",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "KK-II",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1408,88 +1530,6 @@
                             {
                                 "room": "A-104",
                                 "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "FL1003 Introduction to Financial Accounting- Lab": {
-                    "C": {
-                        "Tuesday": [
-                            {
-                                "room": "KK-II",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "KK-II",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B": {
-                        "Wednesday": [
-                            {
-                                "room": "KK-III",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "KK-III",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Wednesday": [
-                            {
-                                "room": "Khyber II",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "Khyber II",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "D": {
-                        "Friday": [
-                            {
-                                "room": "KK-II",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "KK-II",
-                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
