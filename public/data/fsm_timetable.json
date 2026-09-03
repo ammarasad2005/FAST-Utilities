@@ -1024,16 +1024,16 @@
                     "C": {
                         "Wednesday": [
                             {
-                                "room": "KK-I",
-                                "time": "11:30-12:50",
+                                "room": "Mehran-I",
+                                "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             },
                             {
-                                "room": "KK-I",
-                                "time": "01:00-02:20",
+                                "room": "Mehran-I",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -1753,8 +1753,8 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A--211",
-                                "time": "01:00-02:20",
+                                "room": "A-104",
+                                "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -2133,12 +2133,12 @@
                         ]
                     }
                 },
-                "SS1007 Islamic Studies/Ethics (01:00-02:50)": {
+                "SS1007 Islamic Studies/Ethics (02:25-04:15)": {
                     "A": {
                         "Wednesday": [
                             {
                                 "room": "A- 203",
-                                "time": "01:00-02:50",
+                                "time": "02:25-04:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
