@@ -382,7 +382,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "KK-I",
+                                "room": "Khyber I",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -390,8 +390,22 @@
                                 "exam": false
                             },
                             {
-                                "room": "KK-I",
+                                "room": "Khyber I",
                                 "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "CS1001 IT in Business (11:30-01:20)": {
+                    "A": {
+                        "Wednesday": [
+                            {
+                                "room": "A--211",
+                                "time": "11:30-01:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -2112,6 +2126,26 @@
                             }
                         ]
                     },
+                    "E": {
+                        "Wednesday": [
+                            {
+                                "room": "KK-I",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "KK-I",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "D": {
                         "Wednesday": [
                             {
@@ -2221,6 +2255,26 @@
                             {
                                 "room": "Khyber III",
                                 "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "E": {
+                        "Wednesday": [
+                            {
+                                "room": "Mehran-I",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "Mehran-I",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -4121,7 +4175,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "Khyber I",
+                                "room": "KK-I",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4129,7 +4183,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "Khyber I",
+                                "room": "KK-I",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6923,7 +6977,7 @@
                     "C": {
                         "Wednesday": [
                             {
-                                "room": "A--211",
+                                "room": "A-104",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
