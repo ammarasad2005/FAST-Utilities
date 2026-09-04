@@ -1,9 +1,9 @@
 name: Update Timetable Data
 
 on:
-  # Run every hour at minute 0
+  # Run every 20 minutes
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/20 * * * *'
 
   # Allow manual trigger from GitHub Actions tab
   workflow_dispatch:
