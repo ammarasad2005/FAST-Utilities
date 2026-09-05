@@ -546,6 +546,226 @@
                 "email": "hasan.mujtaba@nu.edu.pk",
                 "status": "Professor & HoS (Computing)",
                 "office_room": "C-201 A"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Dr. Aftab Maroof",
+                "email": "aftab.maroof@nu.edu.pk",
+                "status": "Active",
+                "office_room": "A-114 A",
+                "designation": "Professor & Rector NUCES"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Dr. Kashif Munir",
+                "email": "kashif.munir@nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-109 E",
+                "designation": "Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Dr. Amna Basharat",
+                "email": "amna.basharat@nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-205 D",
+                "designation": "Associate Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Dr. Afia Zafar",
+                "email": "afia.zafar@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-109 A",
+                "designation": "Assistant Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Dr. Syeda Javaria Imtiaz",
+                "email": "javaria.imtiaz@nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-109 D",
+                "designation": "Assistant Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Dr. Suleman Khan",
+                "email": "suleman.khan@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-110 B",
+                "designation": "Assistant Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Dr. Nabila Ahmad",
+                "email": "nabila.ahmad@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-110 H",
+                "designation": "Assistant Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Amna Irum",
+                "email": "amna.irum@nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-111 B",
+                "designation": "Assistant Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Munazza Nida",
+                "email": "munazza.nida@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-112 H",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Nimra Shahid",
+                "email": "nimra.shahid@nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-202 F",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Bushra Mehmood",
+                "email": "bushra.mehmood@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-111 F",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Bushra Kanwal",
+                "email": "bushra.kanwal@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-109 C",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Bushra Fatima Tariq",
+                "email": "bushra.fatima@nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-110 G",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Sana Razzaq",
+                "email": "sana.razzaq@nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-502 D",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Mr. Abdullah Bin Zahid",
+                "email": "abdullahbin.zahid@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-503 F",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Zill-E-Huma",
+                "email": "zille.huma@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-112 A",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Mr. Muhammad Faheem Muhammadi",
+                "email": "muhammad.faheem@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-204 G",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Seerat Afreen Satti",
+                "email": "seerat.afreen@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-202 H",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Maryam Khalid",
+                "email": "maryam.khalid@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-110 A",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Mavra Mehak Gill",
+                "email": "mavra.mehak@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-104",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Haqeeq Ruman",
+                "email": "haqeeq.ruman@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-104",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Gul E Zahra",
+                "email": "gul.zahra@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-104",
+                "designation": "Instructor"
             }
         ]
     },
@@ -1209,6 +1429,56 @@
                 "email": "muhammad.asim@nu.edu.pk",
                 "status": "Professor",
                 "office_room": "C-204 E"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Anum kaleem",
+                "email": "anum.kaleem@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-504 B",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Samia Aziz",
+                "email": "samia.aziz@nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-504 G",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Mahnoor Ayaz",
+                "email": "mahnoor.ayaz@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-503 F",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Daniya Jadoon",
+                "email": "daniya.jadoon@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-505 F",
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Mr. Jawad Wakeel",
+                "email": "jawad.wakeel@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-503 F",
+                "designation": "Instructor"
             }
         ]
     },
@@ -2007,6 +2277,226 @@
                 "email": "Irfan.shah@nu.edu.pk",
                 "status": "Professor",
                 "office_room": "B-205"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Mr. Nawfal Waqar",
+                "email": "nawfal.waqar@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-204 G",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Areej Fatima",
+                "email": "areej.fatima@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "D-205 A",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Mr. Khubab Ahmed",
+                "email": "khubab.ahmed@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": "C-204 B",
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Aqsa Malik",
+                "email": "aqsa.malik@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Arisha Wasim",
+                "email": "arisha.wassim@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Eeman Mirza",
+                "email": "eeman.mirza@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ghalia",
+                "email": "ghalia.gohar@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Halla Waheed",
+                "email": "halla.waheed@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Hazber",
+                "email": "hazber.samson@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Maryam Abid",
+                "email": "maryam.abid@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Momal Saleem",
+                "email": "momal.saleem@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Muhammad Usman Rashid",
+                "email": "usman.rashid@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Rabia Islam",
+                "email": "rabia.islam@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Lecturer"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Sara Aziz",
+                "email": "sara.aziz@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Assistant Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Sumaira Azhar",
+                "email": "sumaira.azhar@nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Assistant Professor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Zirwa",
+                "email": "zirva.shabbir@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Iqra Fatima",
+                "email": "iqra.fatima@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Ms. Sadia Sahar",
+                "email": "sadia.sahar@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Shan e Batool",
+                "email": "shan.batool@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Sayeda Hassan",
+                "email": "sayeda.hassan@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Sayeda Mahnoor Ali",
+                "email": "mahnoor.ali@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Instructor"
+            },
+            {
+                "linkedin_profile": null,
+                "profile_url": null,
+                "image_url": null,
+                "name": "Rao M. Touqeer",
+                "email": "muhammad.touqeer@isb.nu.edu.pk",
+                "status": "Active",
+                "office_room": null,
+                "designation": "Lecturer"
             }
         ]
     },
@@ -2273,231 +2763,6 @@
                 "email": "naveed.ahmad@nu.edu.pk",
                 "status": "Professor (Adjunct)",
                 "office_room": "C-204 C"
-            }
-        ]
-    },
-    {
-        "department": "New Faculty",
-        "faculty": [
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Dr. Aftab Maroof",
-                "email": "aftab.maroof@nu.edu.pk",
-                "status": "Active",
-                "office_room": "A-114 A",
-                "designation": "Professor & Rector NUCES"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Dr. Kashif Munir",
-                "email": "kashif.munir@nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-109 E",
-                "designation": "Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Dr. Amna Basharat",
-                "email": "amna.basharat@nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-205 D",
-                "designation": "Associate Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Dr. Afia Zafar",
-                "email": "afia.zafar@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-109 A",
-                "designation": "Assistant Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Dr. Syeda Javaria Imtiaz",
-                "email": "javaria.imtiaz@nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-109 D",
-                "designation": "Assistant Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Dr. Suleman Khan",
-                "email": "suleman.khan@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-110 B",
-                "designation": "Assistant Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Dr. Nabila Ahmad",
-                "email": "nabila.ahmad@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-110 H",
-                "designation": "Assistant Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Amna Irum",
-                "email": "amna.irum@nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-111 B",
-                "designation": "Assistant Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Munazza Nida",
-                "email": "munazza.nida@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-112 H",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Nimra Shahid",
-                "email": "nimra.shahid@nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-202 F",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Bushra Mehmood",
-                "email": "bushra.mehmood@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-111 F",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Bushra Kanwal",
-                "email": "bushra.kanwal@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-109 C",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Bushra Fatima Tariq",
-                "email": "bushra.fatima@nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-110 G",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Sana Razzaq",
-                "email": "sana.razzaq@nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-502 D",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Mr. Abdullah Bin Zahid",
-                "email": "abdullahbin.zahid@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-503 F",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Zill-E-Huma",
-                "email": "zille.huma@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-112 A",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Mr. Muhammad Faheem Muhammadi",
-                "email": "muhammad.faheem@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-204 G",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Seerat Afreen Satti",
-                "email": "seerat.afreen@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-202 H",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Maryam Khalid",
-                "email": "maryam.khalid@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-110 A",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Mavra Mehak Gill",
-                "email": "mavra.mehak@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-104",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Haqeeq Ruman",
-                "email": "haqeeq.ruman@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-104",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Gul E Zahra",
-                "email": "gul.zahra@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-104",
-                "designation": "Instructor"
             },
             {
                 "linkedin_profile": null,
@@ -2538,276 +2803,6 @@
                 "status": "Active",
                 "office_room": "D-202 H",
                 "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Anum kaleem",
-                "email": "anum.kaleem@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-504 B",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Samia Aziz",
-                "email": "samia.aziz@nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-504 G",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Mahnoor Ayaz",
-                "email": "mahnoor.ayaz@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-503 F",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Daniya Jadoon",
-                "email": "daniya.jadoon@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-505 F",
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Mr. Jawad Wakeel",
-                "email": "jawad.wakeel@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-503 F",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Mr. Nawfal Waqar",
-                "email": "nawfal.waqar@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-204 G",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Areej Fatima",
-                "email": "areej.fatima@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "D-205 A",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Mr. Khubab Ahmed",
-                "email": "khubab.ahmed@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": "C-204 B",
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Aqsa Malik",
-                "email": "aqsa.malik@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Arisha Wasim",
-                "email": "arisha.wassim@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Eeman Mirza",
-                "email": "eeman.mirza@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ghalia",
-                "email": "ghalia.gohar@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Halla Waheed",
-                "email": "halla.waheed@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Hazber",
-                "email": "hazber.samson@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Maryam Abid",
-                "email": "maryam.abid@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Momal Saleem",
-                "email": "momal.saleem@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Muhammad Usman Rashid",
-                "email": "usman.rashid@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Rabia Islam",
-                "email": "rabia.islam@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Lecturer"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Sara Aziz",
-                "email": "sara.aziz@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Assistant Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Sumaira Azhar",
-                "email": "sumaira.azhar@nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Assistant Professor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Zirwa",
-                "email": "zirva.shabbir@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Iqra Fatima",
-                "email": "iqra.fatima@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Ms. Sadia Sahar",
-                "email": "sadia.sahar@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Shan e Batool",
-                "email": "shan.batool@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Sayeda Hassan",
-                "email": "sayeda.hassan@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Sayeda Mahnoor Ali",
-                "email": "mahnoor.ali@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Instructor"
-            },
-            {
-                "linkedin_profile": null,
-                "profile_url": null,
-                "image_url": null,
-                "name": "Rao M. Touqeer",
-                "email": "muhammad.touqeer@isb.nu.edu.pk",
-                "status": "Active",
-                "office_room": null,
-                "designation": "Lecturer"
             }
         ]
     }
