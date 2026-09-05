@@ -1,0 +1,46 @@
+name: Push Sweep (backup, other datasets)
+
+on:
+  # Every 20 minutes — mirrors the timetable check cadence. Covers the
+  # datasets without an event-driven instant trigger: exam-visibility toggle,
+  # faculty, semester calendar, student events, slate events.
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commits the rolling hash state file back
+
+jobs:
+  sweep:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install push helper deps
+        run: npm ci --prefix scripts/push
+
+      - name: Hash-diff sweep + ping if changed
+        run: node scripts/push/sweep.js
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Commit hash state (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/state/push-hashes.json
+          if git diff --staged --quiet; then
+            echo "State unchanged."
+          else
+            git commit -m "chore(push): hash state [$(date -u +'%Y-%m-%d %H:%M UTC')]"
+            git push
+          fi
