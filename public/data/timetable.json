@@ -3896,7 +3896,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -3918,7 +3919,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -13135,7 +13137,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -13683,7 +13686,7 @@
                         ],
                         "Saturday (Sep. 05, 2026)": [
                             {
-                                "room": "D-411",
+                                "room": "NC",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
