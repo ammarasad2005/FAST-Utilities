@@ -1,383 +1,383 @@
 {
-  "department": "Department of Artificial Intelligence & Data Science",
-  "faculty": [
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/adilmajeedadi/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6438",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6438_.webp",
-      "name": "Dr. Adil Majeed",
-      "email": "adil.majeed@nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": "D-204 E"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7022",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7022_.webp",
-      "name": "Dr. Muhammad Mateen Yaqoob",
-      "email": "mateen.yaqoob@isb.nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": "D-212 D"
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/muhammad-nouman-noor-phd-266644a2/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6990",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6990_.webp",
-      "name": "Dr. Muhammad Nouman Noor",
-      "email": "nouman.noor@isb.nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": "D-202 E"
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/noshina-tariq-956098281/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7041",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7041_.webp",
-      "name": "Dr. Noshina Tariq",
-      "email": "noshina.tariq@isb.nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": "D-202 D"
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/qurat-ul-ain-73965b171/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7311",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7311_.webp",
-      "name": "Dr. Qurat Ul Ain",
-      "email": "quratul.ain@isb.nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": "D-212 E"
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/zohairai/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7364",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7364_.webp",
-      "name": "Dr. Zohair Ahmed",
-      "email": "zohair.ahmed@isb.nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": "C-203 B"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6405",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6405_.webp",
-      "name": "Dr. M. Ishtiaq",
-      "email": "m.ishtiaq@nu.edu.pk",
-      "status": "Associate Professor",
-      "office_room": "D-214 D"
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/waseem-shahzad-044061272/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4553",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/4553_.webp",
-      "name": "Dr. Waseem Shahzad",
-      "email": "waseem.shahzad@nu.edu.pk",
-      "status": "Director & Professor",
-      "office_room": "Director office"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6478",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/P6478.WebP",
-      "name": "Dr. Ahmad Din",
-      "email": "ahmad.din@nu.edu.pk",
-      "status": "HoD (Artificial Intelligence & Data Science) & Professor",
-      "office_room": "D-201 C"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6654",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6654_.webp",
-      "name": "Mr. Abdul Hammad Rasheed",
-      "email": "hammad.rasheed@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "D-513 A"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7125",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7125_.webp",
-      "name": "Mr. Abdul Wahab Khan",
-      "email": "abdul.wahab@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "D-513 C"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6974",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6974_.webp",
-      "name": "Mr. Ali Hamza",
-      "email": "ali.hamza@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "D-513 D"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6695",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6695_.webp",
-      "name": "Mr. Muhammad Ammar Masood",
-      "email": "ammar.masood@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "D-513 A"
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/talha-tariq-3b934a280/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7004",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7004_.webp",
-      "name": "Mr. Talha Tariq",
-      "email": "talha.tariq@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "D-513 D"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6694",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6694_.webp",
-      "name": "Ms. Maryam Hussain",
-      "email": "maryam.hussain@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "C-108 A"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6693",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6693_.webp",
-      "name": "Ms. Mubrra Asma",
-      "email": "mubrra.asma@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "C-513 C"
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/nabeelah-maryam-2813b3213/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6972",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6972_.webp",
-      "name": "Ms. Nabeelah Maryam",
-      "email": "nabeelah.maryam@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "D-513 F"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7301",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7301_.webp",
-      "name": "Ms. Nayyera Wasim",
-      "email": "nayyera.wasim@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "C-108 A"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6708",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6708_.webp",
-      "name": "Ms. Palwasha Zahid",
-      "email": "palwasha.zahid@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "C-513 B"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6988",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6988_.webp",
-      "name": "Ms. Sidra Fayyaz",
-      "email": "sidra.fayyaz@isb.nu.edu.pk",
-      "status": "Instructor",
-      "office_room": "C-513 A"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6701",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6701_.webp",
-      "name": "Mr. Ahmad Raza",
-      "email": "ahmad.raza@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-202 C"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7029",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7029_.webp",
-      "name": "Mr. Mohsin Khan",
-      "email": "mohsin.khan@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "C-202 G"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6697",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6697_.webp",
-      "name": "Mr. Muhammad Sohail Abbas",
-      "email": "sohail.abbas@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-204 G"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6707",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6707_.webp",
-      "name": "Mr. Shahbaz Hassan",
-      "email": "shahbaz.hassan@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-212 C"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=9242",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/9242_.webp",
-      "name": "Mr. Shoaib Saleem Khattak",
-      "email": "shoaib.saleem@nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-204 H"
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/ubaidkhan3081/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7267",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7267_.webp",
-      "name": "Mr. Ubaid Ur Rehman",
-      "email": "ubaid.rehman@isn.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/usamaimtiaz01/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7006",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7006_.webp",
-      "name": "Mr. Usama Imtiaz",
-      "email": "usama.imtiaz@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-112 E"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7092",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7092_.webp",
-      "name": "Ms. Azka Atiq",
-      "email": "azka.atiq@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "C-202 A"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5695",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/5695_.webp",
-      "name": "Ms. Kainat Iqbal",
-      "email": "kainat.Iqbal@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-212 F"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6869",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6869_.webp",
-      "name": "Ms. Kanza Hamid",
-      "email": "kanza.hamid@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-204 F"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6534",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6534_.webp",
-      "name": "Ms. Khadija Mahmood",
-      "email": "khadija.mahmood@nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-202 H"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6263",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6263_.webp",
-      "name": "Ms. Laraib Afzaal",
-      "email": "laraib.afzaal@nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-202 B"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6696",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6696_.webp",
-      "name": "Ms. Mahnoor Tariq",
-      "email": "mahnoor.tariq@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-212 B"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7145",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7145_.webp",
-      "name": "Ms. Mariam bint Imran",
-      "email": "mariam.imran@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-202 A"
-    },
-    {
-      "linkedin_profile": "https://linkedin.com/in/maryam-s-a40035248",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7300",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7300_.webp",
-      "name": "Ms. Maryam Sana",
-      "email": "maryam.sana@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "C-203 F"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6248",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6248_.webp",
-      "name": "Ms. Mehreen Javaid",
-      "email": "mehreen.javaid@nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-202 G"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6451",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6451_.webp",
-      "name": "Ms. Saira Qamar",
-      "email": "saira.qamar@nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-212 G"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7009",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7009_.webp",
-      "name": "Ms. Umarah Qaseem",
-      "email": "umarah.qaseem@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-202 F"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6801",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6801_.webp",
-      "name": "Ms. Zonera Anjum",
-      "email": "zonera.anjum@isb.nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": "D-204 B"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=9214",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/9214_.webp",
-      "name": "Dr. Mirza Omer Beg",
-      "email": "omer.beg@nu.edu.pk",
-      "status": "Professor",
-      "office_room": "C-205 C"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5783",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/5783_.webp",
-      "name": "Dr. Muhammad Asif Naeem",
-      "email": "asif.naeem@nu.edu.pk",
-      "status": "Professor",
-      "office_room": "D-214 C"
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4551",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/4551_.webp",
-      "name": "Dr. Hasan Mujtaba",
-      "email": "hasan.mujtaba@nu.edu.pk",
-      "status": "Professor & HoS (Computing)",
-      "office_room": "C-201 A"
-    }
-  ]
+    "department": "Department of Artificial Intelligence & Data Science",
+    "faculty": [
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/adilmajeedadi/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6438",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6438_.webp",
+            "name": "Dr. Adil Majeed",
+            "email": "adil.majeed@nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": "D-204 E"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7022",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7022_.webp",
+            "name": "Dr. Muhammad Mateen Yaqoob",
+            "email": "mateen.yaqoob@isb.nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": "D-212 D"
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/muhammad-nouman-noor-phd-266644a2/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6990",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6990_.webp",
+            "name": "Dr. Muhammad Nouman Noor",
+            "email": "nouman.noor@isb.nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": "D-202 E"
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/noshina-tariq-956098281/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7041",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7041_.webp",
+            "name": "Dr. Noshina Tariq",
+            "email": "noshina.tariq@isb.nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": "D-202 D"
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/qurat-ul-ain-73965b171/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7311",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7311_.webp",
+            "name": "Dr. Qurat Ul Ain",
+            "email": "quratul.ain@isb.nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": "D-212 E"
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/zohairai/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7364",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7364_.webp",
+            "name": "Dr. Zohair Ahmed",
+            "email": "zohair.ahmed@isb.nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": "C-203 B"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6405",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6405_.webp",
+            "name": "Dr. M. Ishtiaq",
+            "email": "m.ishtiaq@nu.edu.pk",
+            "status": "Associate Professor",
+            "office_room": "D-214 D"
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/waseem-shahzad-044061272/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4553",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/4553_.webp",
+            "name": "Dr. Waseem Shahzad",
+            "email": "waseem.shahzad@nu.edu.pk",
+            "status": "Director & Professor",
+            "office_room": "Director office"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6478",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/P6478.WebP",
+            "name": "Dr. Ahmad Din",
+            "email": "ahmad.din@nu.edu.pk",
+            "status": "HoD (Artificial Intelligence & Data Science) & Professor",
+            "office_room": "D-201 C"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6654",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6654_.webp",
+            "name": "Mr. Abdul Hammad Rasheed",
+            "email": "hammad.rasheed@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "D-513 A"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7125",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7125_.webp",
+            "name": "Mr. Abdul Wahab Khan",
+            "email": "abdul.wahab@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "D-513 C"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6974",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6974_.webp",
+            "name": "Mr. Ali Hamza",
+            "email": "ali.hamza@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "D-513 D"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6695",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6695_.webp",
+            "name": "Mr. Muhammad Ammar Masood",
+            "email": "ammar.masood@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "D-513 A"
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/talha-tariq-3b934a280/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7004",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7004_.webp",
+            "name": "Mr. Talha Tariq",
+            "email": "talha.tariq@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "D-513 D"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6694",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6694_.webp",
+            "name": "Ms. Maryam Hussain",
+            "email": "maryam.hussain@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "C-108 A"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6693",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6693_.webp",
+            "name": "Ms. Mubrra Asma",
+            "email": "mubrra.asma@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "C-513 C"
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/nabeelah-maryam-2813b3213/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6972",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6972_.webp",
+            "name": "Ms. Nabeelah Maryam",
+            "email": "nabeelah.maryam@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "D-513 F"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7301",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7301_.webp",
+            "name": "Ms. Nayyera Wasim",
+            "email": "nayyera.wasim@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "C-108 A"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6708",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6708_.webp",
+            "name": "Ms. Palwasha Zahid",
+            "email": "palwasha.zahid@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "C-513 B"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6988",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6988_.webp",
+            "name": "Ms. Sidra Fayyaz",
+            "email": "sidra.fayyaz@isb.nu.edu.pk",
+            "status": "Instructor",
+            "office_room": "C-513 A"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6701",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6701_.webp",
+            "name": "Mr. Ahmad Raza",
+            "email": "ahmad.raza@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-202 C"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7029",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7029_.webp",
+            "name": "Mr. Mohsin Khan",
+            "email": "mohsin.khan@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "C-202 G"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6697",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6697_.webp",
+            "name": "Mr. Muhammad Sohail Abbas",
+            "email": "sohail.abbas@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-204 G"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6707",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6707_.webp",
+            "name": "Mr. Shahbaz Hassan",
+            "email": "shahbaz.hassan@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-212 C"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=9242",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/9242_.webp",
+            "name": "Mr. Shoaib Saleem Khattak",
+            "email": "shoaib.saleem@nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-204 H"
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/ubaidkhan3081/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7267",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7267_.webp",
+            "name": "Mr. Ubaid Ur Rehman",
+            "email": "ubaid.rehman@isn.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/usamaimtiaz01/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7006",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7006_.webp",
+            "name": "Mr. Usama Imtiaz",
+            "email": "usama.imtiaz@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-112 E"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7092",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7092_.webp",
+            "name": "Ms. Azka Atiq",
+            "email": "azka.atiq@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "C-202 A"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5695",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/5695_.webp",
+            "name": "Ms. Kainat Iqbal",
+            "email": "kainat.Iqbal@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-212 F"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6869",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6869_.webp",
+            "name": "Ms. Kanza Hamid",
+            "email": "kanza.hamid@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-204 F"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6534",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6534_.webp",
+            "name": "Ms. Khadija Mahmood",
+            "email": "khadija.mahmood@nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-202 H"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6263",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6263_.webp",
+            "name": "Ms. Laraib Afzaal",
+            "email": "laraib.afzaal@nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-202 B"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6696",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6696_.webp",
+            "name": "Ms. Mahnoor Tariq",
+            "email": "mahnoor.tariq@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-212 B"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7145",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7145_.webp",
+            "name": "Ms. Mariam bint Imran",
+            "email": "mariam.imran@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-202 A"
+        },
+        {
+            "linkedin_profile": "https://linkedin.com/in/maryam-s-a40035248",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7300",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7300_.webp",
+            "name": "Ms. Maryam Sana",
+            "email": "maryam.sana@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "C-203 F"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6248",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6248_.webp",
+            "name": "Ms. Mehreen Javaid",
+            "email": "mehreen.javaid@nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-202 G"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6451",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6451_.webp",
+            "name": "Ms. Saira Qamar",
+            "email": "saira.qamar@nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-212 G"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7009",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7009_.webp",
+            "name": "Ms. Umarah Qaseem",
+            "email": "umarah.qaseem@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-202 F"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6801",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6801_.webp",
+            "name": "Ms. Zonera Anjum",
+            "email": "zonera.anjum@isb.nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": "D-204 B"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=9214",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/9214_.webp",
+            "name": "Dr. Mirza Omer Beg",
+            "email": "omer.beg@nu.edu.pk",
+            "status": "Professor",
+            "office_room": "C-205 C"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5783",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/5783_.webp",
+            "name": "Dr. Muhammad Asif Naeem",
+            "email": "asif.naeem@nu.edu.pk",
+            "status": "Professor",
+            "office_room": "D-214 C"
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4551",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/4551_.webp",
+            "name": "Dr. Hasan Mujtaba",
+            "email": "hasan.mujtaba@nu.edu.pk",
+            "status": "Professor & HoS (Computing)",
+            "office_room": "C-201 A"
+        }
+    ]
 }

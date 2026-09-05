@@ -1,176 +1,176 @@
 {
-  "department": "Department of Electrical Engineering",
-  "faculty": [
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4283",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/4283_.webp",
-      "name": "Dr. Aamer Hafeez",
-      "email": "aamer.hafeez@nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=3625",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/3625_.webp",
-      "name": "Dr. Farhan Khalid",
-      "email": "farhan.khalid@nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5953",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/5953_.webp",
-      "name": "Dr. Hassan Saif",
-      "email": "hassan.saif@nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7124",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7124_.webp",
-      "name": "Dr. Irum Saba",
-      "email": "irum.saba@nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6389",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6389_.webp",
-      "name": "Dr. Muhammad Awais",
-      "email": "m.awais@nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4141",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/4141_.webp",
-      "name": "Dr. Muhammad Saeed",
-      "email": "muhammad.saeed@nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/shahzad-saleem-87495612/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4738",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/4738_.webp",
-      "name": "Dr. Shahzad Saleem",
-      "email": "shahzad.saleem@nu.edu.pk",
-      "status": "Assistant Professor",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=3441",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/3441_.webp",
-      "name": "Mr. Aamer Munir",
-      "email": "aamer.munir@nu.edu.pk",
-      "status": "Assistant Professor (MS)",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6390",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/P6390.WebP",
-      "name": "Dr. Niaz Ahmed",
-      "email": "niaz.ahmed@nu.edu.pk",
-      "status": "Associate Professor & HoD (Electrical Engineering)",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": "https://linkedin.com/in/abu788",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6922",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6922_.webp",
-      "name": "Mr. Abu Bakar",
-      "email": "abu.bakar@isb.nu.edu.pk",
-      "status": "Lab Engineer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/burhan-naeem-480b362a8",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7359",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7359_.webp",
-      "name": "Mr. Burhan Naeem",
-      "email": "burhan.naeem@isb.nu.edu.pk",
-      "status": "Lab Engineer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7132",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7132_.webp",
-      "name": "Mr. Hazrat Ali",
-      "email": "Hazrat.Ali@isb.nu.edu.pk",
-      "status": "Lab Engineer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/muhammad-abdur-rehman-649b02239",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6921",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6921_.webp",
-      "name": "Mr. Muhammad Abd Ur Rehman",
-      "email": "abdur.rehman@isb.nu.edu.pk",
-      "status": "Lab Engineer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7262",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/7262_.webp",
-      "name": "Ms. Deema Zargoon Talib",
-      "email": "deema.zargoon@isb.nu.edu.pk",
-      "status": "Lab Engineer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6376",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/6376_.webp",
-      "name": "Ms. Nimra Fatima",
-      "email": "nimra.fatima@nu.edu.pk",
-      "status": "Lab Engineer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4669",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/4669_.webp",
-      "name": "Mr. Fakhar Abbas",
-      "email": "fakhar.abbas@nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=9389",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/9389_.webp",
-      "name": "Ms. Maria Nasir",
-      "email": "maria.nasir@nu.edu.pk",
-      "status": "Lecturer",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": "https://www.linkedin.com/in/rashad-ramzan-367271/",
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5619",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/5619_.webp",
-      "name": "Dr. Rashad Ramzan",
-      "email": "rashad.ramzan@nu.edu.pk",
-      "status": "Professor",
-      "office_room": null
-    },
-    {
-      "linkedin_profile": null,
-      "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5522",
-      "image_url": "https://isb.nu.edu.pk/assets/img/person/5522_.webp",
-      "name": "Dr. Mukhtar Ullah",
-      "email": "mukhtar.ullah@nu.edu.pk",
-      "status": "Professor & Dean Engineering",
-      "office_room": null
-    }
-  ]
+    "department": "Department of Electrical Engineering",
+    "faculty": [
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4283",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/4283_.webp",
+            "name": "Dr. Aamer Hafeez",
+            "email": "aamer.hafeez@nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=3625",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/3625_.webp",
+            "name": "Dr. Farhan Khalid",
+            "email": "farhan.khalid@nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5953",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/5953_.webp",
+            "name": "Dr. Hassan Saif",
+            "email": "hassan.saif@nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7124",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7124_.webp",
+            "name": "Dr. Irum Saba",
+            "email": "irum.saba@nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6389",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6389_.webp",
+            "name": "Dr. Muhammad Awais",
+            "email": "m.awais@nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4141",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/4141_.webp",
+            "name": "Dr. Muhammad Saeed",
+            "email": "muhammad.saeed@nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/shahzad-saleem-87495612/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4738",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/4738_.webp",
+            "name": "Dr. Shahzad Saleem",
+            "email": "shahzad.saleem@nu.edu.pk",
+            "status": "Assistant Professor",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=3441",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/3441_.webp",
+            "name": "Mr. Aamer Munir",
+            "email": "aamer.munir@nu.edu.pk",
+            "status": "Assistant Professor (MS)",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6390",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/P6390.WebP",
+            "name": "Dr. Niaz Ahmed",
+            "email": "niaz.ahmed@nu.edu.pk",
+            "status": "Associate Professor & HoD (Electrical Engineering)",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": "https://linkedin.com/in/abu788",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6922",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6922_.webp",
+            "name": "Mr. Abu Bakar",
+            "email": "abu.bakar@isb.nu.edu.pk",
+            "status": "Lab Engineer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/burhan-naeem-480b362a8",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7359",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7359_.webp",
+            "name": "Mr. Burhan Naeem",
+            "email": "burhan.naeem@isb.nu.edu.pk",
+            "status": "Lab Engineer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7132",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7132_.webp",
+            "name": "Mr. Hazrat Ali",
+            "email": "Hazrat.Ali@isb.nu.edu.pk",
+            "status": "Lab Engineer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/muhammad-abdur-rehman-649b02239",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6921",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6921_.webp",
+            "name": "Mr. Muhammad Abd Ur Rehman",
+            "email": "abdur.rehman@isb.nu.edu.pk",
+            "status": "Lab Engineer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=7262",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/7262_.webp",
+            "name": "Ms. Deema Zargoon Talib",
+            "email": "deema.zargoon@isb.nu.edu.pk",
+            "status": "Lab Engineer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=6376",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/6376_.webp",
+            "name": "Ms. Nimra Fatima",
+            "email": "nimra.fatima@nu.edu.pk",
+            "status": "Lab Engineer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=4669",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/4669_.webp",
+            "name": "Mr. Fakhar Abbas",
+            "email": "fakhar.abbas@nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=9389",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/9389_.webp",
+            "name": "Ms. Maria Nasir",
+            "email": "maria.nasir@nu.edu.pk",
+            "status": "Lecturer",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": "https://www.linkedin.com/in/rashad-ramzan-367271/",
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5619",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/5619_.webp",
+            "name": "Dr. Rashad Ramzan",
+            "email": "rashad.ramzan@nu.edu.pk",
+            "status": "Professor",
+            "office_room": null
+        },
+        {
+            "linkedin_profile": null,
+            "profile_url": "https://isb.nu.edu.pk/Profile.php?id=5522",
+            "image_url": "https://isb.nu.edu.pk/assets/img/person/5522_.webp",
+            "name": "Dr. Mukhtar Ullah",
+            "email": "mukhtar.ullah@nu.edu.pk",
+            "status": "Professor & Dean Engineering",
+            "office_room": null
+        }
+    ]
 }
