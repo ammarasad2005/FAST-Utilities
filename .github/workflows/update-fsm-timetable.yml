@@ -35,14 +35,33 @@ jobs:
           cp fsm_timetable.json public/data/fsm_timetable.json
 
       - name: Commit and push if data changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/data/fsm_timetable.json
           if git diff --staged --quiet; then
             echo "No changes detected — FSM timetable is up to date."
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "chore: auto-update fsm_timetable.json [$(date -u +'%Y-%m-%d %H:%M UTC')]"
             git push
             echo "FSM timetable updated and pushed."
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Set up Node.js
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install push helper deps
+        if: steps.commit.outputs.changed == 'true'
+        run: npm ci --prefix scripts/push
+
+      - name: Fan out FCM ping (campus_updates)
+        if: steps.commit.outputs.changed == 'true'
+        run: node scripts/push/fanout.js --keys=data:timetable:FSM --file=public/data/fsm_timetable.json --url=https://fast-nuces-isb.vercel.app/data/fsm_timetable.json
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}

@@ -1,0 +1,9 @@
+{
+  "name": "fast-utilities-push",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Free-forever FCM fan-out for campus data changes (GitHub Actions driver).",
+  "dependencies": {
+    "firebase-admin": "^12.6.0"
+  }
+}

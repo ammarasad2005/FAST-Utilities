@@ -47,6 +47,7 @@ jobs:
 
       # 5. Only commit and push if something actually changed
       - name: Commit and push if data changed
+        id: commit
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -54,8 +55,27 @@ jobs:
           # Check if there is anything new to commit
           if git diff --staged --quiet; then
             echo "No changes detected — timetable is up to date."
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "chore: auto-update timetable.json [$(date -u +'%Y-%m-%d %H:%M UTC')]"
             git push
             echo "Timetable updated and pushed."
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+
+      # 6. Instant push ping: once Vercel serves the fresh file, notify phones
+      - name: Set up Node.js
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install push helper deps
+        if: steps.commit.outputs.changed == 'true'
+        run: npm ci --prefix scripts/push
+
+      - name: Fan out FCM ping (campus_updates)
+        if: steps.commit.outputs.changed == 'true'
+        run: node scripts/push/fanout.js --keys=data:timetable:FSC --file=public/data/timetable.json --url=https://fast-nuces-isb.vercel.app/data/timetable.json
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
