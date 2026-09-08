@@ -10765,8 +10765,8 @@
                                 "exam": false
                             },
                             {
-                                "room": "D-316",
-                                "time": "08:30-09:50",
+                                "room": "D-403",
+                                "time": "01:00-02:20",
                                 "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
