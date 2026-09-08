@@ -1137,26 +1137,6 @@
                             }
                         ]
                     },
-                    "B": {
-                        "Wednesday": [
-                            {
-                                "room": "KK-III",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "KK-III",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
                     "A": {
                         "Wednesday": [
                             {
@@ -1170,6 +1150,26 @@
                             {
                                 "room": "Khyber II",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Thursday": [
+                            {
+                                "room": "Mehran-I",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "Mehran-I",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -6647,8 +6647,8 @@
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "A-315",
-                                "time": "08:30-09:50",
+                                "room": "A-310",
+                                "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
