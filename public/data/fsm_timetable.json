@@ -6645,10 +6645,10 @@
                         ]
                     },
                     "A": {
-                        "Tuesday": [
+                        "Wednesday": [
                             {
-                                "room": "A-310",
-                                "time": "03:50-05:10",
+                                "room": "A-101",
+                                "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
