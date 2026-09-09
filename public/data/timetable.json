@@ -1262,6 +1262,16 @@
                                 "exam": false
                             }
                         ],
+                        "Friday": [
+                            {
+                                "room": "D-301",
+                                "time": "08:30-11:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "IT Lab 2 (D-211)",
@@ -1580,7 +1590,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "D-405",
+                                "room": "D-403",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -5485,6 +5495,16 @@
                                 "room": "C-309",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "D-302",
+                                "time": "11:30-12:50",
+                                "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -9643,10 +9663,10 @@
                                 "exam": false
                             }
                         ],
-                        "Friday": [
+                        "Thursday": [
                             {
-                                "room": "C-310",
-                                "time": "08:30-09:50",
+                                "room": "C-401",
+                                "time": "11:30-12:50",
                                 "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
