@@ -1562,6 +1562,10 @@ for day_info in day_sheets:
                     # Color confirmed it's a course; use the raw text as name.
                     # Strip any trailing time annotation (e.g., "Fund of Data Vis 11:30-12:50")
                     course_name = re.sub(r'\s+\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2}\s*$', '', val).strip()
+                    # Strip trailing room codes that the sheet author may have
+                    # accidentally appended to the course name (e.g.,
+                    # "Fund of Data Vis C-301" → "Fund of Data Vis")
+                    course_name = re.sub(r'\s+[A-Z]-\d{3,4}[A-Z]?$', '', course_name).strip()
                     if not course_name:
                         continue
                     # Default section to "A" (the cell has no section info).
