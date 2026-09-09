@@ -1226,7 +1226,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ],
                         "Saturday (Sep. 05, 2026)": [
@@ -5810,7 +5811,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ],
                         "Saturday (Sep. 05, 2026)": [
