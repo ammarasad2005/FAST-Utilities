@@ -4593,7 +4593,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A-101",
+                                "room": "A-314",
                                 "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4605,7 +4605,7 @@
                     "A": {
                         "Monday": [
                             {
-                                "room": "A-02",
+                                "room": "A-315",
                                 "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4615,7 +4615,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A-101",
+                                "room": "A-315",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
