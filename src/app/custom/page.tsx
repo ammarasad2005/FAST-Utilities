@@ -5,6 +5,7 @@ import { ExamCard } from '@/components/ExamCard';
 import { ExamDetail } from '@/components/ExamDetail';
 import { SearchBar } from '@/components/SearchBar';
 import { ExportButton } from '@/components/ExportButton';
+import { getExamType } from '@/lib/exam-type';
 import { EmptyState } from '@/components/EmptyState';
 import { Header } from '@/components/Header';
 
@@ -81,6 +82,7 @@ function CustomPageInner() {
   const [isSaving, setIsSaving] = useState(false);
   const [newBundleName, setNewBundleName] = useState('');
   const [semesterName, setSemesterName] = useState<string>('Spring 2026');
+  const examType = getExamType(false); // Custom page loads regular_schedule.json
   const [renamingId, setRenamingId] = useState<string|null>(null);
   const [tempName, setTempName] = useState('');
   const [activeBundleId, setActiveBundleId] = useState<string|null>(null);
@@ -256,7 +258,7 @@ function CustomPageInner() {
     <div className="min-h-dvh flex flex-col">
 
       {/* ── Sticky header ── */}
-      <Header rightActions={saved && <ExportButton entries={filtered} config={{ isCustom: true, subtitle: 'CUSTOM COURSES' }} />}>
+      <Header rightActions={saved && <ExportButton entries={filtered} config={{ isCustom: true, subtitle: 'CUSTOM COURSES', examType }} />}>
         <div className="flex flex-1 items-center gap-2 md:gap-3 w-full max-w-full min-w-0">
           <button
             onClick={() => router.push('/')}
@@ -420,7 +422,7 @@ function CustomPageInner() {
             </div>
             
             {saved && (
-              <ExportButton entries={filtered} variant="sidebar" config={{ isCustom: true, subtitle: 'CUSTOM COURSES' }} />
+              <ExportButton entries={filtered} variant="sidebar" config={{ isCustom: true, subtitle: 'CUSTOM COURSES', examType }} />
             )}
           </div>
         </aside>

@@ -100,10 +100,12 @@ function SchedulePageInner() {
   // always saying "Finals".
   const examType = getExamType(isSummer);
 
-  // Subtitle differs in summer mode
+  // Subtitle for exports — only degree+batch info. The examType is already
+  // shown in the export header line ("Fall 2026 Sessional 1"), so including
+  // it in the subtitle too would be duplication.
   const subtitle = isSummer
-    ? `Summer 2026 · ${examType}`
-    : `${dept === 'BBA' ? `BBA-${batch}` : `BS(${dept})-${batch}`} · ${examType}`;
+    ? 'Summer 2026'
+    : (dept === 'BBA' ? `BBA-${batch}` : `BS(${dept})-${batch}`);
 
   // Show loading state while fetching show_exams
   if (showExams === null) {
