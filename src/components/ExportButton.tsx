@@ -104,7 +104,7 @@ export function ExportButton({ entries, variant = 'header', config }: Props) {
             as Image (PNG)
           </button>
           <button
-            onClick={() => { downloadFullICS(entries); setOpen(false); }}
+            onClick={() => { downloadFullICS(entries, config?.examType); setOpen(false); }}
             className="w-full text-left font-mono text-xs text-[var(--color-text-primary)] px-3 py-2 rounded-sm hover:bg-[var(--color-bg-subtle)] focus-visible:outline-none focus-visible:ring-2"
           >
             as Calendar (.ics)

@@ -107,9 +107,10 @@ export async function downloadXLSX(entries: ExamEntry[]): Promise<void> {
 }
 
 // Generate .ics for all exams in the schedule
-export function downloadFullICS(entries: ExamEntry[]): void {
+export function downloadFullICS(entries: ExamEntry[], examType?: string): void {
   try {
     const dtStamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    const typeLabel = examType || 'Exams';
 
     const events = entries.map(exam => {
       const [dStr, mStr, yStr] = exam.date.split('/');
@@ -136,7 +137,9 @@ export function downloadFullICS(entries: ExamEntry[]): void {
     const ics = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//FAST Exams//EN',
+      `PRODID:-//FAST ${typeLabel}//EN`,
+      `X-WR-CALNAME:FAST ${typeLabel}`,
+      'X-WR-TIMEZONE:Asia/Karachi',
       events,
       'END:VCALENDAR',
     ].join('\r\n');
@@ -145,7 +148,7 @@ export function downloadFullICS(entries: ExamEntry[]): void {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `fsc-exams-schedule-${Date.now()}.ics`;
+    a.download = `fsc-${typeLabel.toLowerCase().replace(/\s+/g, '-')}-schedule-${Date.now()}.ics`;
     a.click();
     URL.revokeObjectURL(url);
   } catch (err) {

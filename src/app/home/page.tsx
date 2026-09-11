@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { DepartmentPill } from '@/components/DepartmentPill';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { SCHOOLS, SCHOOL_DEPARTMENTS, DEPARTMENT_LABELS } from '@/lib/types';
+import { getExamType } from '@/lib/exam-type';
 import { flattenTimetable, getAvailableSections, findMatchingCatalogEntry } from '@/lib/timetable-filter';
 import type { RawTimetableJSON, TimetableEntry, SummerCourseCatalogEntry } from '@/lib/types';
 import { AlertCircle, Terminal, ShieldAlert } from 'lucide-react';
@@ -995,7 +996,7 @@ export default function SetupPage() {
         <div className="mb-8">
           <h1 className="font-display text-4xl leading-tight text-[var(--color-text-primary)]">
             {feature === 'exams' ? (
-              <>Find your<br /><span className="italic">exam schedule.</span></>
+              <>Find your<br /><span className="italic">{isSummerMode ? `${getExamType(true)} schedule.` : `${getExamType(false)} schedule.`}</span></>
             ) : feature === 'timetable' ? (
               <>Find your<br /><span className="italic">class timetable.</span></>
             ) : feature === 'faculty' ? (
@@ -1098,7 +1099,7 @@ export default function SetupPage() {
                 style={{ fontSize: 'clamp(2.4rem, 3.5vw, 3.6rem)' }}
               >
                 {feature === 'exams' ? (
-                  <>Find your<br /><span className="italic">exam schedule.</span></>
+                  <>Find your<br /><span className="italic">{isSummerMode ? `${getExamType(true)} schedule.` : `${getExamType(false)} schedule.`}</span></>
                 ) : feature === 'timetable' ? (
                   <>Find your<br /><span className="italic">class timetable.</span></>
                 ) : feature === 'faculty' ? (

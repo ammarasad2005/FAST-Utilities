@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
   try {
     const payload = await req.json();
     const entries = payload.entries as any[];
-    const config = payload.config as { isCustom?: boolean; subtitle?: string; semesterName?: string } | undefined;
+    const config = payload.config as { isCustom?: boolean; subtitle?: string; semesterName?: string; examType?: string } | undefined;
 
     if (!entries || !Array.isArray(entries)) {
       return new Response('Invalid entries', { status: 400 });
@@ -61,7 +61,9 @@ export async function POST(req: NextRequest) {
                 margin: 0,
               }}
             >
-              {config?.semesterName ? `${config.semesterName} Finals` : 'Spring 2026 Finals'}
+              {config?.semesterName
+                ? `${config.semesterName} ${config.examType || 'Exams'}`
+                : 'Spring 2026 Exams'}
             </h2>
             {config?.subtitle && (
               <h3

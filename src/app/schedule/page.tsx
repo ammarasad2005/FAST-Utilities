@@ -3,6 +3,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { useMemo, useState, useEffect, Suspense } from 'react';
 import { filterExams, filterSummerExams, groupByDay } from '@/lib/filter';
 import { sortByChronological } from '@/lib/dates';
+import { getExamType } from '@/lib/exam-type';
 import { ExamCard } from '@/components/ExamCard';
 import { Header } from '@/components/Header';
 
@@ -93,10 +94,16 @@ function SchedulePageInner() {
 
   const grouped = useMemo(() => groupByDay(filtered), [filtered]);
 
+  // Compute the current exam type from the semester calendar + today's date.
+  // This is used in the header and passed to the export config so exports
+  // show "Sessional 1" / "Sessional 2" / "Finals" / "Mids" instead of
+  // always saying "Finals".
+  const examType = getExamType(isSummer);
+
   // Subtitle differs in summer mode
   const subtitle = isSummer
-    ? 'Summer 2026'
-    : (dept === 'BBA' ? `BBA-${batch}` : `BS(${dept})-${batch}`);
+    ? `Summer 2026 · ${examType}`
+    : `${dept === 'BBA' ? `BBA-${batch}` : `BS(${dept})-${batch}`} · ${examType}`;
 
   // Show loading state while fetching show_exams
   if (showExams === null) {
@@ -208,7 +215,7 @@ function SchedulePageInner() {
   return (
     <div className="min-h-dvh flex flex-col">
       {/* Sticky header */}
-      <Header rightActions={<ExportButton entries={filtered} config={{ isCustom: false, subtitle }} />}>
+      <Header rightActions={<ExportButton entries={filtered} config={{ isCustom: false, subtitle, examType }} />}>
         <div className="flex flex-1 items-center gap-2 md:gap-3 w-full max-w-full min-w-0">
           <button
             onClick={() => router.back()}
@@ -231,7 +238,7 @@ function SchedulePageInner() {
                 >
                   SUMMER
                 </span>
-                <span className="font-mono text-sm text-[var(--color-text-secondary)] truncate">Summer 2026 Exams</span>
+                <span className="font-mono text-sm text-[var(--color-text-secondary)] truncate">Summer 2026 · {examType}</span>
               </>
             ) : (
               <>
@@ -300,7 +307,7 @@ function SchedulePageInner() {
             >
               {isSummer ? 'Change courses' : 'Change filters'}
             </button>
-            <ExportButton entries={filtered} variant="sidebar" config={{ isCustom: false, subtitle }} />
+            <ExportButton entries={filtered} variant="sidebar" config={{ isCustom: false, subtitle, examType }} />
           </div>
         </aside>
 
