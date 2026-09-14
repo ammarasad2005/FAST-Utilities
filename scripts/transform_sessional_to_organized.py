@@ -30,7 +30,7 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
-RAW_FILE = Path("/home/z/my-project/upload/sessional1_fall2026.xlsx")
+RAW_FILE = Path("/home/z/my-project/upload/1st Sessional  Exams Schedule Fall 2026 (Version Final) as on 14-09-2026.xlsx")
 OUT_FILE = Path("/home/z/my-project/repo/exam-table/exam_schedule.xlsx")
 
 # ── Sheet config ────────────────────────────────────────────────────────────
@@ -56,8 +56,12 @@ COURSE_CODE_RE = re.compile(r"^([A-Za-z]{2,4}[\s\-]?\d{4})\s+(.*)$", re.DOTALL)
 
 # ── Program patterns ────────────────────────────────────────────────────────
 # BS(CS) (A,B,C) — BS with dept in parens, sections in second parens
+# NOTE: [^)\n]* instead of [^)]* to prevent greedy matching across newlines
+# when the sections paren is unclosed (e.g., "BS(SE) (A,B, C,D,E, " with no
+# closing paren — without \n exclusion, [^)]* would consume the next line's
+# "BS(AI)" as part of the sections string).
 BS_PAREN_SECTIONS_RE = re.compile(
-    r"BS\s*\(\s*(CS|AI|DS|CY|SE|AF|FT|BA|EE|CE)\s*\)\s*(?:\(([^)]*)\))?",
+    r"BS\s*\(\s*(CS|AI|DS|CY|SE|AF|FT|BA|EE|CE)\s*\)\s*(?:\(([^)\n]*)\))?",
     re.IGNORECASE,
 )
 # BS(CS)-A,B or BS(CS) A,B — BS with dept in parens, sections after dash or space
@@ -107,6 +111,8 @@ def extract_course_and_name(cell_text: str) -> tuple[str, str]:
     if m:
         code_raw = m.group(1)
         rest = m.group(2).strip()
+        # Strip leading " - " separator (e.g., "MT1003 - Calculus..." → rest starts with "- Calculus...")
+        rest = re.sub(r"^[\s\-]+", "", rest).strip()
         # If rest contains a program line (BS(...), BBA, etc.), split it off
         # The course name is everything BEFORE the first program pattern
         program_start = re.search(

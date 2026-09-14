@@ -3,7 +3,17 @@
     "date": "19/09/2026",
     "day": "Saturday",
     "time": "9:00 to 10:00 AM",
-    "courseCode": "DS3004",
+    "courseCode": "EE1005",
+    "courseName": "Digital Logic Design",
+    "batch": "2025",
+    "department": "CS",
+    "school": "FSC"
+  },
+  {
+    "date": "19/09/2026",
+    "day": "Saturday",
+    "time": "9:00 to 10:00 AM",
+    "courseCode": "DS3003",
     "courseName": "Data Warehousing and Business Intellligence",
     "batch": "2023",
     "department": "DS",
@@ -13,9 +23,9 @@
     "date": "19/09/2026",
     "day": "Saturday",
     "time": "9:00 to 10:00 AM",
-    "courseCode": "DS3003",
+    "courseCode": "DS3004",
     "courseName": "Data Warehousing and Business Intellligence",
-    "batch": "2022",
+    "batch": "2024",
     "department": "DS",
     "school": "FSC"
   },
@@ -228,26 +238,6 @@
     "batch": "2024",
     "department": "EE",
     "school": "FSE"
-  },
-  {
-    "date": "19/09/2026",
-    "day": "Saturday",
-    "time": "11:40 to 12:40 PM",
-    "courseCode": "MG3040",
-    "courseName": "Methods in Business Research",
-    "batch": "2023",
-    "department": "AI",
-    "school": "FSC"
-  },
-  {
-    "date": "19/09/2026",
-    "day": "Saturday",
-    "time": "11:40 to 12:40 PM",
-    "courseCode": "MG3040",
-    "courseName": "Methods in Business Research",
-    "batch": "2023",
-    "department": "DS",
-    "school": "FSC"
   },
   {
     "date": "19/09/2026",
@@ -493,16 +483,6 @@
     "date": "19/09/2026",
     "day": "Saturday",
     "time": "02:30 to 03:30 PM",
-    "courseCode": "SS1018",
-    "courseName": "Understanding Holy Quran",
-    "batch": "2024",
-    "department": "BA",
-    "school": "FSM"
-  },
-  {
-    "date": "19/09/2026",
-    "day": "Saturday",
-    "time": "02:30 to 03:30 PM",
     "courseCode": "MG4067",
     "courseName": "Strategic Diversity, Equity and Inclusion",
     "batch": "2023",
@@ -537,6 +517,26 @@
     "courseName": "Applied Physics",
     "batch": "2026",
     "department": "CY",
+    "school": "FSC"
+  },
+  {
+    "date": "19/09/2026",
+    "day": "Saturday",
+    "time": "03:40 to 04:40 PM",
+    "courseCode": "MG3040",
+    "courseName": "Methods in Business Research",
+    "batch": "2023",
+    "department": "AI",
+    "school": "FSC"
+  },
+  {
+    "date": "19/09/2026",
+    "day": "Saturday",
+    "time": "03:40 to 04:40 PM",
+    "courseCode": "MG3040",
+    "courseName": "Methods in Business Research",
+    "batch": "2023",
+    "department": "DS",
     "school": "FSC"
   },
   {
@@ -612,12 +612,12 @@
   {
     "date": "19/09/2026",
     "day": "Saturday",
-    "time": "5:00 to 6:00 PM",
-    "courseCode": "MG4066",
-    "courseName": "Managing Virtual Global Teams",
+    "time": "03:40 to 04:40 PM",
+    "courseCode": "EE3006",
+    "courseName": "Embedded Systems",
     "batch": "2023",
-    "department": "BBA",
-    "school": "FSM"
+    "department": "EE",
+    "school": "FSE"
   },
   {
     "date": "19/09/2026",
@@ -687,16 +687,6 @@
     "courseName": "Technical and Business Writing",
     "batch": "2022",
     "department": "DS",
-    "school": "FSC"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "9:00 to 10:00 AM",
-    "courseCode": "CS2005",
-    "courseName": "Database Systems",
-    "batch": "2024",
-    "department": "CY",
     "school": "FSC"
   },
   {
@@ -833,16 +823,6 @@
     "date": "21/09/2026",
     "day": "Monday",
     "time": "10:20 to 11:20 AM",
-    "courseCode": "CY3003",
-    "courseName": "Information Assurance",
-    "batch": "2023",
-    "department": "CY",
-    "school": "FSC"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "10:20 to 11:20 AM",
     "courseCode": "CS1004",
     "courseName": "Object Oriented Programming",
     "batch": "2025",
@@ -873,6 +853,16 @@
     "date": "21/09/2026",
     "day": "Monday",
     "time": "10:20 to 11:20 AM",
+    "courseCode": "CS4059",
+    "courseName": "Fundamentals of Computer Vision",
+    "batch": "2023",
+    "department": "DS",
+    "school": "FSC"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "10:20 to 11:20 AM",
     "courseCode": "MG1011",
     "courseName": "Business Mathematics",
     "batch": "2026",
@@ -897,6 +887,16 @@
     "courseName": "Business Mathematics",
     "batch": "2026",
     "department": "BA",
+    "school": "FSM"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "10:20 to 11:20 AM",
+    "courseCode": "MT1002",
+    "courseName": "Business Math – I",
+    "batch": "2025",
+    "department": "BBA",
     "school": "FSM"
   },
   {
@@ -953,10 +953,10 @@
     "date": "21/09/2026",
     "day": "Monday",
     "time": "11:40 to 12:40 PM",
-    "courseCode": "CS4059",
-    "courseName": "Fundamentals of Computer Vision",
+    "courseCode": "CY3003",
+    "courseName": "Information Assurance",
     "batch": "2023",
-    "department": "DS",
+    "department": "CY",
     "school": "FSC"
   },
   {
@@ -1013,26 +1013,6 @@
     "date": "21/09/2026",
     "day": "Monday",
     "time": "11:40 to 12:40 PM",
-    "courseCode": "NS1002",
-    "courseName": "Physics for Engineers",
-    "batch": "2026",
-    "department": "CE",
-    "school": "FSE"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "11:40 to 12:40 PM",
-    "courseCode": "NS1002",
-    "courseName": "Physics for Engineers",
-    "batch": "2026",
-    "department": "EE",
-    "school": "FSE"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "11:40 to 12:40 PM",
     "courseCode": "CY4054",
     "courseName": "Blockchain Technologies and Applications",
     "batch": "2024",
@@ -1083,6 +1063,36 @@
     "date": "21/09/2026",
     "day": "Monday",
     "time": "01:00 to 02:00 PM",
+    "courseCode": "AI4015",
+    "courseName": "Agentic Artificial Intelligenc",
+    "batch": "2022",
+    "department": "CS",
+    "school": "FSC"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "01:00 to 02:00 PM",
+    "courseCode": "AI4015",
+    "courseName": "Agentic Artificial Intelligenc",
+    "batch": "2022",
+    "department": "AI",
+    "school": "FSC"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "01:00 to 02:00 PM",
+    "courseCode": "AI4015",
+    "courseName": "Agentic Artificial Intelligenc",
+    "batch": "2022",
+    "department": "DS",
+    "school": "FSC"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "01:00 to 02:00 PM",
     "courseCode": "MG1001",
     "courseName": "Fundamentals of Management",
     "batch": "2026",
@@ -1107,6 +1117,16 @@
     "courseName": "Brand Management",
     "batch": "2023",
     "department": "BBA",
+    "school": "FSM"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "01:00 to 02:00 PM",
+    "courseCode": "AF4017",
+    "courseName": "Digital Assets and Cryptocurrencies; Conventiontional and Shariah Persepectives",
+    "batch": "2023",
+    "department": "FT",
     "school": "FSM"
   },
   {
@@ -1163,36 +1183,6 @@
     "date": "21/09/2026",
     "day": "Monday",
     "time": "02:30 to 03:30 PM",
-    "courseCode": "AI4015",
-    "courseName": "Agentic Artificial Intelligenc",
-    "batch": "2022",
-    "department": "CS",
-    "school": "FSC"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "02:30 to 03:30 PM",
-    "courseCode": "AI4015",
-    "courseName": "Agentic Artificial Intelligenc",
-    "batch": "2022",
-    "department": "AI",
-    "school": "FSC"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "02:30 to 03:30 PM",
-    "courseCode": "AI4015",
-    "courseName": "Agentic Artificial Intelligenc",
-    "batch": "2022",
-    "department": "DS",
-    "school": "FSC"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "02:30 to 03:30 PM",
     "courseCode": "MG2003",
     "courseName": "Consumer Behaviour",
     "batch": "2024",
@@ -1233,16 +1223,6 @@
     "date": "21/09/2026",
     "day": "Monday",
     "time": "02:30 to 03:30 PM",
-    "courseCode": "AF4017",
-    "courseName": "Digital Assets and Cryptocurrencies; Conventiontional and Shariah Persepectives",
-    "batch": "2023",
-    "department": "FT",
-    "school": "FSM"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "02:30 to 03:30 PM",
     "courseCode": "EE1004",
     "courseName": "Electronic Devices and Circuits",
     "batch": "2025",
@@ -1255,7 +1235,7 @@
     "time": "03:40 to 04:40 PM",
     "courseCode": "SS1021",
     "courseName": "Understanding of Holy Quran I/Introduction to Major World Religions I",
-    "batch": "2026",
+    "batch": "2025",
     "department": "CS",
     "school": "FSC"
   },
@@ -1265,7 +1245,7 @@
     "time": "03:40 to 04:40 PM",
     "courseCode": "SS1021",
     "courseName": "Understanding of Holy Quran I/Introduction to Major World Religions I",
-    "batch": "2026",
+    "batch": "2025",
     "department": "DS",
     "school": "FSC"
   },
@@ -1283,10 +1263,60 @@
     "date": "21/09/2026",
     "day": "Monday",
     "time": "03:40 to 04:40 PM",
+    "courseCode": "CS3002",
+    "courseName": "Information Security",
+    "batch": "2024",
+    "department": "CY",
+    "school": "FSC"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "03:40 to 04:40 PM",
+    "courseCode": "CS3002",
+    "courseName": "Information Security",
+    "batch": "2023",
+    "department": "CS",
+    "school": "FSC"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "03:40 to 04:40 PM",
+    "courseCode": "CS3002",
+    "courseName": "Information Security",
+    "batch": "2023",
+    "department": "SE",
+    "school": "FSC"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "03:40 to 04:40 PM",
     "courseCode": "MG4523",
     "courseName": "Conflict Resolution and Negotiation Skills",
     "batch": "2023",
     "department": "BBA",
+    "school": "FSM"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "03:40 to 04:40 PM",
+    "courseCode": "MT2004",
+    "courseName": "Business Math – II",
+    "batch": "2025",
+    "department": "FT",
+    "school": "FSM"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "03:40 to 04:40 PM",
+    "courseCode": "MG1004",
+    "courseName": "Business Calculus II",
+    "batch": "2023",
+    "department": "FT",
     "school": "FSM"
   },
   {
@@ -1312,71 +1342,21 @@
   {
     "date": "21/09/2026",
     "day": "Monday",
-    "time": "03:40 to 04:40 PM",
-    "courseCode": "EE1001",
-    "courseName": "Linear Circuit Analysis",
-    "batch": "2025",
-    "department": "EE",
-    "school": "FSE"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "5:00 to 6:00 PM",
-    "courseCode": "CS3002",
-    "courseName": "Information Security",
-    "batch": "2024",
-    "department": "CY",
-    "school": "FSC"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "5:00 to 6:00 PM",
-    "courseCode": "CS3002",
-    "courseName": "Information Security",
-    "batch": "2023",
-    "department": "CS",
-    "school": "FSC"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "5:00 to 6:00 PM",
-    "courseCode": "CS3002",
-    "courseName": "Information Security",
-    "batch": "2023",
-    "department": "SE",
-    "school": "FSC"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "5:00 to 6:00 PM",
-    "courseCode": "MT2004",
-    "courseName": "Business Math – II",
-    "batch": "2025",
-    "department": "FT",
-    "school": "FSM"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
-    "time": "5:00 to 6:00 PM",
-    "courseCode": "MG1004",
-    "courseName": "Business Calculus II",
-    "batch": "2023",
-    "department": "FT",
-    "school": "FSM"
-  },
-  {
-    "date": "21/09/2026",
-    "day": "Monday",
     "time": "5:00 to 6:00 PM",
     "courseCode": "BA4006",
     "courseName": "Contextual Marketing and Product Analytics",
     "batch": "2023",
     "department": "BA",
+    "school": "FSM"
+  },
+  {
+    "date": "21/09/2026",
+    "day": "Monday",
+    "time": "5:00 to 6:00 PM",
+    "courseCode": "MG4066",
+    "courseName": "Managing Virtual Global Teams",
+    "batch": "2023",
+    "department": "BBA",
     "school": "FSM"
   },
   {
@@ -1433,10 +1413,10 @@
     "date": "22/09/2026",
     "day": "Tuesday",
     "time": "9:00 to 10:00 AM",
-    "courseCode": "AI3002",
-    "courseName": "Machine Learning",
+    "courseCode": "CS2005",
+    "courseName": "Database Systems",
     "batch": "2024",
-    "department": "AI",
+    "department": "CY",
     "school": "FSC"
   },
   {
@@ -1523,10 +1503,10 @@
     "date": "22/09/2026",
     "day": "Tuesday",
     "time": "10:20 to 11:20 AM",
-    "courseCode": "EE1005",
-    "courseName": "Digital Logic Design",
-    "batch": "2025",
-    "department": "CS",
+    "courseCode": "AI3002",
+    "courseName": "Machine Learning",
+    "batch": "2024",
+    "department": "AI",
     "school": "FSC"
   },
   {
@@ -1583,10 +1563,20 @@
     "date": "22/09/2026",
     "day": "Tuesday",
     "time": "10:20 to 11:20 AM",
-    "courseCode": "MT1002",
-    "courseName": "Business Math – I",
+    "courseCode": "CY4053",
+    "courseName": "Cybersecurity for FinTech",
+    "batch": "2023",
+    "department": "FT",
+    "school": "FSM"
+  },
+  {
+    "date": "22/09/2026",
+    "day": "Tuesday",
+    "time": "10:20 to 11:20 AM",
+    "courseCode": "CS2012",
+    "courseName": "Introduction to Object-Oriented Programming",
     "batch": "2025",
-    "department": "BBA",
+    "department": "FT",
     "school": "FSM"
   },
   {
@@ -1753,16 +1743,6 @@
     "date": "22/09/2026",
     "day": "Tuesday",
     "time": "11:40 to 12:40 PM",
-    "courseCode": "CS2011",
-    "courseName": "Fundamentals of Databases",
-    "batch": "2023",
-    "department": "EE",
-    "school": "FSE"
-  },
-  {
-    "date": "22/09/2026",
-    "day": "Tuesday",
-    "time": "11:40 to 12:40 PM",
     "courseCode": "EE2031",
     "courseName": "Instrumentation and Measurements",
     "batch": "2023",
@@ -1856,7 +1836,7 @@
     "courseCode": "SS1015",
     "courseName": "Pakistan Studies",
     "batch": "2026",
-    "department": "FT",
+    "department": "BA",
     "school": "FSM"
   },
   {
@@ -1953,16 +1933,6 @@
     "date": "22/09/2026",
     "day": "Tuesday",
     "time": "02:30 to 03:30 PM",
-    "courseCode": "CY4053",
-    "courseName": "Cybersecurity for FinTech",
-    "batch": "2023",
-    "department": "FT",
-    "school": "FSM"
-  },
-  {
-    "date": "22/09/2026",
-    "day": "Tuesday",
-    "time": "02:30 to 03:30 PM",
     "courseCode": "MG3006",
     "courseName": "Operations Management",
     "batch": "2024",
@@ -2003,9 +1973,19 @@
     "date": "22/09/2026",
     "day": "Tuesday",
     "time": "02:30 to 03:30 PM",
-    "courseCode": "MT1009",
-    "courseName": "Linear Algebra and Diff. Equations",
-    "batch": "2024",
+    "courseCode": "MT1004",
+    "courseName": "Linear Algebra",
+    "batch": "2025",
+    "department": "EE",
+    "school": "FSE"
+  },
+  {
+    "date": "22/09/2026",
+    "day": "Tuesday",
+    "time": "02:30 to 03:30 PM",
+    "courseCode": "CS2011",
+    "courseName": "Fundamentals of Databases",
+    "batch": "2023",
     "department": "EE",
     "school": "FSE"
   },
@@ -2083,19 +2063,19 @@
     "date": "22/09/2026",
     "day": "Tuesday",
     "time": "03:40 to 04:40 PM",
-    "courseCode": "CS2012",
-    "courseName": "Introduction to Object-Oriented Programming",
-    "batch": "2025",
-    "department": "FT",
-    "school": "FSM"
+    "courseCode": "NS1002",
+    "courseName": "Physics for Engineers",
+    "batch": "2026",
+    "department": "CE",
+    "school": "FSE"
   },
   {
     "date": "22/09/2026",
     "day": "Tuesday",
     "time": "03:40 to 04:40 PM",
-    "courseCode": "EE3006",
-    "courseName": "Embedded Systems",
-    "batch": "2023",
+    "courseCode": "NS1002",
+    "courseName": "Physics for Engineers",
+    "batch": "2026",
     "department": "EE",
     "school": "FSE"
   },
@@ -2667,6 +2647,16 @@
     "courseName": "Numerical Computing",
     "batch": "2024",
     "department": "CE",
+    "school": "FSE"
+  },
+  {
+    "date": "23/09/2026",
+    "day": "Wednesday",
+    "time": "02:30 to 03:30 PM",
+    "courseCode": "EE1001",
+    "courseName": "Linear Circuit Analysis",
+    "batch": "2025",
+    "department": "EE",
     "school": "FSE"
   },
   {
