@@ -7545,12 +7545,10 @@
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
-                            }
-                        ],
-                        "Friday": [
+                            },
                             {
-                                "room": "IT Lab 4-GPU (D-203)",
-                                "time": "08:30-11:15",
+                                "room": "Margala 1 (C-209)",
+                                "time": "10:00-12:45",
                                 "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -15029,6 +15027,22 @@
                             {
                                 "room": "C-302",
                                 "time": "03:55-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "D-413",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "D-413",
+                                "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
