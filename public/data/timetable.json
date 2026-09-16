@@ -15033,6 +15033,14 @@
                                 "exam": false
                             },
                             {
+                                "room": "D-303",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
                                 "room": "D-413",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
@@ -15043,14 +15051,6 @@
                             {
                                 "room": "D-413",
                                 "time": "02:30-03:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "C-110",
-                                "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
