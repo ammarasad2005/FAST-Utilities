@@ -3345,7 +3345,7 @@
                     "D": {
                         "Tuesday": [
                             {
-                                "room": "KK-III",
+                                "room": "Khyber II",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3353,7 +3353,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "KK-III",
+                                "room": "Khyber II",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
