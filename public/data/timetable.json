@@ -4120,7 +4120,7 @@
                     "D": {
                         "Friday": [
                             {
-                                "room": "IT Lab 3 (D-213)",
+                                "room": "Rawal 1 (C-509)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -11833,6 +11833,30 @@
         "CY": {
             "regular": {},
             "repeat": {
+                "Vulnerability Asses.": {
+                    "A": {
+                        "Tuesday": [
+                            {
+                                "room": "D-416",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "C-302",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "Sec Ops": {
                     "A": {
                         "Tuesday": [
@@ -11849,30 +11873,6 @@
                             {
                                 "room": "CY Lab",
                                 "time": "02:30-03:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Vulnerability Asses.": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "D-505",
-                                "time": "03:55-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "D-505",
-                                "time": "03:55-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
