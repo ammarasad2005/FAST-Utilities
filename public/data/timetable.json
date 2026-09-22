@@ -6005,6 +6005,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "C-310",
+                                "time": "08:30-11:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "B": {
