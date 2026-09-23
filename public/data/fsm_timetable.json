@@ -3690,8 +3690,8 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A-101",
-                                "time": "08:30-09:50",
+                                "room": "A-104",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
