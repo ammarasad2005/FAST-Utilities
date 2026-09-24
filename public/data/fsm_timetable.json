@@ -5620,6 +5620,20 @@
                         ]
                     }
                 },
+                "SS2041 Critical Thinking  (02:25-04:15)": {
+                    "A": {
+                        "Friday": [
+                            {
+                                "room": "A-03",
+                                "time": "02:25-04:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "SS2041 Critical Thinking (08:30-10:20)": {
                     "A": {
                         "Friday": [
@@ -5640,20 +5654,6 @@
                             {
                                 "room": "A-310",
                                 "time": "10:00-11:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "SS2041 Critical Thinking  (02:25-04:15)": {
-                    "A": {
-                        "Friday": [
-                            {
-                                "room": "A-311",
-                                "time": "02:25-04:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
