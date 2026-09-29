@@ -14406,24 +14406,6 @@
             "regular": {
                 "Reserved": {
                     "Reserved": {
-                        "Monday": [
-                            {
-                                "room": "C-110",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "C-110",
-                                "time": "02:30-03:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Tuesday": [
                             {
                                 "room": "C-302",
