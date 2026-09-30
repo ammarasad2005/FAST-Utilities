@@ -3798,7 +3798,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A-101",
+                                "room": "C-406",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3820,7 +3820,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A-101",
+                                "room": "C-406",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4753,7 +4753,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "A-01",
+                                "room": "A-301",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -4761,7 +4761,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "A-01",
+                                "room": "A-301",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -4953,39 +4953,11 @@
                         ]
                     }
                 },
-                "CY4053 Cybersecurity for FinTech": {
-                    "A/B": {
-                        "Tuesday": [
-                            {
-                                "room": "A-101",
-                                "time": "02:25-03:45",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "CY 4053Cybersecurity for FinTech": {
-                    "A/B": {
-                        "Tuesday": [
-                            {
-                                "room": "A-101",
-                                "time": "03:50-05:10",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "AF4011 Investment and Portfolio Analytics": {
                     "A": {
                         "Tuesday": [
                             {
-                                "room": "A-315",
+                                "room": "A-03",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4995,7 +4967,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-406",
+                                "room": "A-04",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5017,10 +4989,38 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-406",
+                                "room": "A-04",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "CY4053 Cybersecurity for FinTech": {
+                    "A/B": {
+                        "Tuesday": [
+                            {
+                                "room": "A-04",
+                                "time": "02:25-03:45",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "CY 4053Cybersecurity for FinTech": {
+                    "A/B": {
+                        "Tuesday": [
+                            {
+                                "room": "A-04",
+                                "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
@@ -5075,7 +5075,7 @@
                     "A/B": {
                         "Friday": [
                             {
-                                "room": "A-301",
+                                "room": "A-01",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -5083,7 +5083,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "A-301",
+                                "room": "A-01",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -5497,28 +5497,6 @@
                             }
                         ]
                     },
-                    "D": {
-                        "Tuesday": [
-                            {
-                                "room": "A-03",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A-04",
-                                "time": "11:30-12:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
                     "C": {
                         "Tuesday": [
                             {
@@ -5532,8 +5510,30 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "A-04",
+                                "room": "A-101",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "D": {
+                        "Tuesday": [
+                            {
+                                "room": "A-103",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A-101",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
