@@ -2910,6 +2910,28 @@
                             }
                         ]
                     },
+                    "B1": {
+                        "Tuesday": [
+                            {
+                                "room": "D-403",
+                                "time": "08:30-11:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday": [
+                            {
+                                "room": "Pre-Schedule",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
                     "A1": {
                         "Thursday": [
                             {
@@ -2927,18 +2949,6 @@
                             {
                                 "room": "Mehran-2 (A-306)",
                                 "time": "08:30-11:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "B1": {
-                        "Saturday": [
-                            {
-                                "room": "C-Rawal 4 (C-512)",
-                                "time": "11:30-02:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
