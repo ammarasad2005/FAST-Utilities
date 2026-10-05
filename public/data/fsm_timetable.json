@@ -4155,7 +4155,7 @@
                     "B": {
                         "Thursday": [
                             {
-                                "room": "KK-I",
+                                "room": "Khyber III",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4163,7 +4163,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "KK-I",
+                                "room": "Khyber III",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4175,7 +4175,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "KK-I",
+                                "room": "Mehran-II",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4183,7 +4183,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "KK-I",
+                                "room": "Mehran-II",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6340,7 +6340,7 @@
                     "A": {
                         "Thursday": [
                             {
-                                "room": "Khyber III",
+                                "room": "KK-I",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6348,7 +6348,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "Khyber III",
+                                "room": "KK-I",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
