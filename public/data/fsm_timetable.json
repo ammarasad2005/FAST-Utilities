@@ -4872,7 +4872,7 @@
                     "A/B": {
                         "Tuesday": [
                             {
-                                "room": "A-303",
+                                "room": "A-101",
                                 "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -4880,7 +4880,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "A-303",
+                                "room": "A-101",
                                 "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": true,
