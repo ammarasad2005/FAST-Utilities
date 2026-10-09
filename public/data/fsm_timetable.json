@@ -2430,7 +2430,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "A- 203",
+                                "room": "A-101",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2804,7 +2804,7 @@
                         ],
                         "Friday": [
                             {
-                                "room": "A-101",
+                                "room": "A- 203",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
