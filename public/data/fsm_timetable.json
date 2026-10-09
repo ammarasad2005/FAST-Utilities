@@ -4753,7 +4753,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "A-301",
+                                "room": "A-305",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -4761,7 +4761,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "A-301",
+                                "room": "A-305",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
