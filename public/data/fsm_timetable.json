@@ -2225,7 +2225,7 @@
                     "D": {
                         "Wednesday": [
                             {
-                                "room": "Khyber I",
+                                "room": "KK-III",
                                 "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -2233,7 +2233,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "Khyber I",
+                                "room": "KK-III",
                                 "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -3071,7 +3071,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A- 203",
+                                "room": "A-03",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5518,7 +5518,7 @@
                     "C": {
                         "Wednesday": [
                             {
-                                "room": "KK-III",
+                                "room": "Khyber I",
                                 "time": "02:25-03:45",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5526,7 +5526,7 @@
                                 "exam": false
                             },
                             {
-                                "room": "KK-III",
+                                "room": "Khyber I",
                                 "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5597,7 +5597,7 @@
                         ],
                         "Wednesday": [
                             {
-                                "room": "A-03",
+                                "room": "A- 203",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
