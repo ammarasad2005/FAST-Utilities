@@ -2230,7 +2230,7 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "C-601",
+                                "room": "C-302",
                                 "time": "02:30-05:15",
                                 "rescheduled": true,
                                 "is_elective": false,
@@ -5442,8 +5442,8 @@
                         ],
                         "Thursday": [
                             {
-                                "room": "D-303",
-                                "time": "01:00-02:20",
+                                "room": "D-302",
+                                "time": "03:55-05:15",
                                 "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -9224,6 +9224,14 @@
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
+                            },
+                            {
+                                "room": "C-407",
+                                "time": "02:30-03:50",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
                             }
                         ],
                         "Wednesday": [
@@ -10524,8 +10532,8 @@
                         ],
                         "Friday": [
                             {
-                                "room": "C-307",
-                                "time": "11:30-12:50",
+                                "room": "C-310",
+                                "time": "08:30-09:50",
                                 "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -10601,16 +10609,6 @@
                                 "room": "C-Rawal 4 (C-512)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Friday": [
-                            {
-                                "room": "D-301",
-                                "time": "10:00-12:45",
-                                "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -11423,6 +11421,64 @@
                         ]
                     }
                 },
+                "OS Lab": {
+                    "A": {
+                        "Monday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "02:30-05:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "B": {
+                        "Wednesday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Sep. 05, 2026)": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    },
+                    "C": {
+                        "Thursday": [
+                            {
+                                "room": "C-Rawal 4 (C-512)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "DB": {
                     "B": {
                         "Tuesday": [
@@ -11580,54 +11636,6 @@
                             {
                                 "room": "Margala 1 (C-209)",
                                 "time": "08:30-11:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "OS Lab": {
-                    "B": {
-                        "Wednesday": [
-                            {
-                                "room": "Cyber (D-514)",
-                                "time": "02:30-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Saturday (Sep. 05, 2026)": [
-                            {
-                                "room": "Cyber (D-514)",
-                                "time": "02:30-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "C": {
-                        "Thursday": [
-                            {
-                                "room": "C-Rawal 4 (C-512)",
-                                "time": "02:30-05:15",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    },
-                    "A": {
-                        "Friday": [
-                            {
-                                "room": "Cyber (D-514)",
-                                "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -11992,21 +12000,11 @@
                         ]
                     }
                 },
-                "Vulnerability Assesment Lab": {
+                "Sec Ops Lab": {
                     "A": {
                         "Thursday": [
                             {
-                                "room": "Margala 1 (C-209)",
-                                "time": "08:30-11:15",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Friday": [
-                            {
-                                "room": "Margala 3 (C-211)",
+                                "room": "Cyber (D-514)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -12016,11 +12014,11 @@
                         ]
                     }
                 },
-                "Sec Ops Lab": {
+                "Vulnerability Assesment Lab": {
                     "A": {
-                        "Thursday": [
+                        "Friday": [
                             {
-                                "room": "Cyber (D-514)",
+                                "room": "Margala 3 (C-211)",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -14573,6 +14571,14 @@
                             {
                                 "room": "D-302",
                                 "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "C-110",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
