@@ -30,7 +30,7 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
-RAW_FILE = Path("/home/z/my-project/upload/1st Sessional  Exams Schedule Fall 2026 (Version Final) as on 14-09-2026.xlsx")
+RAW_FILE = Path("/home/z/my-project/upload/sessional2_fall2026.xlsx")
 OUT_FILE = Path("/home/z/my-project/repo/exam-table/exam_schedule.xlsx")
 
 # ── Sheet config ────────────────────────────────────────────────────────────
@@ -52,7 +52,7 @@ TIME_SLOT_COLS_FSE  = [2, 4, 6, 8, 10, 12]             # B,D,F,H,J,L
 # ── Course code pattern ─────────────────────────────────────────────────────
 # Matches: SS1012, CS1002, MT-1003, AI4015, etc. (2-4 letters + optional
 # hyphen/space + 4 digits)
-COURSE_CODE_RE = re.compile(r"^([A-Za-z]{2,4}[\s\-]?\d{4})\s+(.*)$", re.DOTALL)
+COURSE_CODE_RE = re.compile(r"^([A-Za-z]{2,4}[\s\-]?\d{4})[\s\-]+(.*)$", re.DOTALL)
 
 # ── Program patterns ────────────────────────────────────────────────────────
 # BS(CS) (A,B,C) — BS with dept in parens, sections in second parens
