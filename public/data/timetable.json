@@ -2145,19 +2145,21 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
                     "D": {
                         "Monday": [
                             {
-                                "room": "IT Lab 2 (D-211)",
+                                "room": ".",
                                 "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -14479,42 +14481,42 @@
                 "day": "Monday",
                 "sheetName": "Monday",
                 "date": "",
-                "isoDate": "2026-10-12",
+                "isoDate": "2026-10-19",
                 "isMakeup": false
             },
             {
                 "day": "Tuesday",
                 "sheetName": "Tuesday",
                 "date": "",
-                "isoDate": "2026-10-13",
+                "isoDate": "2026-10-20",
                 "isMakeup": false
             },
             {
                 "day": "Wednesday",
                 "sheetName": "Wednesday",
                 "date": "",
-                "isoDate": "2026-10-14",
+                "isoDate": "2026-10-21",
                 "isMakeup": false
             },
             {
                 "day": "Thursday",
                 "sheetName": "Thursday",
                 "date": "",
-                "isoDate": "2026-10-15",
+                "isoDate": "2026-10-22",
                 "isMakeup": false
             },
             {
                 "day": "Friday",
                 "sheetName": "Friday",
                 "date": "",
-                "isoDate": "2026-10-16",
+                "isoDate": "2026-10-23",
                 "isMakeup": false
             },
             {
                 "day": "Saturday",
                 "sheetName": "Saturday",
                 "date": "",
-                "isoDate": "2026-10-17",
+                "isoDate": "2026-10-24",
                 "isMakeup": false
             },
             {
