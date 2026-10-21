@@ -310,7 +310,7 @@
                         ]
                     }
                 },
-                "SS1007 Islamic Studies/Ethics (02:25-04:15) CAncelled": {
+                "SS1007 Islamic Studies/Ethics (02:25-04:15)": {
                     "A": {
                         "Tuesday": [
                             {
@@ -2207,7 +2207,7 @@
                         ]
                     }
                 },
-                "SS1007 Islamic Studies/Ethics (02:25-04:15)": {
+                "SS1007 Islamic Studies/Ethics (02:25-04:15) Cancelled": {
                     "A": {
                         "Wednesday": [
                             {
@@ -2890,6 +2890,20 @@
                             {
                                 "room": "Khyber I",
                                 "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "SS 1018U-Holy Quran (04:20-05:10)": {
+                    "A": {
+                        "Thursday": [
+                            {
+                                "room": "A-302",
+                                "time": "04:20-05:10",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -4353,14 +4367,6 @@
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
-                            },
-                            {
-                                "room": "Khyber III",
-                                "time": "01:00-02:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
                             }
                         ]
                     },
@@ -4377,6 +4383,20 @@
                             {
                                 "room": "Khyber II",
                                 "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "BSBA05A Lab": {
+                    "C": {
+                        "Wednesday": [
+                            {
+                                "room": "Khyber III",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -4884,20 +4904,6 @@
                                 "time": "03:50-05:10",
                                 "rescheduled": false,
                                 "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "SS 1018U-Holy Quran (04:20-05:10)": {
-                    "A": {
-                        "Thursday": [
-                            {
-                                "room": "A-03",
-                                "time": "04:20-05:10",
-                                "rescheduled": false,
-                                "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
                             }
