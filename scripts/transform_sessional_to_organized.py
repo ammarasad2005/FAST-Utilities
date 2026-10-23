@@ -30,7 +30,7 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
-RAW_FILE = Path("/home/z/my-project/upload/sessional2_fall2026.xlsx")
+RAW_FILE = Path("/home/z/my-project/upload/sessional2_fall2026_final.xlsx")
 OUT_FILE = Path("/home/z/my-project/repo/exam-table/exam_schedule.xlsx")
 
 # ── Sheet config ────────────────────────────────────────────────────────────

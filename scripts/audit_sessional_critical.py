@@ -36,7 +36,7 @@ from pathlib import Path
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
-RAW = "/home/z/my-project/upload/sessional2_fall2026.xlsx"
+RAW = "/home/z/my-project/upload/sessional2_fall2026_final.xlsx"
 JSON = "/home/z/my-project/repo/exam-table/public/data/regular_schedule.json"
 
 SHEETS = [("FSC", "FSC", True), ("FSM", "FSM", True), ("FSE", "FSE", False)]
