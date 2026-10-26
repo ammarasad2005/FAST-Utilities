@@ -2455,8 +2455,8 @@
                     "E": {
                         "Tuesday": [
                             {
-                                "room": "C-309",
-                                "time": "10:00-11:20",
+                                "room": "C-307",
+                                "time": "11:30-12:50",
                                 "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
