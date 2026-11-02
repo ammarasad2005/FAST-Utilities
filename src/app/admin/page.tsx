@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
+import { SeatingPlanImporter } from '@/components/admin/SeatingPlanImporter'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   ShieldAlert,
@@ -28,7 +29,8 @@ import {
   Bug,
   Star,
   HelpCircle,
-  Settings
+  Settings,
+  FileUp
 } from 'lucide-react'
 import { Header } from '@/components/Header'
 import { supabase } from '@/lib/supabase'
@@ -72,7 +74,7 @@ export default function AdminPage() {
   // State Management
   const [checkingAuth, setCheckingAuth] = useState(true)
   const [authenticated, setAuthenticated] = useState(false)
-  const [adminView, setAdminView] = useState<'items' | 'feedback' | 'settings'>('items')
+  const [adminView, setAdminView] = useState<'items' | 'feedback' | 'seatingPlan' | 'settings'>('items')
 
   // Settings Form State
   const [semesterType, setSemesterType] = useState<'regular' | 'summer'>('regular')
@@ -967,7 +969,7 @@ export default function AdminPage() {
               </div>
 
               {/* Tab Selector Header */}
-              <div className="flex border-b border-[var(--color-border)] gap-2">
+              <div className="flex flex-wrap border-b border-[var(--color-border)] gap-2">
                 <button
                   onClick={() => setAdminView('items')}
                   className={`px-5 py-3 font-black text-xs uppercase tracking-[0.08em] border-b-2 transition-all flex items-center gap-2 ${
@@ -989,6 +991,17 @@ export default function AdminPage() {
                 >
                   <MessageSquare size={13} />
                   Student Suggestions ({feedbackList.length})
+                </button>
+                <button
+                  onClick={() => setAdminView('seatingPlan')}
+                  className={`px-5 py-3 font-black text-xs uppercase tracking-[0.08em] border-b-2 transition-all flex items-center gap-2 ${
+                    adminView === 'seatingPlan'
+                      ? 'border-orange-500 text-orange-500 font-black'
+                      : 'border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
+                  }`}
+                >
+                  <FileUp size={13} />
+                  Seating Plan Import
                 </button>
                 <button
                   onClick={() => setAdminView('settings')}
@@ -1425,6 +1438,8 @@ export default function AdminPage() {
                     )}
                   </div>
                 </>
+              ) : adminView === 'seatingPlan' ? (
+                <SeatingPlanImporter />
               ) : (
                 /* ==========================================
                    3. SETTINGS VIEW
