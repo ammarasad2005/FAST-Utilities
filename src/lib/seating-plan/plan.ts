@@ -280,6 +280,8 @@ export function parseSeatingPlanPages(
       course: { code: string; section: string; name: string } | null;
       row: { roll: string; text: string } | null;
       pendingCourseName: string[];
+      /** Only append wrapped title fragments after an explicit heading on this page. */
+      courseNameCanExtend: boolean;
       rows: number;
     };
     const firstCourseByLane = new Map<string, { code: string; section: string; name: string }>();
@@ -308,6 +310,7 @@ export function parseSeatingPlanPages(
           course: initialCourse ? { ...initialCourse } : null,
           row: null,
           pendingCourseName: [],
+          courseNameCanExtend: false,
           rows: 0,
         };
         lanes.set(key, state);
@@ -315,12 +318,17 @@ export function parseSeatingPlanPages(
       return state;
     };
     const flushCourseName = (state: LaneState) => {
-      if (state.course && state.pendingCourseName.length) {
-        state.course.name = [state.course.name, ...state.pendingCourseName]
-          .filter(Boolean)
-          .join(' ')
-          .replace(/\s+/g, ' ')
-          .trim();
+      if (state.course && state.courseNameCanExtend && state.pendingCourseName.length) {
+        let extendedName = state.course.name;
+        for (const fragment of state.pendingCourseName) {
+          const candidate = [extendedName, fragment].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+          if (candidate.length > 240) break;
+          extendedName = candidate;
+        }
+        // PDF text extraction can leak unrelated header/layout text into a
+        // wrapped title. Keep only bounded fragments, never exceeding the
+        // server's 240-character title limit.
+        state.course.name = extendedName;
       }
       state.pendingCourseName = [];
     };
@@ -345,6 +353,7 @@ export function parseSeatingPlanPages(
           section: heading[2].toUpperCase(),
           name: heading[3].trim(),
         };
+        state.courseNameCanExtend = true;
         continue;
       }
 
@@ -353,6 +362,7 @@ export function parseSeatingPlanPages(
         finishStudentRow(state.row, pageHeader, state.course, pageIndex + 1, assignments, errors);
         if (state.row) state.rows++;
         flushCourseName(state);
+        state.courseNameCanExtend = false;
         state.row = { roll: student[1], text: student[2] };
         // The roll, name fragment and seat usually share a baseline. Finalize
         // immediately once a seat is present so unrelated text from a nearby
@@ -373,7 +383,7 @@ export function parseSeatingPlanPages(
           state.row = null;
         }
       } else if (
-        state.rows === 0 &&
+        state.courseNameCanExtend &&
         state.course &&
         !/^Date\s*:/i.test(line) &&
         !/^Venue\s*:/i.test(line) &&
