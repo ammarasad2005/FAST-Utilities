@@ -14,6 +14,7 @@ import { EmptyState } from '@/components/EmptyState';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import type { ExamEntry } from '@/lib/types';
 import { supabase } from '@/lib/supabase';
+import { buildSeatingRoomIndex, examDateISO, examTimeRange, seatingRoomKey, type SeatingRoom } from '@/lib/seating-plan/room-map';
 
 // Both JSON files are bundled at build time; the component picks the right one
 // at runtime based on the active semester type from localStorage.
@@ -58,6 +59,35 @@ function SchedulePageInner() {
 
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState<ExamEntry | null>(null);
+  const [seatingRooms, setSeatingRooms] = useState<SeatingRoom[]>([]);
+
+  useEffect(() => {
+    let active = true;
+    void (async () => {
+      try {
+        const { data, error } = await supabase.rpc('lookup_current_seating_rooms');
+        if (!active || error || !Array.isArray(data)) return;
+        const rooms = data.map((row: Record<string, unknown>) => ({
+          dateISO: String(row.plan_date),
+          courseCode: String(row.course_code),
+          startMinute: Number(row.start_minute),
+          endMinute: Number(row.end_minute),
+          venue: String(row.venue),
+        })).filter((row: unknown): row is SeatingRoom => {
+          if (!row || typeof row !== 'object') return false;
+          const value = row as Partial<SeatingRoom>;
+          return typeof value.dateISO === 'string' && /^20\d{2}-\d{2}-\d{2}$/.test(value.dateISO)
+            && typeof value.courseCode === 'string' && value.courseCode.length > 0
+            && Number.isInteger(value.startMinute) && Number.isInteger(value.endMinute)
+            && typeof value.venue === 'string' && value.venue.trim().length > 0;
+        });
+        setSeatingRooms(rooms);
+      } catch {
+        // Seat-room data is optional; the exam schedule remains usable if lookup is unavailable.
+      }
+    })();
+    return () => { active = false; };
+  }, []);
 
   // Pick the right dataset based on semester type
   const allExams: ExamEntry[] = isSummer
@@ -92,7 +122,17 @@ function SchedulePageInner() {
     [isSummer, allExams, batch, school, dept, query]
   );
 
-  const grouped = useMemo(() => groupByDay(filtered), [filtered]);
+  const roomsByExam = useMemo(() => buildSeatingRoomIndex(seatingRooms), [seatingRooms]);
+
+  const examsWithRooms = useMemo(() => filtered.map((exam) => {
+    const dateISO = examDateISO(exam.date);
+    const time = examTimeRange(exam.time);
+    if (!dateISO || !time) return exam;
+    const rooms = roomsByExam.get(seatingRoomKey(dateISO, exam.courseCode, time.startMinute, time.endMinute));
+    return rooms?.length ? { ...exam, room: rooms.join(', ') } : exam;
+  }), [filtered, roomsByExam]);
+
+  const grouped = useMemo(() => groupByDay(examsWithRooms), [examsWithRooms]);
 
   // Compute the current exam type from the semester calendar + today's date.
   // This is used in the header and passed to the export config so exports
@@ -217,7 +257,7 @@ function SchedulePageInner() {
   return (
     <div className="min-h-dvh flex flex-col">
       {/* Sticky header */}
-      <Header rightActions={<ExportButton entries={filtered} config={{ isCustom: false, subtitle, examType }} />}>
+      <Header rightActions={<ExportButton entries={examsWithRooms} config={{ isCustom: false, subtitle, examType }} />}>
         <div className="flex flex-1 items-center gap-2 md:gap-3 w-full max-w-full min-w-0">
           <button
             onClick={() => router.back()}
@@ -309,7 +349,7 @@ function SchedulePageInner() {
             >
               {isSummer ? 'Change courses' : 'Change filters'}
             </button>
-            <ExportButton entries={filtered} variant="sidebar" config={{ isCustom: false, subtitle, examType }} />
+            <ExportButton entries={examsWithRooms} variant="sidebar" config={{ isCustom: false, subtitle, examType }} />
           </div>
         </aside>
 
