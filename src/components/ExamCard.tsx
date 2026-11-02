@@ -56,10 +56,10 @@ export function ExamCard({ exam, dept, onClick }: Props) {
         {exam.time}
       </p>
 
-      {/* Room (summer only — only shown if present) */}
+      {/* Regular seating-plan rooms and any room data already present on summer exams */}
       {exam.room && (
         <p className="font-mono text-xs text-[var(--color-text-tertiary)]">
-          Room: {exam.room}
+          Rooms: {exam.room}
         </p>
       )}
 
