@@ -2092,16 +2092,6 @@
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ],
-                        "Thursday": [
-                            {
-                                "room": "A--211",
-                                "time": "08:30-10:20",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
                         ]
                     }
                 },
@@ -2315,6 +2305,20 @@
                             {
                                 "room": "KK-I",
                                 "time": "03:50-05:10",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "SS1007 Islamic Studies/Ethics (08:30-10:20) Cancelled": {
+                    "A": {
+                        "Thursday": [
+                            {
+                                "room": "A--211",
+                                "time": "08:30-10:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
