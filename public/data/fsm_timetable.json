@@ -2092,6 +2092,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "A--211",
+                                "time": "08:30-10:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     }
                 },
@@ -2305,20 +2315,6 @@
                             {
                                 "room": "KK-I",
                                 "time": "03:50-05:10",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "SS1007 Islamic Studies/Ethics (08:30-10:20) Cancelled": {
-                    "A": {
-                        "Thursday": [
-                            {
-                                "room": "A--211",
-                                "time": "08:30-10:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -5555,16 +5551,6 @@
                                 "elective_group": null,
                                 "exam": false
                             }
-                        ],
-                        "Friday": [
-                            {
-                                "room": "A-310",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
                         ]
                     }
                 },
@@ -5644,6 +5630,20 @@
                             {
                                 "room": "A--211",
                                 "time": "08:30-10:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
+                "AF2003 Management Accounting Cancelled": {
+                    "B": {
+                        "Friday": [
+                            {
+                                "room": "A-310",
+                                "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
