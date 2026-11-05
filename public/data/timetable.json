@@ -1203,7 +1203,7 @@
                     "A": {
                         "Friday": [
                             {
-                                "room": "D-501",
+                                "room": "Dr Afia Zafar",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1897,9 +1897,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday": [
                             {
-                                "room": "C-409",
+                                "room": "Session",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8806,6 +8806,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday": [
+                            {
+                                "room": "Session",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "C": {
@@ -11083,20 +11093,6 @@
                         ]
                     }
                 },
-                "FSM Lab": {
-                    "A": {
-                        "Tuesday": [
-                            {
-                                "room": "CALL-1 (A-213)",
-                                "time": "02:30-05:15",
-                                "rescheduled": false,
-                                "is_elective": true,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
                 "Data St": {
                     "B": {
                         "Wednesday": [
@@ -11394,6 +11390,16 @@
                             {
                                 "room": "CALL-2 (A-214)",
                                 "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Tuesday": [
+                            {
+                                "room": "CALL-1 (A-213)",
+                                "time": "02:30-05:15",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
@@ -14060,11 +14066,17 @@
                                 "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
-                            },
+                            }
+                        ]
+                    }
+                },
+                "Comp Net Lab": {
+                    "A": {
+                        "Tuesday": [
                             {
                                 "room": "Cyber (D-514)",
                                 "time": "02:30-05:15",
-                                "rescheduled": false,
+                                "rescheduled": true,
                                 "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
