@@ -7191,6 +7191,20 @@
                         ]
                     }
                 },
+                "LA Tutorial Session": {
+                    "A": {
+                        "Wednesday": [
+                            {
+                                "room": "C-301",
+                                "time": "03:55-05:15",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ]
+                    }
+                },
                 "Islamic": {
                     "A": {
                         "Wednesday": [
