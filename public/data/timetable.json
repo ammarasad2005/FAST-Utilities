@@ -42,15 +42,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-301",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -75,15 +74,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-302",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -118,7 +116,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-303",
                                 "time": "11:30-12:50",
@@ -150,7 +148,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-304",
                                 "time": "08:30-09:50",
@@ -312,7 +310,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-301",
                                 "time": "10:00-11:20",
@@ -344,7 +342,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-302",
                                 "time": "08:30-09:50",
@@ -376,7 +374,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-303",
                                 "time": "08:30-09:50",
@@ -408,7 +406,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-304",
                                 "time": "10:00-11:20",
@@ -519,10 +517,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-301",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "C": {
                         "Monday": [
+                            {
+                                "room": "C-303",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-303",
                                 "time": "01:00-02:45",
@@ -647,10 +665,48 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-302",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "D": {
                         "Monday": [
+                            {
+                                "room": "C-304",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "C-303",
+                                "time": "02:30-03:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "C-311",
+                                "time": "11:30-12:30",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-304",
                                 "time": "01:00-02:45",
@@ -773,6 +829,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-304",
+                                "time": "11:30-12:25",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "B": {
@@ -840,6 +906,14 @@
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
+                            },
+                            {
+                                "room": "C-305",
+                                "time": "03:45-04:40",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
                             }
                         ],
                         "Saturday (Sep. 05, 2026)": [
@@ -902,10 +976,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-305",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "G": {
                         "Monday": [
+                            {
+                                "room": "C-401",
+                                "time": "09:00-10:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-401",
                                 "time": "09:00-10:45",
@@ -1030,6 +1124,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "IT Lab 1 (D-210)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "F": {
@@ -1043,11 +1147,11 @@
                                 "exam": false
                             }
                         ],
-                        "Friday": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "IT Lab 2 (D-211)",
-                                "time": "02:30-05:15",
-                                "rescheduled": true,
+                                "room": "Margala 1 (C-209)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -1158,10 +1262,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "IT Lab 2 (D-211)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "E": {
                         "Monday": [
+                            {
+                                "room": "IT Lab 2 (D-211)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "IT Lab 2 (D-211)",
                                 "time": "11:30-02:15",
@@ -1276,10 +1400,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "CALL-1 (A-213)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "E2": {
                         "Monday": [
+                            {
+                                "room": "CALL-2 (A-214)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "CALL-2 (A-214)",
                                 "time": "02:30-05:15",
@@ -1310,10 +1454,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "CALL-3 (A-308)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "H2": {
                         "Monday": [
+                            {
+                                "room": "Mehran-2 (A-306)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Mehran-2 (A-306)",
                                 "time": "11:30-02:15",
@@ -1563,6 +1727,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-409",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "C": {
@@ -1646,7 +1820,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-601",
                                 "time": "08:30-09:50",
@@ -1678,9 +1852,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-409",
+                                "room": "C-601",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1787,15 +1961,17 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "Session",
+                                "room": "C-602",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
-                            },
+                            }
+                        ],
+                        "Saturday": [
                             {
                                 "room": "Session",
                                 "time": "10:00-11:20",
@@ -1827,15 +2003,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-601",
+                                "room": "C-602",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -1853,6 +2028,16 @@
                         "Wednesday": [
                             {
                                 "room": "C-311",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-605",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -1987,6 +2172,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-604",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "A": {
@@ -2080,15 +2275,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-602",
+                                "room": "C-605",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -2113,15 +2307,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-602",
+                                "room": "C-605",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -2213,10 +2406,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "IT Lab 1 (D-210)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "D": {
                         "Monday": [
+                            {
+                                "room": "IT Lab 2 (D-211)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "IT Lab 2 (D-211)",
                                 "time": "02:30-05:15",
@@ -2267,6 +2480,16 @@
                 "PF Lab": {
                     "C": {
                         "Monday": [
+                            {
+                                "room": "IT Lab 1 (D-210)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "IT Lab 1 (D-210)",
                                 "time": "02:30-05:15",
@@ -2360,10 +2583,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "CALL-3 (A-308)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "D2": {
                         "Monday": [
+                            {
+                                "room": "B-Computing-3",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "B-Computing-3",
                                 "time": "08:30-11:15",
@@ -2666,19 +2909,21 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-301",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "D-301",
                                 "time": "08:30-09:50",
                                 "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            },
-                            {
-                                "room": "D-301",
-                                "time": "10:00-11:20",
-                                "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -2752,7 +2997,27 @@
                                 "exam": false
                             }
                         ],
+                        "Wednesday": [
+                            {
+                                "room": "D-406",
+                                "time": "11:30-12:50",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Thursday": [
+                            {
+                                "room": "D-301",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "D-301",
                                 "time": "11:30-12:50",
@@ -2830,6 +3095,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-301",
+                                "time": "01:00-02:45",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "C": {
@@ -2878,6 +3153,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-312",
+                                "time": "11:30-12:25",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "A": {
@@ -2908,6 +3193,16 @@
                 "PF Lab": {
                     "C": {
                         "Monday": [
+                            {
+                                "room": "IT Lab 3 (D-213)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "IT Lab 3 (D-213)",
                                 "time": "08:30-11:15",
@@ -2954,10 +3249,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "CALL-3 (A-308)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "C2": {
                         "Monday": [
+                            {
+                                "room": "Mehran-2 (A-306)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Mehran-2 (A-306)",
                                 "time": "02:30-05:15",
@@ -3197,10 +3512,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-311",
+                                "time": "08:30-10:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "B": {
                         "Monday": [
+                            {
+                                "room": "D-315",
+                                "time": "02:30-04:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "D-315",
                                 "time": "02:30-04:15",
@@ -3247,6 +3582,16 @@
                 "Islamic": {
                     "B": {
                         "Monday": [
+                            {
+                                "room": "D-316",
+                                "time": "12:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "D-316",
                                 "time": "12:30-02:15",
@@ -3303,6 +3648,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "Margala 1 (C-209)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "B": {
@@ -3343,6 +3698,16 @@
                 "PF Lab": {
                     "B": {
                         "Monday": [
+                            {
+                                "room": "Margala 3 (C-211)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Margala 3 (C-211)",
                                 "time": "08:30-11:15",
@@ -3645,7 +4010,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ]
                     },
@@ -3745,6 +4111,16 @@
                                 "room": "D-303",
                                 "time": "12:30-01:25",
                                 "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "C-403",
+                                "time": "08:30-10:20",
+                                "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -4524,10 +4900,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-305",
+                                "time": "10:30-11:25",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "H": {
                         "Monday": [
+                            {
+                                "room": "C-401",
+                                "time": "02:30-03:25",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-401",
                                 "time": "02:30-03:25",
@@ -4586,6 +4982,14 @@
                     },
                     "F": {
                         "Wednesday": [
+                            {
+                                "room": "C-305",
+                                "time": "09:30-10:25",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
                             {
                                 "room": "C-305",
                                 "time": "10:30-11:25",
@@ -4676,6 +5080,16 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-305",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "C-401",
@@ -4708,7 +5122,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-307",
                                 "time": "01:00-02:20",
@@ -4740,7 +5154,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-310",
                                 "time": "02:30-03:50",
@@ -4782,15 +5196,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-401",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -4927,7 +5340,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-307",
                                 "time": "08:30-09:50",
@@ -4959,9 +5372,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-309",
+                                "room": "C-307",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -4991,15 +5404,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-308",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -5024,9 +5436,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-402",
+                                "room": "C-309",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5056,9 +5468,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-402",
+                                "room": "C-310",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5178,7 +5590,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-307",
                                 "time": "10:00-11:20",
@@ -5210,7 +5622,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-308",
                                 "time": "01:00-02:20",
@@ -5242,7 +5654,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-309",
                                 "time": "08:30-09:50",
@@ -5274,9 +5686,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-308",
+                                "room": "C-309",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5316,15 +5728,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-310",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -5439,15 +5850,17 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-402",
+                                "room": "C-308",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
-                            },
+                            }
+                        ],
+                        "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "C-403",
                                 "time": "10:00-11:20",
@@ -5479,7 +5892,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-309",
                                 "time": "01:00-02:20",
@@ -5511,9 +5924,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-305",
+                                "room": "C-310",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5543,9 +5956,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-307",
+                                "room": "C-311",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -5575,7 +5988,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-311",
                                 "time": "01:00-02:20",
@@ -5686,10 +6099,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-311",
+                                "time": "09:30-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "G": {
                         "Monday": [
+                            {
+                                "room": "C-311",
+                                "time": "02:30-04:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-311",
                                 "time": "02:30-04:20",
@@ -5834,10 +6267,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "Margala 1 (C-209)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "H": {
                         "Monday": [
+                            {
+                                "room": "Margala 4 (C-212",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Margala 4 (C-212",
                                 "time": "08:30-11:15",
@@ -5964,10 +6417,30 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "B-Digital",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "F": {
                         "Monday": [
+                            {
+                                "room": "B-Digital",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "B-Digital",
                                 "time": "02:30-05:15",
@@ -6122,7 +6595,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-308",
                                 "time": "02:30-03:50",
@@ -6154,7 +6627,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-308",
                                 "time": "03:55-05:15",
@@ -6173,7 +6646,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ],
                         "Thursday": [
@@ -6195,7 +6669,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ],
                         "Thursday": [
@@ -6232,7 +6707,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-309",
                                 "time": "03:55-05:15",
@@ -6283,6 +6758,16 @@
                                 "room": "C-402",
                                 "time": "10:00-12:45",
                                 "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "Rawal 1 (C-509)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -6352,9 +6837,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6384,9 +6869,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-604",
+                                "room": "C-605",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6472,6 +6957,16 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-601",
+                                "time": "11:30-01:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "C-607",
@@ -6552,7 +7047,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-603",
                                 "time": "08:30-09:50",
@@ -6584,9 +7079,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-605",
+                                "room": "C-603",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6662,15 +7157,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-604",
+                                "room": "C-603",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -6695,15 +7189,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-607",
+                                "room": "C-609",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -6774,9 +7267,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-604",
+                                "room": "C-603",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6799,6 +7292,16 @@
                         "Wednesday": [
                             {
                                 "room": "C-605",
+                                "time": "02:30-03:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-603",
                                 "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -6873,6 +7376,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-607",
+                                "time": "10:00-10:55",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "B": {
@@ -6933,6 +7446,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "Margala 4 (C-212",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "B": {
@@ -6985,6 +7508,26 @@
                 "Data St Lab": {
                     "C": {
                         "Monday": [
+                            {
+                                "room": "Margala 4 (C-212",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Wednesday": [
+                            {
+                                "room": "C-607",
+                                "time": "02:30-05:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Margala 4 (C-212",
                                 "time": "02:30-05:15",
@@ -7080,9 +7623,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-604",
+                                "room": "C-603",
                                 "time": "03:55-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7132,9 +7675,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-304",
+                                "room": "D-303",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7164,9 +7707,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-306",
+                                "room": "D-304",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7230,9 +7773,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-304",
+                                "room": "D-303",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7262,9 +7805,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-305",
+                                "room": "D-304",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7312,6 +7855,16 @@
                             {
                                 "room": "D-306",
                                 "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-303",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -7406,9 +7959,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-306",
+                                "room": "D-304",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7438,9 +7991,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-304",
+                                "room": "D-311",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -7483,6 +8036,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "IT Lab 4-GPU (D-203)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "A": {
@@ -7513,6 +8076,26 @@
                 "Data St Lab": {
                     "C": {
                         "Monday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "IT Lab 4-GPU (D-203)",
+                                "time": "02:30-05:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Cyber (D-514)",
                                 "time": "08:30-11:15",
@@ -7729,6 +8312,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-304",
+                                "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     }
                 },
@@ -7772,6 +8365,16 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-312",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "D-314",
@@ -7798,6 +8401,16 @@
                             {
                                 "room": "D-314",
                                 "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-312",
+                                "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -7833,6 +8446,16 @@
                                 "room": "D-314",
                                 "time": "02:30-04:15",
                                 "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-314",
+                                "time": "03:10-05:00",
+                                "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -7884,6 +8507,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "IT Lab 3 (D-213)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "A": {
@@ -7930,6 +8563,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "IT Lab 4-GPU (D-203)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "B": {
@@ -7959,6 +8602,16 @@
                 "Data St Lab": {
                     "B": {
                         "Monday": [
+                            {
+                                "room": "Margala 3 (C-211)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Margala 3 (C-211)",
                                 "time": "02:30-05:15",
@@ -8095,6 +8748,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Friday": [
+                            {
+                                "room": "C-403",
+                                "time": "10:30-12:20",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "A": {
@@ -8183,9 +8846,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-501",
+                                "room": "D-414",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8215,7 +8878,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "D-415",
                                 "time": "01:00-02:20",
@@ -8288,15 +8951,22 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-502",
+                                "room": "D-414",
+                                "time": "02:30-03:50",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "D-416",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -8367,9 +9037,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-501",
+                                "room": "D-415",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8399,9 +9069,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-501",
+                                "room": "D-415",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8436,6 +9106,16 @@
                 "UHQ-II": {
                     "C": {
                         "Monday": [
+                            {
+                                "room": "D-416",
+                                "time": "09:00-09:55",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "D-416",
                                 "time": "09:00-09:55",
@@ -8523,9 +9203,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-501",
+                                "room": "D-502",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8555,7 +9235,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "D-502",
                                 "time": "02:30-03:50",
@@ -8592,6 +9272,16 @@
                 "COAL Lab": {
                     "C": {
                         "Monday": [
+                            {
+                                "room": "Cyber (D-514)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Cyber (D-514)",
                                 "time": "11:30-02:15",
@@ -8752,9 +9442,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-403",
+                                "room": "C-402",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8784,9 +9474,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-404",
+                                "room": "C-403",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8816,7 +9506,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-404",
                                 "time": "11:30-12:50",
@@ -8848,7 +9538,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-405",
                                 "time": "01:00-02:20",
@@ -8938,9 +9628,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-403",
+                                "room": "C-402",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -8970,9 +9660,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-402",
+                                "room": "C-403",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9002,7 +9692,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-404",
                                 "time": "01:00-02:20",
@@ -9034,9 +9724,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-401",
+                                "room": "C-407",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9134,9 +9824,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-403",
+                                "room": "C-402",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9166,9 +9856,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-405",
+                                "room": "C-403",
                                 "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9198,9 +9888,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-406",
+                                "room": "C-404",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9230,9 +9920,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-405",
+                                "room": "C-404",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9330,9 +10020,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-407",
+                                "room": "C-405",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9362,9 +10052,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-407",
+                                "room": "C-405",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9394,9 +10084,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-406",
+                                "room": "C-407",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9516,9 +10206,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-407",
+                                "room": "C-405",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9548,7 +10238,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-406",
                                 "time": "11:30-12:50",
@@ -9580,9 +10270,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-407",
+                                "room": "C-406",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9701,6 +10391,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "Rawal 1 (C-509)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "F": {
@@ -9719,6 +10419,16 @@
                                 "room": "IT Lab 4-GPU (D-203)",
                                 "time": "02:30-05:15",
                                 "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "Rawal 1 (C-509)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -9834,9 +10544,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-403",
+                                "room": "C-402",
                                 "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9866,9 +10576,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-403",
+                                "room": "C-402",
                                 "time": "03:55-05:15",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9918,9 +10628,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-607",
+                                "room": "C-408",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -9950,9 +10660,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10016,9 +10726,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-605",
+                                "room": "C-408",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10048,7 +10758,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-409",
                                 "time": "11:30-12:50",
@@ -10112,15 +10822,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-408",
+                                "room": "C-409",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -10193,9 +10902,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-408",
+                                "room": "C-409",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10271,9 +10980,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-609",
+                                "room": "C-604",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10303,9 +11012,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-408",
+                                "room": "C-607",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10340,6 +11049,16 @@
                 "AI Lab": {
                     "C": {
                         "Monday": [
+                            {
+                                "room": "Margala 3 (C-211)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "Margala 3 (C-211)",
                                 "time": "11:30-02:15",
@@ -10424,9 +11143,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-315",
+                                "room": "D-305",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10502,9 +11221,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-314",
+                                "room": "D-305",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10534,9 +11253,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-312",
+                                "room": "D-306",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10566,9 +11285,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-312",
+                                "room": "D-306",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10600,9 +11319,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-314",
+                                "room": "D-305",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10678,9 +11397,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-312",
+                                "room": "D-306",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10718,9 +11437,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-312",
+                                "room": "D-306",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -10755,6 +11474,16 @@
                 "ML Lab": {
                     "C": {
                         "Monday": [
+                            {
+                                "room": "IT Lab 4-GPU (D-203)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "IT Lab 4-GPU (D-203)",
                                 "time": "08:30-11:15",
@@ -10817,6 +11546,16 @@
                                 "room": "IT Lab 3 (D-213)",
                                 "time": "02:30-05:15",
                                 "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-Rawal 4 (C-512)",
+                                "time": "11:30-02:15",
+                                "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -10914,6 +11653,16 @@
                                 "exam": false
                             }
                         ],
+                        "Wednesday": [
+                            {
+                                "room": "D-313",
+                                "time": "10:00-11:20",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Thursday": [
                             {
                                 "room": "D-311",
@@ -10953,15 +11702,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-315",
+                                "room": "D-314",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -10986,15 +11734,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-316",
+                                "room": "D-315",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     }
@@ -11021,9 +11768,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-315",
+                                "room": "D-314",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -11053,9 +11800,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-316",
+                                "room": "D-315",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -11068,6 +11815,16 @@
                 "DAV Lab": {
                     "A": {
                         "Monday": [
+                            {
+                                "room": "IT Lab 3 (D-213)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "IT Lab 3 (D-213)",
                                 "time": "02:30-05:15",
@@ -11118,6 +11875,16 @@
                                 "room": "C-401",
                                 "time": "08:30-11:15",
                                 "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-Rawal 4 (C-512)",
+                                "time": "02:30-05:15",
+                                "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -11350,9 +12117,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-503",
+                                "room": "D-501",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -11369,7 +12136,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ],
                         "Thursday": [
@@ -11391,7 +12159,8 @@
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false
+                                "exam": false,
+                                "cancelled": true
                             }
                         ],
                         "Thursday": [
@@ -11428,9 +12197,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-503",
+                                "room": "D-501",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -11506,9 +12275,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-503",
+                                "room": "D-501",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -11604,9 +12373,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-503",
+                                "room": "D-501",
                                 "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -11943,9 +12712,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-408",
+                                "room": "C-604",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -12068,9 +12837,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "C-609",
+                                "room": "D-302",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -12107,7 +12876,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "D-402",
                                 "time": "11:30-12:50",
@@ -12286,15 +13055,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-607",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -12319,15 +13087,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-609",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     }
@@ -12354,7 +13121,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-609",
                                 "time": "11:30-12:50",
@@ -12602,7 +13369,7 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
                                 "room": "D-302",
                                 "time": "08:30-09:50",
@@ -12628,6 +13395,16 @@
                             {
                                 "room": "D-302",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-302",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
@@ -12668,9 +13445,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-505",
+                                "room": "D-503",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -12694,6 +13471,16 @@
                             {
                                 "room": "D-505",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-503",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
@@ -12734,9 +13521,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-506",
+                                "room": "D-504",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -12760,6 +13547,16 @@
                             {
                                 "room": "D-506",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-504",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
@@ -12929,9 +13726,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-403",
+                                "room": "D-314",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -12961,9 +13758,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-402",
+                                "room": "D-401",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -12995,9 +13792,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-403",
+                                "room": "D-316",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -13027,9 +13824,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-402",
+                                "room": "D-401",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -13061,9 +13858,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-402",
+                                "room": "D-316",
                                 "time": "03:55-05:15",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -13095,9 +13892,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-403",
+                                "room": "D-401",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -13129,9 +13926,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-402",
+                                "room": "D-401",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -13163,9 +13960,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-403",
+                                "room": "D-401",
                                 "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": true,
@@ -13252,9 +14049,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-315",
+                                "room": "D-402",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -13330,15 +14127,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-401",
+                                "room": "D-403",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -13363,15 +14159,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-401",
+                                "room": "D-403",
                                 "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -13420,15 +14215,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-401",
+                                "room": "D-403",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     },
@@ -13453,15 +14247,14 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-401",
+                                "room": "D-403",
                                 "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
-                                "exam": false,
-                                "cancelled": true
+                                "exam": false
                             }
                         ]
                     }
@@ -13483,6 +14276,16 @@
                                 "room": "Cyber (D-514)",
                                 "time": "02:30-05:15",
                                 "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-Rawal 4 (C-512)",
+                                "time": "08:30-11:15",
+                                "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
@@ -13643,9 +14446,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-405",
+                                "room": "D-404",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -13675,9 +14478,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-405",
+                                "room": "D-404",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -13707,9 +14510,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-406",
+                                "room": "D-405",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -13739,9 +14542,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-406",
+                                "room": "D-405",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -13838,6 +14641,16 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-404",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     }
                 },
@@ -13889,6 +14702,16 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "C-110",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "C-110",
@@ -13923,9 +14746,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "NC",
+                                "room": "D-406",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -13955,9 +14778,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-412",
+                                "room": "D-411",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -13987,9 +14810,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-413",
+                                "room": "D-412",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -14121,9 +14944,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-411",
+                                "room": "D-406",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -14153,9 +14976,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-412",
+                                "room": "D-411",
                                 "time": "08:30-09:50",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -14185,9 +15008,9 @@
                                 "exam": false
                             }
                         ],
-                        "Saturday (Sep. 05, 2026)": [
+                        "Saturday (Nov.14,2026)": [
                             {
-                                "room": "D-413",
+                                "room": "D-412",
                                 "time": "10:00-11:20",
                                 "rescheduled": false,
                                 "is_elective": false,
@@ -14307,6 +15130,16 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-406",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "D-406",
@@ -14385,6 +15218,16 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-411",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "D-411",
@@ -14411,6 +15254,16 @@
                             {
                                 "room": "D-411",
                                 "time": "02:30-03:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-411",
+                                "time": "01:00-02:20",
                                 "rescheduled": false,
                                 "is_elective": true,
                                 "elective_group": null,
@@ -14451,6 +15304,16 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-412",
+                                "time": "11:30-12:50",
+                                "rescheduled": false,
+                                "is_elective": true,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "D-412",
@@ -14479,6 +15342,16 @@
                             {
                                 "room": "D-413",
                                 "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-413",
+                                "time": "11:30-12:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -14665,6 +15538,16 @@
                                 "exam": false
                             }
                         ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-406",
+                                "time": "01:00-02:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "D-406",
@@ -14691,6 +15574,16 @@
                             {
                                 "room": "D-406",
                                 "time": "03:55-05:15",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
+                        "Saturday (Nov.14,2026)": [
+                            {
+                                "room": "D-406",
+                                "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -14773,6 +15666,14 @@
                             {
                                 "room": "C-408",
                                 "time": "10:00-11:20",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "D-302",
+                                "time": "02:30-03:50",
                                 "rescheduled": false,
                                 "is_elective": false,
                                 "elective_group": null,
@@ -14925,6 +15826,13 @@
                 "date": "",
                 "isoDate": "2026-11-13",
                 "isMakeup": false
+            },
+            {
+                "day": "Saturday",
+                "sheetName": "Saturday (Nov.14,2026)",
+                "date": "14 Nov",
+                "isoDate": "2026-11-14",
+                "isMakeup": true
             },
             {
                 "day": "Saturday",
