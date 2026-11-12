@@ -5422,16 +5422,6 @@
                                 "exam": false
                             }
                         ],
-                        "Thursday": [
-                            {
-                                "room": "D-401",
-                                "time": "08:30-09:50",
-                                "rescheduled": true,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
                         "Saturday (Nov.14,2026)": [
                             {
                                 "room": "C-309",
@@ -8075,16 +8065,6 @@
                                 "room": "Cyber (D-514)",
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
-                                "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ],
-                        "Friday": [
-                            {
-                                "room": "IT Lab 4-GPU (D-203)",
-                                "time": "02:30-05:15",
-                                "rescheduled": true,
                                 "is_elective": false,
                                 "elective_group": null,
                                 "exam": false
