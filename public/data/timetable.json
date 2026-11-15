@@ -2885,6 +2885,16 @@
                         ]
                     },
                     "A": {
+                        "Wednesday": [
+                            {
+                                "room": "D-302",
+                                "time": "11:30-12:50",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Thursday": [
                             {
                                 "room": "C-409",
