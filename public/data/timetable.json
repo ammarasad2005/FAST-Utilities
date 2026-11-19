@@ -6420,6 +6420,16 @@
                                 "exam": false
                             }
                         ],
+                        "Thursday": [
+                            {
+                                "room": "D-405",
+                                "time": "02:30-05:15",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
+                        ],
                         "Saturday (Sep. 05, 2026)": [
                             {
                                 "room": "Margala 4 (C-212",
@@ -9626,6 +9636,24 @@
                                 "elective_group": null,
                                 "exam": false
                             }
+                        ],
+                        "Thursday": [
+                            {
+                                "room": "C-303",
+                                "time": "10:00-11:20",
+                                "rescheduled": true,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            },
+                            {
+                                "room": "C-404",
+                                "time": "08:30-09:50",
+                                "rescheduled": false,
+                                "is_elective": false,
+                                "elective_group": null,
+                                "exam": false
+                            }
                         ]
                     },
                     "G": {
@@ -10527,20 +10555,6 @@
                                 "time": "08:30-11:15",
                                 "rescheduled": false,
                                 "is_elective": false,
-                                "elective_group": null,
-                                "exam": false
-                            }
-                        ]
-                    }
-                },
-                "Comp Wrch": {
-                    "E": {
-                        "Thursday": [
-                            {
-                                "room": "C-404",
-                                "time": "08:30-09:50",
-                                "rescheduled": false,
-                                "is_elective": true,
                                 "elective_group": null,
                                 "exam": false
                             }
